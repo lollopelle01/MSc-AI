@@ -1,0 +1,49 @@
+# 1) We normalize the dataset
+from sklearn.preprocessing import PowerTransformer
+pt = PowerTransformer() 
+X_pt = pd.DataFrame(pt.fit_transform(X), columns=X.columns)
+
+# 2) We rescale the dataset
+from sklearn.preprocessing import MinMaxScaler
+mms = MinMaxScaler()
+X_st = pd.DataFrame(mms.fit_transform(X_pt), columns = X_pt.columns)
+
+sns.pairplot(X_st)
+
+## We'll find the best parameters ##
+import numpy as np
+from sklearn.metrics import silhouette_score
+from sklearn.model_selection import ParameterGrid
+from sklearn.cluster import DBSCAN
+
+# Parameters
+param_grid = {'eps': list(np.arange(0.001, 1, 0.005)), 'min_samples': list(range(2,10,1))}
+params = list(ParameterGrid(param_grid))
+dbscan_out = pd.DataFrame(columns =  ['eps','min_samples','n_clusters','silhouette', 'unclust%'])
+
+# Process
+for i in range(len(params)):
+    db = DBSCAN(**(params[i]))
+    y_db = db.fit_predict(X_st)
+    cluster_labels_all = np.unique(y_db) # Considerando i singoli labels
+    cluster_labels = cluster_labels_all[cluster_labels_all != -1] # Che sono siano rumore
+    n_clusters = len(cluster_labels)
+    if 1 < n_clusters and n_clusters < len(y_db): # Se ci sono meno cluster (ma almeno 1) di prima
+        X_cl = X_st.loc[y_db!=-1,:] # seleziona tutte le colonne per le righe dove il label corrispondente non è rumore.
+        y_db_cl = y_db[y_db!=-1] # seleziona i labels non rumore
+        silhouette = silhouette_score(X_cl,y_db_cl)
+        uncl_p = (1 - y_db_cl.shape[0]/y_db.shape[0]) * 100 # percentuale di punti che non appartengono a nessun cluster
+        dbscan_out.loc[len(dbscan_out)] = [db.eps, db.min_samples, n_clusters, silhouette, uncl_p]
+
+
+# We filter the results
+dbscan_out[(dbscan_out['n_clusters']==3)].sort_values(['silhouette','unclust%'],ascending=[False,True])
+
+from matplotlib import pyplot as plt
+
+db = DBSCAN(eps=0.091, min_samples=3) # using best parameters
+y_db = db.fit_predict(X_st)
+
+X_st['cluster_db']=y_db
+sns.pairplot(data=X_st, hue='cluster_db')
+plt.show()

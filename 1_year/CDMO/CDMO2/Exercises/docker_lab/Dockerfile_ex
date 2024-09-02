@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+# RUN ls
+
+WORKDIR /src
+
+# COPY
+
+CMD ls .

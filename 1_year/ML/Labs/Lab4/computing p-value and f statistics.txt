@@ -1,0 +1,2 @@
+# Computation of F-statistic and p-value for the regression
+# http://facweb.cs.depaul.edu/sjost/csc423/documents/f-test-reg.htm

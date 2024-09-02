@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Data mining</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c7d2194d-e01a-4944-a235-a51821405883" class="page sans"><header><h1 class="page-title">Data mining</h1><p class="page-description"></p></header><div class="page-body"><nav id="b0ec1736-1944-4734-8528-adc9da27c80d" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#77998506-c09b-4ff5-962e-ea37a8bd6960">Big Data, Data Mining and Machine Learning</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5c5bf74d-18cd-43ae-915a-35c84cf1e8d0">Data source</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2dc789d9-f7c9-4a2b-af04-e21a319e90fe">Analytics</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1d3ae074-be76-472f-b505-1a15ac22e8e6">Cloud Offerings by Service</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b9576e45-1fdd-4929-a904-a81f84fdf978">The Data Mining Process</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#424d0e44-c488-4635-a355-785e5ea6d219">Business Intelligence</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e3a43507-b718-4f31-a873-349a4238e477">Business Intelligence and Data Warehouse</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b29b570a-c1ac-4770-b5ef-e0d9419470f3">OLTP and OLAP</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#820d0834-8c9a-4384-b9d4-534a5b2a85ad">Database vs Data Warehouse</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#732be10c-c030-44c1-9fcf-ea3b9e420a5f">OLAP</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7bc30514-684a-4970-a793-bec0caad9eca">OLAP operators</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0c47b671-6389-4330-8b48-1da7136d6da6">ETL (<strong>Extraction Transformation and Loading</strong>)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#df70959b-283f-46a1-9415-e6377fbc0571">ETL phases</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c515397c-8124-48c8-a7ee-b80b134787b2">DWH Architecture</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0dae3547-1aa2-4f8e-abcd-ef45296cc7fd">DFM (<strong><strong>Dimensional Fact Model)</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8caf7f4e-9098-47c7-9ba4-70979d02e1e3">Logical Design</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#45b3b698-6cd3-4b50-b743-88351e658f67">Data Lake</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c744c3c2-0fb6-41aa-88b3-02f8b8aee3f3">Modern Data Architecture</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d4681ec0-b63b-422a-8088-e22b0930371d">Data Lake Users</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ef3419be-06e3-48a9-b843-9c56f470bbc6">Data Lake Components</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#80b8224a-b9f0-4a84-a71f-aa9e7a07013e">Metadata in Data Lake</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f0ef8a3b-cd18-4137-9992-61809d0bf60f">The CRISP-DM methodology</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7f95f831-faf5-4757-9492-b41634c8e567">Business understanding</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6f54f154-b09e-4197-851b-661c600756a3">Data unserstanding</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b26f778-deae-4d9f-80a7-a658b51ed10c">Data preparation</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#67d16bde-a31c-4ac7-8b0b-cc3c65f6c4f4">Modeling</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#18e657b5-24cb-4684-8d69-ebd493242c27">Evaluation</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8fd3fa63-cbfd-43d9-9c0b-0ab00c7f2ff1">Daployment</a></div></nav><hr id="e45d2ce8-dd5a-46b6-b936-f32c20196957"/><p id="9aa2acef-ae00-4daf-8805-59583c6d2b6e" class=""><time>@September 27, 2023</time> </p><h2 id="77998506-c09b-4ff5-962e-ea37a8bd6960" class="">Big Data, Data Mining and Machine Learning</h2><p id="b1819247-2dc4-4a5d-99fa-b63a6b47c0fb" class="">Data (raw values) → Information (related data) → Knowledge (understanding information pattern)</p><h2 id="5c5bf74d-18cd-43ae-915a-35c84cf1e8d0" class="">Data source</h2><p id="04674190-703b-44d7-968d-a1a5f45becf0" class="">When an event in the real world changes the state of the enterprise:</p><p id="a841d362-982b-471e-b896-ebac1ea9ea87" class=""><span style="border-bottom:0.05em solid">Transaction</span>: event that generates/modifies data in database<br/><br/><span style="border-bottom:0.05em solid">Signal</span>: information of the reading of a measure produced by a sensor</p><p id="4735edc5-2077-478e-a0e7-1147f3f216e8" class="">
+</p><p id="25615576-298f-494b-b96a-38b71a5c2e09" class=""><strong>Software</strong>:</p><ul id="193e6752-03d2-444d-8eda-99d9014134d3" class="toggle"><li><details open=""><summary>OLTP (On-Line Transaction Processing)</summary><p id="846266b5-d26b-4e19-91c7-5a1e695af80c" class="">Supports transaction-oriented applications and data storage efficiently.</p><p id="4867e3c1-9cd6-44b8-a38c-c606028f7722" class="">SQL systems are designed for this, and generates transactions by SQL query.</p><figure id="7f89aaf7-8f09-4a78-902e-1dc7fb9717c1" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.43.43.png"><img style="width:392px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.43.43.png"/></a></figure></details></li></ul><ul id="1ef2f995-8288-4fe9-be33-cb849c037bdb" class="toggle"><li><details open=""><summary>ERP (Enterprise Resource Planning)</summary><p id="ffe3d1c2-b7e4-42b5-9e2c-180c1a8ea8f6" class="">Designed by a common database that supports all the applications even un different modules and in real time.</p></details></li></ul><ul id="d0de580b-1f92-4210-9917-60aa84cfe567" class="toggle"><li><details open=""><summary>MIS (Management Information Systems)</summary><p id="4dfbb423-b261-4a6b-96c7-66f2f95cd150" class="">Reporting system built on OLTP, useful in decision making </p></details></li></ul><ul id="a9bafc43-08eb-4628-9ad5-a93c34c02ad1" class="toggle"><li><details open=""><summary>DSS (Decision Support Systems)</summary><p id="823bc5a0-6c47-4d5f-8c2e-5cf99d85f44e" class="">Analytical system that provides supports for complex and <a href="https://www.notion.so/Data-mining-c7d2194de01a4944a235a51821405883?pvs=21">unstructured decisions</a> (not detailed decisions before making them)</p></details></li></ul><ul id="ae4d73e6-ac20-4834-8b88-a1e58da6fe82" class="toggle"><li><details open=""><summary>EIS (Executive Information Systems)</summary><p id="1495ef40-02be-4b9f-945c-26e5ccb61b21" class="">…</p></details></li></ul><ul id="e0daf416-840e-45f8-b278-9fd43177b629" class="toggle"><li><details open=""><summary>BI</summary><blockquote id="96329973-0fe2-4825-8cf2-a5631af2d971" class="">A set of methodologies, processes, architectures, and technologies that transform raw data into meaningful and useful information used to enable more effective strategic, tactical, and operational insights and decision- making”</blockquote><p id="4063d38e-ff7a-4025-b565-913be6e22e98" class="">Data are extracted by sources, transformed and loaded into Data <strong>Warehouse</strong>(<em>copy of transaction data specifically structured for query and analysis</em>) which uses them.</p></details></li></ul><ul id="11c77dbc-53f7-4a0e-953b-b66554b1c33e" class="toggle"><li><details open=""><summary>OLAP (On-Line Analytical Processing)</summary><p id="cb2ec1d0-d657-4be7-8fb2-2cbb26faa87b" class="">Analyse multidimensional data interactively from multiple perspectives.</p><figure id="0a447eb1-8cc2-41d0-a92c-c6188cb12fd1" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.42.45.png"><img style="width:732px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.42.45.png"/></a></figure></details></li></ul><p id="001a178f-367e-4fc0-be79-caac9de0119b" class="">
+</p><p id="29b766d6-17ed-4e9c-b4ef-0c662e64738c" class=""><strong>Structured vs unstructured decisions</strong></p><figure id="4d22d659-c9d9-471f-b3d6-1948210da6ad" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.45.20.png"><img style="width:1206px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.45.20.png"/></a></figure><h2 id="2dc789d9-f7c9-4a2b-af04-e21a319e90fe" class="">Analytics</h2><ul id="33857b94-31b7-42e5-beef-3bc921ca96ef" class="toggle"><li><details open=""><summary>Analytics vs Data Mining</summary><p id="8830d210-6c7f-4626-9abb-90984f589afd" class=""><strong>Analytics</strong> → <span style="border-bottom:0.05em solid">Structured</span> decisions driven by data</p><p id="0f2cefd4-ebf5-4785-b433-d5897e10166a" class=""><strong>Data Mining</strong> → <span style="border-bottom:0.05em solid">Unstructured</span> decisions driven by data</p><p id="f882fd53-7f50-40d5-bfdd-d25e5573beb6" class="">We extract threshold from Data Mining and it is essential for Analytics.</p></details></li></ul><figure id="7401edf2-faa4-4ddc-86e6-0158262c753a" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.54.42.png"><img style="width:1174px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-09-27_alle_10.54.42.png"/></a></figure><p id="80350253-896b-4bd5-9772-95b9677347fc" class=""><strong>Descriptive</strong> = DB + understand data + statistics + unsupervised ML</p><p id="4e73a2b5-2962-477f-9079-cbde860c92bd" class=""><strong>Diagnostic</strong> = Descriptive + domain knowledge + understand causes</p><p id="9fbbeee7-0eee-404e-90d2-ddd39cb1222e" class=""><strong>Predictive</strong> = most probable value in future, given a history of them</p><p id="dc4cacb0-702c-497d-bddf-8c80ffd958d4" class=""><strong>Prescriptive</strong> = suggestion for a goal + strategy choice + optimization</p><h2 id="1d3ae074-be76-472f-b505-1a15ac22e8e6" class="">Cloud Offerings by Service</h2><p id="1c3cd7c1-346b-43d5-80cb-22a564d32dbb" class="">(More Structured, Less Control) SaaS → PaaS→ IaaA (Less Structured, More Control) </p><p id="6fa45ceb-9fdc-4e57-a984-80b0853b74a3" class="">
+</p><hr id="23d7c97e-1855-4ae4-a465-3f66a1324fb2"/><p id="591fd829-1a36-44e4-bfc5-716f35b05cb4" class=""><time>@September 28, 2023</time> </p><h2 id="b9576e45-1fdd-4929-a904-a81f84fdf978" class="">The Data Mining Process</h2><figure id="4ebcf358-a891-48b8-852d-92414058a763" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-04_alle_18.53.13.png"><img style="width:1110px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-04_alle_18.53.13.png"/></a></figure><h2 id="424d0e44-c488-4635-a355-785e5ea6d219" class="">Business Intelligence</h2><p id="8e1ae01f-b271-4070-829b-df694f450124" class="">Process of:</p><ol type="1" id="51730ba3-8f83-4bbd-9273-0655f983531f" class="numbered-list" start="1"><li>Transforming raw data into useful information to support effective and aware business strategies</li></ol><ol type="1" id="9f6daacf-6011-4fff-9389-d9ae48b8260d" class="numbered-list" start="2"><li>Capturing the business data and getting the right information to the right people, at the right time, through the right channel</li></ol><h2 id="e3a43507-b718-4f31-a873-349a4238e477" class="">Business Intelligence and Data Warehouse</h2><p id="79f0f2e9-f254-40bc-b079-bbb9873cd591" class="">Data Warehouse is an optimized repository that stores information useful for decision-making by providing the ability to manage sets of historical data which are fundamental for activities like forecasting as an example.</p><p id="753c63f2-dbfa-4c98-9c5a-e0693bd35b33" class="">It :</p><ul id="74f77107-4b1a-480f-94ab-ca9697547477" class="bulleted-list"><li style="list-style-type:disc">is <strong>subject-oriented</strong><br/>focuses on enterprise-specific concepts<br/></li></ul><ul id="a741ecd5-2383-4cee-9a30-42af7cc3fdff" class="bulleted-list"><li style="list-style-type:disc">is <strong>integrated</strong> and <strong>consistent</strong><br/>integrates data from different and heterogeneous sources and provides a unified view of all the data<br/></li></ul><ul id="2c8a39c9-2539-4076-86cd-023391e56f08" class="bulleted-list"><li style="list-style-type:disc">is <strong>not volatile</strong> and <strong>shows evolution</strong> over time<br/>the changes in the data are tracked and recorded showing them over time.<br/></li></ul><h2 id="b29b570a-c1ac-4770-b5ef-e0d9419470f3" class="">OLTP and OLAP</h2><div id="3965cad0-cea0-4043-887e-6f7c0e096649" class="column-list"><div id="85e21127-f561-4f6c-a568-92a8ecb80cad" style="width:50%" class="column"><ul id="94669ddd-dcc0-45e2-9bc1-21c14e9fcf1b" class="toggle"><li><details open=""><summary>OLTP</summary><ol type="1" id="e8bfe24c-0500-47f4-98bd-2380d72a4db0" class="numbered-list" start="1"><li>For transaction</li></ol><ol type="1" id="5201c8f5-5dab-4454-8532-eee93f8d0741" class="numbered-list" start="2"><li>Each transaction reads a few records</li></ol><ol type="1" id="6fe9ee19-1841-4c4c-8ff4-b5a4ee7a597a" class="numbered-list" start="3"><li>Frozen workload</li></ol></details></li></ul></div><div id="411bde24-1bbb-4091-856d-85cf44be173b" style="width:50%" class="column"><ul id="8b884662-e4de-42ef-a139-6381f86114c9" class="toggle"><li><details open=""><summary>OLAP</summary><ol type="1" id="896ed6a2-5358-4413-aba1-f9d937ea7bff" class="numbered-list" start="1"><li>For dynamic multidimensional analyses</li></ol><ol type="1" id="05ba0571-b2ee-44eb-b363-81cd298dccc1" class="numbered-list" start="2"><li>Each query involves huge amount of records</li></ol><ol type="1" id="067c3751-82eb-4080-89bb-289ecfbe3d90" class="numbered-list" start="3"><li>Mutable workload</li></ol></details></li></ul></div></div><h2 id="820d0834-8c9a-4384-b9d4-534a5b2a85ad" class="">Database vs Data Warehouse</h2><figure id="b2c93ce4-d555-4aa9-b07a-4a14854404fa" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-04_alle_19.10.35.png"><img style="width:1226px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-04_alle_19.10.35.png"/></a></figure><p id="87a7baf3-07dc-4d17-a488-e1ca9ff76aa6" class="">
+</p><hr id="e51c2bfa-794f-4ce6-a781-8c73e8e84759"/><p id="da9b3380-4994-433d-9b6d-fa5b985b6091" class=""><time>@October 5, 2023</time> </p><h2 id="732be10c-c030-44c1-9fcf-ea3b9e420a5f" class="">OLAP</h2><p id="72f836de-0f66-4156-9a91-c45afa7f01de" class="">We concatenate different operators to navigate the DWH at different levels of aggregation and a session allows the system to conatenate the output of a operator as the input of le following one.</p><h3 id="7bc30514-684a-4970-a793-bec0caad9eca" class="">OLAP operators</h3><div id="29ef7ab0-88fc-4d9d-9625-abc5db06748e" class="column-list"><div id="bb4b1999-4aa1-407a-a3a3-d01f12ef9535" style="width:50%" class="column"><ul id="82f623c5-9ae6-40c8-bccc-ce048c8540e2" class="toggle"><li><details open=""><summary>Roll-up</summary><figure id="94231bdb-281a-4436-9720-7f9042f119b7" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.32.32.png"><img style="width:144px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.32.32.png"/></a><figcaption>Aggregates data</figcaption></figure></details></li></ul></div><div id="4488d3ae-683b-4f55-b0e7-681ede37c13f" style="width:50%" class="column"><ul id="86503bcf-0dfd-4565-9db3-bf128d40c470" class="toggle"><li><details open=""><summary>Drill-down</summary><figure id="d4869862-825d-438a-8ed7-f6ef2836a586" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.34.14.png"><img style="width:192px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.34.14.png"/></a><figcaption>Reduces data aggregation</figcaption></figure></details></li></ul></div></div><div id="feed3e56-7521-4480-845e-b8c8bf722dc5" class="column-list"><div id="ab94de7c-7621-4737-bc4f-b92e424e7264" style="width:49.99999999999999%" class="column"><ul id="76c994f5-7ae7-4f84-a8bf-71f54168200c" class="toggle"><li><details open=""><summary>Slice-and-dice</summary><figure id="45723699-8c32-49dd-b192-1439aaaed970" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.36.03.png"><img style="width:192px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.36.03.png"/></a><figcaption>Extraction of data by one category (slice) or by reducing the set of data (dice)</figcaption></figure></details></li></ul></div><div id="85d4364c-1521-48ff-93c7-e0d3098218ab" style="width:50.000000000000014%" class="column"><ul id="523d133a-0e55-4410-9979-7ced14b076fa" class="toggle"><li><details open=""><summary>Pivot</summary><figure id="7a4a8ae2-2ab6-491f-8301-0bed1d9c7976" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.42.23.png"><img style="width:240px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.42.23.png"/></a><figcaption>Changes in layouts, providing new viewpoints</figcaption></figure></details></li></ul></div></div><div id="84f3d214-09fd-4c1a-b5bc-ba2aa36e2910" class="column-list"><div id="3d8b22f6-92f7-4083-8936-63c9e06237fa" style="width:50%" class="column"><ul id="750468c8-ac71-4df9-8e6a-35dd1e7494de" class="toggle"><li><details open=""><summary>Drill-across</summary><figure id="882c58b6-99fc-4532-a80f-e116191f5bbd" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.44.02.png"><img style="width:144px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.44.02.png"/></a><figcaption>Creates link between data</figcaption></figure></details></li></ul></div><div id="e05626ab-187b-4b89-9919-500e08677694" style="width:50%" class="column"><ul id="31c42a23-98c9-4a67-88dd-e5afa69892da" class="toggle"><li><details open=""><summary>Drill-through</summary><figure id="5fdb68ad-24bb-435a-ab93-fdfbaae541f5" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.46.04.png"><img style="width:240px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_17.46.04.png"/></a><figcaption>Translate multidimensional data to operational data</figcaption></figure><p id="f343f441-7f33-4214-84c8-ad5db64ae3c0" class="">
+</p></details></li></ul></div></div><h2 id="0c47b671-6389-4330-8b48-1da7136d6da6" class="">ETL (<strong>Extraction Transformation and Loading</strong>)</h2><p id="7af0e9c5-66eb-4d91-9c71-2988a94a8970" class="">We extracts, integrates, and cleans data from operational sources to feed the Data Warehouse layer.</p><h3 id="df70959b-283f-46a1-9415-e6377fbc0571" class="">ETL phases</h3><ul id="8169d332-a28a-4721-baa9-cde2208a54dc" class="toggle"><li><details open=""><summary>Extraction</summary><p id="c479feba-317c-463e-8be9-7a0b9e4139e4" class="">We have different data types (structured or not) and different extraction types:</p><ul id="f1841261-a070-4b61-835d-430ec32b13b1" class="bulleted-list"><li style="list-style-type:disc">static → snapshot of data</li></ul><ul id="1124fd88-b5d5-4d78-92d7-8983c069d1a1" class="bulleted-list"><li style="list-style-type:disc">incremental → regular update → timestamp and triggers</li></ul></details></li></ul><ul id="04958829-630e-4f50-90b1-21b8e20087b8" class="toggle"><li><details open=""><summary>Cleansing</summary><p id="4edf3ad3-918c-490e-b2a6-88e6becc48ea" class="">Quality improvement procedure, standardize:</p><ul id="76df8e03-e57f-4eee-8ff6-746801c69442" class="bulleted-list"><li style="list-style-type:disc">Duplicate data</li></ul><ul id="1404e43e-ac17-4624-afc4-8ca87a527ab9" class="bulleted-list"><li style="list-style-type:disc">Missing data</li></ul><ul id="6e70f0bb-94a2-4948-968d-9e259dc9a581" class="bulleted-list"><li style="list-style-type:disc">Improper field use</li></ul><ul id="9d67eb04-2866-4cc9-b1e7-25571cee5275" class="bulleted-list"><li style="list-style-type:disc">Wrong values</li></ul><ul id="77f1eeb1-4bb4-42b0-b14f-a4f8f7f46d20" class="bulleted-list"><li style="list-style-type:disc">Inconsistent values for error or bad usage</li></ul></details></li></ul><ul id="68b576a8-e4e0-4bc4-8606-bfbb9d781e3d" class="toggle"><li><details open=""><summary>Transformation</summary><ul id="f0846506-a9b8-4237-8576-1af55f8a236e" class="bulleted-list"><li style="list-style-type:disc">Conversion → data type change</li></ul><ul id="a233d1f7-7f9c-42e3-b4f3-f624f40bf71b" class="bulleted-list"><li style="list-style-type:disc">Enrichment → attribute combination</li></ul><ul id="60829496-b900-45ce-9d80-93e2ccbf6bfd" class="bulleted-list"><li style="list-style-type:disc">Separation/Concatenation → attribute <span style="border-bottom:0.05em solid">denormalized</span>/normalized</li></ul></details></li></ul><ul id="dd36cb3b-5e64-480b-a012-335418b8272b" class="toggle"><li><details open=""><summary>Loading</summary><ul id="7273ea2c-8c1c-4975-a191-5be1473bf716" class="bulleted-list"><li style="list-style-type:disc">Refresh → rewrite of DWH (ok with static extraction)</li></ul><ul id="92d0a9ca-2e79-4b3b-8a98-4657586f57fe" class="bulleted-list"><li style="list-style-type:disc">Update → rewrite only changed data (ok with progressing extraction)</li></ul></details></li></ul><p id="f49398d0-4b02-401f-9263-0e343cc02fc0" class="">
+</p><h2 id="c515397c-8124-48c8-a7ee-b80b134787b2" class="">DWH Architecture</h2><p id="37f79057-4882-4cc4-bfd4-780c277e8038" class="">We require:</p><ul id="dcee81c8-bfa0-4dc4-8fd8-8f149b06a6de" class="bulleted-list"><li style="list-style-type:disc"><strong>Separation</strong> → analytical ≠ transactional</li></ul><ul id="b443fea8-6ddf-43d8-886f-b463f273c47d" class="bulleted-list"><li style="list-style-type:disc"><strong>Scalability</strong> → system upgrades with data volume</li></ul><ul id="79cfe4df-5291-4819-bbf8-74119abc225a" class="bulleted-list"><li style="list-style-type:disc"><strong>Extensibility</strong> → can host new applications/technologies</li></ul><ul id="f113ca39-0cc0-4028-bfa4-db61fc84655c" class="bulleted-list"><li style="list-style-type:disc"><strong>Security</strong> → monitoring accesses</li></ul><ul id="d3194fc1-7e7c-4cfd-9331-a06d3d345572" class="bulleted-list"><li style="list-style-type:disc"><strong>Administrability</strong> → easy to manage</li></ul><p id="21949b84-1e85-40b2-b67a-e32cabc81d4b" class="">
+</p><p id="522b19b0-1287-430a-a00b-2066745a4574" class="">We have:</p><div id="c8965f93-df9b-43b1-af2b-464f326ce564" class="column-list"><div id="3a2926c2-e576-4f34-b0d5-52fc84ab7133" style="width:33.33333333333333%" class="column"><ul id="b5fc2110-5545-4469-876a-c90306234930" class="toggle"><li><details open=""><summary>Single-Layer</summary><figure id="261e9a1a-937a-4350-91ba-3796a3374341" class="image" style="text-align:left"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.14.23.png"><img style="width:240px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.14.23.png"/></a><figcaption>DWH is multidimensional view by specific middleware</figcaption></figure><p id="b9ea9c2a-fa07-454c-b1d6-e1e33c818d18" class="">✅ Limited space<br/>❌ No sepratation<br/></p></details></li></ul></div><div id="644a8dfa-ba5b-404f-8a2f-2484c649a2c4" style="width:33.33333333333334%" class="column"><ul id="4fffe54b-b6cb-4be3-8020-467403fca235" class="toggle"><li><details open=""><summary>Two-Layer</summary><figure id="230aeefe-6937-407b-be3a-d65da0dc1622" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.15.24.png"><img style="width:240px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.15.24.png"/></a><figcaption>In Data Staging there’s ETL.</figcaption></figure><p id="4787836b-22cf-4637-85b3-a851a5ddd2c1" class="">✅ Separation</p></details></li></ul></div><div id="9993993f-fdb4-4516-a1d5-314acd6b738c" style="width:33.33333333333333%" class="column"><ul id="df180cc6-b4cf-49b3-a570-96bf3fe33b76" class="toggle"><li><details open=""><summary>Three -Layer</summary><figure id="f9347b58-09fe-4c0b-a062-2cf027d05a84" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.17.27.png"><img style="width:240px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_15.17.27.png"/></a><figcaption>The reconciled layer makes the data integrated, consistent, correct, current<br/>and detailed.<br/></figcaption></figure><p id="b76a1330-a6ad-497a-a77b-079d27e5d143" class=""><br/><br/></p><p id="8a6aba0e-a3e6-4f0c-a7ac-1485f0524495" class="">
+</p></details></li></ul></div></div><h2 id="0dae3547-1aa2-4f8e-abcd-ef45296cc7fd" class="">DFM (<strong><strong>Dimensional Fact Model)</strong></strong></h2><p id="58abcda3-fa0a-4b6b-b307-df8e9ddb45d3" class="">It is a conceptual model created specifically to function as data mart design support. It is graphic and based on the multidimensional model.</p><p id="aca6bb16-84a9-468e-81b6-c7bc2a088f93" class="">The basic concepts are:</p><table id="2e5d1ca3-3433-4575-b7e3-8d3f33b3d079" class="simple-table"><tbody><tr id="028aefee-4ecf-4439-accc-de20939d153e"><td id="C;j@" class="block-color-blue_background" style="width:166.9965362548828px"><strong>Concept</strong></td><td id="epw&gt;" class="block-color-blue_background" style="width:517px"><strong>Description</strong></td></tr><tr id="6233ceef-82fa-4e59-b3dd-40f38d2b3443"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Fact</strong></td><td id="epw&gt;" class="" style="width:517px">It is a concept relevant to decision-making processes that models a set of events.</td></tr><tr id="895cdf5a-0ef8-4205-8052-c69914e14122"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Measure</strong></td><td id="epw&gt;" class="" style="width:517px">It is a numerical property of a fact, describes quantitive aspects.</td></tr><tr id="ac207637-27d0-453d-9917-537cafb71b11"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Dimensions</strong></td><td id="epw&gt;" class="" style="width:517px">It is a fact property with a finite domain and it’s used for analysis coordination</td></tr><tr id="3c2c9a0a-37dd-42c7-8b38-90b762d40f15"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Dimensional attribute</strong></td><td id="epw&gt;" class="" style="width:517px">Attributes of dimensions</td></tr><tr id="4227dc6a-4d7c-450f-926b-b4ef180b179f"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Hierarchy</strong></td><td id="epw&gt;" class="" style="width:517px">Three of Dimensional attribute that models a many-to-one relation between pairs of dimensional attributes.<br/>There is a dimension in the root and the nodes describe it.<br/></td></tr><tr id="05353494-14db-44d7-aa2d-843025a31452"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Primary event</strong></td><td id="epw&gt;" class="" style="width:517px">Particular occurrence of a fact and provides various dimensions, each with n-ple of values.</td></tr><tr id="7663d6e4-b83a-4984-94a1-6ee4189896c3"><td id="C;j@" class="" style="width:166.9965362548828px"><strong>Secondary event</strong></td><td id="epw&gt;" class="" style="width:517px">Sums up all the values of the same measure in the corresponding primary events</td></tr></tbody></table><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0b91ae91-0e7c-41d2-be78-cfecd1898e67"><div style="font-size:1.5em"><span class="icon">💬</span></div><div style="width:100%"><strong>Additivity<br/><br/></strong>A measure can be additive or not:<br/>• <br/><span style="border-bottom:0.05em solid">It is</span> → you can use the SUM operator to aggregate its values along the dimension hierarchy<br/>• <br/><span style="border-bottom:0.05em solid">It is not</span> → you can use no aggregation operator for it.<br/><br/></div></figure><h2 id="8caf7f4e-9098-47c7-9ba4-70979d02e1e3" class="">Logical Design</h2><p id="beb3c798-be90-4630-aed1-9a0a7487a448" class="">Defines the data structure that represent data marts according to the preselected logical model and optimizes performance by fine- tuning these structures.</p><p id="ee464334-76f9-42c8-90aa-32e9c150ae04" class="">There are 3 steps to implement a logical schema:</p><ol type="1" id="47821335-92ec-4f8d-b760-0e5bf3812e34" class="numbered-list" start="1"><li>Translating: fact schema → logic schema<ul id="c65c16ed-7662-4f50-94e1-a50221ebafd1" class="toggle"><li><details open=""><summary>Star schema</summary><figure id="e7ad2668-a8ee-40de-baf6-e644fab01372" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_18.18.51.png"><img style="width:480px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_18.18.51.png"/></a><figcaption>It is characterized by fact tables (measures + descriptive) and dimension tables.</figcaption></figure></details></li></ul><ul id="7184aff5-a267-469b-98c0-f52d22dda135" class="toggle"><li><details open=""><summary>Snowflake schema</summary><figure id="c132205f-abe4-43d5-8ee5-5dd4475bb53e" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_18.19.05.png"><img style="width:480px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-05_alle_18.19.05.png"/></a><figcaption>Dimension tables partially normalized</figcaption></figure></details></li></ul></li></ol><ol type="1" id="5b0f608d-a9c7-4504-aa17-b91e035436d0" class="numbered-list" start="2"><li>Materializing views: secondary view that aggregate primary view data to improve query performance</li></ol><ol type="1" id="a61db30d-5368-4e43-95e3-ef41786abd78" class="numbered-list" start="3"><li>Fragmenting fact tables vertically and horizontally</li></ol><p id="5a419347-4358-4244-bf41-045044542547" class="">
+</p><hr id="135efa59-ebae-42db-b0a9-74f7acdf1dd9"/><p id="9f5217e8-e995-4e62-a9e3-4322a6d6cae2" class=""><time>@October 11, 2023</time> </p><p id="248de4c3-f614-4f7d-b6fb-7ac07ae96836" class="">There are new data types. For example:<br/>Dark data → the pages that could not be accessed but they are available<br/>Open data → data provided by administration<br/></p><h2 id="45b3b698-6cd3-4b50-b743-88351e658f67" class="">Data Lake</h2><blockquote id="996706d8-5245-4cd5-84ca-a4bbb871947f" class="">A Data Lake is a repository of data stored in a raw form. </blockquote><p id="5b8ed070-f2c6-498a-8079-3ef5814cf051" class="">It will provide data that will be used when they are necessary. </p><p id="ee8390d3-823c-44e2-81f9-dc5e2e1f680b" class="">It is also cheaply scalable and quickly ingest everything.</p><p id="71b5958c-6af6-4e7f-b73b-1607823bb0fe" class="">Data could come from batches but also from streams (Internet) so a data lake must also handle queues to stay efficient.</p><p id="702a3470-fd76-4c66-9614-22f3f793bc03" class="">It doesn’t force schema on write, so it doesn’t impose a schema to the data but uses the data own schema.</p><p id="0f326221-055f-47d5-b5b2-ac2f214117c1" class="">It can be enabled in less time than a data wharehouse</p><blockquote id="478daa9a-6a51-405f-8ab0-3913fcfd41e3" class=""><span style="border-bottom:0.05em solid">time to value</span>: from when we need something to when i’ll have a software for that ‘something’</blockquote><p id="f7fefb3b-d33b-4c53-a988-4c7d2047453f" class="">Time to value must be the shortest possible.</p><figure id="afea8473-8151-4c19-b7bf-6a9d4011e0c4" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.04.12.png"><img style="width:1202px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.04.12.png"/></a></figure><p id="f6401da7-ccf4-4aa3-b545-d505b9e254a2" class="">Mission critical → complete their mission as soon as possible</p><h2 id="c744c3c2-0fb6-41aa-88b3-02f8b8aee3f3" class="">Modern Data Architecture</h2><figure id="0b8c032e-bd92-47d9-89c0-e88d96b2f5ed" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.28.45.png"><img style="width:1180px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.28.45.png"/></a></figure><h2 id="d4681ec0-b63b-422a-8088-e22b0930371d" class="">Data Lake Users</h2><p id="6ed528b5-0006-4e50-bcf4-d1f17db93110" class="">They are different and they have different needs:</p><ul id="9d03d24b-a995-4dfe-9bf8-ac7314ff8f9a" class="bulleted-list"><li style="list-style-type:disc">Business Users → pre-configured dashboards</li></ul><ul id="de70c28f-2ac9-4bb9-aef2-31ba7946708a" class="bulleted-list"><li style="list-style-type:disc">Business Analiysts → own model to provide business insights</li></ul><ul id="9ec714b4-f570-4f9f-9097-42449f6426e1" class="bulleted-list"><li style="list-style-type:disc">Data Scientists, Engeneers → statistical analysis, implementations, optimizations</li></ul><h2 id="ef3419be-06e3-48a9-b843-9c56f470bbc6" class="">Data Lake Components</h2><figure id="8ee925fb-01cb-41e8-801f-892292380e8f" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.39.24.png"><img style="width:1164px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_10.39.24.png"/></a></figure><p id="6d750554-40ed-4f49-9aaf-1a2d24dff829" class="">Orchestration, makes the software components cooperate correctly.</p><p id="e7ab5ced-878e-4ed3-969c-dade649d858a" class="">There are 3 phases:</p><ul id="7f2de2c3-07e0-4a36-bb5e-7c599fdc9beb" class="toggle"><li><details open=""><summary>Data Ingestion</summary><figure id="6154a8c3-a130-4cdf-b87f-0a8ee9df7d81" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.03.42.png"><img style="width:1168px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.03.42.png"/></a></figure><p id="f684e587-5476-48e5-889e-a1e0b723b402" class="">Ingestion has to be guaranteed independently from the type of data flow it faces.</p><p id="61a4b40b-3221-425a-88f6-2d643b8a9349" class="">It can come as a workload, as an incremental ingestion or a streaming.</p><p id="965cd0d5-20bb-4960-adad-4fe29e18fd7a" class="">Change Data Capture (CDC) may be useful when we are receiving many data logs and application events in a continuous ingestion of the data lake.</p><p id="27e9a8c1-4d08-4b01-b6db-702428fd23e7" class="">To insert data we have code-tools and no-code-tools. The first ones are more flexible but more difficult, the oppositre for the others.</p><blockquote id="86ef86aa-0741-4d59-9cac-69184c489db3" class="">No-code-tools have smaller time to value but also less value, the opposite for code-tools. It’s a trade-off.</blockquote></details></li></ul><ul id="b6bbd05d-6ed9-412a-9fe1-bc5d25f8852e" class="toggle"><li><details open=""><summary>Data Storage</summary><figure id="8a9be058-8ad6-49c7-bcec-9a47017a76e8" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.04.06.png"><img style="width:1172px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.04.06.png"/></a></figure><p id="d37604f0-e8d8-4e43-9e11-d239093e597a" class="">We have 3 zones of storing:</p><ol type="1" id="ff6e8f07-d668-45be-9859-f26cf8176871" class="numbered-list" start="1"><li>Raw → immutable, self-descriptive with metadata, ok for disaster recovery</li></ol><ol type="1" id="022d7d1b-8e14-4598-9e49-448093e9f1c2" class="numbered-list" start="2"><li>Optimized → optimizes format for speed of query</li></ol><ol type="1" id="62b9d5ef-7484-4e21-9912-8ee60b4b2db4" class="numbered-list" start="3"><li>Analytics → clean data for ML</li></ol><figure id="7ddb4c7a-5404-449e-8ad6-1696ab28674f" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_13.06.23.png"><img style="width:1312px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_13.06.23.png"/></a></figure></details></li></ul><ul id="d297631c-7e9d-4a07-92bc-e4b709b48a4a" class="toggle"><li><details open=""><summary>Data Processing and Analytics</summary><figure id="003d6ba6-78e9-4079-87be-c780de85e0f8" class="image"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.04.46.png"><img style="width:1176px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-11_alle_11.04.46.png"/></a></figure><p id="2758c928-aca6-4aa6-850c-f493269919da" class="">The data got extracted and then analized in real-time (Real time depends on the time scale of my system)</p></details></li></ul><h2 id="80b8224a-b9f0-4a84-a71f-aa9e7a07013e" class="">Metadata in Data Lake</h2><p id="99edbb33-9ea6-4070-9369-24d359f7ee4f" class="">Helps users to understand and use the data efficiently.</p><ul id="c742a8e0-b6bf-4f59-aeab-187ef88322b3" class="toggle"><li><details open=""><summary>They got many components</summary><ul id="7303249c-fe0e-43a0-adc6-0017c4dbc280" class="bulleted-list"><li style="list-style-type:disc">data Source → info on where it was originated</li></ul><ul id="ebb92535-4338-44c1-bf78-08aec8ca885e" class="bulleted-list"><li style="list-style-type:disc">data Schema → stucture of data</li></ul><ul id="cac4ab2f-a9a3-4daa-b064-97d905b89f43" class="bulleted-list"><li style="list-style-type:disc">data Format → encoding of files</li></ul><ul id="c3cfb1da-cff2-4687-93fe-6fa422e7eed9" class="bulleted-list"><li style="list-style-type:disc">data Quality Metrics → % of missing values or statistic accuracy</li></ul><ul id="fd016e37-cae5-498d-8869-31dfdb64673e" class="bulleted-list"><li style="list-style-type:disc">data Lifecycle → how much time in the data lake</li></ul><ul id="57f6559a-ecd3-4ae2-a116-8f680792d282" class="bulleted-list"><li style="list-style-type:disc">data Ownership → who has to manage/maintain the data</li></ul><ul id="1bb55bcb-03aa-4f66-9863-e3f580f0d090" class="bulleted-list"><li style="list-style-type:disc">data Lineage → tracks data lineage</li></ul><ul id="b8c14426-a8cf-4781-8150-042d77fed234" class="bulleted-list"><li style="list-style-type:disc">Access Control → who has access to the data</li></ul><ul id="dca076a4-405f-4e01-9791-be2bb8cb1a10" class="bulleted-list"><li style="list-style-type:disc">data Classification → sensitivity or classification level of the data</li></ul><ul id="e7e76f52-fe14-4d37-9f89-d42ce2e13ffe" class="bulleted-list"><li style="list-style-type:disc">data Usage Information → how many times / who accesses the data</li></ul></details></li></ul><p id="8c9876e2-9e45-4d94-afcd-39da6f1b286b" class="">
+</p><hr id="bf8dbc96-f65d-4732-81d6-b8d2cbc9bd7b"/><p id="ab1d0af6-b32d-4d30-8fe1-97481310d5b7" class=""><time>@October 12, 2023</time> </p><h2 id="f0ef8a3b-cd18-4137-9992-61809d0bf60f" class="">The CRISP-DM methodology</h2><div id="8bfa33b0-3c90-4bfc-a790-70c2bffa2ea7" class="column-list"><div id="41e3d097-05fc-491d-ae5a-878d8a48893f" style="width:43.75%" class="column"><figure id="6f1083a9-0623-4c63-908a-b8fabb2db01a" class="image" style="text-align:left"><a href="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-12_alle_14.27.57.png"><img style="width:288px" src="Data%20mining%20c7d2194de01a4944a235a51821405883/Screenshot_2023-10-12_alle_14.27.57.png"/></a></figure></div><div id="3da6723a-8512-4bee-8daf-93eb5e06d43e" style="width:56.25%" class="column"><p id="6716ca74-76b9-4d3f-83ee-b4ffa6ec6244" class="">
+</p></div></div><h3 id="7f95f831-faf5-4757-9492-b41634c8e567" class="">Business understanding</h3><p id="5ef4b4ef-dd44-4808-8bb2-b8ac67e9ea6f" class="">We reformulate the problem until my problem formulation and scenario fit. I have to consider the current situation and where i want to go.</p><h3 id="6f54f154-b09e-4197-851b-661c600756a3" class="">Data unserstanding</h3><p id="5bc0a823-a8d9-485a-8efe-a526a6593a13" class="">I have to understand which data are available and which ones fit the purpose and how much do they cost.</p><p id="6f6b4b51-2fd9-4683-aa70-a9a7b8eac795" class="">In order to do that in the best way, i need to collect the data, describe and explore them an then i need to verify the quality.</p><h3 id="5b26f778-deae-4d9f-80a7-a658b51ed10c" class="">Data preparation</h3><p id="74c23769-c576-4fb3-bcf7-6273ade6a4cf" class="">We manipulate the data, transforming it (converting formats and data types) in irder to imporve the quality of the result.</p><p id="ae0bf758-7360-496b-a6c1-1d235ddb34dd" class="">In order to do that we take a data set, select data in it, clean the new dataset, construct the data an then we integrate and format it.</p><h3 id="67d16bde-a31c-4ac7-8b0b-cc3c65f6c4f4" class="">Modeling</h3><p id="33912014-a4ca-4585-b28c-2bdae1b83b00" class="">We choose a modeling technique and a test design, then build the model and assess it.</p><h3 id="18e657b5-24cb-4684-8d69-ebd493242c27" class="">Evaluation</h3><p id="3c60b320-3e6b-4872-8acd-9615034905bf" class="">We have to make a rigorous assessment of the results of the data mining process and compare different choices on a qualitative and quantitative basis.</p><h3 id="8fd3fa63-cbfd-43d9-9c0b-0ab00c7f2ff1" class="">Daployment</h3><p id="fcd4384d-4b79-4a01-a0cf-3f16d7844166" class="">We make a deployment plan, review the project and deploy it.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
