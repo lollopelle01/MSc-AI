@@ -18,5 +18,7 @@ Some courses couldn't be uploaded because of the excessive load and some aren't 
 ## Projects
 
 - [CDMO: Multiple Courier Planning Problem](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/CDMO/CDMO-project)
+- [FAIKR1: Tablut challenge](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/FAIKR/FAIKR1/tablut-challenge)
+- [FAIKR3: Exploring Student Depression with Bayesian Networks](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/FAIKR/FAIKR3/faikr3-project)
 
 ## Thesis
