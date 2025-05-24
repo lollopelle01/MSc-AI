@@ -1,8 +1,6 @@
 # Notes and material
 
-Repository with all the material i used along my master in Artificial Intelligence at UniBO.
-
-Some courses couldn't be uploaded because of the excessive load and some aren't complete $\Rightarrow$ **Do not trust them too much**
+Repository with all the material <ins>**i used**</ins> along my master in Artificial Intelligence at UniBO.
 
 ## Courses
 
