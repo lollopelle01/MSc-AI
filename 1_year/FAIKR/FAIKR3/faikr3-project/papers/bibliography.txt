@@ -1,0 +1,21 @@
+India macroregions:
+https://www.researchgate.net/profile/Sivakumar-Iyyanar/publication/342590854_REGIONAL_DISPARITIES_AND_INDIAN_STATES_A_MACRO_LEVEL_STUDY/links/5efc5cee45851550508109f4/REGIONAL-DISPARITIES-AND-INDIAN-STATES-A-MACRO-LEVEL-STUDY.pdf
+@article{kumar2020regional,
+  title={Regional disparities and Indian states: A macro level study},
+  author={Kumar, K Ramesh and Sivakumar, I and Saravanakumar, N and Sathishkumar, R},
+  journal={Journal of Critical Reviews},
+  volume={7},
+  number={13},
+  pages={87--92},
+  year={2020}
+}
+
+@article{classificationsprovisional,
+  title={PROVISIONAL GUIDELINES ON STANDARD INTERNATIONAL AGE CLASSIFICATIONS},
+  author={CLASSIFICATIONS, AGE}
+}
+
+https://www.suniv.ac.in/upload/UGC%20Guidelines.pdf
+
+# symptoms of depression by whos
+https://www.who.int/news-room/fact-sheets/detail/depression

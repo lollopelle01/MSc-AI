@@ -1,0 +1,22 @@
+(1)
+We’re going to present our project on Student Depression in India. 
+Our goal was to explore how various factors — academic, social, and personal — interact and potentially contribute to depression among students, using Bayesian Networks.
+
+(2)
+We had two main objectives in this project.
+First, to investigate how models with latent variables behave and how they can be fitted using probabilistic techniques.
+Second, to answer four specific queries inspired by prior research on student mental health.
+Finally, we noticed that many of the papers we reviewed used customer satisfaction-style models — which are often based on more linear or deterministic approaches.
+We thought it would be interesting to approach the problem using Bayesian Networks, which allow for uncertainty and can better capture the complex, interdependent relationships among multiple variables — including hidden or unobserved ones like stress.
+
+(3)
+The first thing we did was to perform a preprocessing pipeline involving cleaning, dealing with missing values, and importantly, binning — because the pgmpy library we used requires categorical data for Bayesian Network modeling.
+Then, in order to identify the relations among the attributes we used correlation-like methods adapted to categorical data like Tschuprow index and Chi-square tests and we ended up in 3 main groups: Root causes, Concauses and Symptoms.
+It's important to mention that  even with the tests we were not sure about the relation between Study Satisfaction and Depression.
+So we tried a parallel experiment with the attribute as concause but this one ended up with better results.
+
+(4)
+Those were the 2 models we used.
+The first one is the Baseline model as it simply represent the model we presented in the previous slide. As all the nodes were present in the dataset the better option was to fit it with the Bayesian Estimator — which is based on Maximum Likelihood Estimation.
+The second one is very similar to the first one except for the presence of the latent variable Stress to represent underlying psychological strain not directly observed in the dataset.
+For this reason it was necessary to use an iterative methods like Expectation-Maximization to estimate the parameters.
