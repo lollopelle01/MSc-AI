@@ -1,0 +1,87 @@
+1 ora 4 question:
+2 prolog
+Lista e meta interpreter/predicates
+2 aperte
+Based on time
+- Ltl poche cose
+- Even calculs
+- Allen
+Represent something with Event calculus
+Close vs open world
+Described RETE algorith
+Probabilistic logic semantic
+
+Based on time
+- Proposition logic, situation calculus -> event calculus
+   tecnicamente parlando l'EC sarebbe un caso molto specifico di situation calculus;
+- Allen's logic
+- LTL è una Modal Logic. Le Modal logics sono una famiglia di logiche,
+che hanno in comune la semantica basata sulla nozione di "mondi
+accessibili" e CTL e LTL sono molto importanti perchè sono alla base 
+delle tecniche di verifica formale dei sistemi (tipicamente, applicazioni 
+mission critical e di safety.
+
+-------
+Sugli altri argomenti, le domande sono sempre molto generiche: 
+- introdurre la DISTRIBUTION SEMANTIC e propongo un PROGRAMMA PROBABILISTICO 
+  di due clausole in croce e chiedo di calcolare il risultato.
+  Fornisco un esempio semplice e ancora chiedo di rappresentarlo tramite PLP.  
+- Su FORWARD REASONING di solito chiedo di spiegare un po' l'algoritmo RETE, 
+  che è parecchio importante e usato industrialmente.
+- Sui BUSINESS PROCESS, tipo la differenza tra approcci procedurali e dichiarativi.
+
+-------
+A volte fornisco un piccolo piccolo problema, e chiedo di
+rappresentarlo usando uno degli approcci. Ma si tratta di toy
+examples: quando correggo non controllo la sintassi, ma piuttosto se è
+stata compresa la filosofia sottostante alla specifica tecnica di
+rappresentazione della conoscenza.
+
+
++ The candidate is invited to shortly introduce rule-based forward reasoning and 
+the RETE algorithm.
+
+
+
++ ONTOLOGIES/CATEGORIES
+Within the terminological approach towards the representation of 
+concepts/categories and individuals/instances, the candidate is invited to 
+illustrate the notions of
+• Disjointness over a set S of categories (S = {c1, c2, …, cn}, where c1…cn are 
+categories)
+• Exhaustive Decomposition of a category c into a set S of categories
+• Partition of a category c into a set of categories S
+The candidate is invited to illustrate these notions through a simple example
+
++ Semantic Networks	
+The candidate is invited to briefly introduce the notion of Semantic Networks, 
+and to highlight some of the limits that were present in their original formulation.
+
++ CWA vs OWA
+The candidate is invited to introduce the notions of close world assumption and 
+open world assumption, and to briefly discuss how Prolog and Description Logics 
+deal with these aspects. (x2)
+
++ Description Logics
+The candidate is invited to briefly introduce the Description Logics, and in 
+particular the principal operators of the ALC fragment (AND operator; ALL 
+operator; [EXISTS 1 r] operator; concept complement (negation)).
+
+The candidate is invited to briefly introduce the ALC Description Logics, 
+mentioning the operators that are supported (negation, AND, ALL, EXISTS), and 
+their meaning (possibly with a short example for each operator).
+
++ Temporal information
+The candidate is invited to briefly introduce the three different approaches 
+(presented in the course), to deal with the reasoning with temporal information.
+
++ Event Calculus Framework
+The candidate is invited to describe the predicates/terminology used in the 
+definition of the Event Calculus Framework
+
+The candidate is invited to describe the predicates/terminology used in the 
+definition of the Event Calculus Framework
+
+The candidate is invited to introduce the terminology used in the Event Calculus 
+Framework having care, in particular, of indicating the framework axioms.
+

@@ -1,0 +1,10 @@
+1) Enter `swipl` in terminal
+2) ['file_name.pl'].
+3) query. 
+4) press tab to see other results
+
+ctrl + D    to exit
+ctrl + L    to clear the tab
+tab         to see more results
+
+When you insert input don't forget the point (".") at the end.
