@@ -1,0 +1,26 @@
+{
+	"model_chfd_chuffed":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"model_chfd_SB_chuffed":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"model_gcd_gecode":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"model_gcd_SB_gecode":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	}
+}

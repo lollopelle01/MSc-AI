@@ -1,0 +1,38 @@
+{
+	"circuit_ILU_SB":{
+		"time":300,
+		"optimal":false,
+		"obj":"N/A",
+		"sol":[]
+	},
+	"circuit_ILU":{
+		"time":300,
+		"optimal":false,
+		"obj":"N/A",
+		"sol":[]
+	},
+	"circuit_BS_SB":{
+		"time":300,
+		"optimal":false,
+		"obj":"N/A",
+		"sol":[]
+	},
+	"circuit_BS":{
+		"time":300,
+		"optimal":false,
+		"obj":"N/A",
+		"sol":[]
+	},
+	"1-hot-cube_BS2_SB":{
+		"time":1,
+		"optimal":true,
+		"obj":14,
+		"sol":[[4, 3, 1], [2, 5, 6]]
+	},
+	"1-hot-cube_BS2":{
+		"time":3,
+		"optimal":true,
+		"obj":14,
+		"sol":[[4, 3, 1], [2, 5, 6]]
+	}
+}

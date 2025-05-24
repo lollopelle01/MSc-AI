@@ -1,0 +1,26 @@
+{
+	"model_chfd_chuffed":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	},
+	"model_chfd_SB_chuffed":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	},
+	"model_gcd_gecode":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	},
+	"model_gcd_SB_gecode":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	}
+}

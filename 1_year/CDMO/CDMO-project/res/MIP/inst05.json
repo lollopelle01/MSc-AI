@@ -1,0 +1,38 @@
+{
+	"cbc_enum_all":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"cbc_MTZ":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"glpk_enum_all":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"glpk_MTZ":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"HiGHS_enum_all":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	},
+	"HiGHS_MTZ":{
+		"time":0,
+		"optimal":true,
+		"obj":206,
+		"sol":[[2], [1, 3]]
+	}
+}

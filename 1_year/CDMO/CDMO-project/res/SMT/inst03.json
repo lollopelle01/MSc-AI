@@ -1,0 +1,44 @@
+{
+	"z3_OPT":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [7, 1]]
+	},
+	"z3_arrays_SB":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[5, 6, 3], [2, 4], [7, 1]]
+	},
+	"z3_arrays":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	},
+	"z3_best":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	},
+	"cvc5_arrays_SB":{
+		"time":1,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [4, 2], [7, 1]]
+	},
+	"cvc5_arrays":{
+		"time":1,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [4, 2], [7, 1]]
+	},
+	"cvc5_best":{
+		"time":0,
+		"optimal":true,
+		"obj":12,
+		"sol":[[3, 6, 5], [2, 4], [1, 7]]
+	}
+}

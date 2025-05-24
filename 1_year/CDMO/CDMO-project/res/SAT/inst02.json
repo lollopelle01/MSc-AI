@@ -1,0 +1,38 @@
+{
+	"circuit_ILU_SB":{
+		"time":0,
+		"optimal":true,
+		"obj":226,
+		"sol":[[9, 8], [3, 5], [1, 4], [7], [2], [6]]
+	},
+	"circuit_ILU":{
+		"time":0,
+		"optimal":true,
+		"obj":226,
+		"sol":[[8], [9, 6], [5, 7], [2], [4, 1], [3]]
+	},
+	"circuit_BS2_SB":{
+		"time":3,
+		"optimal":true,
+		"obj":226,
+		"sol":[[4, 1], [5, 9], [7], [8], [2, 3], [6]]
+	},
+	"circuit_BS2":{
+		"time":2,
+		"optimal":true,
+		"obj":226,
+		"sol":[[1], [5], [4], [3, 7, 2], [8], [6, 9]]
+	},
+	"1-hot-cube_BS2_SB":{
+		"time":2,
+		"optimal":true,
+		"obj":226,
+		"sol":[[1, 4], [5], [8], [7], [2, 3], [6, 9]]
+	},
+	"1-hot-cube_BS2":{
+		"time":5,
+		"optimal":true,
+		"obj":226,
+		"sol":[[5], [7], [8, 6], [1, 4], [9], [2, 3]]
+	}
+}

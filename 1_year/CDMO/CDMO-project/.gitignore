@@ -1,0 +1,9 @@
+/ignored
+/__pycache__
+/utils/__pycache__
+/CP/__pycache__
+/MIP/__pycache__
+/SAT/__pycache__
+/SMT/__pycache__
+*.pyc
+*.pyc
