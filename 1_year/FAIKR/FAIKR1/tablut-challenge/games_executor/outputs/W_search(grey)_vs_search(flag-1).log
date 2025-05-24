@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/pelle/Development/GitHub/tablut-challenge/games_executor/../LoDaLe_tablut/PLAYER.py", line 93, in main
+    try: current_state = sock.get_state()
+                         ~~~~~~~~~~~~~~^^
+  File "/Users/pelle/Development/GitHub/tablut-challenge/LoDaLe_tablut/socket_manager.py", line 55, in get_state
+    len_bytes = struct.unpack('>i', self.recvall(4))[0]
+                                    ~~~~~~~~~~~~^^^
+  File "/Users/pelle/Development/GitHub/tablut-challenge/LoDaLe_tablut/socket_manager.py", line 48, in recvall
+    packet = self._sock.recv(n - len(data))
+ConnectionResetError: [Errno 54] Connection reset by peer
+Connected to the server 127.0.0.1:5800
+An error occurred during the game:

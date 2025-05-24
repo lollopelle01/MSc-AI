@@ -1,0 +1,20 @@
+While we were implementing our player we faced several challenges.
+
+For example we had problems while we were debugging our Node class, since we naively
+applied it to the Tablut domain without considering the dimension of the problem, so we 
+implemented an easier one to get that done easily.
+
+Then, we noticed that our alpha-beta cut was considering more a deep evaluation wrt the same
+but at a lower depth so as a first attempt we tried to weighten the depth but it wasn't
+enough effective and we were late so we patched it by applying a breadth-first to the first layer.
+
+In the end we had several problems in comparing different heuristics and finding a good tradeoff
+between simplicity and accuracy, so we implemented a parser that could obtain a dataset out of the 
+log files of the server in order to extract the moves and the results of each game.
+Moreover we implemented a games executor that could simulate the tablut-challenge and we merged those
+applications to compare 4 of the different heuristics we wrote.
+
+=======================
+
+For example we could have considered better other search stategies, for example by implementing 
+iterative deepening with a transposition table to add effectiveness to our player.

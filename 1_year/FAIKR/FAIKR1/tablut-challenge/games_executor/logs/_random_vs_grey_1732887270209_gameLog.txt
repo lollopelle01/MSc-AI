@@ -1,0 +1,1485 @@
+nov 29, 2024 2:34:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+BUONO: Players:	random	vs	grey
+nov 29, 2024 2:34:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+BUONO: Repeated moves allowed:	0	Cache:	-1
+nov 29, 2024 2:34:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+BUONO: Inizio partita
+nov 29, 2024 2:34:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut <init>
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWWBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+nov 29, 2024 2:34:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from g5 to g2
+nov 29, 2024 2:34:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:34:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:34:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+B
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from h5 to g5
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackPawnLeft
+BUONO: Pedina bianca rimossa in: f5
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:35:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKOBOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+W
+nov 29, 2024 2:35:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d5 to d3
+nov 29, 2024 2:35:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:35:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBWOKOBOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOO
+-
+B
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from d9 to d5
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackPawnLeft
+BUONO: Pedina bianca rimossa in: c5
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:35:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBOBKOBOB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOOBBOOO
+-
+W
+nov 29, 2024 2:35:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from e7 to a7
+nov 29, 2024 2:35:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:35:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBOBKOBOB
+BOOOWOOOB
+WOOOOOOOO
+OOOOBOOOO
+OOOOBBOOO
+-
+B
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from e8 to e7
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureBlackPawnUp
+BUONO: Pedina bianca rimossa in: e6
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:35:43 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBOBKOBOB
+BOOOOOOOB
+WOOOBOOOO
+OOOOOOOOO
+OOOOBBOOO
+-
+W
+nov 29, 2024 2:35:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from a7 to a9
+nov 29, 2024 2:35:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:35:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBOBKOBOB
+BOOOOOOOB
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+B
+nov 29, 2024 2:35:52 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i6 to b6
+nov 29, 2024 2:35:52 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:52 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 3
+nov 29, 2024 2:35:52 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWWOOOO
+BOOOWOOOB
+BBOBKOBOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+W
+nov 29, 2024 2:35:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from e3 to i3
+nov 29, 2024 2:35:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:35:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 4
+nov 29, 2024 2:35:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWOOOOW
+BOOOWOOOB
+BBOBKOBOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+B
+nov 29, 2024 2:36:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i4 to f4
+nov 29, 2024 2:36:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 5
+nov 29, 2024 2:36:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOWOOOOW
+BOOOWBOOO
+BBOBKOBOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+W
+nov 29, 2024 2:36:09 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d3 to f3
+nov 29, 2024 2:36:09 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:09 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 6
+nov 29, 2024 2:36:09 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOOOWOOW
+BOOOWBOOO
+BBOBKOBOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+B
+nov 29, 2024 2:36:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g5 to f5
+nov 29, 2024 2:36:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 7
+nov 29, 2024 2:36:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOWOO
+OOOOOWOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOOOO
+WOOOBBOOO
+-
+W
+nov 29, 2024 2:36:14 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from g2 to g8
+nov 29, 2024 2:36:14 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:14 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 8
+nov 29, 2024 2:36:14 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOOWOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBBOOO
+-
+B
+nov 29, 2024 2:36:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from f9 to i9
+nov 29, 2024 2:36:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 9
+nov 29, 2024 2:36:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOOWOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOOOB
+-
+W
+nov 29, 2024 2:36:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from i3 to h3
+nov 29, 2024 2:36:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 10
+nov 29, 2024 2:36:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOOWOWO
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOOOB
+-
+B
+nov 29, 2024 2:36:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 11
+nov 29, 2024 2:36:19 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOOWOWO
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOBOO
+-
+W
+nov 29, 2024 2:36:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from f3 to b3
+nov 29, 2024 2:36:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 12
+nov 29, 2024 2:36:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OWOOOOOWO
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOBOO
+-
+B
+nov 29, 2024 2:36:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 13
+nov 29, 2024 2:36:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OWOOOOOWO
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOOOB
+-
+W
+nov 29, 2024 2:36:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from h3 to i3
+nov 29, 2024 2:36:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 14
+nov 29, 2024 2:36:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OWOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOOOB
+-
+B
+nov 29, 2024 2:36:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 15
+nov 29, 2024 2:36:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OWOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOBOO
+-
+W
+nov 29, 2024 2:36:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b3 to c3
+nov 29, 2024 2:36:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 16
+nov 29, 2024 2:36:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOBOO
+-
+B
+nov 29, 2024 2:36:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 17
+nov 29, 2024 2:36:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+WOOOBOOOB
+-
+W
+nov 29, 2024 2:36:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from a9 to b9
+nov 29, 2024 2:36:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 18
+nov 29, 2024 2:36:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:36:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 19
+nov 29, 2024 2:36:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOOOOWOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:36:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from g8 to g6
+nov 29, 2024 2:36:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 20
+nov 29, 2024 2:36:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOWOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:36:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 21
+nov 29, 2024 2:36:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOOOOWOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:36:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from g6 to d6
+nov 29, 2024 2:36:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 22
+nov 29, 2024 2:36:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:36:38 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:38 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:38 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 23
+nov 29, 2024 2:36:38 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOWOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:36:39 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c3 to c1
+nov 29, 2024 2:36:39 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:39 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 24
+nov 29, 2024 2:36:39 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:36:41 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:41 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:41 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 25
+nov 29, 2024 2:36:41 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:36:42 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c1 to b1
+nov 29, 2024 2:36:42 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:42 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 26
+nov 29, 2024 2:36:42 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:36:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 27
+nov 29, 2024 2:36:44 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOWBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:36:45 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from e4 to c4
+nov 29, 2024 2:36:45 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:45 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 28
+nov 29, 2024 2:36:45 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:36:47 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:47 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:47 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 29
+nov 29, 2024 2:36:47 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOWOOOOO
+OOOOBOOOO
+OOOOOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:36:48 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d6 to d8
+nov 29, 2024 2:36:48 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:48 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 30
+nov 29, 2024 2:36:48 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:36:50 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:50 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:50 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 31
+nov 29, 2024 2:36:50 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:36:51 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b1 to b2
+nov 29, 2024 2:36:51 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:51 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 32
+nov 29, 2024 2:36:51 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:36:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 33
+nov 29, 2024 2:36:53 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOOOOOOW
+BOWOOBOOO
+BBOBKBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:36:54 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from e5 to e4
+nov 29, 2024 2:36:54 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:54 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 34
+nov 29, 2024 2:36:54 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOOOOOOW
+BOWOKBOOO
+BBOBTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:36:56 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:36:56 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:56 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 35
+nov 29, 2024 2:36:56 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOOOOOOW
+BOWOKBOOO
+BBOBTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:36:57 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from i3 to c3
+nov 29, 2024 2:36:57 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:57 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 36
+nov 29, 2024 2:36:57 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOWOKBOOO
+BBOBTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:36:59 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:36:59 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:36:59 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 37
+nov 29, 2024 2:36:59 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOWOKBOOO
+BBOBTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c4 to c5
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureWhite
+BUONO: Pedina nera rimossa in: d5
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:37:00 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+B
+nov 29, 2024 2:37:02 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:02 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:02 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:37:02 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+W
+nov 29, 2024 2:37:03 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c3 to d3
+nov 29, 2024 2:37:03 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:03 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 3
+nov 29, 2024 2:37:03 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOBOO
+-
+B
+nov 29, 2024 2:37:05 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:05 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:05 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 4
+nov 29, 2024 2:37:05 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OOOWOOOOO
+OWOOBOOOB
+-
+W
+nov 29, 2024 2:37:06 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b9 to b8
+nov 29, 2024 2:37:06 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:06 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 5
+nov 29, 2024 2:37:06 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:07 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:07 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:07 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 6
+nov 29, 2024 2:37:07 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BBOOOOOOO
+OOOOBOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c5 to c6
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureWhite
+BUONO: Pedina nera rimossa in: b6
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:37:08 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOWOOOOOO
+OOOOBOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:10 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:10 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:10 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:37:10 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOWOOOOOO
+OOOOBOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c6 to e6
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkCaptureWhite
+BUONO: Pedina nera rimossa in: e7
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Capture! Draw cache cleared!
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 1
+nov 29, 2024 2:37:11 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:12 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:12 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:12 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 2
+nov 29, 2024 2:37:12 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOOWOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d3 to c3
+nov 29, 2024 2:37:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 3
+nov 29, 2024 2:37:13 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:15 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:15 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:15 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 4
+nov 29, 2024 2:37:15 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OWOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b2 to b1
+nov 29, 2024 2:37:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 5
+nov 29, 2024 2:37:16 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 6
+nov 29, 2024 2:37:17 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OWOBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:18 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b1 to c1
+nov 29, 2024 2:37:18 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:18 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 7
+nov 29, 2024 2:37:18 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 8
+nov 29, 2024 2:37:20 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOWOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:21 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d8 to d5
+nov 29, 2024 2:37:21 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:21 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 9
+nov 29, 2024 2:37:21 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOWTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOOOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 10
+nov 29, 2024 2:37:22 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBOWTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOOOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d5 to c5
+nov 29, 2024 2:37:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 11
+nov 29, 2024 2:37:23 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOOOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:24 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:24 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:24 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 12
+nov 29, 2024 2:37:24 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BOOOWOOOO
+OOOOOOOOO
+OWOOOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b8 to b6
+nov 29, 2024 2:37:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 13
+nov 29, 2024 2:37:25 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOWOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 14
+nov 29, 2024 2:37:26 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOWOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOWOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:27 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c3 to i3
+nov 29, 2024 2:37:27 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:27 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 15
+nov 29, 2024 2:37:27 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOKBOOO
+BBWOTBOOB
+BWOOWOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 16
+nov 29, 2024 2:37:28 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOKBOOO
+BBWOTBOOB
+BWOOWOOOO
+OOOOOOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from e6 to e7
+nov 29, 2024 2:37:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 17
+nov 29, 2024 2:37:29 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 18
+nov 29, 2024 2:37:30 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOO
+OOOOOOOOW
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from i3 to i2
+nov 29, 2024 2:37:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 19
+nov 29, 2024 2:37:31 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 20
+nov 29, 2024 2:37:32 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOWBBBOOO
+OOOOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from c1 to c2
+nov 29, 2024 2:37:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 21
+nov 29, 2024 2:37:33 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+B
+nov 29, 2024 2:37:34 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from i9 to g9
+nov 29, 2024 2:37:34 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:34 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 22
+nov 29, 2024 2:37:34 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+W
+nov 29, 2024 2:37:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from b6 to d6
+nov 29, 2024 2:37:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 23
+nov 29, 2024 2:37:35 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BOOWOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOBOO
+-
+B
+nov 29, 2024 2:37:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: B Pawn from g9 to i9
+nov 29, 2024 2:37:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 24
+nov 29, 2024 2:37:36 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BOOWOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+W
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Turn: W Pawn from d6 to b6
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut movePawn
+BUONO: Movimento pedina
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Partita terminata in pareggio per numero di stati ripetuti
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Equal states found: 1
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Current draw cache size: 25
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut checkMove
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+D
+nov 29, 2024 2:37:37 PM it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut endGame
+BUONO: Stato:
+OOOBBBOOO
+OOWOBOOOW
+OOOOOOOOO
+BOOOKBOOO
+BBWOTBOOB
+BWOOOOOOO
+OOOOWOOOO
+OOOOOOOOO
+OOOOBOOOB
+-
+D

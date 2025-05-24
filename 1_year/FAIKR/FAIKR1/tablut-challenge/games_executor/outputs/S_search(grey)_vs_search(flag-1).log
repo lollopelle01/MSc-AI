@@ -1,0 +1,19 @@
+usage: java Server
+ -c,--cache <arg>           cache must be an integer, negative value means
+                            infinite; default: infinite
+ -e,--errors <arg>          errors must be an integer >= 0; default: 0
+ -g,--enableGUI             enableGUI if option is present
+ -r,--game rules <arg>      game rules must be an integer; 1 for Tablut, 2
+                            for Modern, 3 for Brandub, 4 for Ashton;
+                            default: 4
+ -s,--repeatedState <arg>   repeatedStates must be an integer >= 0;
+                            default: 0
+ -t,--time <arg>            time must be an integer (number of seconds);
+                            default: 60
+/Users/pelle/Development/GitHub/tablut-challenge/games_executor/logs/1732885285944_systemLog.txt
+Waiting for connections...
+Socket error....
+nov 29, 2024 2:01:26 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+AVVERTENZA: Errore connessioni
+nov 29, 2024 2:01:26 PM it.unibo.ai.didattica.competition.tablut.server.Server run
+AVVERTENZA: Chiusura sistema

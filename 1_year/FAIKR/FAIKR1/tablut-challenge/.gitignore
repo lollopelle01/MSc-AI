@@ -1,0 +1,5 @@
+Tablut.ova
+.DS_Store
+Test/logs/*
+*.pyc
+/Tablut/bin

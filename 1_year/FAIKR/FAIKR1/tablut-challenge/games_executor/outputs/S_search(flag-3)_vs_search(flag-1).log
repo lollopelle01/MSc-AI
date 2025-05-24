@@ -1,0 +1,183 @@
+usage: java Server
+ -c,--cache <arg>           cache must be an integer, negative value means
+                            infinite; default: infinite
+ -e,--errors <arg>          errors must be an integer >= 0; default: 0
+ -g,--enableGUI             enableGUI if option is present
+ -r,--game rules <arg>      game rules must be an integer; 1 for Tablut, 2
+                            for Modern, 3 for Brandub, 4 for Ashton;
+                            default: 4
+ -s,--repeatedState <arg>   repeatedStates must be an integer >= 0;
+                            default: 0
+ -t,--time <arg>            time must be an integer (number of seconds);
+                            default: 60
+/Users/pelle/Development/GitHub/tablut-challenge/games_executor/logs/1732886132620_systemLog.txt
+Waiting for connections...
+White player name:	flag3
+Black player name:	flag-1
+Clients connected..
+Waiting for W...
+Suggested move: Turn: W Pawn from g5 to g9
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBWOO
+-
+B
+Waiting for B...
+Suggested move: Turn: B Pawn from i6 to f6
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBWOO
+-
+B
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBWOO
+-
+W
+Waiting for W...
+Suggested move: Turn: W Pawn from g9 to i9
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWOOOB
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBWOO
+-
+B
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBWOO
+-
+W
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWOOOB
+BBWWKWOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+B
+Waiting for B...
+Suggested move: Turn: B Pawn from i4 to f4
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWKOOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+W
+Waiting for W...
+Suggested move: Turn: W Pawn from e5 to g5
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWKOOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+W
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWTOKBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+B
+Waiting for B...
+Suggested move: Turn: B Pawn from h5 to h9
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWKOOBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+W
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWTOKBB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOOW
+-
+B
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWTOKOB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBOBW
+-
+W
+Waiting for W...
+Suggested move: Turn: W Pawn from g5 to g9
+Stato:
+OOOBBBOOO
+OOOOBOOOO
+OOOOWOOOO
+BOOOWBOOO
+BBWWTOOOB
+BOOOWBOOO
+OOOOWOOOO
+OOOOBOOOO
+OOOBBBKOW
+-
+WW
+END OF THE GAME
+RESULT: PLAYER WHITE WIN
