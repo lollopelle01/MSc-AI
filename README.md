@@ -1,6 +1,6 @@
 # Notes and material
 
-Repository with all the material `<ins>`**i used**`</ins>` along my master in Artificial Intelligence at UniBO.
+Repository with all the material **i used** along my master in Artificial Intelligence at UniBO.
 
 ## Courses
 
