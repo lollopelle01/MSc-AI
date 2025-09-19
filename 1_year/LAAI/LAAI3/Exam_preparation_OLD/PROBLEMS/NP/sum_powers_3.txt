@@ -1,0 +1,21 @@
+L = {n | n in N, n=sum({m_i in I}) where I subset of M={3^m | m in N*} }
+
+Prove L is in NP.
+
+INPUT: n
+OUTPUT: I = {3^j, ..., 3^k}
+
+PSEUDOCODE:
+if n % 3 == 0:
+       I = []
+       for _ in {1,...,n/3}
+              add 3 to I
+       return I
+return False
+
+- The input n encoding is polynomially bounded as n is integer
+- The pseudocode works in O(n/3)
+- The operations are polynomially bounded to the input
+- The intermediate result "I" is polyomially bounded to n
+
+L is in P ==> in NP

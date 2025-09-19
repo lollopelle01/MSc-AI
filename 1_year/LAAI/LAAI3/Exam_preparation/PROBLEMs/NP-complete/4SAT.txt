@@ -1,0 +1,20 @@
+INPUT: formula F = [c_1, ..., c_n] where each clause c_i is a list of 4 literals in the form (literal_name, value) to understand the positive or negative form.
+CERTIFICATE: assigment dict f (f[literal_name]=value)
+VERIFIER:
+for c in F:
+     sat = False
+     for i in {0...3}:
+           name = c[i][0]
+           val = c[i][1]
+           real_val = (f[name]) if val else (not f[name])
+           sat = sat or real_val
+     if not sat: 
+            return False
+return True
+
+The problem is in NP since:
+1) The certificate is bounded to the number of variables O(m)=O(n) since we assume not more distinct literals than clauses.
+2) The pseudocode works in O(n)
+
+Moreover we can prove the problem to be NP-hard (and so NP-complete) by showing a polynomial-time reduction 3SAT <_p 4SAT. So finding f so that the formula F is 3SAT <=> f(F) is 4SAT.
+We can easily prove the equivalence, given F=(A or B or C), then f(F)=(A or B or C or D) and (A or B or C or ¬D) and since logically F=f(F) both the proof directions follow.

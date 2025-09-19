@@ -1,0 +1,20 @@
+Since 2SAT is in P, I expect 1SAT to be in P.
+
+INPUT: tuple list L (var, value) where val is a string and value is True for positive form and False
+OUTPUT: True/False
+
+PSEUDOCODE:
+	formula={}
+	for (var,val) in L
+		if formula[var] exists then
+			if formula[var]!=val then
+				return False
+		else
+			formula[var]=val
+	return True
+- |_L_| = |_(a,True)_| @ ... @ |_(z,False)_| = |_a_|#|_True_| ..., so we need to encode #,@,True/False bit and variable encoding which is log_2(num variables)
+- It works in O(|L|)
+- The operations are polynomially bonded: O(1) for accessing dictionary
+- The variables size is polynomially bounded: dict size is O(|L|)
+
+So 1SAT is in P.

@@ -1,0 +1,19 @@
+INPUT: G=(V,E), k
+CERTIFICATE: S subset of E
+VERIFIER:
+if |S| > k :
+   return False
+for v in V:
+    covered = False
+    for (a,b) in E:
+         if a==v or b==v:
+              covered = True
+              break
+      if not covered:
+         return False
+return True
+
+1) The cerificate is smaller than input
+2) The verifier works in O(|V|*|E|)
+
+The problem is in NP.

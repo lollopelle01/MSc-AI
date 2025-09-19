@@ -1,0 +1,29 @@
+L = {w in{0,1}* ∣between every pair of consecutive 0’s in w, there is an odd number of 1’s}
+
+STATES:
+q_init,
+q_read,
+q_0,
+q_01,
+q_011,
+q_reject, 
+q_accept
+
+TRANSITION FUNCTION:
+(q_init, >) -> (q_read, >)
+
+(q_read, 0) -> (q_0, 0, R)
+(q_read, 1) -> (q_read, 1, R)
+(q_read, _) -> (q_accept, _, S)
+
+(q_0, 0) -> (q_reject, 0, R)
+(q_0, 1) -> (q_01, 1, R)
+(q_0, _) -> (q_accept, _, S)
+
+(q_01, 0) -> (q_0, 0, R)
+(q_01, 1) -> (q_011, 1, R)
+(q_01, _) -> (q_accept, _, S)
+
+(q_011, 0) -> (q_reject, 0, R)
+(q_011, 1) -> (q_01, 1, R)
+(q_011, _) -> (q_accept, _, S)

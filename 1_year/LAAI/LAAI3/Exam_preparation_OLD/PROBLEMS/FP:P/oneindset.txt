@@ -1,0 +1,25 @@
+INPUT: G=(V,E), k
+OUTPUT: True/False
+
+PSEUDOCODE:
+
+S = {}
+E_nodes = {} 	# set => unique values
+for (u,v) in E:
+	for v1 in V:
+		if v1!=v and v1!=u and ((v,v1) in E) or ((v1,v) in E)):
+			return False
+	add u to S
+	add u,v to E_nodes	
+S = V - E_nodes
+if |S| < k:
+	return False
+else:
+	return S
+
+- It works in O(|E|*|V|)
+- Intermediate results are just comparisons so O(1)
+- Graph encoding is polynomial 
+- Intermediate operations are polynomially bounded to the input G
+
+So it is in P.

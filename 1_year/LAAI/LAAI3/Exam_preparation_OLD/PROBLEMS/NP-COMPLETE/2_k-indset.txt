@@ -1,0 +1,22 @@
+The language L includes precisely those binary strings which are encodings of triples in the form (G, n, m) where G is an undirected graph, n, m are natural numbers, and G contains two independent sets of size at least equal to n and m, respectively. 
+
+1) Proof it is in NP.
+
+INPUT: G=(V,E), n, m
+OUTPUT: True/False
+
+• Certificate: list of nodes for m (V_m) and for n (V_n)
+• Verifier:
+	if |V_m|<m or |V_n|<n:
+		return False
+	for (u,v) in E:
+		if ((u in V_m) and (v in V_m)) or ((u in V_n) and (v in V_n)):
+			return False
+	return True
+It works in O(|E|)
+
+2) Proof it is NP-hard
+
+We can k-INDSET <_p L in polynomial time as we know that k-INDSET is NP-hard and by setting n=k and m=0 (m=1) in L we are looking for the same solution.
+			
+

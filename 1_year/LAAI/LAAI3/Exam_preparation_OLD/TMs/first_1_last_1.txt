@@ -1,0 +1,18 @@
+STATES = {q_init, q_first, q_1, q_0, q_reject, q_accept}
+
+ALPHABET = {> (= start), _ (= blank), 0,1}
+
+TRANSITION FUNCTION:
+(q_init, >) -> (q_first, >, R)
+
+(q_first, 0) -> (q_reject, _, S)
+(q_first, _) -> (q_reject, _, S)
+(q_first, 1) -> (q_1, 1, R)
+
+(q_1, 0) -> (q_0, 0, R)
+(q_1, _) -> (q_accept, _, S)
+(q_1, 1) -> (q_1, 1, R)
+
+(q_0, 0) -> (q_0, 0, R)
+(q_0, _) -> (q_reject, _, S)
+(q_0, 1) -> (q_1, 1, R)

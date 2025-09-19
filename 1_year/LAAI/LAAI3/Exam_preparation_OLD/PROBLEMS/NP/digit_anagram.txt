@@ -1,0 +1,27 @@
+L = {(t,s) | s,t in {0..9}* and s anagram of t}
+
+Prove it is in NP.
+
+• I prove it is in P ==> it is in NP
+
+INPUT: t,s
+OUTPUT:True/False
+
+PSEUDOCODE:
+	if |t|!=|s|:
+		return False
+	chars_t = {}
+	chars_s = {}
+	for i in {0...|t|-1}:
+		if not chars_t[t[i]]
+			chars_t[t[i]] = 1
+		else:
+			chars_t[t[i]] += 1
+		if not chars_s[s[i]]
+			chars_s[s[i]] = 1
+		else:
+			chars_s[s[i]] += 1
+	return (chars_t == chars_s)
+It works in O(|t|) and the dictionary comparison is O(|t|)
+		
+			

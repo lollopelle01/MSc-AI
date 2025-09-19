@@ -1,0 +1,19 @@
+INPUT: n,m,k
+CERTIFICATE: P=[p1, ..., pk]
+VERIFIER:
+res_n = 1
+res_m = 1
+for p in P:
+	if is_prime(p):
+		res_n = res_n * p
+		res_m = res_m * p
+	else:
+		return False
+return (res_n==n) and (res_m==m)
+
+1) The certificate is polynomially bounded to the input size
+2) The verifier works in O(k)
+
+The problem is in NP.
+
+

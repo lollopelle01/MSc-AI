@@ -1,0 +1,27 @@
+L = {w in {A,B,C}* ∣ between every a and the next a in w, there is at least one c}
+
+STATES:
+q_init, 
+q_read,
+q_A,
+q_AC,
+q_reject,
+q_accept
+
+TRANSITION FUNCTION
+(q_init, >) -> (q_read, >, R)
+
+(q_read, A) -> (q_A, A, R)
+(q_read, B) -> (q_read, B, R)
+(q_read, C) -> (q_read, C, R)
+(q_read, _) -> (q_accept, C, R)
+
+(q_A, A) -> (q_reject, A, R)
+(q_A, C) -> (q_AC, C, R)
+(q_A, B) -> (q_A, B, R)
+(q_A, _) -> (q_accept, _, S)
+
+(q_AC, A) -> (q_A, A, R)
+(q_AC, C) -> (q_AC, C, R)
+(q_AC, B) -> (q_AC, B, R)
+(q_AC, _) -> (q_accept, _, S)

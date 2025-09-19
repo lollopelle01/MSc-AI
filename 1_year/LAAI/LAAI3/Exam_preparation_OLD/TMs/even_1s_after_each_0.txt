@@ -1,0 +1,22 @@
+L = {w in {0,1}* | after any occurrence of 0 in w there is an even number of 1s}
+
+STATES:
+q_init, q_start, q_0, q_1, q_11, q_acc, q_rej
+
+TRANSITION FUNCTION:
+(q_init, >) -> (q_start, >, R)
+
+(q_start, 0) -> (q_0, -, R)
+(q_start, 1) -> (q_start, -, R)
+
+(q_0, 0) -> (q_0, -, R)
+(q_0, _) -> (q_acc, -, R)
+
+(q_0, 1) -> (q_1, -, R)
+(q_1, 1) -> (q_11, -, R)
+(q_1, 0) -> (q_rej, -, S)
+(q_1, _) -> (q_rej, -, S)
+
+(q_11, 0) -> (q_0, -, R)
+(q_11, 1) -> (q_1, -, R)
+(q_11, _) -> (q_acc, -, R)

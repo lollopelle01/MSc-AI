@@ -1,0 +1,17 @@
+The function is one that, given two strings v,w in L* checks whether v is a substring of w, namely whether w contains an exact occurrence of v.
+
+Prove that it is in FP.
+
+INPUT: v,w
+OUTPUT: True/False
+
+PSEUDOCODE:
+	if |v|>|w|:
+		return False
+	for i in {0...|w|-|v|-1}:
+		if w[i:i+|v|]==v:		# end of slice "]" is exlusive
+			return True
+	return False
+- It works in O(|w|)
+- Intermediate results are O(|v|)
+- Operations are atomic

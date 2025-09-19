@@ -1,0 +1,17 @@
+INPUT: G=(V,E),3
+OUTPUT: True/False
+
+PSEUDOCODE:
+for v1 in V:
+      for v2 in V-{v1}:
+            for v3 in V-{v1,v2}:
+                  if ((v1,v2) in E) and ((v2,v3) in E) and ((v1,v3) in E):
+                       return True
+return False
+
+1) Input can be encoded as a matrix and so polynomially as binary string
+2) The pseudocode works in O(|V|^3)
+3) Intermediate operations are linear
+4) Intermediate results are nodes or sets smaller than input V by definition.
+
+The problem is in P.

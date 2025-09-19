@@ -1,6 +1,6 @@
 # Notes and material
 
-Repository with all the material <ins>**i used**</ins> along my master in Artificial Intelligence at UniBO.
+Repository with all the material `<ins>`**i used**`</ins>` along my master in Artificial Intelligence at UniBO.
 
 ## Courses
 
@@ -19,5 +19,6 @@ Repository with all the material <ins>**i used**</ins> along my master in Artifi
 - [FAIKR1: Tablut challenge](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/FAIKR/FAIKR1/tablut-challenge)
 - [FAIKR3: Exploring Student Depression with Bayesian Networks](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/FAIKR/FAIKR3/faikr3-project)
 - [SMMAI: Homeworks](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/SMMAI/Homeworks)
+- [DL: Swirl correction](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/DL/Swirl_correction_lorenzo_pellegrino_0001189550.ipynb)
 
 ## Thesis

@@ -1,0 +1,22 @@
+Given the graph G=(V,E) we are asked which are all the cliques of size 3 in the graph if there are.
+
+Prove that the problem is in P.
+
+===========================================================================
+
+INPUT: G=(V,E)
+OUTPUT: cliques
+
+PSEUDOCODE:
+	cliques = {}
+	for v in V do
+		for v' in V-{v} do
+			for v'' in V-{v,v'} do
+				if ((v,v') is in E) and ((v',v'') is in E) and ((v'',v) is in E) then
+					add {v, v', v''} to cliques
+return cliques
+
+It runs in O(|V|^3), notice that it would scale wrt to k in a k-cliques: O(|V|^k) for the loops and O(k!/(2!(k-2)!)) ~ O(k^2) for the if-statement (considering it as an iteration over all combinations each pair of k nodes).
+So it would be O(|V|^k * k^2) ~ O(|V|^k).
+
+NB: it is in P but only for small enough k, when doing cliques you are considering k in a [x,∞[ range and so this makes cliques NP-complete.

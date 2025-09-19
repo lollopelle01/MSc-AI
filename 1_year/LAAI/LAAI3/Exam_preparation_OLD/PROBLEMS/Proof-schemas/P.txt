@@ -1,0 +1,12 @@
+INPUT: ...
+OUTPUT: ...
+
+PSEUDOCODE: (+ time complexity per line)
+...
+
+0) Is the algorithm correct? (fails when no solutions and return solution when ther e is)
+1) Runtime time complexity is polynomial?
+2) Size of intermediate results are polynomially bounded to the input?
+3) Each instruction can be executed in polynomial time?
+
+==> Problem is in P.

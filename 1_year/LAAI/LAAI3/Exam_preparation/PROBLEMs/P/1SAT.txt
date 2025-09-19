@@ -1,0 +1,20 @@
+INPUT: formula F = [c1, ..., cn] where every clause ci = (l_i, True/False) where l_i is the i-th (i in {1..m}) literal without/with negation depending on the boolean
+OUTPUT: True/False if sat/unsat
+
+PSEUDOCODE:
+values={} #keeps track of inconsistencies
+for c in F:
+    name = c[0][0]
+    val = c[0][1]
+    if (name in values) and (val != values[name]):
+         return False
+    else:
+         values[name]=val
+return True
+
+1) The input can be encoded polynomially like a list of n tuples so in O(n) space
+2) The pseudocode works in O(|F|)=O(n) time.
+3) Intermediate operations are linear or O(m) in time.
+4) Intermediate results are simple elements like "name" and "val" or a dictionary like "values" that can be encoded like a matrix in O(m) space.
+
+So the problem is in P.

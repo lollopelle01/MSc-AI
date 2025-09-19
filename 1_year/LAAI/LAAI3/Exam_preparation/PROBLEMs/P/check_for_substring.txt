@@ -1,0 +1,21 @@
+INPUT: v,w
+OUTPUT: True/False if w contains v
+
+PSEUDOCODE:
+if |v| > |w|:
+     return False
+for i in {0...(|w|-|v|)}:
+     for j in {0...|v|-1}:
+          if v[j] != w[i+j]:
+              break
+     if j==|v|-1 :
+          return True
+return False
+
+1) The input is already encoded.
+2) The pseudocode works in O((|w|-|v|)*|v|) = O(|w|*|v|)
+3) Intermediate operations are linear
+4) Intermediate results are just indexes
+
+The function is in FP.
+     

@@ -1,0 +1,34 @@
+An hamiltonian path in a graph G=(V,E) is a path (sequence of nodes connected by edges) that explores each node in V exactly once. We are asked whether there is or not an hamiltonian path in a given graph.
+
+Prove that this problem is NP-Complete.
+
+====================================================================================
+
+1) Prove that it is in NP.
+
+INPUT: G=(V,E)
+OUTPUT: True/False
+
+• Certificate: list of nodes L=[l_1,...,l_n]
+• Verifier:
+	# assuming well defined strings (checkable in polynomial time)
+	for i in {0,...,|L|-1} do
+		if (l_i, l_{i+1}) not in E then
+			return False
+	return True
+It runs in O(|L|) = O(|V|) so polynomially bounded to the input.
+
+2) Prove that it is NP-hard.
+
+• We could try 3SAT ≤_p HAMPATH (too difficult/long https://youtu.be/4r78NtOnWWA?si=rLL_ydJxh_Kiv_Fx)
+	3SAT: given a CNF of 3 literals per clause, is there an assignment to the literals that makes the formula true?
+
+• We'll try HAMCYCLE ≤_p HAMPATH, so we need f so that 
+	G hamcycle <=> f(G) hampath
+• We can write f:G=(V,E)->G'=(V',E') so that given a node v in V, in order to have a cycle it has to have incoming (x,v) and outgoing (v,y) edges, so we have:
+	V'=(V\{v})u{v',v''} 
+	E'=(E\{(x,v),(v,y)})u{(x,v'),(v'',y)}
+The modification can be done in polynomial time. Now we can say that there exist an hamcycle in G iff there is an hampath in G' between v' and v'' .
+	 
+
+==> The problem is NP-complete.

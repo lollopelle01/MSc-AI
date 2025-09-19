@@ -1,0 +1,57 @@
+INPUT: G of degree 2
+OUTPUT: True/False
+
+PSEUDOCODE:
+# 1) Compute the degrees
+degree = {0 for v in V}
+for (u,v) in E:
+     degree[u] += 1
+     degree[v] += 1
+
+# 2) Filter out isolated nodes and collect endpoints
+endpoints = []
+for v in V:
+     if degree[v] == 0:
+        return False       # can't pass through isolated nodes
+     if degree[v] == 1:
+         add v to endpoints
+
+# 3) Divide cycle case from general path case
+if |endpoints|==0:           # one or more cycles
+    start = V[0]
+    end = V[0]
+elif  |endpoints|==2:       # mean normal path (+ many cycles)
+   start = endpoints[0]
+   end = endpoints[1]
+else:
+    return False               # multiple paths
+
+# 4) FIlter out noisy cycles
+act_end = start
+visited = []
+while act_end != end  :                 # O(|V|)
+    found = false
+    for (u,v) in E:
+          if ((u==act_end) and (v not in visited)) :
+              add act_end to visited
+              act_end = v
+              found = True
+              break
+          elif ((v==act_end) and (u not in visited)):
+              add act_end to visited
+              act_end = u
+              found = True
+              break
+      if not found:   
+          return False        # when when start/end are on different cycles
+if |visited| != |V|:      # path or cycle was not complete
+    return False
+return True
+
+1) Input is polynomially encodable in binary string as a matrix
+2) The pseudocode works in O(|E|+|V|+|V|*|E|)=O(|V|*|E|)
+3) Intermediate results are polynomially bounded to input
+4) Intermediate operations are linear
+
+The problem is in P.
+ 

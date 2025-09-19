@@ -1,0 +1,24 @@
+L = {w in {0,1}* | if 0^k is a subsequence of w, then k<=2}
+
+STATES:
+q_init,
+q_1,
+q_0,
+q_00,
+q_reject,
+q_accept
+
+Transition Function:
+(q_init, >) -> (q_1, >, R)
+
+(q_1, 1) -> (q_1, 1, R)
+(q_1, 0) -> (q_0, 0, R)
+(q_1, _) -> (q_accept, _, S)
+
+(q_0, 1) -> (q_1, 1, R)
+(q_0, 0) -> (q_00, 0, R)
+(q_0, _) -> (q_accept, _, S)
+
+(q_00, 1) -> (q_1, 1, R)
+(q_00, 0) -> (q_reject, 0, S)
+(q_00, _) -> (q_accept, _, S)

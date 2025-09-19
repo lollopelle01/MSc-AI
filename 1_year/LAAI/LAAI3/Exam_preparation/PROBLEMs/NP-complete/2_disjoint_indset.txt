@@ -1,0 +1,25 @@
+INPUT: G=(V,E), n, m
+CERTIFICATE: the two indset proposal W,U subsets of V
+VERIFIER:
+if intersection(U,W)!=empty:
+     return False
+if |U|!=n or |W|!=m:
+      return False
+for set in {U,W}:
+      for v in set:
+            for v' in set-{v}:
+                   if (v,v') in E:
+                       return False
+return True
+
+1) The certificate is polynomially bounded to V.
+2) The verifier runs in O(|V|^2)
+
+The problem is in NP.
+
+Moreover we can prove its NP-hardness by finding f so that:
+(G,k) has indset <==> f(G,k) has L
+So a polytime reduction indset <_p L.
+We can think of a reduction where we set n=k and m=0, in this way the problems are equal as the second indset can also be empty and doesn't influence the first solution that is equal to the original indset.
+
+The problem is so NP-complete.

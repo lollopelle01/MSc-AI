@@ -1,0 +1,19 @@
+INPUT: t,z in {0...9}*
+OUTPUT: True/False if z anagram of t
+
+PSEUDOCODE:
+if |t| != |z|:
+    return False
+t_chars = {c:0 for c in {1...9}}
+z_chars = {c:0 for c in {1...9}}
+for i in {0...|t|-1}
+     t_chars[t[i]] += 1
+     z_chars[z[i]] += 1
+return t_chars==z_chars
+
+1) Input is already encoded
+2) The pseudocode works in O(|t|)
+3) The intermediate results are polynomially bounded to the input
+4) The intermediate operations are linear
+
+The problem is in P and so in NP:

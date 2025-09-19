@@ -1,0 +1,20 @@
+INPUT: n, D=[d_1, ..., d_k]
+OUTPUT: True/False
+
+• Certficate: subset S of D
+• Verifier:
+
+	prod = 1
+	to_visit = D
+	for s in S:
+		if s not in to_visit:
+			return False
+		else:
+			remove s from to_visit
+		prod*=s
+		if prod > n:
+			return False
+	return (prod==n)
+It works in O(|S|)=O(|D|)
+
+So it is in NP.

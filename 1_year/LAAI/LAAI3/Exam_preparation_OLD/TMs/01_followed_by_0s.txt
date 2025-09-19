@@ -1,0 +1,29 @@
+L = {{0,1}* | if 01 occurs in w, then all characters to the right of it are 0s}
+
+States:
+q_init, 
+q_read,
+q_0,
+q_01,
+q_0s,
+q_reject,
+q_accept
+
+Transition function:
+(q_init, >) -> (q_read, >, R)
+
+(q_read, 0) -> (q_0, 0, R)
+(q_read, 1) -> (q_read, 1, R)
+(q_read, _) -> (q_reject, _, R)
+
+(q_0, 0) -> (q_0, 0, R)
+(q_0, 1) -> (q_01, 1, R)
+(q_0, _) -> (q_reject, _,  R)
+
+(q_01, 0) -> (q_0s, 0, R)
+(q_01, 1) -> (q_reject, 1, R)
+(q_01, _) -> (q_reject, _,  R)
+
+(q_0s, 0) -> (q_0s, 0, R)
+(q_0s, 1) -> (q_reject, 1, R)
+(q_0s, _) -> (q_accept, _,  R)

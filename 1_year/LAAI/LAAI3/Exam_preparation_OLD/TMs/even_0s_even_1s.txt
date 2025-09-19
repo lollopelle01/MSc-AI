@@ -1,0 +1,27 @@
+STATES:
+q_init,
+q_0e_1e, 	# both even
+q_0e_1o,	# even 0s and odd 1s
+q_0o_1e,	# even 1s and odd 0s
+q_0o_1o,	# both odd
+q_reject,
+q_accept
+
+TRANSITION FUNCTION
+(q_init, >) -> (q_0e_1e, >, R)
+
+(q_0e_1e, 0) -> (q_0o_1e, 0, R)
+(q_0e_1e, 1) -> (q_0e_1o, 1, R)
+(q_0e_1e, _) -> (q_accept, _, S)
+
+(q_0o_1e, 0) -> (q_0e_1e, 0, R)
+(q_0o_1e, 1) -> (q_0o_1o, 1, R)
+(q_0o_1e, _) -> (q_reject, _, S)
+
+(q_0e_1o, 0) -> (q_0o_1o, 0, R)
+(q_0e_1o, 1) -> (q_0e_1e, 1, R)
+(q_0e_1o, _) -> (q_reject, _, S)
+
+(q_0o_1o, 0) -> (q_0e_1o, 0, R)
+(q_0o_1o, 1) -> (q_0o_1e, 1, R)
+(q_0o_1o, _) -> (q_reject, _, S)

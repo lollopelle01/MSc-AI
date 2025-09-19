@@ -1,0 +1,24 @@
+Given N=(n1, ..., nk), p, m then exists I subset of {1,...,k} where ∑_{i in I}n_i=m and ∑_{i not in I}n_i=p ?
+
+1) Prove it is in NP
+
+INPUT: (n1, ..., nk), p, m
+OUTPUT: True/False
+
+• Certificate: I subset of {1,...,k}
+• Verifier:
+	sum_not_I=0
+	sum_I=0
+	for ind in {1...k}:
+		if ind in I then
+			sum_I += n_ind
+		else
+			sum_not_I += n_ind
+	return (sum_not_I==p) and (sum_I==m)
+
+It works in O(k)
+
+2) Prove it is NP-hard
+
+We can prove that SUBSUM <_p SUBSUM_variation in polynomial time:
+In the SUBSUM_variation, we can set ∑_{i in I}n_i=m and ∑_{i not in I}n_i=(∑n_i)-m.

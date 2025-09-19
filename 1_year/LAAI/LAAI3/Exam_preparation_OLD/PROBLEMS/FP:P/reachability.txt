@@ -1,0 +1,48 @@
+Prove that reachability is in P.
+
+Reachability:
+Given 
+	• G=(V,E),
+	• (u,v) in V
+Determine whether v is reachable from u, so if there exist a path going from v to u.
+
+=======================================================================
+
+INPUT: G=(V,E), (u,v) in V
+OUTPUT: True/False
+
+PSEUDOCODE:
+visited <- {u}								1
+stack <- [u]									1
+while stack is not empty do						O(|V|) (*)
+	current <- stack[-1]						1
+	remove current from stack					1
+	if current==v then							1
+		return True							1
+	for (x,y) in E do							O(|E|)
+		if x==current then						1
+			neighbour <- y					1
+		elif y==current then					1
+			neighbour <- x					1
+		else									1
+			continue							1
+		if neighbour is not in visited then		1
+			add neighbour to visited			1
+			add neighbour to stack				1		
+return False									1	
+= 3+[3*O(|V|)*9*O(|E|)] ~ O(|V|)*O(|E|)=O(n^2) (where n is input size)
+
+(*) The stack loses a node at each while iteration and the node is added only if visited, which is a set so doesn't contain duplicates, doesn't contain it, so since the set can be at most of size |V|, it is also the number of maximum iterations of the while.
+
+1) Correctness: yes, explores all the elements
+2) Tot num of instructions: polynomial
+3) Size of intermediate results: 
+	visited <= |V|
+	stack <= |V|
+	current, neighbour
+3) Time execution of instruction: polynomial
+	• variable assignments
+	• string comparisons
+	• list and set atomic manipulations
+==> Pseudocode works in polynomial time ==> reachability is in P
+

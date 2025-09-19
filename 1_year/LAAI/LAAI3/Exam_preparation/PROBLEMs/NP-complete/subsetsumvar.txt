@@ -1,0 +1,23 @@
+INPUT: N=[n1, ..., nk], m, p
+CERTIFICATE: a proposal I subset of {1..k}
+VERIFIER:
+sum_m = 0
+sum_p = 0
+for i in {1..k}:
+     if i in I:
+         sum_m += N[i-1]     # -1 for list offset
+      else:
+         sum_p += N[i-1]     # -1 for list offset
+return (sum_m==m and sum_p==p)
+
+1) The certificate is polynomially bounded to the input
+2) The verifier works in O(k)
+
+The problem is so in NP.
+
+Moreover consider the polytime reduction subsetsum <_p subsetsumvar, this can be proven by finding f so that (N,p) has subsetsum <==> f(N,p) has subsetsumvar.
+This can be obtained by setting p=sum(N[i])-m:
+=>) If N,m has subsetsum then there is I so that then sum of n over I will be m and of course the other ones sum up to sum(N[i])-m, giving a solution for subsetsumvar
+<=) similarly
+
+The problem is so NP-hard and so NP-complete.

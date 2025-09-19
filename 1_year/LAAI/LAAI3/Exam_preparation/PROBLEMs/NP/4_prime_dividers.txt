@@ -1,0 +1,19 @@
+INPUT: n
+CERTIFICATE: list of numbers L
+VERIFIER:
+if |L| != 4:
+    return False
+unique=[]
+res=1
+for l in L:
+     if l not in unique and is_prime(l):
+          add l to unique
+     else:
+          return False
+     res = res * l
+return (res==n)
+
+1) The certifciate is polynomially bounded
+2) The verifier works in O(4)
+
+The problem is in NP.

@@ -1,0 +1,32 @@
+L = {w in {0, 1}* | w contains at least an occurrence of 011 and no occurrence of 100}.
+
+STATES:
+q_init,
+q_read,
+q_0,
+q_01,
+q_1,
+q_10,
+q_accept,
+q_reject
+
+TRANSITION FUNCTION
+(q_init, (>,>)) -> (q_read, (>,>), (R,R))
+
+(q_read, (0,_)) -> (q_0, (0,_), (R,S))
+(q_read, (1,_)) -> (q_1, (1,_), (R,S))
+
+(q_0, (0,_)) -> (q_0, (0,_), (R,S))
+(q_0, (1,_)) -> (q_01, (1,_), (R,S))
+
+(q_1, (0,_)) -> (q_10, (0,_), (R,S))
+(q_1, (1,_)) -> (q_1, (1,_), (R,S))
+
+(q_01, (0,_)) -> (q_10, (0,_), (R,S))
+(q_01, (1,_)) -> (q_1, (1,1), (R,S))
+
+(q_10, (0,_)) -> (q_reject, (1,_), (R,S))
+(q_10, (1,_)) -> (q_01, (1,1), (R,S))
+
+(-, (_,_)) -> (q_reject, (_,_), (S,S))
+(-, (_,1)) -> (q_accept, (_,1), (S,S))

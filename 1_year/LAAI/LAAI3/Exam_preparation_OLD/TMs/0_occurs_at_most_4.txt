@@ -1,0 +1,30 @@
+L = then number of occurences of the symbol 0 is at most 4
+
+STATES:
+q_init,
+q_accept,
+q_reject,
+q_0, q_1, q_2, q_3, q_4 	# wrt how many 0s i faced so far
+
+TRANSITION FUNCTION:
+(q_init, >) -> (q_0, >, R)
+
+(q_0, 1) -> (q_0, _, R)
+(q_0, 0) -> (q_1, _, R)
+(q_0, _) -> (q_reject, _, S)		# empty string
+
+(q_1, 1) -> (q_1, _, R)
+(q_1, 0) -> (q_2, _, R)
+(q_1, _) -> (q_reject, _, S)
+
+(q_2, 1) -> (q_2, _, R)
+(q_2, 0) -> (q_3, _, R)
+(q_2, _) -> (q_reject, _, S)
+
+(q_3, 1) -> (q_3, _, R)
+(q_3, 0) -> (q_4, _, R)
+(q_3, _) -> (q_reject, _, S)
+
+(q_4, 1) -> (q_4, _, R)
+(q_4, 0) -> (q_reject, _, R)
+(q_4, _) -> (q_accept, _, S)

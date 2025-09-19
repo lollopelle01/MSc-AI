@@ -1,0 +1,10 @@
+INPUT: A, B
+OUTPUT: True/False
+
+PSEUDOCODE:
+for el in B:
+	if el in A:
+		return False
+return True
+
+Since pseudocode, input, operations and intermediate results are polytnomial, the problem is in P.

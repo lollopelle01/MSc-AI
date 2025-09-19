@@ -1,0 +1,14 @@
+INPUT: n
+OUTPUT: True/False
+
+PSEUDOCODE:
+if n%3 == 0:
+    return True      # given d=n/3 then n is d times 3^1
+return False
+
+1) The pseudocode works in linear time
+2) The input is a natural number, so polynomially encodable as binary string.
+3) Intermediate operations are linear
+4) Intermediate results are smaller than input n
+
+The problem is in P and so in NP.

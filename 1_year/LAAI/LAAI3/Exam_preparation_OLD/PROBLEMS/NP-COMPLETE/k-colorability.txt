@@ -1,0 +1,58 @@
+Given a graph G = (V, E) and an integer k, determine whether it is possible to assign to each vertex a color from the set {1, ..., k} such that no two adjacent vertices share the same color.
+
+Prove that the k-COLORING problem is NP-complete.
+
+================================================================================
+
+1) Prove that k-COLORING is in NP
+
+INPUT: A graph G = (V, E), and an integer k.
+OUTPUT: True/False
+
+• Certificate: A function f: V -> {1, ..., k}, assigning a color to each vertex.
+
+• Verifier: 
+
+	for (v, u) in E:
+		if f(v) == f(u):
+			return False
+	return True
+
+	This verification runs in O(|E|) time, so the problem is in NP.
+
+================================================================================
+
+2) Prove it is NP-hard
+
+• We can try the reduction 3SAT <_p 3-COL <_p K-COL
+
+• First we do 3SAT <_p 3-COL, so we have to find f such that f(F) is 3-colorable <=> F is 3SAT. In order to do that we have to arrange the literals in a graph structure so that (1) if the clause is satisfied than the corresponding graph is 3-col and then (2) connect all the clause graphs in order to ensure 3-colorability of the whole formula.
+
+Proof: https://www.youtube.com/watch?v=JOZS9_ijZ7o
+1) Palette gadjet 
+	- We define 3 possible colors: True, False, Base 
+	- They are defined by using a cycle-triangle connection of 3 nodes
+2) OR gadget
+	- Before thinking about the 3-OR, we have to represent the classical 2-OR. Which is built like 2 nodes (representing literals) are connected to a triangle where the non-literal-connected node is the result.
+	- At this point we can use the result of the 2-OR and a 3rd literal and connect them to the same structure and obtain the 3-OR.
+3) AND gadget
+	- Now we have many 3-colorable graphs, one per clause, but we have to make them coherent and correct in the variable assignment.
+	- Coherency: we have to ensure that X and ¬X don't have the same values along all the graphs. So each node X has to be connected to a ¬X to ensure different colours.
+	- Correctness: moreover neither X nor ¬X can be Base so we have to enforce variables to be T/F by connecting all of them to B (which is enforced by connecting it into a triangle T and F, we need to enforce it in this way as we start from a binary logic so we can only set T/F).
+4) Set-search-direction gadject
+	- Now we don't know which would be the output of the whole graph and since we are working with a CNF and so we want ALL the clause to be True, then we have to connect each clause output to a False and a Base (enforced by being connected to the False and a True). 
+	- In this way we graph will look directly for configurations considering the output to be true.
+
+NB: remember that the minimum number of nodes is used so we don't connect all pair of X and ¬X but we define a couple for each different literal in the 3CNF (that is connected to B to ensure coherence) and then we take as variable input for a clause the respective value in the couple.
+
+--------------------------------------------------------------------------------
+
+• Then we do 3-COL <_p K-COL
+
+Idea: Since the problem is the same and it just changes on the amount of colours to be assigned, we can try to reduce the k-3 additional possible colors from the k-coloring in order to match the 3-coloring.
+In order to do that we can take G and add a clique of k-3 new vertices (in order to be sure to add k-3 different colors) and connect each of them to the vertices of V, in this way each node in v will be connected to at least k-3 nodes and so will have not to be k-3 colors, leaving the remaining 3 as the only possible.
+
+V' = V u {c_1, ..., c_{k-3}}
+E' = E u {clique edges (c_i,c_j)} u {clique-vertices edges (v, c_i)}
+
+In this way the subset V of V' is forced to be a 3-coloring.

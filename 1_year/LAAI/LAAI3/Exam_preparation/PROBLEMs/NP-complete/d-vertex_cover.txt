@@ -1,0 +1,28 @@
+INPUT: G=(V,E), k, d
+CERTIFICATE: d-vertex cover proposal S
+VERIFIER:
+if |S| > k:
+   return False
+d_check = {0 for v in V}
+for (u,v) in E:
+     if (u in S):
+         d_check[v] += 1
+     if (v in S):
+         d_check[u] += 1
+for card in d_check.values:
+     if card < d :
+         return False
+return True
+
+1) Certificate size is O(|V|)
+2) Verifiers works in O(|E|+|V|)=O(|E|)
+
+The problem is in NP.
+
+Moreover we can prove d-vertex cover to be NP-hard (and so NP-complete) by finding the polytime reduction vertex cover <_p d-vertex cover.
+This is done by finding f so that f(G,k) is d-vertex cover <==> (G,k) is vertex cover.
+In this sense we can say f(G,k) = (G,k,d=1)
+=>) If (G,k) has a vertex cover it means that all nodes are connected to at least 1 node in the vertex cover and so the cardinality of nodes has to be at least 1, which is equivalent to saying d=1.
+<=) if (G,k,d=1) it means that each node has a least 1 neighbour node in the d-vertex cover, which is the same as the vertex cover.
+        
+The problem is NP-complete.

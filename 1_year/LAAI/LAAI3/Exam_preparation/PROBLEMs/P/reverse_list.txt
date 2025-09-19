@@ -1,0 +1,15 @@
+INPUT: L = [l_1, ..., l_n]
+OUTPUT: Lr = [l_n, ..., l_1]
+
+PSEUDOCODE:
+Lr = []
+for i in {n...1}:
+     add l_i to Lr
+return Lr
+
+1) Input il polynomially encodable
+2) The pseudocode works in O(n)
+3) The intermediate results are smaller or equal to input
+4) The intermediate operations are linear.
+
+The function is in FP.

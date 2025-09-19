@@ -1,0 +1,17 @@
+INPUT: ...
+OUTPUT: ...
+
+CERTIFICATE: (often thought of as a solution path within a verification process)
+...
+
+VERIFIER: 
+...
+- Takes (input, certificate)
+- Runs in polynomial time
+- Accepts iff the certificate proves the input is a YES-instance
+
+0) Verifier is correct? (accepts valid YES instances, rejects invalid ones)
+1) Verifier runs in polynomial time?
+2) Certificate is of polynomial size?
+
+==> Problem is in NP.

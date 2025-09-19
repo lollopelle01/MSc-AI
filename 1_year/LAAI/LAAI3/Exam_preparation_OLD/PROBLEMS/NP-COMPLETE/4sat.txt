@@ -1,0 +1,32 @@
+4SAT = {F in 4CNF | F is satisfiable}
+
+Prove that 4SAT is NP-complete.
+
+============================================================
+
+1) Prove that it is in NP.
+
+INPUT: list F of k tuples with 4 literals out of N, so 
+	[[(l_1,v_1),...,(l_4,v_4)],...,[(l_1,v_1),...,(l_4,v_4)]]
+OUTPUT: L=[(l_1,v_1), ..., (l_N,v_N)]
+
+• Certificate: literal assignment dict L=[l_1:v_1, ..., l_N:v_N]
+• Verifier:
+	for c in F:
+		sat=False
+		for i in {0...|c|-1}:
+			literal = c[i][0]
+			value = c[i][1]
+			if L[literal] == required_value:
+                		sat = True
+                		break
+		if not sat:
+			return False
+	return True	
+It runs in O(4*|F|)=O(4*N)=O(N)
+
+2) Prove it is NP-hard.
+
+• We can simply do 3SAT <_p 4SAT, so we need a function f so that for each Ω in 3SAT iff f(Ω) is in 4SAT
+	(A v B v C) == (A v B v C v ¬d) /\ (A v B v C v d)
+This is true in both direction as it is an equivalence

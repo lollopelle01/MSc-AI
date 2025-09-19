@@ -1,0 +1,12 @@
+INPUT: G=(V,E),k
+CERTIFICATE: dict f of colour assignments (f[v]=c)
+VERIFIER:
+for v in f:
+      if f[v] < 1 or f[v] > k:
+          return False
+for (u,v) in E:
+      if f[u]==f[v]:
+          return False
+return True
+
+Since the certificate is polynomially bounded to the input (O(|V|)) and the verifier works in O(|E|) time, the problem is in NP.

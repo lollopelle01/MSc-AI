@@ -1,0 +1,33 @@
+Given the objects {1,...,n} with each of them size s_i, a bin size B and a number k. There is a partition X_1,...,X_k of the objects so that for each partition j ∑s_ji <= B.
+
+Prove that bin-packing is NP-Complete.
+
+==============================================================================
+
+INPUT: O={1,...,n}, S={s_1,...,s_n}, B, k
+OUTPUT: X_1,...,X_k
+
+1) Prove that bin-packing is in NP.
+
+• Certificate: 
+	String in form C=(c_1,...,c_n) in {1,...,k}^n which is a list of n integers and the values are [1,k]. 
+	So the position i we have the i-th object in the c_i bin.
+
+• Verifier:
+	tot <- [0,...,0]			
+	for i in {1,...,n} do
+		tot[c_i] <- tot[c_i] + s_i
+	for j in {1,...,k} do
+		if tot[j] > B then
+			return False
+	return True
+
+The verifier works in O(k+n)=O(n), so polynomially bounded to the input.
+
+2) Prove that it can be reduced (in polynomial time) to a NP-complete problem 
+
+• We can reduce the partition problem to bin-packing (PARTITION ≤ₚ BINPACK)
+	Partition problem:  can S={s_1,...,s_n} be partitioned into S_1 and S_2 so that ∑s_1[j]==∑s_2[j] (==1/2∑s[j]) ?
+• So if we set B=1/2∑s_i and k=2 and the same set S we are solving Partition.
+
+==> So the problem is NP-Complete.

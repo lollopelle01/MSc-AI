@@ -1,0 +1,17 @@
+INPUT: G,k
+OUTPUT: True/False 
+
+PSEUDOCODE:
+S=V
+for (u,v) in E:
+      remove v from S	# or remove u
+if |S| < k:
+    return False
+return True
+
+1) The input can be encoded with binary strings encoding G as a matrix 
+2) The pseudocode works in O(|E|)
+3) The intermediate operations are linear
+4) The intermediate results are smaller than input
+
+The problem is in P.

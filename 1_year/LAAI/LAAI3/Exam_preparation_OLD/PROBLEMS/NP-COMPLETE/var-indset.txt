@@ -1,0 +1,28 @@
+VARINDSET = {(G,k) | G is a weighted graph (weights on nodes) with and independent set of total weight ≥ k}
+
+Prove it is in NP-complete.
+
+===============================================================================
+
+1) Prove it is in NP.
+
+INPUT: G=((V,E),E), k
+OUTPUT: True / False
+
+• Certificate: list of nodes L
+• Verifier:
+	w_tot <- 0
+	for i in {0,|L|-1} do
+		for j in {0,|L|-1} do
+			if (i!=j) and ((l_i,l_j) in E) then
+				return False
+		w_tot <- w_tot + w_i
+	return w_tot >= k
+It works in O(|L|^2)=O(|V|^2).
+
+2) Prove it is NP-hard.
+
+• We can do INDSET <_p VARINDSET.
+	If we add to G nodes all weight=1 and keep the same k, then in the VARINDSET we'll look for a subset I where sum(w_i) == |I| 
+
+==> It is NP-complete

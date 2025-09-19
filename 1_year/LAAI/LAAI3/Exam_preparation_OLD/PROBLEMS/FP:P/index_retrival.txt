@@ -1,0 +1,21 @@
+Given a list A= [a1,...,an] of natural numbers and a number v∈N, return an index
+i∈{1,...,n} such that A[i] = v, if any, and return −1 otherwise.
+
+Prove it is in P.
+
+======================================================================================
+
+INPUT: A=[a1,...,an], v
+OUTPUT: i
+
+for i in {0...|A|-1}:
+	if A[i]==v:
+		return i+1
+return -1
+
+1) Input encoding: we have to encode number separations symbol and each number of the list that can be binary encoded. It is polynomially bounded to the input size.
+2) Pseudocode complexity: it works in O(|A|)=O(n) so polynomially bounded to the input size.
+3) Instructions complexity: string equality is linear wrt the size.
+4) Intermediate data/results size: i is O(n)
+
+So it is in P.

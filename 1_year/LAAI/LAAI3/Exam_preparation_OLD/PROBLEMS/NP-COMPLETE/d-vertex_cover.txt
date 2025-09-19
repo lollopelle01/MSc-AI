@@ -1,0 +1,30 @@
+INPUT: G=(V,E), k, d
+OUTPUT: True/False
+
+· Certificate: S subset of V
+· Verifier:
+count  = { 0 for v in V}
+if |S| > K:
+    return False
+for v in S:
+      for (u, w) in E:
+            if u!=w and (v==u or v==w):
+                  count[v] += 1
+      if count[v] < d:
+          return False
+return True
+
+Since:
+- intermediate results are polynomially bounded to the input
+- operations are linear
+- input encoding is polynomial
+- pseudocode works in O(|V|*|E|)
+
+The d-vertex cover is in NP.
+
+Moreover we can prove it is NP-hard and so is NP-complete, by finding a function f that works in polynomial time so that given (G,k):
+f((G,k)) has a d-vertex cover <==> (G,k) has a vertex cover
+
+If we design f so that we add d=1 to (G,k):
+<= ) Since each node in S must be and endpoint of an edge of E, then each node must have at least 1 edge which is the definition of 1-vertex cover
+=> ) d-vertex is more restrictive so this direction is trivial

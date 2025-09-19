@@ -1,0 +1,14 @@
+L = {(G,k) | G=(V,E) and f:V->{1..k} so that for u,v in V, if (u,v) in E then f(v)!=f(u)}
+
+Prove it is in NP.
+
+INPUT: G=(V,E) and k
+OUTPUT: {v1:f(v1), ..., v_n:f(v_n)}
+
+• Cerificate: dict C={v1:f(v1), ..., v_n:f(v_n)} with node colorings
+• Verifier:
+	for (u,v) in E:
+		if C[u]==C[v]:
+			return False
+	return True
+It works in O(|E|)

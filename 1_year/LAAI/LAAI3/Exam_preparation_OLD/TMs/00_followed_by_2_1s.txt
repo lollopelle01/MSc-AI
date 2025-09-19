@@ -1,0 +1,40 @@
+L = {w in {0,1}* | if 00 is a subsequence of w, then it is followed by at least two 1s in w}
+NB: i mean 11 attached to 00
+
+States:
+q_init, 
+q_read,
+q_found_0,
+q_0,
+q_00,
+q_1,
+q_11,
+q_reject, 
+q_accept
+
+Transition function:
+(q_init, >) -> (q_read, >, R)
+
+(q_read, 0) -> (q_0, 0, R)
+(q_read, 1) -> (q_read, 1, R)
+(q_read, _) -> (q_reject, _, S)
+
+(q_0, 0) -> (q_00, 0, R)
+(q_0, 1) -> (q_read, 1, R)
+(q_0, _) -> (q_reject, _, S)
+
+(q_00, 0) -> (q_reject, 0, S)
+(q_00, 1) -> (q_1, 1, R)
+(q_00, _) -> (q_reject, _, S)
+
+(q_1, 0) -> (q_reject, 0, R)
+(q_1, 1) -> (q_11, 1, R)
+(q_1, _) -> (q_reject, _, S)
+
+(q_11, 0) -> (q_found_0, 0, R)
+(q_11, 1) -> (q_11, 1, R)
+(q_11, _) -> (q_accept, _, S)
+
+(q_found_0, 0) -> (q_00, 0, R)
+(q_found_0, 1) -> (q_1, 1, R)
+(q_found_0, _) -> (q_accept, _, S)

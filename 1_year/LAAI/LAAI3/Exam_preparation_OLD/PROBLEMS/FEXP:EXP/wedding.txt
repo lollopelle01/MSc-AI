@@ -1,0 +1,95 @@
+Prove that the wedding plan problem is in FEXP.
+
+Given a list of invitees and a list of incompatibility constraints between invitees, we want to determine a sublist of invitees which are compatible with each other.
+
+We can see this a undirect graph problem where nodes=invitees and edges=incompatibilities.
+In this way it becomes like the Maximum Independent Set problem where, given N(v)={w|(w,v) in E} the neighbours of a node, we want a subset W of V such that:
+	a. for each w in W : N(w) /\ W = 0		(/\ stands for intersection)
+	b. |W| is maximum among the ones satisfying (a.)
+
+===========================================================================
+
+INPUT: G=(V,E)
+OUTPUT: W=[w_1,...,w_n] sublist of V
+
+PSEUDOCODE:	
+Z <- []										1
+for W subset of V do							O(2^|V|)
+	for w1 in W do								O(|V|)
+		if L(w1) /\ W == 0 and |W| > |Z| then		1
+			Z <- W							1
+return Z										1
+
+= 2+O(2^|V|)*2*O(|V|) ~ O(2^|V|)*O(|V|)
+
+1) Correctness: yes, explores all the possible solutions
+2) Tot num of instructions: exponential
+3) Size of intermediate results: 
+	|L(•)| <= |E|
+	|W|,|Z| <= |V|
+	w1 is a node
+4) Time execution of instruction: 
+	L(•) is polynomial
+	/\ (computed as AND on binary strings) is polynomial
+	Others are trivially polynomial
+
+==> it's in FEXP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Heurisric version that is not correct as it doesn't guarantee the global optima. For example if you have k nodes with the same cardinality you are not able to find the ones that are connected to ones whose exclusion could improve the solution (you could do level by level but it would EXPONENTIALLY increase the complexity) and so you could get stuck in local solutions.
+
+N <- []
+for v in V do
+	count <- 0
+	for (_,v) in E:
+		count <- count + 1
+	N <- (v,count)
+N sorted ascendingly by count
+W <- []
+for (n,_) in N do
+	for w in W do
+		if (w,n) is in E:
+			toAdd <- False
+			break
+	if toAdd is True:
+		add n to w
+return W

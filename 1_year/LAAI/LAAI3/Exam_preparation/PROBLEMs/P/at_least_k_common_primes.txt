@@ -1,0 +1,33 @@
+INPUT: n,m,k
+OUTPUT: True/False
+
+PSEUDOCODE:
+
+# Helping function in O(n)
+def is_prime(n):
+     if n < 3 : 
+           return True
+     for div in {2...n-1}:
+           if n%div==0:
+                 return False
+      return True
+
+# Core function
+if n > m: 
+   min = m
+else:
+   min = n
+count=0
+for div in {2...min-1}:
+      if (m%div==0) and (n%div==0) and is_prime(div):
+            count += 1
+return (count>=k)
+
+1) The input is just a couple of number so easy to encode as binary strings
+2) The pseudocode works in O(n^2) time
+3) The intermediate results are a number min smaller than input and k which is for sure smaller than the input
+4) The intermediate operation is_prime(•) works in polynomial time wrt the input, as already considered in the pseudocode time complexity.
+
+So the problem is in P and consequentially in NP.
+
+

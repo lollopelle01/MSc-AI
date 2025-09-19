@@ -1,0 +1,32 @@
+Given a set of objects O={1,...,n}, each with a weight w_i and a price p_i (i in {1,...,n}), and given a capacity z of the backpack and a budget r, determine whether there is a choice of objects I subset of O such that:
+
+• ∑w_i <= z
+• ∑p_i >= r
+
+Prove that this problem is NP-COMPLETE.
+
+================================================================
+
+INPUT: O={1,...,n}, W={w_1,...,w_n}, P={p_1,...,p_n}, z, r
+OUTPUT: I subset of O
+
+1) Prove that the problem is in NP
+• CERTIFICATE: I'
+• VERIFIER:
+	tot_w <- 0
+	tot_c <- 0
+	for i in I' do
+		tot_w <- tot_w + w_i
+		tot_p <- tot_p + p_i
+	return (tot_w<=z) and (tot_p>=r)
+
+2) Prove that it can be reduced (in polynomial time) to a NP-complete problem 
+• We will prove SS(Subset Sum) ≤ₚ Knapsack
+	SS: given S={a_1,...,a_n} and target T, exists S' subset of S such that ∑a_i=T
+• We want to encode a special case of knapsack that matches SS:
+	1) For each i in {1,...,n} we define w_i=a_i and p_i=a_i
+	2) Then we define z=T and r=T 
+	- This reduction is polynomial in time
+• Now knapsack will find {a_i} so that ∑a_i>=T and ∑a_i<=T, so that ∑a_i==T, which is the SS. Thus, the solution to the Knapsack instance corresponds exactly to the solution of the Subset Sum instance.
+
+==> So the problem is NP-Complete.

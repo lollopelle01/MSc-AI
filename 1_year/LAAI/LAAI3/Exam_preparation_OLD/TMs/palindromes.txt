@@ -1,0 +1,26 @@
+Write a 2-tape TM which accepts palindromes of {0,1}*
+
+STATES
+q_copy = copies 1° tape in 2°
+q_back = 1° tape goes to the beginning
+q_comp = compares from start of 1° tape and from end of 2°
+
+TRANSITION FUNCTION
+(q_init, (>,>)) --> (q_copy, (>,>), (R,R))
+
+(q_copy, (0,_)) --> (q_copy, (0,0), (R,R))
+(q_copy, (1,_)) --> (q_copy, (1,1), (R,R))
+(q_copy, (_,_)) --> (q_back, (_,_), (L,L))
+
+(q_back, (>,-)) --> (q_comp, (>,-), (R,S))	
+# NB: order is important! In this way > is excluded from the "-" of the next rule
+(q_back, (-,-)) --> (q_back, (-,-), (L,S))	
+
+(q_comp, (0,0)) --> (q_comp, (0,0), (R,L))
+(q_comp, (1,1)) --> (q_comp, (1,1), (R,L))
+(q_comp, (0,1)) --> (q_fail, (0,1), (S,S))
+(q_comp, (1,0)) --> (q_fail, (1,0), (S,S))
+(q_comp, (_,>)) --> (q_succ, (_,>), (S,S))
+
+
+

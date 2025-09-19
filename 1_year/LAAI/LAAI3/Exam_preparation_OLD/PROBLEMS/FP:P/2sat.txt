@@ -1,0 +1,32 @@
+2SAT is finding a literal assignment so that k conjunction clauses of 2 disjuncted literals are satisfied.
+
+Prove that it is in P.
+
+====================================================================================
+
+INPUT: list L of tuples (a,b) where in the position i we find the literal assignment (a_i,b_i) of the i-th clause. x_i is assumed to be 1 if written in positive form or 0 otherwise (¬).
+OUTPUT: (l_1,l_2) assignment where l_i is 0/1, (-1,-1) if unsat.
+
+PSEUDCODE:
+n <- |L|
+for i in {0,..,n-1} do
+	a_i <- L_i_0
+	b_i <- L_i_1
+	valid <- True
+	for j in {0,..,n-1} do
+		a_j <- L_j_0
+    		b_j <- L_j_1
+        	if (a_i != a_j) and (b_i != b_j) then
+            	valid <- False
+            	break
+    	if valid then
+		return (a_i, b_i)
+return (-1, -1)
+
+1) Correctness: yes, explores all the elements
+2) Tot num of instructions: O(|L|^2) polynomial
+3) Size of intermediate results: 
+	l_1,l_2 which can be a 2 bit encoding (3 values)
+3) Time execution of instruction: polynomial
+
+==> 2SAT is in P.

@@ -1,0 +1,20 @@
+INPUT: n, D={d_1, ..., d_m}
+OUTPUT: True/False if n is product of distinct d_i 
+
+PSEUDOCODE:
+S={}
+for d in D:
+     if (n%d==0) and (d not in S):
+           add d to S
+            n = n / d
+if n==1:
+    return True
+else:
+    return False
+
+1) Input is a list of natural numbers so easily encoded as binary strings
+2) Pseudocode works in O(n)
+3) Intermediate results are smaller than input since n gets smaller and smaller and S is a subset of D.
+4) Intermediate operations are linear.
+
+The problem is in P and so in NP.

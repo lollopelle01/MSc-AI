@@ -1,0 +1,34 @@
+Given an undirect graph G=(V,E) with weighted edges w_i, we are asked to determine whether G has an hamiltonian cycle of ∑w_i <= k .
+
+Prove that TSP is NP-Complete.
+
+===============================================================================
+
+1) Prove that it is in NP.
+
+INPUT: G=(V,(E,W)), k
+OUTPUT: True/False
+
+• Certificate: list of ordered nodes L
+• Verifier:
+	w_tot <- 0
+	for i in {0,...,|L|-2} do
+		if (l_0,l_{i+1}) is not in E then
+			return False
+		w <- W[(l_0,l_{i+1})]
+		w_tot <- w_tot + w
+	if (l_|L|-1,l_0) is not in E then
+		return False
+	w <- W[(l_|L|-1,l_0)]
+		w_tot <- w_tot + w
+	return w_tot <= k
+It runs in O(|L|)=O(|V|)
+
+The problem is in NP.
+
+2) Prove it is NP-hard.
+
+• We can use the reduction Hamiltonian Cycle <_p TSP, so we have to define a f so that G has HC <=> f(G) has TSP.
+If f sets all the weights to 0 and k=0 then the TSP will look for a HC without looking at weigths.
+
+=> TSP is NP-complete.

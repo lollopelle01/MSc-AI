@@ -1,0 +1,116 @@
+L = {w ∈ {0,1}^* | if 01 occurs in w then all characters to the right of it are 0s}
+
+Singe-tape TM:
+
+(q_init, ▷) → (q_0, ▷, R)
+(q_0, 0) → (q_1, 0, R)
+(q_0, 1) → (q_2, 1, R)
+(q_0, ☐) → (q_halt, ☐, S)
+(q_1, 0) → (q_1, 0, R)
+(q_1, 1) → (q_3, 1, R)
+(q_2, 0) → (q_1, 0, R)
+(q_2, 1) → (q_2, 1, R)
+(q_2, ☐) → (q_halt, ☐, S)
+(q_3, 0) → (q_3, 0, R)
+(q_3, ☐) → (q_halt, ☐, S)
+
+The TM has linear complexity, as it goes through at most the whole input string, from beginning to end, one symbol at a time.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+L = {w ∈ {0,1}^* | if 0^k is a subsequence of w, then k <= 2}
+
+Single-tape TM:
+
+(q_init, ▷) → (q_0, ▷, R)
+(q_0, 0) → (q_1, 0, R)
+(q_0, 1) → (q_0, 1, R)
+(q_0, ☐) → (q_halt, ☐, S)
+(q_1, 0) → (q_2, 0, R)
+(q_1, 1) → (q_0, 1, R)
+(q_1, ☐) → (q_halt, ☐, S)
+(q_2, 1) → (q_0, 1, R)
+(q_2, ☐) → (q_halt, ☐, S)
+
+The TM has linear complexity, as it goes through at most the whole input string, from beginning to end, one symbol at a time.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You are required to prove that the following problem in in NP. To do that, you can proceed as you prefer (e.g. by giving an NTM, or by giving certificates and algorithms). The problem is: given a natural number n and a set of natural numbers D, check whether n is the product of distinct elements from D.
+
+Let l = |⌞(n,D)⌟| be the input encoding length.
+
+• CERTIFICATE: the subset P of D whose elements have product equal to n.
+
+• CERTIFICATE SIZE: |P| = O(|D|) = O(l), so the certificate size is polynomial in the input encoding length.
+
+• CERTIFICATE CHECK: checking that the elements in P have product = n requires 
+    
+    |P| - 1 = O(|D|) = O(l)
+
+multiplications of natural numbers <= n = O(l), which takes polynomial time in l.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The "Principia Mathematica" is a book by philosopher Bertrand Russel, published between 1910 and 1913, in which many theorems about mathematics are stated and proved to hold. Let PP be the set of theorems in "Principia Mathematica", appropriately encoded in a succinct way as finite binary strings. Which complexity class does PP belong to? Prove your claim.
+
+Let T be the set of theorems in Principia Mathematica. Then, we can model PP as the set of (encoding) of pairs (t,T) where t is a theorem in T:
+
+    PP = {⌞(t,T)⌟ | t ∈ T}.
+
+A TM that receives in input the pair (t,T) and checks whether t ∈ T trivially works in poly-time in |⌞(t,T)⌟|, since both t and T belong to the input itself. Therefore, PP is in P.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+L = {w ∈ {0,1}^* | w starts with a 1 and ends with a 1}
+
+Single-tape TM:
+
+(q_init, ▷) → (q_0, ▷, R)
+(q_0, 1) → (q_1, 1, R)
+(q_1, 0) → (q_1, 0, R)
+(q_1, 1) → (q_1, 1, R)
+(q_1, ☐) → (q_2, ☐, L)
+(q_2, 1) → (q_halt, 1, R)
+
+The TM has linear complexity, as it goes through at most the whole input string, from beginning to end, one symbol at a time, then goes back one symbol.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You are required to prove that the following problem in in NP. To do that, you can give a NTM or define some pseudocode. The problem is: given a natural number n, check whether n is a sum of powers of 3.
+
+Remark: assume n = 3^i1 +...+ 3^ik with 0 <= i1 <...< ik <= log_3(n). Then k = O(log_3(n)).
+
+Let l = |⌞n⌟| = O(lgn) be the input encoding length.
+
+• CERTIFICATE: the set P of powers of 3 that sum up to n.
+
+• CERTIFICATE SIZE: |P| = k = O(log_3(n)) = O(lgn) = O(l), polynomial in l.
+
+• CERTIFICATE CHECK: checking whether the elements of P sum up to n requires O(|P|) = O(l) sums of integer numbers <= n, which therefore have encoding length O(lgn) = O(l). Such check can thus be performed in polynomial time in l.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

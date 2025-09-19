@@ -1,0 +1,34 @@
+A clique in an undirect graph is a subset W of the set of nodes V such that for each nodes v,w in W there exists (v,w) in E. 
+We are ask to determine if there exists a clique at least of cardinality |W| al least k.
+
+Prove that the problem is NP-Complete.
+
+====================================================================================
+
+INPUT: G=(V,E), k
+OUTPUT: W subset of V, |W|≥k
+
+1) Prove that it is in NP.
+
+• Certificate: W'
+
+• Verifier:
+	if |W'|<k then
+		return False
+	for w in W' do 
+		for v in W' do
+			if (w≠v) and ((w,v) not in E) then
+				return False
+	return True
+
+The verifier works in O(|V|^2) so it's polynomial wrt input.
+
+2) Prove that it is NP-hard.
+
+• We will reduce to the independent set problem (INDSET ≤_p CLIQUES)
+	INDSET: Given a graph G=(V,E) and integer k, is there a subset W of at least k vertices no two of which are connected?
+
+• It's quite obvious that if we remove all the edges from the cliques we would have an independent set and since the nodes are the same so does the cardinality. 
+So, given the graph G=(V,E), we can say that it has a cliques W of |W|=k by building in polynomial time the complement graph G'=(V,E'), where E' is obtained by creating edges where there weren't and removing previous edges, and looking for an independent set W' of |W'|=k.
+The result will be the same set of nodes and the edges would be trivial.
+G cliques of cardinality at least k <=> G' indset of cardinality k

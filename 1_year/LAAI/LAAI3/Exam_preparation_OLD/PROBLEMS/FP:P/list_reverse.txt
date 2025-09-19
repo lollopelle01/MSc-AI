@@ -1,0 +1,16 @@
+INPUT: L = [l_1, ..., l_n]
+OUTPUT: L_rev = [l_n, ..., l_1]
+
+PSEUDOCODE:
+L_rev = []
+for i in {n-1, ..., 0}:
+     add L[i] to L_rev
+return L_rev
+
+- The input encoding is polynomially bounded as O(log(max(L))+1)
+- The pseudocode works in O(n) so in polytime wrt the input L
+- The operations are just list append so in O(1)
+- The intermediate result L_rev has the same size of the input
+
+So f is in FP.
+  

@@ -1,0 +1,33 @@
+L = {(G,k) | G=(V,E) undirect, S subset of E where |S|>=k and each node in V occurs in S}
+
+Prove that L is in NP.
+
+===============================================================================
+
+INPUT: G=(V,E), k
+OUTPUT: True/False
+
+• Certificate: list of nodes S
+• Verifier:
+
+	# 1) S is subset and has maximum cardinality
+	if (|S| < k) or (|S|>|E|) then
+		return False
+	for e in S do
+		if e not in E then
+			return False
+
+	
+	# 2) Each node must appear once in S edges
+	for v in V do
+		present <- False
+		for (a,b) in S do
+			if (a==v) or (b==v) then
+				present <- False
+				break
+		if not present then
+			return False
+
+	return True
+
+It checks vality in O(|S| + |V|*|E|) = O(|V|*|E|)

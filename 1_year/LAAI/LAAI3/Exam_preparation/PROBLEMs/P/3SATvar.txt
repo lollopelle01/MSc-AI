@@ -1,0 +1,28 @@
+INPUT: F=[c1, ..., cN], where each clause c is a list of 3 literals expressed like (lit_name, lit_form). lit_name in {l1, l2, l3, l4} and lit_form in {True, False}.
+OUTPUT: True/False
+
+PSEUDOCODE:
+for v1 in {True,False}:
+      for v2 in {True,False}:
+             for v3 in {True,False}:
+                    for v4 in {True,False}:
+                           assigment = {l1:v1, l2:v2, l3:v3, l4:v4]
+                           for c in F:
+                                 sat = False
+                                 for i in {0...|c|-1}:
+                                       name = c[i][0]
+                                       val = c[i][1]
+                                       act_val = assignment[name] if val else not assignment[name]
+                                       sat = sat or act_val
+                                  if not sat:
+                                      break
+                            if sat:
+                                return True
+return False
+
+1) The input is polynomially encodable
+2) The pseudocode works in O(2^4 * |F|)=O(N)
+3) The intermediate results are dicts, values and boolean so polynomially encodable
+4) The intermediate operations are linear.
+
+The problem is in P.

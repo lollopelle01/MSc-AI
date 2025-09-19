@@ -1,0 +1,25 @@
+INPUT: G,n
+OUTPUT: True if G has path through only n nodes once
+
+CERTIFICATE: ordered path P=[p_1, ..., p_n] 
+VERIFIER:
+if |P| != n:
+    return False
+for i in [0...n-2]:
+     add P[i] to visited
+     if ((P[i], P[i+1]) not in E) or (P[i+1], P[i]) not in E) or (P[i+1] in visited):
+          return False
+add P[i+1] to visited
+return True
+
+1) The certificate is a subset of V and so smaller than input
+2) The verifier works in O(n)
+
+The problem is in NP.
+
+Moreover we can prove its NP-hardness by showing the polytime reduction HAMPATH <_p L, this can be done by finding f so that G has hampath <=> f(G) has L.
+This can be easily done by setting n=|V|, in this way the 2 problems are equal:
+=>) If there is an hampath, then there exists a path that passes once through all nodes (|V|) of the graph
+<=) similarly
+
+So the problem is NP-complete.

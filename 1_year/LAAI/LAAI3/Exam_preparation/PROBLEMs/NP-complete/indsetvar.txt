@@ -1,0 +1,26 @@
+INPUT: G=(V,E), k, association dict f[v_i]=n_i where n_i is the weight associated to n_i
+OUTPUT: True if exists indset W subset of V so that sum(f[w_i])>=k
+
+CERTIFICATE: a proposal W subset of V
+VERIFIER: 
+sum = 0 
+for w in W:
+     for w' in W-{w}:
+           if (w,w') in E:
+                return False
+      sum += f[w]
+if sum < k:
+   return False
+return True
+
+1) The certificate is smaller than input
+2) The verifier works in O(|W|^2)=O(|V|^2)
+
+The problem is in NP.
+
+Moreover we can prove the NP-hardness by showing the reduction INDSET <_p INDSETVAR. This has to be done by finding f so that (G,k) has indset <=> f(G,k) has indsetvar.
+In this sense we can assign to each node in G a weight of 1:
+=>) If G,k has an indset it means that there are at least k nodes in it and if we sum their weight it would be at least k and so a solution for varindset.
+<=) similarly
+
+The reduction can be in polytime so the problem is also NP-complete,

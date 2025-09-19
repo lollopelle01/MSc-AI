@@ -1,0 +1,28 @@
+INPUT: ...
+OUTPUT: ...
+
+CERTIFICATE: (often thought of as a solution path within a verification process)
+...
+
+VERIFIER: 
+...
+- Takes (input, certificate)
+- Runs in polynomial time
+- Accepts iff the certificate proves the input is a YES-instance
+
+0) Verifier is correct? (accepts valid YES instances, rejects invalid ones)
+1) Verifier runs in polynomial time?
+2) Certificate is of polynomial size?
+
+==> Problem is in NP.
+
+==========================================================================================
+
+REDUCTION:
+- Choose a known NP-complete problem A
+- Describe how to reduce A to this problem (call it B)
+- Prove that the reduction A≤ₚB (A special case of B):
+   a) Is computable in polynomial time
+   b) Maps YES instances of A to YES instances of B (and optionally NO to NO)
+
+==> Problem is NP-complete.

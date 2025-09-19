@@ -1,0 +1,44 @@
+Given an undirect graph G=(V,E) and a number k, we are asked if G has a cover of at most k nodes.
+COVER = subset of nodes such that every edge has an endpoint in the cover
+
+Prove that it is NP-complete.
+
+======================================================================================
+
+1) Prove that it is in NP.
+
+INPUT: G=(V,E), k
+OUTPUT: True/False
+
+• Certificate: a list of nodes L subset of V
+• Verifier:
+	if |L|>k then
+		return False
+	for (u,v) in E do 
+		if (u not in L) and (v not in L) then 
+			return False
+	return True
+It runs in O(|E|).
+
+2) Prove it is NP-hard.
+
+• We can try the reduction INDSET <_p VCOVER, so defining f so that G has VCOVER of k nodes <=> f(G) has INDSET of |V|-k nodes.
+
+• As a fact we can think of VCOVER and INDSET as opposite problems as:
+	1. INDSET looks for the set of nodes that never connect
+		{for each (u,v) in E | ¬ (u in INDSET /\ v in INDSET)}
+	2. VCOVER looks for the set of nodes that represents all the connections
+		{for each (u,v) in E | (u in VCOVER \/ v in VCOVER)}
+We can go from (1) to (2):
+	{for each (u,v) in E | ¬(u in INDSET /\ v in INDSET)} = 
+	{for each (u,v) in E | ¬(u in INDSET) \/ ¬(v in INDSET)} =(*)=
+	{for each (u,v) in E | (u in V-INDSET) \/ (v in V-INDSET)} =
+	{for each (u,v) in E | (u in VCOVER) \/ (v in VCOVER)}
+
+(*) From this is clear that if u is in V but is not in INDSET then it would be in the complement V-INDSET and, since the definitions match, V-INDSET=VCOVER is true.
+
+• To complete the f, we have to notice the cardinalities where |VCOVER|=k and |INDSET|=|V-VCOVER|=|V|-|VCOVER|=|V|-k
+	
+
+
+		

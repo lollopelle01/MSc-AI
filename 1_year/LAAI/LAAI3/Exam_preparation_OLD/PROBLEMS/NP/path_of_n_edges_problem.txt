@@ -1,0 +1,36 @@
+L = {(G,n) | G=(V,E) undirect, path of n edges exaclty once}
+
+Prove that it is in NP.
+
+============================================================================
+
+INPUT: G=(V,E), n
+OUTPUT: True/False
+
+• Certificate: ordered list of edges L
+• Verifier:
+	if |L| != n then
+		return False
+	uniques = {}
+	for i in {0,...,|L|-2} do
+		if (l_i not in uniques) and (l_i in E) and (l_{i+1} in E) then
+			add l1 to unqiues
+			a,b = li
+			c,d = l_{i+1}
+			if (a==c) or (b==c) or (a==d) or (b==d) then
+				continue
+			else 
+				return False
+		else 
+			return False
+	if l_{|L|-1} not in uniques and l_{|L|-1} in E then
+		add l_{|L|-1} to uniques
+	else
+		return False
+	if |uniques| == |L| then
+		return True
+
+It is in NP as the verifier works in O(|L|)=O(|V|) so polynomially bounded to the input.
+
+Moreover we can notice that it is NP-complete as we can do HAMPATH <_p N-EDGES-PATH in polynomial time.
+If we set n = |V|-1 then the 2 problems are identical.				

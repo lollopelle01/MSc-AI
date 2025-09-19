@@ -1,0 +1,28 @@
+An independent set is a set of vertices in a graph so that no two of which are adjacent.
+
+Prove that it is NP-compete.
+
+==========================================================================================
+
+1) Prove that it is in NP
+
+INPUT: G=(V,E)
+OUTPUT: True/False
+
+• Certificate: set of nodes L
+• Verifier:
+	for l in L do
+		for l' in L do
+			if (l!=l') and (l,l') is in E then
+				return False
+	return True
+It runs in O(|L|^2)=O(|V|^2).
+
+2) Prove that it is NP-hard.
+
+• We can prove the reduction 3SAT <_p INDSET, so we have to define f so that F is 3SAT <=> f(F) has INDSET
+• We can define the function that, given a formula F = C_1 /\ ... /\ C_n with C_i = A \/ B \/ C, produces a node for each literal for each node (3*n nodes) and edges between:
+	• literals in the came clause C_i.
+		=> In this way with independency you can choose only one literal for clause, this is crucial as in 3CNF it is sufficient to satisfy one literal per clause but you have to satisfy all clauses. With this boundaries the independecy cannot choose 3 literals that maybe satisfy only one clause but not the others.
+	• same literals in different clauses with incoherent value (eg. A in C_1 and ¬A in C_2).
+		=> In this way with independency you can't choose incoherent values.

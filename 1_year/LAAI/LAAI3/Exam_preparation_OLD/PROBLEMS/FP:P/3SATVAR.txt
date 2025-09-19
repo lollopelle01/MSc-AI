@@ -1,0 +1,39 @@
+3SATVAR = {F| F is a satisfiable 3CNF in which at most 4 distinct boolean variables occur.}
+
+INPUT: F=[[(l_i,v_i),...,(l_i,v_i)], ..., ] 	
+		• list of k clauses
+		• each clause is a list with 3 tuples (var_name_i, var_value)
+		• i in {0...3}
+OUTPUT: list of 4 variable assignments as tuples (var_name_i, var_value)
+
+# Try all possible 2^4 assignments
+for A in {True, False}:
+	for B in {True, False}:
+		for C in {True, False}:
+			for D in {True, False}:
+				assigment = {l_1:A, l_2:B, l_3:C, l_4:D}
+				
+				
+				for i in {0...k-1} :
+					sat = False
+					if |F[i]| > 3:
+						return False
+					for literal in F[i]:
+						var = literal[0]
+						val = literal[1]
+						
+						if not val:
+							ass_val = not assigment[var]
+						else:
+							ass_val = assigment[var]
+						sat = sat or ass_val
+
+					if not sat:
+						break
+				if i==k-1 and sat:
+					return True
+return False
+
+It works in O(2^4 * k * 3) so polynomially bounded to the input.
+
+So it is in P.

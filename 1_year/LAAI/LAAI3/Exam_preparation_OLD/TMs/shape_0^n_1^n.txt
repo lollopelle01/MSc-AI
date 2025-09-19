@@ -1,0 +1,23 @@
+Write a 2-tape TM which accepts words with shape 0^n_1^n, so n 0s followed by n 1s.
+
+STATES
+q_copy = we are copying the 0s in the second tape
+q_comp = we are comparing length of 1st and 2nd tape
+
+TRANSITION FUNCTION
+# 1) Starting
+(q_init, (>,>)) --> (q_copy, (>,>), (R,R))
+
+# 2) Copying 0s in 2nd tape
+(q_copy, (0,_)) --> (q_copy, (_,0), (R,R))	# found another consecutive 0, copy it
+(q_copy, (_,_)) --> (q_comp, (_,_), (S,L))	# empty string (n=0) or never seen the 1 after 0s
+(q_copy, (1,_)) --> (q_comp, (1,_), (S,L))	# found a 1, start comparing
+
+# 3) Comparing 1s and 0s
+(q_comp, (1,0)) --> (q_comp, (_,_), (R,L))	# counting 1s and 0s one by one
+(q_comp, (0,0)) --> (q_fail, (0,0), (S,S))	# first tape has 1+ 0s after the 1s
+(q_comp, (0,>)) --> (q_fail, (0,>), (S,S))	# first tape has 1+ 0s after the 1s
+(q_comp, (1,>)) --> (q_fail, (1,>), (S,S))	# second tape finished and first not ==> more 1s than 0s
+(q_comp, (_,0)) --> (q_fail, (_,0), (S,S))  	# first tape finished and second not ==> more 0s than 1s
+(q_comp, (_,>)) --> (q_succ, (_,>), (S,S))	# both first and second tapes finished so |0s|=n=|1s|
+

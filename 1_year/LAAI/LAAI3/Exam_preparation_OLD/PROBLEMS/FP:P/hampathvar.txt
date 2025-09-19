@@ -1,0 +1,63 @@
+HAMPATHVAR = {G | G is a graph of degree 2 having an hampath}
+
+INPUT: G=(V,E)
+OUTPUT: path/True or False
+
+PSEUDOCODE:
+# 1) Check that every node is at most of degree 2 and there are no isolated nodes
+
+counts <- {v: 0 for v in V}
+for (u, v) in E do
+	counts[u] <- counts[u] + 1
+	counts[v] <- counts[v] + 1
+for key, value in counts do
+	if value>2  or value==0 then
+		return False
+
+# 2) Check that there is an hampath, since all have 1 or 2 edges there must be
+# start/end (deg=1) --> path of degs=2 --> start/end (deg=1)
+
+endpoints <- []
+for key, value in counts do
+	if value==1 then
+		append key to endpoints
+	# Useful as maybe there are isolated edges
+	if (|endpoints| != 0) and (|endpoints| != 2) then
+		return False
+
+# Here we are sure there is the hampath
+
+# 3) Find the hampath from one endpoint to the other
+if |endpoints| == 2 then
+	current <- endpoints[0]
+else 
+	current <- V[0]
+path <- [current]
+while |path| < |V| do
+	for (v,w) in E do
+		if current==v and (w not in path) then
+			current <- w
+			append current to path
+			break
+		else if current==w and (v not in path) then
+			current <- v
+			append current to path
+			break
+return path
+		
+
+
+
+
+
+It runs in:
+• O(|E| + |V|) for graph check
+• O(|V|) for path check
+• O(|V| + |V| * |E|)) for finding result
+==> O(|V|*|E|) complexity which is polynomial wrt the input G
+
+Moreover:
+- intermediate results are in O(|V|) 
+- operations are atomic
+
+==> HAMPATHVAR is in P.

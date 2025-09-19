@@ -1,0 +1,18 @@
+INPUT: S={a_1, ..., a_n}, T
+CERTIFICATE: a proposal subset A
+VERIFIER:
+if |A|%2!=0:
+	return False
+sum = 0
+for a in A:
+	sum += a
+return (sum==T)
+
+1) The certificate is at most S, so polynomially bounded to the input
+2) The verifier works in O(|A|)=O(|S|)
+
+The problem is so in NP.
+
+Moreover we can reduce L tu subsetsum (subsetsum <_p L) by finding f so that (S,T) has subsetsum <==> f(S,T) has even-subsetsum.
+In order to do that we can add a 0 so S, in this sense if S has a subsetsum A of even size, 0 can be excluded, othwerwise if it has and odd one it would become even by adding 0 without changing the constrain for summing up to T.
+If there is an even subsetsum in Su{0}, since we can remove 0 and the sum is still T, then we'll have a subsetsum.

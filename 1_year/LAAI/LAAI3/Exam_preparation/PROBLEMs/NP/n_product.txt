@@ -1,0 +1,14 @@
+INPUT: n, D={d_1, ..., d_m}
+CERTIFICATE: S subset of D
+VERIFIER:
+res=1
+for d in S:
+	if d not in D:
+		return False
+	res = res * d
+return (res==n)
+
+1) The certificate is smaller than D
+2) The verifier works in O(|D|)=O(n)
+
+The problem is so in NP.

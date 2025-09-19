@@ -1,0 +1,19 @@
+L = {w in {0,1}* | every 1 occurring in w is immediately followed by a 0}
+
+States:
+q_init,
+q_0,
+q_1,
+q_reject,
+q_accept
+
+Transition function:
+(q_init, >) -> (q_0, >, R)
+
+(q_0, 0) -> (q_0, 0, R)
+(q_0, 1) -> (q_1, 1, R)
+(q_0, _) -> (q_accept, _, S)
+
+(q_1, 0) -> (q_0, 0, R)
+(q_1, 1) -> (q_reject, 1, S)
+(q_1, _) -> (q_reject, _, S)

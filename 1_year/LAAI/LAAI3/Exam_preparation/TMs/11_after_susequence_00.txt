@@ -1,0 +1,20 @@
+(!!) subsequence != substring ==> 00 is subsequence of 0110
+I consider the string "11" right after the subsequence
+
+Alphabet = {>, _, 0, 1}
+States = (q_init, q_0, q_00, q_001, q_0011, q_acc, q_rej)
+
+Transition function:
+(q_init, >) --> (q_0, >, R)
+
+(q_0, 0) --> (q_00, 0, R)
+(q_0, 1) --> (q_0, 1, R)
+(q_0, _) --> (q_acc, _, S)
+
+(q_00, 0) --> (q_00, 0, R)
+(q_00, 1) --> (q_001, 1, R)
+(q_00, _) --> (q_rej, _, S)
+
+(q_001, 0) --> (q_001, 0, R)
+(q_001, 1) --> (q_0, 1, R)
+(q_001, _) --> (q_rej, _, S)

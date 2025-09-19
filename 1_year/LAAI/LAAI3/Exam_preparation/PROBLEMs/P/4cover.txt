@@ -1,0 +1,26 @@
+INPUT: G=(V,E)
+OUTPUT: True if exists W subset of V so that for all (a,b) in E, a in W or b in W and |W|==4
+
+PSEUDOCODE:
+for v1 in V:
+     for v2 in V-{v1}:
+            for v3 in V-{v1,v2}:
+                   for v4 in V-{v1,v2,v3}:
+                          W = {v1, v2, v3, v4}
+                           found = True
+                           for (a,b) in E:
+                                  if (a not in W) and (b not in W):
+                                       found = False
+                                       break
+                            if found:
+                                return True
+return False
+
+1) The input is easily encodable as binary string by considering the graph as a matrix
+2) The pseudocode works in O(|V|^4 * |E|)
+3) The intermediate result W is of constant length 4
+4) The intermediate operations are linear
+
+The problem is in P.
+    
+                            

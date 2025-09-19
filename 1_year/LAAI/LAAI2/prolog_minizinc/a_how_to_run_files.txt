@@ -1,0 +1,14 @@
+1) Enter `swipl` in terminal
+1.1) If you want to run CLPs run    
+    use_module(library(clpfd)).
+2) In order to consider a['file_name.pl'].
+3) query. 
+4) press tab to see other results
+
+ctrl + D    to exit
+ctrl + L    to clear the tab
+
+#######################################################
+For the .mzn file just enter in terminal
+    minizinc file_name.mzn
+(PS: 1 exercise for file)

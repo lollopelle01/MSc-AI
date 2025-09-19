@@ -1,0 +1,12 @@
+ALPHABET={> (start), _(blank), 0, 1}
+STATES={q_init, q_read, q_1, q_acc}
+TRANSITION FUNCTION:
+(q_init, >) --> (q_read, >, R)
+
+(q_read, 0) --> (q_read, 0, R)
+(q_read, 1) --> (q_1, 1, R)
+(q_read, _) --> (q_rej, _, S)
+
+(q_1, 0) --> (q_acc, 0, S)
+(q_1, 1) --> (q_1, 1, R)
+(q_1, _) --> (q_rej, _, S)

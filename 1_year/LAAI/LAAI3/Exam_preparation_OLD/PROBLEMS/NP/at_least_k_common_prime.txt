@@ -1,0 +1,29 @@
+The language L includes precisely those binary strings which are encodings of triples in the form (n, m, k) where n and m are natural numbers which have at least k prime factors in common.
+
+Prove it is in NP.
+
+===========================================================================
+
+• Certficate: (n, m, k)
+• Verifier:
+	if n>m:
+		min=m
+	else:
+		min=n
+	primes_common=1
+	for i in {2...min}:
+		if is_prime(i) and (m%i==0) and (n%i==0):
+			primes_common+=1
+		if primes_common==k:
+			return True
+	return False
+	
+def is_prime(num):
+	if num==1 :
+		return True
+	for j in {num-1...2}:
+		if m%j==0:
+			return False
+	return true
+
+It works in O(n^2).

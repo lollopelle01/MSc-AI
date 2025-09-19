@@ -1,0 +1,37 @@
+ALPHABET={> (start), _ (blank), 0, 1}
+STATES={q_init, q_read, q_0, q_01, q_011, q_rej, q_acc}
+TRANSITION FUNCTION:
+(q_init, >) --> (q_read, >, R)
+
+(q_read, 0) --> (q_0, 0, R)
+(q_read, 1) --> (q_read, 1, R)
+(q_read, _) --> (q_acc, _, S)
+
+(q_0, 0) --> (q_rej, 0, S)
+(q_0, 1) --> (q_01, 1, R)
+(q_0, _) --> (q_acc, _, S)
+
+(q_01, 0) --> (q_0, 0, R)
+(q_01, 1) --> (q_011, 1, R)
+(q_01, _) --> (q_acc, _, S)
+
+(q_011, 0) --> (q_rej, 0, S)
+(q_011, 1) --> (q_01, 1, R)
+(q_011, _) --> (q_acc, _, S)
+
+
+======================================================================
+NOTE: it can be done also without q_0 and q_01=q_odd and q_011=q_even
+(q_init, >) --> (q_read, >, R)
+
+(q_read, 0) --> (q_even, 0, R)
+(q_read, 1) --> (q_read, 1, R)
+(q_read, _) --> (q_acc, _, S)
+
+(q_even, 0) --> (q_rej, 0, S)
+(q_even, 1) --> (q_odd, 1, R)
+(q_even, _) --> (q_acc, _, S)
+
+(q_odd, 0) --> (q_even, 0, R)
+(q_odd, 1) --> (q_even, 1, R)
+(q_odd, _) --> (q_acc, _, S)

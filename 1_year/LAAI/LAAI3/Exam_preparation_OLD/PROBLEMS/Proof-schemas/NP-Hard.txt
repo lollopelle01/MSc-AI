@@ -1,0 +1,13 @@
+INPUT: ...
+OUTPUT: ...
+
+(Don't need to prove it into NP)
+
+REDUCTION:
+- Choose a known NP-complete problem A
+- Describe how to reduce A to this problem (call it B)
+- Prove that the reduction A≤ₚB (A special case of B):
+   a) Is computable in polynomial time
+   b) Maps YES instances of A to YES instances of B (and optionally NO to NO)
+
+==> Problem is NP-complete.

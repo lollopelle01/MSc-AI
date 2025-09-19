@@ -1,0 +1,20 @@
+We want to show with a TM that the function inc(n)=n+1 can be computed in linear time.
+
+We'll work with the binary-reversed encoding of the integers.
+(so that moving around least significant bit is easier)
+
+10011 ==> 01011
+01001 ==> 11001
+
+STATES
+q_1 = there is carry-out (we are adding 1)
+q_0 = there is not carry-out (we are rewriting input)
+
+TRANSITION FUNCTION
+(q_init, >) --> (q_1, >, R)
+(q_1, 0) --> (q_0, 1, R)
+(q_1, 1) --> (q_1, 0, R)
+(q_0, 1) --> (q_0, 1, R)
+(q_0, 0) --> (q_0, 0, R)
+(q_1, _) --> (q_0, 1, R)
+(q_0, _) --> (q_halt, _, S)

@@ -1,0 +1,14 @@
+INPUT: L = [l_1, ..., l_n], P = [p_1, ..., p_n]
+OUTPUT: scalar product of L and P
+
+PSEUDOCODE:
+	if |L|!=|P|:
+		return False
+	sum = 0
+	for i in {0, ..., n-1}:
+		sum += L[i]*P[i]
+	return P
+- The input encoding is polynomially bounded to the input as we need 1 bit for distinguish between "," in the list and "," between lists and then log_2(max(max(L),max(P))) bits for the numbers.
+- It works in O(n)
+- The operations are polytime
+- The intermediate result size is O(n * max(max(L),max(P))^2)
