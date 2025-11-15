@@ -20,5 +20,6 @@ Repository with all the material **i used** along my master in Artificial Intell
 - [FAIKR3: Exploring Student Depression with Bayesian Networks](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/FAIKR/FAIKR3/faikr3-project)
 - [SMMAI: Homeworks](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/SMMAI/Homeworks)
 - [DL: Swirl correction](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/DL/Swirl_correction_lorenzo_pellegrino_0001189550.ipynb)
+- [IPCV: books recognition and pets classfication](https://github.com/lollopelle01/MSc-AI/tree/main/1_year/IPCV/Assignments)
 
 ## Thesis
