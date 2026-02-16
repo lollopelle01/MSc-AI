@@ -1,0 +1,26 @@
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{xcolor}
+
+\definecolor{quotebg}{HTML}{F2F2F2}
+\definecolor{quotebar}{HTML}{000000}
+\definecolor{quotetext}{HTML}{000000}
+
+\tcolorboxenvironment{quote}{%
+  colback=quotebg,
+  coltext=quotetext,
+  frame hidden,
+  borderline west={4pt}{0pt}{quotebar},
+  arc=6pt,
+  outer arc=6pt,
+  boxrule=0pt,
+  left=12pt,
+  right=12pt,
+  top=10pt,
+  bottom=10pt,
+  before upper={\leavevmode},
+  enhanced,
+  breakable,
+  before skip=10pt,
+  after skip=10pt
+}

@@ -1,0 +1,16 @@
+1.⁠ ⁠Compare and contrast electrical and chemical synapses, focusing on their structural differences, mechanisms of signal transmission, and functional implications for neural communication.
+
+2.⁠ ⁠Explain the computational distinction between model-based and model-free reinforcement learning. How do these computational frameworks help us understand the cognitive processes underlying goal-directed and habitual behavior, and what evidence supports the idea that both systems contribute to behavior?
+
+3.⁠ ⁠Describe the key functional and architectural similarities and differences between hierarchical convolutional neural networks (HCNNs) and the primate ventral visual pathway.
+
+========================================================================================================
+
+1) Electrical synapses transmit signals through direct ionic current flow between neurons via gap junctions, where the membranes of two neurons are closely apposed and their cytoplasms are connected. This continuity allows ions and small molecules to pass directly from one cell to another. Signal transmission is therefore extremely fast and synchronous, but it is also less flexible and less specific, as the postsynaptic response is essentially identical to the presynaptic activity.
+
+Chemical synapses, by contrast, rely on a more complex mechanism. When an action potential reaches the presynaptic terminal, voltage-gated calcium channels open, allowing calcium influx. The rise in intracellular calcium triggers vesicle fusion with the presynaptic membrane and the release of neurotransmitters into the synaptic cleft. These neurotransmitters then bind to receptors on the postsynaptic membrane, typically leading to the opening of sodium channels. This process is slower and less synchronous than electrical transmission, but it allows for greater specificity, modulation, and plasticity, since different neurotransmitters and receptors can produce excitatory, inhibitory, or modulatory effects.
+
+
+
+
+2)The computational distinction between model-based and model-free reinforcement learning formalizes the psychological concepts of goal-directed and habitual behavior. Model-free learning is an efficient but inflexible cached-value system that associates actions with past rewards through reward prediction errors, leading to automatic habits that persist even when outcomes are devalued. In contrast, model-based learning is a flexible but computationally expensive system that uses an internal model of the environment to simulate action outcomes, enabling deliberate, goal-directed choices that are sensitive to changes in outcome value or action-outcome contingencies. Evidence for the simultaneous contribution of both systems comes from behavioral studies showing a transition from goal-directed to habitual control with overtraining, a neural dissociation between the dorsomedial striatum and orbitofrontal cortex for model-based control and the dorsolateral striatum for model-free habits, and computational modeling of human choice behavior that reveals hybrid control, with neural signals for both types of prediction errors found in the striatum.

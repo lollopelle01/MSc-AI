@@ -1,0 +1,20 @@
+1. Starita: The longest axon of a human motor neuron can be over a meter long, reaching from the base of the spine to the toe. The maximum distance a passive current will flow along a neuron is only about 1 millimeter. So, how does the neuron solve the problem of ensuring fast conduction over long distances?
+
+2. Starita: Decisions can be reached using different strategies. Sometimes, they involve careful consideration of the expected outcome of our behavior. Other times, they are generated more automatically, if a particular response has been repeatedly successful in the past. Discuss the characteristics of each strategy and how one can uncover which strategy was used for a given decision.
+
+3. Di Pellegrino: quiz
+
+========================================================================================================================
+
+1) To ensure fast conduction over long distances, neurons rely on myelination and saltatory conduction. In the peripheral nervous system, Schwann cells wrap the axon with multiple layers of myelin, which act as an insulating layer and prevent current leakage. The myelin sheath greatly increases the membrane resistance and decreases capacitance, allowing the electrical signal to travel faster along the axon.
+Between myelinated segments are the nodes of Ranvier, where the axon membrane is exposed. At these nodes, voltage-gated sodium and potassium channels regenerate the action potential, so the signal is “boosted” at each node. This results in saltatory conduction, where the action potential effectively “jumps” from node to node, allowing the neuron to transmit signals rapidly over distances of a meter or more without significant decay.
+
+2) We learn which actions to take in given situations through instrumental learning, a form of reinforcement learning. This can involve two main strategies: goal-directed and habitual.
+
+Goal-directed strategy occurs when we aim for a specific outcome and understand how our actions change the current state. Decisions are made by evaluating possible action sequences to achieve the desired goal. This strategy requires volitional control, high computational effort, and often longer decision times. It is primarily implemented in the dorsomedial striatum.
+
+Habitual strategy develops when a stimulus repeatedly triggers the same response over time. It is automatic, fast, and computationally cheap, but it does not account for the current value of the outcome and is therefore harder to override. Habit formation is mainly associated with the dorsolateral striatum.
+
+Although these strategies are implemented in different brain areas, they are interconnected. An action often starts as goal-directed and, through repeated performance and consolidation, can become habitual over time.
+
+To determine which strategy underlies a given decision, researchers can use outcome devaluation tests under extinction conditions. After overtraining the action, the reinforcer is devalued (made less rewarding). If the subject reduces the action, it indicates goal-directed learning; if the action persists despite devaluation, it reflects a habitual strategy. 

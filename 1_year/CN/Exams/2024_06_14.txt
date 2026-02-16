@@ -1,0 +1,59 @@
+1. Sartarita: Structure (hardware) and function (software) are intimately related in the nervous system. Choose an example from cognitive neuroscience to illustrate that function or cognition directly emerges from the nervous system or brain structure.
+
+2. Starita: Discuss the reward prediction error hypothesis of dopamine neurons, illustrating relevant experimental evidence.
+
+3. Di Pellegrino: quiz
+
+===============================
+
+1) In cognitive neuroscience, we study the intimate relationship between neural structure and cognition. Neuroscience investigates how the nervous system is organized (the hardware), while cognitive science focuses on the processes that emerge from it (the software). Unlike in computers, these two are inseparable: the more a function is used, the more the neurons supporting it fire and strengthen their connections, following Hebb’s law of synaptic plasticity. In this way, the “hardware” itself is reshaped by the “software.”
+This is particularly evident in the cortical homunculus, the representation of body parts in the motor and somatosensory cortices. Body parts are mapped not according to their physical size, but according to their functional importance: for example, the hands and lips occupy disproportionately large areas. Crucially, this map is plastic: when a body part is amputated, its cortical representation becomes unused and is gradually taken over by neighboring regions, while intense use (as in musicians) can enlarge the representation of trained body parts. This demonstrates that brain structure dynamically follows function.
+However, structure does not always adapt: some brain areas are essential for certain functions. For instance, patients with hippocampal damage cannot form new long-term memories, showing that the absence of a critical structure can permanently abolish a specific cognitive function.
+
+
+
+
+
+
+2) Dopamine is a neuromodulator, this means that it is a neurotransmitter, so a chemical signal that influences directly neurons behaviour, but also a modulator of plasticity, influencing the neuron indirectly by conditioning the preceived relevance of inputs to it. Dopamine is not a simple reward signal as it is released proportionally to the prediction error between the expected and the actual reward. It has a complex behaviour, working over various aspects of the reward:
+- Presence or absence
+- Better or worse quality
+- More or less
+- Earlier or later
+- More or less likely to occur
+
+It was proved through multiple experiments with the same experimental setup. It was registered the activation of dopaminergic neurons in monkeys and was observed results over many variations of rewards.
+
+a) Presence or absence (NB: no pavlovian learning here)
+It was given a non edible and edible reward and, since it was expected the second one, it occurred an underactivation. This indicates the presence of signal errors implemented as more (+) or less (-) than expected.
+
+b) More or less 
+They tried also giving an higher/lower magnitude of reward. They divided the quantity in small, medium, large and noticed that the same quantity could elicit proportionally increasing responses while the reward was increasing.
+
+(•) It is a reward prediction error (NB: from now on we have pavlovian learning)
+First of all it was observed that before pavlovian learning there was no reaction to CS but there was a peak at the reward delivery. After pavlovian learning the situation was the opposite. This happened because before the reward was unpredictable but then it is fully predicted. 
+
+c) Better or worse quality
+They tried also giving an higher/lower quality of reward and obtained peak/trough. They also divided the quantity in small, medium, large and noticed that the same quantity could elicit completely different responses in monkey with different expectations. Namely giving a medium amount to monkeys expecting small amounts raised peaks while giving it to monkeys expecting large ones produced troughs.
+
+d) More or less likely to occur
+They used different rewards with different probabilities of being delivered (0, 0.25, 0.5, 0.75, 1). What they observed is that the first two cases presented a small peak in the CS and much higher in the reward. In the central case, the more uncertain, the two peaks were equal. Then in the last two cases the peaks were higher in the CS than in the reward. This introduces probability granularity to the reward observation (•), suggesting that dopamine implements probability.
+
+e) Timing
+Although we did not study timing with a dedicated manipulation, we can infer a temporal representation of reward in dopamine neurons from responses to reward omission after a learned CS. Specifically, a trough occurs at the exact moment when the reward was expected, indicating that the neurons have learned not only the reward magnitude and probability but also its expected timing. The trough reflects a temporal prediction error, showing that dopamine activity encodes both what and when a reward should occur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

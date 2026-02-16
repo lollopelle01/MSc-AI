@@ -1,0 +1,5 @@
+1.⁠ ⁠Starita: Describe how Hebbian plasticity underlies Pavlovian learning and provide specific experimental evidence, such as conditioning of the gill withdrawal reflex in Aplysia Californica.
+
+2.⁠ ⁠Starita: Discuss the reward prediction error (RPE) hypothesis of dopaminergic neuron activity. How does this model challenge the early view of dopamine as merely a ‘feel-good’ neurotransmitter? In your answer, provide a critical analysis supported by relevant experimental evidence.
+
+3.⁠ ⁠Di Pellegrino: Explain why Hierarchical Convolutional Neural Networks (HCNNs) are considered suitable models of the primate ventral visual pathway. In your answer, also discuss their limitations as models of biological vision.
