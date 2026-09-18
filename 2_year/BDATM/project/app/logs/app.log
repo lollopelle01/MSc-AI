@@ -1,0 +1,349 @@
+2026-07-19 17:47:32 INFO     logs.logging_config: Logging initialised. app.log=/Users/pelle/Development/GitHub/aac-mcp-agent/app/logs/app.log, errors.log=/Users/pelle/Development/GitHub/aac-mcp-agent/app/logs/errors.log, agent.log=/Users/pelle/Development/GitHub/aac-mcp-agent/app/logs/agent.log, prompt.log=/Users/pelle/Development/GitHub/aac-mcp-agent/app/logs/prompt.log, file_level=DEBUG
+2026-07-19 17:47:32 DEBUG    settings: Settings loaded from /Users/pelle/Development/GitHub/aac-mcp-agent/app/user_settings.json
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Initializing server 'AAC Pictogram Service'
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for ListToolsRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for CallToolRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for ListResourcesRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for ReadResourceRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for PromptListRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for GetPromptRequest
+2026-07-19 17:47:33 DEBUG    mcp.server.lowlevel.server: Registering handler for ListResourceTemplatesRequest
+2026-07-19 17:47:36 INFO     src.api.server: Using LlamaCppBackend: /Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  (n_ctx=2048)
+2026-07-19 17:47:36 INFO     src.api.server: [WARMUP] background model load started
+2026-07-19 17:47:36 INFO     src.api.server: Creating AACAgent model='qwen2.5:3b'  backend=LlamaCppBackend
+2026-07-19 17:47:36 INFO     mcp_server.dataset_cache: Loaded 15718 keywords for lang='en'.
+2026-07-19 17:47:36 INFO     mcp_server.tools.arasaac: list_keywords(lang='en'): 15718 keywords from local dataset.
+2026-07-19 17:47:36 INFO     agent.agent: Loaded 15718 ARASAAC keywords for lang='en'.
+2026-07-19 17:47:36 INFO     agent.backends: Loading GGUF model from '/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf' (n_ctx=2048) ...
+2026-07-19 17:47:39 INFO     agent.backends: GGUF model loaded.
+2026-07-19 17:47:51 DEBUG    httpcore.connection: connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-07-19 17:47:51 DEBUG    httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x12af83450>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:51 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:51 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:51 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:51 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:51 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:51 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:51 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:51 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:47:53 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:53 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:53 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:53 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:53 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:53 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:53 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:53 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:53 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:53 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:53 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:53 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:47:54 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:54 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:54 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:54 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:54 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:54 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:54 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:54 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:54 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:54 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:54 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:54 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:47:56 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:56 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:56 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:56 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:56 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:56 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:56 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:56 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:56 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:56 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:56 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:56 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:47:56 INFO     agent.backends: [LLAMACPP] prompt_tokens=446 completion_tokens=32
+2026-07-19 17:47:56 INFO     src.api.server: [WARMUP] dummy inference complete
+2026-07-19 17:47:56 INFO     src.api.server: [WARMUP] model ready in 20.4s
+2026-07-19 17:47:57 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:57 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:47:57 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:47:57 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:47:57 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:47:57 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:47:57 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:47:57 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:47:57 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:47:57 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:47:57 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:47:57 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:48:26 INFO     agent.agent: ── Turn 0 ── 'He seems a bit down'
+2026-07-19 17:48:31 INFO     agent.backends: [LLAMACPP] prompt_tokens=231 completion_tokens=6
+2026-07-19 17:48:31 DEBUG    mcp_server.tools.time_tool: get_time() -> 2026-07-19 17:48 | afternoon
+2026-07-19 17:48:32 DEBUG    quic: [bce28837793fd7ce] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:48:32 DEBUG    quic: [bce28837793fd7ce] ECH: GREASE extension added to ClientHello
+2026-07-19 17:48:32 DEBUG    quic: [bce28837793fd7ce] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:48:34 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /
+2026-07-19 17:48:37 INFO     mcp_server.tools.schedule_tool: Apple CalDAV: 1 events for 2026-07-19
+2026-07-19 17:48:52 INFO     agent.backends: [LLAMACPP] prompt_tokens=482 completion_tokens=40
+2026-07-19 17:48:52 INFO     mcp_server.dataset_cache: Loaded keyword_index for lang='en' (15718 entries).
+2026-07-19 17:48:52 INFO     mcp_server.dataset_cache: Loaded 13800 pictograms for lang='en'.
+2026-07-19 17:48:52 INFO     mcp_server.tools.arasaac: search_pictograms('i', lang='en'): 7 results from local dataset.
+2026-07-19 17:48:53 INFO     agent.resolve: Loaded keyword embeddings for lang='en': 15718 keywords, dim=384.
+2026-07-19 17:48:57 DEBUG    datasets: PyTorch version 2.2.2 available.
+2026-07-19 17:48:57 INFO     sentence_transformers.SentenceTransformer: Use pytorch device_name: cpu
+2026-07-19 17:48:57 INFO     sentence_transformers.SentenceTransformer: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-07-19 17:48:58 DEBUG    quic: [90491525b54cdfaf] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:48:58 DEBUG    quic: [90491525b54cdfaf] ECH: GREASE extension added to ClientHello
+2026-07-19 17:48:58 DEBUG    quic: [90491525b54cdfaf] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:48:59 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json
+2026-07-19 17:49:01 INFO     agent.resolve: Loaded SentenceTransformer model 'all-MiniLM-L6-v2' for embedding lookup.
+2026-07-19 17:49:03 INFO     agent.resolve: Embedding nearest('down') → 'get down'  score=0.792  threshold=0.75
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('get down', lang='en'): 1 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('sad', lang='en'): 4 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('feel', lang='en'): 7 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('depressed', lang='en'): 4 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('unhappy', lang='en'): 4 results from local dataset.
+2026-07-19 17:49:03 DEBUG    agent.resolve: Embedding nearest('mood') — best score 0.638 below threshold 0.75, no match.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms('negative', lang='en'): 1 results from local dataset.
+2026-07-19 17:49:03 DEBUG    agent.resolve: Embedding nearest('withdrawn') — best score 0.690 below threshold 0.75, no match.
+2026-07-19 17:49:03 INFO     mcp_server.dataset_cache: Loaded synset_index for lang='en' (8422 synsets).
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06841868-n, lang=en): 50 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06831828-n, lang=en): 50 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01962311-v, lang=en): 3 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01982590-v, lang=en): 4 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01364779-a, lang=en): 5 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00155165-a, lang=en): 5 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00707060-s, lang=en): 6 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110460-v, lang=en): 5 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110960-v, lang=en): 5 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208316-v, lang=en): 2 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208838-v, lang=en): 8 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01212242-v, lang=en): 1 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02163627-v, lang=en): 3 results from local dataset.
+2026-07-19 17:49:03 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00359614-s, lang=en): 1 results from local dataset.
+2026-07-19 17:49:03 INFO     agent.agent: Turn 0 done — 25 pictograms
+2026-07-19 17:49:03 INFO     src.api.server: /run turn=1  input='He seems a bit down'  results=25  tools_called=True
+2026-07-19 17:49:17 INFO     src.api.server: /select  pid=6632  label='I'
+2026-07-19 17:49:17 INFO     agent.agent: ── Turn 1 ── 'He seems a bit down'
+2026-07-19 17:49:23 INFO     agent.backends: [LLAMACPP] prompt_tokens=181 completion_tokens=6
+2026-07-19 17:49:23 DEBUG    mcp_server.tools.time_tool: get_time() -> 2026-07-19 17:49 | afternoon
+2026-07-19 17:49:23 DEBUG    quic: [6d8fdb7584823def] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:49:23 DEBUG    quic: [6d8fdb7584823def] ECH: GREASE extension added to ClientHello
+2026-07-19 17:49:23 DEBUG    quic: [6d8fdb7584823def] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:49:24 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /
+2026-07-19 17:49:27 INFO     mcp_server.tools.schedule_tool: Apple CalDAV: 1 events for 2026-07-19
+2026-07-19 17:49:44 INFO     agent.backends: [LLAMACPP] prompt_tokens=432 completion_tokens=29
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('i', lang='en'): 7 results from local dataset.
+2026-07-19 17:49:44 INFO     agent.resolve: Embedding nearest('down') → 'get down'  score=0.792  threshold=0.75
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('get down', lang='en'): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('sad', lang='en'): 4 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('afternoon', lang='en'): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('time', lang='en'): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('apple', lang='en'): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('calendar', lang='en'): 2 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms('test', lang='en'): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06841868-n, lang=en): 50 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06831828-n, lang=en): 50 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01962311-v, lang=en): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01982590-v, lang=en): 4 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01364779-a, lang=en): 5 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00155165-a, lang=en): 5 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00707060-s, lang=en): 6 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=15191238-n, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=15295388-n, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00028468-n, lang=en): 4 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00458406-n, lang=en): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00119765-r, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00491904-v, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=07755101-n, lang=en): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=15198526-n, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=08283770-n, lang=en): 3 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02537291-v, lang=en): 5 results from local dataset.
+2026-07-19 17:49:44 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=07211681-n, lang=en): 1 results from local dataset.
+2026-07-19 17:49:44 INFO     agent.agent: Turn 1 done — 25 pictograms
+2026-07-19 17:49:44 INFO     src.api.server: /run turn=2  input='He seems a bit down'  results=25  tools_called=True
+2026-07-19 17:50:44 DEBUG    httpcore.connection: close.started
+2026-07-19 17:50:44 DEBUG    httpcore.connection: close.complete
+2026-07-19 17:50:44 DEBUG    httpcore.connection: connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-07-19 17:50:44 DEBUG    httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x125b9c290>
+2026-07-19 17:50:44 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:50:44 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:50:44 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:50:44 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:50:44 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:50:44 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:50:44 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:50:44 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:50:44 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:50:44 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:50:44 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:50:44 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:51:13 DEBUG    httpcore.connection: close.started
+2026-07-19 17:51:13 DEBUG    httpcore.connection: close.complete
+2026-07-19 17:51:13 DEBUG    httpcore.connection: connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-07-19 17:51:13 DEBUG    httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x27adb40d0>
+2026-07-19 17:51:13 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 17:51:13 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 17:51:13 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 17:51:13 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 17:51:13 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 17:51:13 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 15:51:13 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 17:51:13 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 17:51:13 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 17:51:13 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 17:51:13 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 17:51:13 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 17:51:28 INFO     agent.agent: Session reset.
+2026-07-19 17:51:28 INFO     src.api.server: /reset -- session cleared
+2026-07-19 17:52:54 INFO     agent.agent: ── Turn 0 ── 'He seems a bit down'
+2026-07-19 17:53:00 INFO     agent.backends: [LLAMACPP] prompt_tokens=231 completion_tokens=6
+2026-07-19 17:53:00 DEBUG    mcp_server.tools.time_tool: get_time() -> 2026-07-19 17:53 | afternoon
+2026-07-19 17:53:00 DEBUG    quic: [97206bba61650a65] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:53:00 DEBUG    quic: [97206bba61650a65] ECH: GREASE extension added to ClientHello
+2026-07-19 17:53:00 DEBUG    quic: [97206bba61650a65] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:53:01 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /
+2026-07-19 17:53:04 INFO     mcp_server.tools.schedule_tool: Apple CalDAV: 0 events for 2026-07-19
+2026-07-19 17:53:18 INFO     agent.backends: [LLAMACPP] prompt_tokens=461 completion_tokens=37
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('i', lang='en'): 7 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('sad', lang='en'): 4 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('feel', lang='en'): 7 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('depressed', lang='en'): 4 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('unhappy', lang='en'): 4 results from local dataset.
+2026-07-19 17:53:18 DEBUG    agent.resolve: Embedding nearest('mood') — best score 0.638 below threshold 0.75, no match.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('low', lang='en'): 1 results from local dataset.
+2026-07-19 17:53:18 DEBUG    agent.resolve: Embedding nearest('hopeless') — best score 0.571 below threshold 0.75, no match.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms('crying', lang='en'): 1 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06841868-n, lang=en): 50 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06831828-n, lang=en): 50 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01364779-a, lang=en): 5 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00155165-a, lang=en): 5 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00707060-s, lang=en): 6 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110460-v, lang=en): 5 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110960-v, lang=en): 5 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208316-v, lang=en): 2 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208838-v, lang=en): 8 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01212242-v, lang=en): 1 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02163627-v, lang=en): 3 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01056890-v, lang=en): 1 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01050590-v, lang=en): 2 results from local dataset.
+2026-07-19 17:53:18 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00869874-n, lang=en): 1 results from local dataset.
+2026-07-19 17:53:18 INFO     agent.agent: Turn 0 done — 25 pictograms
+2026-07-19 17:53:18 INFO     src.api.server: /run turn=1  input='He seems a bit down'  results=25  tools_called=True
+2026-07-19 17:53:27 INFO     src.api.server: /select  pid=6632  label='I'
+2026-07-19 17:53:27 INFO     agent.agent: ── Turn 1 ── 'He seems a bit down'
+2026-07-19 17:53:32 INFO     agent.backends: [LLAMACPP] prompt_tokens=181 completion_tokens=6
+2026-07-19 17:53:32 DEBUG    mcp_server.tools.time_tool: get_time() -> 2026-07-19 17:53 | afternoon
+2026-07-19 17:53:32 DEBUG    quic: [00afedaa642a151f] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:53:32 DEBUG    quic: [00afedaa642a151f] ECH: GREASE extension added to ClientHello
+2026-07-19 17:53:32 DEBUG    quic: [00afedaa642a151f] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:53:33 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /
+2026-07-19 17:53:36 INFO     mcp_server.tools.schedule_tool: Apple CalDAV: 0 events for 2026-07-19
+2026-07-19 17:53:51 INFO     agent.backends: [LLAMACPP] prompt_tokens=411 completion_tokens=35
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('i', lang='en'): 7 results from local dataset.
+2026-07-19 17:53:51 INFO     agent.resolve: Embedding nearest('down') → 'get down'  score=0.792  threshold=0.75
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('get down', lang='en'): 1 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('sad', lang='en'): 4 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('feel', lang='en'): 7 results from local dataset.
+2026-07-19 17:53:51 DEBUG    agent.resolve: Embedding nearest('mood') — best score 0.638 below threshold 0.75, no match.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('depressed', lang='en'): 4 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('cry', lang='en'): 6 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('sleep', lang='en'): 3 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms('lonely', lang='en'): 2 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06841868-n, lang=en): 50 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06831828-n, lang=en): 50 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01962311-v, lang=en): 3 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01982590-v, lang=en): 4 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01364779-a, lang=en): 5 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00155165-a, lang=en): 5 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00707060-s, lang=en): 6 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110460-v, lang=en): 5 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110960-v, lang=en): 5 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208316-v, lang=en): 2 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208838-v, lang=en): 8 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01212242-v, lang=en): 1 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02163627-v, lang=en): 3 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00065962-v, lang=en): 5 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00869874-n, lang=en): 1 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=07135865-n, lang=en): 1 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00014735-v, lang=en): 8 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00496744-v, lang=en): 1 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=14438119-n, lang=en): 3 results from local dataset.
+2026-07-19 17:53:51 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02258956-s, lang=en): 2 results from local dataset.
+2026-07-19 17:53:51 INFO     agent.agent: Turn 1 done — 25 pictograms
+2026-07-19 17:53:51 INFO     src.api.server: /run turn=2  input='He seems a bit down'  results=25  tools_called=True
+2026-07-19 17:55:49 INFO     src.api.server: /select  pid=35545  label='sad'
+2026-07-19 17:55:50 INFO     agent.agent: ── Turn 2 ── 'He seems a bit down'
+2026-07-19 17:55:54 INFO     agent.backends: [LLAMACPP] prompt_tokens=199 completion_tokens=6
+2026-07-19 17:55:54 DEBUG    mcp_server.tools.time_tool: get_time() -> 2026-07-19 17:55 | afternoon
+2026-07-19 17:55:54 DEBUG    quic: [c85906c165976acf] TLS: Advertising to peer post-quantum algorithm using X25519ML768 (0x11EC)
+2026-07-19 17:55:54 DEBUG    quic: [c85906c165976acf] ECH: GREASE extension added to ClientHello
+2026-07-19 17:55:54 DEBUG    quic: [c85906c165976acf] TLS CLIENT_HANDSHAKE_START -> CLIENT_EXPECT_SERVER_HELLO
+2026-07-19 17:55:55 WARNING  urllib3.connectionpool: Retrying (Retry(total=0, connect=None, read=False, redirect=None, status=None)) after connection broken by 'MustDowngradeError('The server yielded its support for HttpVersion.h3 through the Alt-Svc header while unable to do so. To remediate that issue, either disable HttpVersion.h3 or reach out to the server admin.')': /
+2026-07-19 17:55:59 INFO     mcp_server.tools.schedule_tool: Apple CalDAV: 0 events for 2026-07-19
+2026-07-19 17:56:11 INFO     agent.backends: [LLAMACPP] prompt_tokens=429 completion_tokens=32
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('i', lang='en'): 7 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('sad', lang='en'): 4 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('feel', lang='en'): 7 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('depressed', lang='en'): 4 results from local dataset.
+2026-07-19 17:56:11 DEBUG    agent.resolve: Embedding nearest('mood') — best score 0.638 below threshold 0.75, no match.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('alone', lang='en'): 4 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('time', lang='en'): 3 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms('afternoon', lang='en'): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06841868-n, lang=en): 50 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=06831828-n, lang=en): 50 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01364779-a, lang=en): 5 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00155165-a, lang=en): 5 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00707060-s, lang=en): 6 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110460-v, lang=en): 5 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02110960-v, lang=en): 5 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208316-v, lang=en): 2 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01208838-v, lang=en): 8 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=01212242-v, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02163627-v, lang=en): 3 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=02258956-s, lang=en): 2 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00496744-v, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=14438119-n, lang=en): 3 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=15295388-n, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00028468-n, lang=en): 4 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00458406-n, lang=en): 3 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00119765-r, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=00491904-v, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     mcp_server.tools.arasaac: search_pictograms_by_synset(synset=15191238-n, lang=en): 1 results from local dataset.
+2026-07-19 17:56:11 INFO     agent.agent: Turn 2 done — 25 pictograms
+2026-07-19 17:56:11 INFO     src.api.server: /run turn=3  input='He seems a bit down'  results=25  tools_called=True
+2026-07-19 18:22:17 DEBUG    httpcore.connection: close.started
+2026-07-19 18:22:17 DEBUG    httpcore.connection: close.complete
+2026-07-19 18:22:17 DEBUG    httpcore.connection: connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-07-19 18:22:17 DEBUG    httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x279d7f5d0>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 16:22:17 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 18:22:17 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 18:22:17 DEBUG    httpcore.http11: response_closed.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_headers.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: send_request_body.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 19 Jul 2026 16:22:17 GMT'), (b'Content-Length', b'1793')])
+2026-07-19 18:22:17 INFO     httpx: HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-07-19 18:22:17 DEBUG    httpcore.http11: receive_response_body.complete
+2026-07-19 18:22:17 DEBUG    httpcore.http11: response_closed.started
+2026-07-19 18:22:17 DEBUG    httpcore.http11: response_closed.complete

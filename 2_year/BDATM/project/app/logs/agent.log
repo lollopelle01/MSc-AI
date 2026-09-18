@@ -1,0 +1,83 @@
+[INPUT]  turn=0  user='He seems a bit down'  history_turns=0  history='(none)'
+[DECIDE] needs_context=True  elapsed=5.24s  raw='{"needs_context": true}'
+[CTX]    tool_calls=['get_time', 'get_schedule']  time_of_day='afternoon'  exact_time='17:48'  events=1  [BDATM test from apple calendar@15:00:00]  context_block='time=afternoon (17:48) | schedule: BDATM test from apple calendar at 15:00:00'
+[PLAN IN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=True  user_msg='Context:\ntime=afternoon (17:48) | schedule: BDATM test from apple calendar at 15:00:00\n\nCaregiver: "He seems a bit down"\n\nHint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with \'I\' (the AAC user\'s self-reference), regardless of whether the caregiver says \'he\', \'she\', \'they\', or \'you\'. Then list semantic concepts from the caregiver\'s input.'
+[PLAN]   elapsed=15.04s  concepts=['I', 'down', 'sad', 'feeling', 'depressed', 'unhappy', 'mood', 'negative', 'withdrawn']  (deduped 10-->9)  raw='{"concepts": ["I", "down", "sad", "feeling", "depressed", "unhappy", "mood", "negative", "depressed", "withdrawn"]}'
+[RESOLVE] 'I' → queries=['i']  new_candidates=7  [method=exact]
+[RESOLVE] 'down' → queries=['get down']  new_candidates=1  [method=embedding]
+[RESOLVE] 'sad' → queries=['sad']  new_candidates=4  [method=exact]
+[RESOLVE] 'feeling' → queries=['feel']  new_candidates=7  [method=lemma]
+[RESOLVE] 'depressed' → queries=['depressed']  new_candidates=0  [method=exact]
+[RESOLVE] 'unhappy' → queries=['unhappy']  new_candidates=0  [method=exact]
+[RESOLVE] 'mood' --> no match  [method=none]
+[RESOLVE] 'negative' → queries=['negative']  new_candidates=1  [method=exact]
+[RESOLVE] 'withdrawn' --> no match  [method=none]
+[SYNSET] pool 20 → 91 (+71 via 14 synset(s))
+[RANK]   strategy=sequential_blocks  pool=91→91  excl=0  window=25
+[RESULT] elapsed=37.08s  window=25  memory_excluded=0  ids=[6632, 2617, 3030, 3117, 31807, 7309, 7310, 33014, 35545, 11959, 2606, 31939, 3293, 30194, 30195, 30196, 30197, 30198, 37719, 26937, 11595, 3021, 3023, 3024, 3025]
+[INPUT]  turn=1  user='He seems a bit down'  history_turns=1  history='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I'
+[DECIDE] needs_context=True  elapsed=5.76s  raw='{"needs_context": true}'
+[CTX]    tool_calls=['get_time', 'get_schedule']  time_of_day='afternoon'  exact_time='17:49'  events=1  [BDATM test from apple calendar@15:00:00]  context_block='time=afternoon (17:49) | schedule: BDATM test from apple calendar at 15:00:00'
+[PLAN IN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False  user_msg='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I\n\nContext:\ntime=afternoon (17:49) | schedule: BDATM test from apple calendar at 15:00:00\n\nCaregiver: "He seems a bit down"'
+[PLAN]   elapsed=16.60s  concepts=['I', 'down', 'sad', 'afternoon', 'time', 'apple', 'calendar', 'test']  raw='{"concepts": ["I", "down", "sad", "afternoon", "time", "apple", "calendar", "test"]}'
+[RESOLVE] 'I' → queries=['i']  new_candidates=7  [method=exact]
+[RESOLVE] 'down' → queries=['get down']  new_candidates=1  [method=embedding]
+[RESOLVE] 'sad' → queries=['sad']  new_candidates=4  [method=exact]
+[RESOLVE] 'afternoon' → queries=['afternoon']  new_candidates=1  [method=exact]
+[RESOLVE] 'time' → queries=['time']  new_candidates=3  [method=exact]
+[RESOLVE] 'apple' → queries=['apple']  new_candidates=3  [method=exact]
+[RESOLVE] 'calendar' → queries=['calendar']  new_candidates=2  [method=exact]
+[RESOLVE] 'test' → queries=['test']  new_candidates=3  [method=exact]
+[SYNSET] pool 24 → 95 (+71 via 18 synset(s))
+[RANK]   strategy=sequential_blocks  pool=95→94  excl=1  window=25
+[RESULT] elapsed=26.92s  window=25  memory_excluded=1  ids=[2617, 3030, 3117, 31807, 7309, 7310, 33014, 35545, 11959, 2606, 31939, 7268, 22631, 27385, 28599, 2462, 13644, 13645, 32488, 3071, 28825, 28826, 38462, 3021, 3023]
+[INPUT]  turn=0  user='He seems a bit down'  history_turns=0  history='(none)'
+[DECIDE] needs_context=True  elapsed=5.26s  raw='{"needs_context": true}'
+[CTX]    tool_calls=['get_time']  time_of_day='afternoon'  exact_time='17:53'  events=0  context_block='time=afternoon (17:53)'
+[PLAN IN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=True  user_msg='Context:\ntime=afternoon (17:53)\n\nCaregiver: "He seems a bit down"\n\nHint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with \'I\' (the AAC user\'s self-reference), regardless of whether the caregiver says \'he\', \'she\', \'they\', or \'you\'. Then list semantic concepts from the caregiver\'s input.'
+[PLAN]   elapsed=14.12s  concepts=['I', 'sad', 'feeling', 'depressed', 'unhappy', 'mood', 'low', 'hopeless', 'crying']  raw='{"concepts": ["I", "sad", "feeling", "depressed", "unhappy", "mood", "low", "hopeless", "crying"]}'
+[RESOLVE] 'I' → queries=['i']  new_candidates=7  [method=exact]
+[RESOLVE] 'sad' → queries=['sad']  new_candidates=4  [method=exact]
+[RESOLVE] 'feeling' → queries=['feel']  new_candidates=7  [method=lemma]
+[RESOLVE] 'depressed' → queries=['depressed']  new_candidates=0  [method=exact]
+[RESOLVE] 'unhappy' → queries=['unhappy']  new_candidates=0  [method=exact]
+[RESOLVE] 'mood' --> no match  [method=none]
+[RESOLVE] 'low' → queries=['low']  new_candidates=1  [method=exact]
+[RESOLVE] 'hopeless' --> no match  [method=none]
+[RESOLVE] 'crying' → queries=['crying']  new_candidates=1  [method=exact]
+[SYNSET] pool 20 → 87 (+67 via 14 synset(s))
+[RANK]   strategy=sequential_blocks  pool=87→87  excl=0  window=25
+[RESULT] elapsed=23.89s  window=25  memory_excluded=0  ids=[6632, 2617, 3030, 3117, 31807, 7309, 7310, 35545, 11959, 2606, 31939, 3293, 30194, 30195, 30196, 30197, 30198, 37719, 7169, 35881, 11595, 3021, 3023, 3024, 3025]
+[INPUT]  turn=1  user='He seems a bit down'  history_turns=1  history='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I'
+[DECIDE] needs_context=True  elapsed=5.15s  raw='{"needs_context": true}'
+[CTX]    tool_calls=['get_time']  time_of_day='afternoon'  exact_time='17:53'  events=0  context_block='time=afternoon (17:53)'
+[PLAN IN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False  user_msg='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I\n\nContext:\ntime=afternoon (17:53)\n\nCaregiver: "He seems a bit down"'
+[PLAN]   elapsed=15.41s  concepts=['I', 'down', 'sad', 'feeling', 'mood', 'depressed', 'cry', 'sleep', 'lonely']  raw='{"concepts": ["I", "down", "sad", "feeling", "mood", "depressed", "cry", "sleep", "lonely"]}'
+[RESOLVE] 'I' → queries=['i']  new_candidates=7  [method=exact]
+[RESOLVE] 'down' → queries=['get down']  new_candidates=1  [method=embedding]
+[RESOLVE] 'sad' → queries=['sad']  new_candidates=4  [method=exact]
+[RESOLVE] 'feeling' → queries=['feel']  new_candidates=7  [method=lemma]
+[RESOLVE] 'mood' --> no match  [method=none]
+[RESOLVE] 'depressed' → queries=['depressed']  new_candidates=0  [method=exact]
+[RESOLVE] 'cry' → queries=['cry']  new_candidates=6  [method=exact]
+[RESOLVE] 'sleep' → queries=['sleep']  new_candidates=3  [method=exact]
+[RESOLVE] 'lonely' → queries=['lonely']  new_candidates=2  [method=exact]
+[SYNSET] pool 30 → 110 (+80 via 20 synset(s))
+[RANK]   strategy=sequential_blocks  pool=110→109  excl=1  window=25
+[RESULT] elapsed=24.64s  window=25  memory_excluded=1  ids=[2617, 3030, 3117, 31807, 7309, 7310, 33014, 35545, 11959, 2606, 31939, 3293, 30194, 30195, 30196, 30197, 30198, 37719, 7147, 28645, 32298, 3239, 35881, 37924, 6479]
+[INPUT]  turn=2  user='He seems a bit down'  history_turns=2  history='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I\n  Turn 1 (afternoon): "He seems a bit down" → sad'
+[DECIDE] needs_context=True  elapsed=4.31s  raw='{"needs_context": true}'
+[CTX]    tool_calls=['get_time']  time_of_day='afternoon'  exact_time='17:55'  events=0  context_block='time=afternoon (17:55)'
+[PLAN IN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False  user_msg='Recent conversation history:\n  Turn 0 (afternoon): "He seems a bit down" → I\n  Turn 1 (afternoon): "He seems a bit down" → sad\n\nContext:\ntime=afternoon (17:55)\n\nCaregiver: "He seems a bit down"'
+[PLAN]   elapsed=12.81s  concepts=['I', 'sad', 'feeling', 'depressed', 'mood', 'alone', 'time', 'afternoon']  raw='{"concepts": ["I", "sad", "feeling", "depressed", "mood", "alone", "time", "afternoon"]}'
+[RESOLVE] 'I' → queries=['i']  new_candidates=7  [method=exact]
+[RESOLVE] 'sad' → queries=['sad']  new_candidates=4  [method=exact]
+[RESOLVE] 'feeling' → queries=['feel']  new_candidates=7  [method=lemma]
+[RESOLVE] 'depressed' → queries=['depressed']  new_candidates=0  [method=exact]
+[RESOLVE] 'mood' --> no match  [method=none]
+[RESOLVE] 'alone' → queries=['alone']  new_candidates=4  [method=exact]
+[RESOLVE] 'time' → queries=['time']  new_candidates=3  [method=exact]
+[RESOLVE] 'afternoon' → queries=['afternoon']  new_candidates=1  [method=exact]
+[SYNSET] pool 26 → 99 (+73 via 20 synset(s))
+[RANK]   strategy=sequential_blocks  pool=99→97  excl=2  window=25
+[RESULT] elapsed=21.90s  window=25  memory_excluded=2  ids=[2617, 3030, 3117, 31807, 7309, 7310, 11959, 2606, 31939, 3293, 30194, 30195, 30196, 30197, 30198, 37719, 10213, 25776, 39247, 7253, 22631, 27385, 28599, 7268, 11595]

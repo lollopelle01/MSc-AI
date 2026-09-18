@@ -1,0 +1,98 @@
+# ARASAAC Local Datasets
+
+Submission zip note: to stay under the 100MB size limit, this archive ships without `pictograms/*.png` (thousands of images, slow to download, needed only to view pictograms, not for retrieval logic) and without `en/keyword_embeddings.npz` / `en_eval/keyword_embeddings.npz` (fully regenerable, see [§ Keyword embeddings](#keyword-embeddings)). All the JSON dataset files (`pictograms.json`, `keywords.json`, `keyword_index.json`, `synset_index.json`) for `en` and `en_eval` are included as-is. See [§ Images](#images) for how to get the full image set via gdown, faster but not up to date. See also the [root README § Missing data](../../README.md#missing-data-this-is-a-stripped-down-archive) for the full picture across the whole project.
+
+## How the dataset is built
+
+Running `python datasets/update_datasets.py` performs, per language:
+
+1. Fetch: a single `GET /pictograms/all/{lang}` request returns all pictograms for that language.
+2. Merge: each fetched record is merged into the existing `pictograms.json`, unless `--force` is passed. New IDs are added, existing ones are only overwritten if ARASAAC's `lastUpdated` timestamp is strictly newer than the one stored locally, unchanged records are skipped entirely.
+3. Derive keywords: `keywords.json` is built directly from the merged pictogram records (every keyword string across every pictogram) rather than from a separate `/keywords/{lang}` call, so it stays in sync automatically.
+4. Rebuild indices: `keyword_index.json` and `synset_index.json` are regenerated from scratch from the merged records on every run, covering every keyword and synset of every pictogram.
+5. Write `_meta.json`: build timestamps and record counts for every file.
+6. Images, optional: with `--download-images`, every pictogram PNG not already cached locally is downloaded, very slow.
+
+See [Commands](#commands) for the actual invocations (`--langs`, `--force`, `--download-images`, `--verbose`).
+
+## Layout
+
+```
+datasets/
+  {lang}/
+    _meta.json            per-file build timestamps and record counts
+    keywords.json         full keyword list for that language (list of strings)
+    pictograms.json       { id_str : Pictogram }, all pictograms
+    keyword_index.json    { keyword : [id, ...] }, enables offline search_pictograms()
+    synset_index.json     { synset_id : [id, ...] }, enables offline search_pictograms_by_synset()
+
+  pictograms/
+    {id}.png              language-independent images
+```
+
+## `_meta.json`
+
+Each language directory contains a `_meta.json` that records when each file was last written and how many records it contains:
+
+```json
+{
+  "pictograms":    { "built_at": "2025-04-17T15:00:00Z", "count": 13780, "added": 0, "updated": 3 },
+  "keywords":      { "built_at": "2025-04-17T15:00:00Z", "count": 18400 },
+  "keyword_index": { "built_at": "2025-04-17T15:00:00Z", "count": 18400 },
+  "synset_index":  { "built_at": "2025-04-17T15:00:00Z", "count": 3211 }
+}
+```
+
+`built_at` is the UTC timestamp of the run that wrote each file. For `keyword_index` and `synset_index` (derived from pictogram records, with no upstream timestamp of their own), `built_at` reflects the run that rebuilt them, which happens on every run, so you always know how fresh the derived files are.
+
+## Synsets vs tags vs categories
+
+Synsets are WordNet synset IDs like `"00854425-v"`, language-independent concept identifiers and the most semantically precise handle for retrieval. Tags are free-form editorial labels added by ARASAAC editors, language-dependent. Categories are broad thematic groupings, also language-dependent, good for browsing.
+
+## Commands
+
+```bash
+# Full build for all languages in config.DATASET_LANGS:
+python datasets/update_datasets.py
+
+# Specific languages:
+python datasets/update_datasets.py --langs en it
+
+# Force full re-fetch (ignore lastUpdated):
+python datasets/update_datasets.py --force
+
+# Also pre-download all pictogram images:
+python datasets/update_datasets.py --download-images
+
+# Verbose logging:
+python datasets/update_datasets.py --verbose
+```
+
+## Images
+
+Images are language-independent, the same PNG serves all languages. Stored in `datasets/pictograms/{id}.png`. The MCP server downloads them lazily on first use via `_DatasetCache.get_pictogram_image()`. Pre-download with `--download-images`, slow, one HTTP request per image, thousands of images.
+
+To just view the full pictogram set without regenerating anything, a pre-downloaded archive is available via gdown:
+
+```bash
+pip install gdown
+gdown 1xZGHdEk29XQ0TodoONHOVK6s5V-fyMLT -O pictograms.zip
+unzip pictograms.zip -d datasets
+rm pictograms.zip
+```
+
+## Keyword embeddings
+
+`build_keyword_embeddings.py` generates `{lang}/keyword_embeddings.npz`, used by the last of the 5 strategies in `resolve_concept()`, semantic nearest-neighbour fallback, see [`app/README.md § Concept resolution`](../README.md#concept--keyword-resolution-srcagentresolvepy). Already generated for `en`, must be regenerated by hand for other languages, not required for the agent's basic operation, if the file is missing for a language, that fallback step is simply skipped.
+
+```bash
+python datasets/build_keyword_embeddings.py --lang en
+```
+
+Not regenerated automatically by `update_datasets.py`, run it explicitly whenever the keyword list for a language changes meaningfully.
+
+## `en_eval/`, a frozen evaluation snapshot
+
+`en_eval/` is a separate dataset, same file layout as `en/`, built once by the first notebook in `annotation/` (`arasaac_vs_hf_vs_eval.ipynb`) by merging the local ARASAAC dataset with pictogram IDs only found in the HuggingFace mirror used to build the evaluation sentences. It exists so that every pictogram ID referenced by the evaluation dataset (`annotation/eval_final.parquet`) actually resolves, which isn't guaranteed by the "production" `en/` dataset alone.
+
+Never touched by `update_datasets.py`, treat it as a frozen snapshot. Only regenerated by re-running `annotation/arasaac_vs_hf_vs_eval.ipynb` (see [`annotation/README.md`](../../annotation/README.md)), and only needed if you rebuild the evaluation dataset from scratch. The `eval/` notebooks use `en_eval`, not `en`, as their dataset language for exactly this reason.

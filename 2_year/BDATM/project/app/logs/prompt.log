@@ -1,0 +1,298 @@
+2026-07-19 17:48:26 [DECIDE] turn=? model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+=== SYSTEM ===
+You are deciding whether temporal or schedule context is needed to understand a caregiver's input.
+Return ONLY a JSON object, no explanation, no markdown.
+Format: {"needs_context": <bool>}
+
+needs_context is true when the input is vague, references a routine, implies shared knowledge,
+or leaves the specific activity or objects unstated.
+needs_context is false ONLY when the input explicitly names the activity, timing, and key objects
+— nothing left implicit.
+Empty input → false.
+
+Examples:
+"he keeps covering his ears"          → {"needs_context": true}
+"she is doing physiotherapy at 10:45" → {"needs_context": false}
+
+=== USER ===
+Caregiver: "He seems a bit down"
+
+Hint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with 'I' (the AAC user's self-reference), regardless of whether the caregiver says 'he', 'she', 'they', or 'you'. Then list semantic concepts from the caregiver's input.
+==============
+2026-07-19 17:48:37 [PLAN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=True
+=== SYSTEM ===
+You are an AAC pictogram planner. Return ONLY a JSON object, no explanation.
+Format: {"concepts": ["word1", "word2", ...]}
+
+Generate 5 to 10 concepts. Start with the core concept, then add words a person would naturally
+associate with this situation — objects, actions, feelings, settings.
+Use base forms: infinitive for verbs, singular for nouns.
+No function words, no synonyms, no variants of words already listed.
+If a "Context" block is present in the input, use it to generate more specific and relevant concepts.
+If the input is empty, infer the next concept from session history.
+
+Examples:
+
+Caregiver: "he keeps covering his ears"
+{"concepts": ["I", "ear", "noise", "loud", "pain", "headphone", "quiet", "stop"]}
+
+Caregiver: "she keeps reaching for the snacks"
+{"concepts": ["snack", "hungry", "eat", "food", "want", "more"]}
+
+Caregiver: "she is doing physiotherapy at 10:45 this morning"
+{"concepts": ["physiotherapy", "exercise", "arm", "leg", "stretch", "therapist", "pain", "movement"]}
+
+Caregiver: "coat and shoes, we are going out"
+{"concepts": ["We", "coat", "shoes", "go out", "door", "bag", "ready", "outside"]}
+
+Caregiver: "she keeps pulling at her socks"
+{"concepts": ["I", "sock", "foot", "uncomfortable", "take off", "tight", "hurt"]}
+
+=== USER ===
+Context:
+time=afternoon (17:48) | schedule: BDATM test from apple calendar at 15:00:00
+
+Caregiver: "He seems a bit down"
+
+Hint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with 'I' (the AAC user's self-reference), regardless of whether the caregiver says 'he', 'she', 'they', or 'you'. Then list semantic concepts from the caregiver's input.
+==============
+2026-07-19 17:49:17 [DECIDE] turn=? model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+=== SYSTEM ===
+You are deciding whether temporal or schedule context is needed to understand a caregiver's input.
+Return ONLY a JSON object, no explanation, no markdown.
+Format: {"needs_context": <bool>}
+
+needs_context is true when the input is vague, references a routine, implies shared knowledge,
+or leaves the specific activity or objects unstated.
+needs_context is false ONLY when the input explicitly names the activity, timing, and key objects
+— nothing left implicit.
+Empty input → false.
+
+Examples:
+"he keeps covering his ears"          → {"needs_context": true}
+"she is doing physiotherapy at 10:45" → {"needs_context": false}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+
+Caregiver: "He seems a bit down"
+==============
+2026-07-19 17:49:27 [PLAN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False
+=== SYSTEM ===
+You are an AAC pictogram planner. Return ONLY a JSON object, no explanation.
+Format: {"concepts": ["word1", "word2", ...]}
+
+Generate 5 to 10 concepts. Start with the core concept, then add words a person would naturally
+associate with this situation — objects, actions, feelings, settings.
+Use base forms: infinitive for verbs, singular for nouns.
+No function words, no synonyms, no variants of words already listed.
+If a "Context" block is present in the input, use it to generate more specific and relevant concepts.
+If the input is empty, infer the next concept from session history.
+
+Examples:
+
+Caregiver: "he keeps covering his ears"
+{"concepts": ["I", "ear", "noise", "loud", "pain", "headphone", "quiet", "stop"]}
+
+Caregiver: "she keeps reaching for the snacks"
+{"concepts": ["snack", "hungry", "eat", "food", "want", "more"]}
+
+Caregiver: "she is doing physiotherapy at 10:45 this morning"
+{"concepts": ["physiotherapy", "exercise", "arm", "leg", "stretch", "therapist", "pain", "movement"]}
+
+Caregiver: "coat and shoes, we are going out"
+{"concepts": ["We", "coat", "shoes", "go out", "door", "bag", "ready", "outside"]}
+
+Caregiver: "she keeps pulling at her socks"
+{"concepts": ["I", "sock", "foot", "uncomfortable", "take off", "tight", "hurt"]}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+
+Context:
+time=afternoon (17:49) | schedule: BDATM test from apple calendar at 15:00:00
+
+Caregiver: "He seems a bit down"
+==============
+2026-07-19 17:52:54 [DECIDE] turn=? model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+=== SYSTEM ===
+You are deciding whether temporal or schedule context is needed to understand a caregiver's input.
+Return ONLY a JSON object, no explanation, no markdown.
+Format: {"needs_context": <bool>}
+
+needs_context is true when the input is vague, references a routine, implies shared knowledge,
+or leaves the specific activity or objects unstated.
+needs_context is false ONLY when the input explicitly names the activity, timing, and key objects
+— nothing left implicit.
+Empty input → false.
+
+Examples:
+"he keeps covering his ears"          → {"needs_context": true}
+"she is doing physiotherapy at 10:45" → {"needs_context": false}
+
+=== USER ===
+Caregiver: "He seems a bit down"
+
+Hint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with 'I' (the AAC user's self-reference), regardless of whether the caregiver says 'he', 'she', 'they', or 'you'. Then list semantic concepts from the caregiver's input.
+==============
+2026-07-19 17:53:04 [PLAN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=True
+=== SYSTEM ===
+You are an AAC pictogram planner. Return ONLY a JSON object, no explanation.
+Format: {"concepts": ["word1", "word2", ...]}
+
+Generate 5 to 10 concepts. Start with the core concept, then add words a person would naturally
+associate with this situation — objects, actions, feelings, settings.
+Use base forms: infinitive for verbs, singular for nouns.
+No function words, no synonyms, no variants of words already listed.
+If a "Context" block is present in the input, use it to generate more specific and relevant concepts.
+If the input is empty, infer the next concept from session history.
+
+Examples:
+
+Caregiver: "he keeps covering his ears"
+{"concepts": ["I", "ear", "noise", "loud", "pain", "headphone", "quiet", "stop"]}
+
+Caregiver: "she keeps reaching for the snacks"
+{"concepts": ["snack", "hungry", "eat", "food", "want", "more"]}
+
+Caregiver: "she is doing physiotherapy at 10:45 this morning"
+{"concepts": ["physiotherapy", "exercise", "arm", "leg", "stretch", "therapist", "pain", "movement"]}
+
+Caregiver: "coat and shoes, we are going out"
+{"concepts": ["We", "coat", "shoes", "go out", "door", "bag", "ready", "outside"]}
+
+Caregiver: "she keeps pulling at her socks"
+{"concepts": ["I", "sock", "foot", "uncomfortable", "take off", "tight", "hurt"]}
+
+=== USER ===
+Context:
+time=afternoon (17:53)
+
+Caregiver: "He seems a bit down"
+
+Hint: this is the first turn —> no history yet. The AAC user is always the person the caregiver is speaking ABOUT. Always start your concept list with 'I' (the AAC user's self-reference), regardless of whether the caregiver says 'he', 'she', 'they', or 'you'. Then list semantic concepts from the caregiver's input.
+==============
+2026-07-19 17:53:27 [DECIDE] turn=? model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+=== SYSTEM ===
+You are deciding whether temporal or schedule context is needed to understand a caregiver's input.
+Return ONLY a JSON object, no explanation, no markdown.
+Format: {"needs_context": <bool>}
+
+needs_context is true when the input is vague, references a routine, implies shared knowledge,
+or leaves the specific activity or objects unstated.
+needs_context is false ONLY when the input explicitly names the activity, timing, and key objects
+— nothing left implicit.
+Empty input → false.
+
+Examples:
+"he keeps covering his ears"          → {"needs_context": true}
+"she is doing physiotherapy at 10:45" → {"needs_context": false}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+
+Caregiver: "He seems a bit down"
+==============
+2026-07-19 17:53:36 [PLAN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False
+=== SYSTEM ===
+You are an AAC pictogram planner. Return ONLY a JSON object, no explanation.
+Format: {"concepts": ["word1", "word2", ...]}
+
+Generate 5 to 10 concepts. Start with the core concept, then add words a person would naturally
+associate with this situation — objects, actions, feelings, settings.
+Use base forms: infinitive for verbs, singular for nouns.
+No function words, no synonyms, no variants of words already listed.
+If a "Context" block is present in the input, use it to generate more specific and relevant concepts.
+If the input is empty, infer the next concept from session history.
+
+Examples:
+
+Caregiver: "he keeps covering his ears"
+{"concepts": ["I", "ear", "noise", "loud", "pain", "headphone", "quiet", "stop"]}
+
+Caregiver: "she keeps reaching for the snacks"
+{"concepts": ["snack", "hungry", "eat", "food", "want", "more"]}
+
+Caregiver: "she is doing physiotherapy at 10:45 this morning"
+{"concepts": ["physiotherapy", "exercise", "arm", "leg", "stretch", "therapist", "pain", "movement"]}
+
+Caregiver: "coat and shoes, we are going out"
+{"concepts": ["We", "coat", "shoes", "go out", "door", "bag", "ready", "outside"]}
+
+Caregiver: "she keeps pulling at her socks"
+{"concepts": ["I", "sock", "foot", "uncomfortable", "take off", "tight", "hurt"]}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+
+Context:
+time=afternoon (17:53)
+
+Caregiver: "He seems a bit down"
+==============
+2026-07-19 17:55:50 [DECIDE] turn=? model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+=== SYSTEM ===
+You are deciding whether temporal or schedule context is needed to understand a caregiver's input.
+Return ONLY a JSON object, no explanation, no markdown.
+Format: {"needs_context": <bool>}
+
+needs_context is true when the input is vague, references a routine, implies shared knowledge,
+or leaves the specific activity or objects unstated.
+needs_context is false ONLY when the input explicitly names the activity, timing, and key objects
+— nothing left implicit.
+Empty input → false.
+
+Examples:
+"he keeps covering his ears"          → {"needs_context": true}
+"she is doing physiotherapy at 10:45" → {"needs_context": false}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+  Turn 1 (afternoon): "He seems a bit down" → sad
+
+Caregiver: "He seems a bit down"
+==============
+2026-07-19 17:55:59 [PLAN] model=/Users/pelle/Development/GitHub/aac-mcp-agent/app/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf  hint_present=False
+=== SYSTEM ===
+You are an AAC pictogram planner. Return ONLY a JSON object, no explanation.
+Format: {"concepts": ["word1", "word2", ...]}
+
+Generate 5 to 10 concepts. Start with the core concept, then add words a person would naturally
+associate with this situation — objects, actions, feelings, settings.
+Use base forms: infinitive for verbs, singular for nouns.
+No function words, no synonyms, no variants of words already listed.
+If a "Context" block is present in the input, use it to generate more specific and relevant concepts.
+If the input is empty, infer the next concept from session history.
+
+Examples:
+
+Caregiver: "he keeps covering his ears"
+{"concepts": ["I", "ear", "noise", "loud", "pain", "headphone", "quiet", "stop"]}
+
+Caregiver: "she keeps reaching for the snacks"
+{"concepts": ["snack", "hungry", "eat", "food", "want", "more"]}
+
+Caregiver: "she is doing physiotherapy at 10:45 this morning"
+{"concepts": ["physiotherapy", "exercise", "arm", "leg", "stretch", "therapist", "pain", "movement"]}
+
+Caregiver: "coat and shoes, we are going out"
+{"concepts": ["We", "coat", "shoes", "go out", "door", "bag", "ready", "outside"]}
+
+Caregiver: "she keeps pulling at her socks"
+{"concepts": ["I", "sock", "foot", "uncomfortable", "take off", "tight", "hurt"]}
+
+=== USER ===
+Recent conversation history:
+  Turn 0 (afternoon): "He seems a bit down" → I
+  Turn 1 (afternoon): "He seems a bit down" → sad
+
+Context:
+time=afternoon (17:55)
+
+Caregiver: "He seems a bit down"
+==============
