@@ -1,0 +1,36 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Linear Classifier}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definition}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Training}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Feature selection}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Deep Neural Networks}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definition}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Training}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Backpropagation}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Convolutional Neural Networks}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Limits of DNNs in computer vision}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Definition}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Building blocks}{7}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Convolution Layer}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Batch Normalization Layer}{8}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Pooling Layer}{9}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Fully Connected Layer}{10}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Separable Convolutions}{10}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Spatially Separable Convolutions}{10}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Depthwise Separable Convolutions}{11}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Parameter Reduction Ratio}{11}{subsubsection.3.4.3}%
+\contentsline {section}{\numberline {4}Quantization \& Pruning}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Numeric Data Types}{12}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Integer}{12}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Fixed-Point Number}{12}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Floating-Point Number}{13}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Quantization}{13}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Linear Quantization}{14}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Fixed Precision vs Mixed Precision}{16}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Binary Neural Networks}{17}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Non-Uniform quantization}{17}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Strategies}{18}{subsubsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.3}Pruning}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Strategies}{19}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Limitations}{19}{subsubsection.4.3.2}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

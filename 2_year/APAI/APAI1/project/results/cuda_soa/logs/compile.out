@@ -1,0 +1,10 @@
+====================================================================
+Compilation started on slurmng-n1 at Sun Apr  5 11:50:09 PM CEST 2026
+====================================================================
+compiled: kmeans_cuda
+
+====================================================================
+All binaries in results/experiment_binaries/:
+total 884K
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 878K Apr  5 23:50 kmeans_cuda
+====================================================================

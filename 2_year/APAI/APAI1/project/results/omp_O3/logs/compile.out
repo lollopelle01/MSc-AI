@@ -1,0 +1,23 @@
+====================================================================
+Compilation started on slurmng-n1 at Tue Mar 31 11:36:23 PM CEST 2026
+====================================================================
+compiled: kmeans_base
+compiled: kmeans_base_O3
+compiled: kmeans_base_O3_simd
+
+====================================================================
+All binaries in results/experiment_binaries/:
+total 344K
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 31 23:36 kmeans_base
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 31 23:36 kmeans_base_O3
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 31 23:36 kmeans_base_O3_simd
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 13 14:59 kmeans_O0
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 18K Mar 13 14:59 kmeans_O1
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 13 14:59 kmeans_O2
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 13 14:59 kmeans_O3
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 26K Mar 13 14:59 kmeans_O3_native
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 28K Mar 13 14:59 kmeans_O3_native_ffast
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 28K Mar 13 14:59 kmeans_O3_native_ffast_simd
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 26K Mar 13 14:59 kmeans_O3_native_simd
+-rwxr-xr-x 1 lorenzo.pellegrino2 lorenzo.pellegrino2 22K Mar 13 17:02 kmeans_simd
+====================================================================

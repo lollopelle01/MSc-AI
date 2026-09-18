@@ -1,0 +1,64 @@
+%% Custom Macros and Environments %% 
+
+% Box for important notes
+\newcommand{\mybox}[1]{%
+\begin{tcolorbox}[
+enhanced,
+sharp corners,
+colback=gray!5,
+colframe=black,
+left=2mm,
+boxrule=0.4pt,
+frame hidden,
+borderline west={1pt}{0pt}{black} % now recognized
+]
+#1
+\end{tcolorbox}
+}
+
+
+% Box for examples
+% #1 = title, #2 = content
+\newcommand{\example}[2]{%
+\begin{tcolorbox}[
+    enhanced,
+    sharp corners=2mm,                        % slightly rounded corners
+    colback=blue!3!white,                       % background color
+    borderline west={1pt}{0pt}{blue!60!black},  % left border
+    left=2mm,                                   % inner left margin
+    boxrule=0.4pt,                              % border thickness
+    frame hidden,                               % hide main frame
+    title=#1                                    % title of the box
+]
+#2
+\end{tcolorbox}
+}
+
+% Box for code snippets, required for next command
+\lstdefinestyle{mycode}{%
+    backgroundcolor=\color{gray!10},        % background color
+    basicstyle=\ttfamily\small,             % font style and size
+    frame=single,                           % frame around code
+    rulecolor=\color{black!30},             % color of frame
+    keywordstyle=\color{blue}\bfseries,     % keywords styling
+    commentstyle=\color{gray!70}\itshape,   % comments styling
+    stringstyle=\color{teal},               % strings styling
+    numbers=left,                           % line numbers position
+    numberstyle=\tiny\color{gray!70},       % line numbers style
+    stepnumber=1,                           % number every line
+    numbersep=8pt,                          % space between numbers and code
+    breaklines=true,                        % automatic line breaking
+    showstringspaces=false,                 % hide space markers
+    tabsize=4,                              % tab width
+    captionpos=b                            % caption position (b=bottom)
+}
+
+% Command for inline code snippets or small listings
+% #1 = language, #2 = caption (optional)
+\newcommand{\code}[2]{%
+\lstset{style=mycode, language=#1, caption={#2}}
+\lstinline|
+}
+
+% Remove automatic paragraph indentation
+\setlength{\parindent}{0pt}

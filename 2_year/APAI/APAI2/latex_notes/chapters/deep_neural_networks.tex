@@ -1,0 +1,103 @@
+\section{Deep Neural Networks}
+
+\subsection{Definition}
+DNNs are foundamentally extensions of the linear perceptron. It is the is the simplest type of artificial neuron, a computational model inspired by a biological neuron. It can only classify the input vectors into two categories (binary classification).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{Images/perceptron.png}
+    \caption{Linear perceptron vs Neuron}
+    \label{fig:placeholder}
+\end{figure}
+
+The DNNs then are built by composing multiple perceptrons in layers (input, hidden, output) and then applying non-linear activation functions at each neuron so the network can approximate complex, non-linear mappings.
+
+\subsection{Training}
+
+In order to choose which are the best weights for achieving the best performance the DNN must be trained. The procedure consist in taking an input $x_i$, applying inference (forward propagation) in order to obtain a result $y_i$. \\
+Then, using the loss function measures how much the prediction differed from the true label $\hat{y}_i$. \\
+Then, thanks to gradient backpropagation (backward propagation), we can measure how much each weight contributed to the final error. \\
+In the end the optimizer updated properly the weights in order to correct the prediction.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Images/training_schema.png}
+    \caption{General DNN training loop}
+    \label{fig:placeholder}
+\end{figure}
+
+Since the gradients are computed with respect to the loss, their exact computation would require averaging over all data points in the dataset, which is impractical for modern large-scale datasets.  \\
+To address this, \textbf{minibatches} are introduced: subsets of the dataset containing a manageable number of samples that still statistically approximate the overall data distribution.  \\
+A complete iteration over all minibatches(thus processing the entire dataset once)is called an \textbf{epoch}.
+
+\subsection{Backpropagation}
+
+Backpropagation is the algorithm used to compute how much each weight in a neural network contributed to the total output error.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/backpropagation.png}
+    \caption{Backpropagation in one perceptron}
+    \label{fig:placeholder}
+\end{figure}
+
+It provides the gradients of the loss function with respect to all parameters of the model and consists of the following phases:
+
+\begin{enumerate}
+    \item \textbf{Forward pass}  
+    Each input sample is propagated through the network layer by layer.  
+    For each layer $l = 1, 2, \dots, L$:
+    \[
+    z^{(l)} = W^{(l)} a^{(l-1)} + b^{(l)}, \qquad a^{(l)} = f^{(l)}(z^{(l)}),
+    \]
+    where $a^{(0)} = x$ is the input vector.  
+    During this step, all intermediate values $z^{(l)}$ and $a^{(l)}$ are stored because they are required later to compute local gradients.  
+    The final output $\hat{y} = a^{(L)}$ is compared with the target label $y$ using a loss function $L(\hat{y}, y)$.
+
+    \item \textbf{Backward pass}  
+    The backward phase computes how the loss changes with respect to every parameter by applying the chain rule of calculus in reverse order (from the output layer back to the first hidden layer).  \\
+    For the output layer ($l = L$):
+    \[
+    \delta^{(L)} = \frac{\partial L}{\partial a^{(L)}} \, f'^{(L)}(z^{(L)}),
+    \]
+    where the multiplication is elementwise.  \\
+    For hidden layers ($l = L-1, L-2, \dots, 1$):
+    \[
+    \delta^{(l)} = (W^{(l+1)})^T \delta^{(l+1)} \, f'^{(l)}(z^{(l)}).
+    \]
+    Each $\delta^{(l)}$ represents the local error signal for layer $l$, showing how sensitive the loss is to changes in its pre-activation values.
+
+    \item \textbf{Gradient computation and aggregation}  
+    Once the $\delta^{(l)}$ values are known for all $l = 1, \dots, L$, the gradients of the loss with respect to the weights and biases are computed as:
+    \[
+    \frac{\partial L}{\partial W^{(l)}} = \delta^{(l)} (a^{(l-1)})^T, \qquad
+    \frac{\partial L}{\partial b^{(l)}} = \delta^{(l)}.
+    \]
+    When using minibatches, these gradients are averaged across all samples in the batch:
+    \[
+    \nabla W^{(l)} = \frac{1}{m} \sum_{i=1}^{m} \frac{\partial L_i}{\partial W^{(l)}}, \qquad l = 1, \dots, L,
+    \]
+    where $m$ is the batch size.
+
+    \item \textbf{Optimization step}  
+    The optimizer uses the computed gradients to update the parameters for each layer $l = 1, \dots, L$.  
+    In the case of gradient descent:
+    \[
+    W^{(l)} \leftarrow W^{(l)} - \eta \nabla W^{(l)}, \qquad
+    b^{(l)} \leftarrow b^{(l)} - \eta \nabla b^{(l)},
+    \]
+    where $\eta$ is the learning rate controlling the magnitude of each update.  
+    More advanced optimizers (e.g. Adam) adapt $\eta$ dynamically based on running statistics of past gradients, but they still rely on the same gradients computed via backpropagation.
+
+    \mybox{The learning rate can be made dynamic depending on the training progress, typically measured in \textbf{total steps} or epochs.  
+The total number of steps $T$ is given by
+\[
+T = \text{epochs} \times \frac{N}{B},
+\]
+where $N$ is the total number of training samples and $B$ is the minibatch size.  
+Dynamic learning rates can be implemented using learning rate schedulers, which adjust the learning rate as a function of the current step or epoch (e.g. cosine, one-cycle).
+}
+
+\end{enumerate}
+
+\newpage

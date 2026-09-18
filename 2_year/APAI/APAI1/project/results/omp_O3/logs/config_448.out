@@ -1,0 +1,20 @@
+================================================================================
+Machine metadata:
+================================================================================
+CPU Vendor: AuthenticAMD
+CPU Model: Common KVM processor
+CPU Cores:                       8
+Threads per core: 1
+Threads per core: 1 (no symmetric multithreading)
+CPU MHz: 
+RAM: 62.79 GB
+OS: Debian GNU/Linux 12 (bookworm)
+GCC version: gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+================================================================================
+Experiment results:
+================================================================================
+Repetition 1: t_classify = 3.189 s, t_update = 0.151 s, total = 3.340 s, n_iter = 100, final_shift = 0.050064
+Repetition 2: t_classify = 3.190 s, t_update = 0.140 s, total = 3.330 s, n_iter = 100, final_shift = 0.050064
+Repetition 3: t_classify = 3.199 s, t_update = 0.129 s, total = 3.328 s, n_iter = 100, final_shift = 0.050064
+Repetition 4: t_classify = 3.195 s, t_update = 0.151 s, total = 3.345 s, n_iter = 100, final_shift = 0.050064
+Repetition 5: t_classify = 3.219 s, t_update = 0.080 s, total = 3.299 s, n_iter = 100, final_shift = 0.050064

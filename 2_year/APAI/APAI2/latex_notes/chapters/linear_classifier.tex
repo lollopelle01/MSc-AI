@@ -1,0 +1,34 @@
+\section{Linear Classifier}
+\subsection{Definition}
+A linear classifier is described by the equation $f(x,W)=Wx+b$, where:  \\
+\begin{itemize}
+    \item $x \in \mathbf{R^d}$ is the input vector, a single observation living in a $d$-dimensional space where each coordinate represents a measured feature. In geometric terms, $x$ is a point in the landscape the classifier must learn to partition.
+    
+    \item $W \in \mathbf{R^{d \times k}}$ contains the model’s parameters. Each column defines a direction in feature space associated with one class: together they form $k$ geometric “templates” the model uses to evaluate similarity. Changing $W$ reshapes the orientation of the decision hyperplanes, dictating how sensitive the classifier is to each input dimension. In practice it measures how much each of the $d$ features of the input contributes to the construction of the score for each of the possible $k$ classes.
+    
+    \item $b \in \mathbf{R^k}$ is the bias vector, translating those hyperplanes through space. It decouples the classification boundaries from the origin, allowing the model to represent structure that does not naturally center around zero—a small but essential freedom for any realistic dataset.
+\end{itemize}
+\subsection{Training}
+When we train the classifier we want to find the best weights and biases so that the model best represents all the classes. In order to evaluate the classifier there is the concept of loss. \\\\
+A loss $L_i$ is a function that, considering a known dataset $(x_i,y_i)$ with $i \in[1,N]$ where for each input $x_i$ there is a known ground truth class $y_i$, computes the difference between the prediction and the true label. It is averaged over all the data in the dataset. Moreover regularization is applied: we give a weight $\lambda$ to how $R(\cdot)$ interprets a complexity of the model which is represented by $W$. In this way we penalize the model from overfitting the training data.
+$$L=\frac{1}{N}\sum_iL_i(f_i(x,W), y_i) + \lambda R(W)$$
+\\
+A major limitation of the linear classifier is that it can only separate data using linear hyperplanes. This constraint makes it ineffective when classes are not linearly separable in the input space, for instance, attempting to classify points arranged in a circular pattern with a straight line is geometrically impossible.
+\\\\
+To overcome this, the \textbf{kernel trick} maps the input data into a higher-dimensional feature space through a kernel function, in which the samples become linearly separable and a linear classifier can operate effectively. Different kernels induce different feature spaces and levels of model complexity. However, higher flexibility comes with the risk of overfitting: as the kernel becomes more expressive, it may fit noise and lose generalization on unseen data, especially in large or noisy datasets (capacity–generalization trade-off).
+
+\subsection{Feature selection}
+Before feeding data into the fully connected (FC) layer, they must be \textbf{preprocessed} to remove noise and highlight the most informative features, thereby improving classification performance. \\ This stage involves two key operations: \textbf{feature extraction}, which constructs new, more expressive features from existing ones, and \textbf{feature selection}, which identifies a subset of the most relevant original features. Both methods aim to reduce dimensionality, eliminating variables that contribute little useful information or that may introduce redundancy and noise. \\By focusing on the most discriminative aspects of the data, the model becomes more efficient, less prone to overfitting, and easier to generalize to unseen samples (e.g. principle component analysis or PCA).
+\\\\
+Before the exploding use of deep neaural networks (DNNs), these operations were done manually or with shallow statistical models. Anyway they had many issues:
+\begin{enumerate}
+    \item \textbf{Manual feature design doesn’t scale}\\
+    Handcrafted features worked for simple, low-dimensional tasks but failed when the structure of the data was intricate or abstract.
+    \item \textbf{Methods assumed linear or low-order relationships}\\
+    Real-world data, however, often contains highly nonlinear dependencies that linear combinations or simple transformations can’t express.
+    \item \textbf{Feature engineering locked learning into a human bias}
+\end{enumerate}
+
+DNNs changed this dynamic by learning hierarchical representations directly from raw data. Lower layers capture simple patterns, and successive layers combine them into complex abstractions. This automatic feature learning removed the need for explicit handcrafted preprocessing and allowed models to adapt their internal representation to the task, yielding far better performance on unstructured, high-dimensional data.
+
+\mybox{Training a deep network means not only learning to classify data, but also learning the representations that make such classification possible.ciao}

@@ -1,0 +1,6 @@
+input_file,n_points,n_dims,k,use_reduction,repetition,final_shift,n_iter,t_classify,t_update,t_tot,block_dim_classify,block_dim_update,grid_classify,grid_classify_optimal,grid_update,grid_update_optimal
+../gen_datasets/gen_N300000_D100_K5.txt,300000,100,10,0,1,0.950909,100,0.089307,0.039386,0.128701,768,768,395,284,395,284
+../gen_datasets/gen_N300000_D100_K5.txt,300000,100,10,0,2,0.950978,100,0.089234,0.039439,0.128681,768,768,395,284,395,284
+../gen_datasets/gen_N300000_D100_K5.txt,300000,100,10,0,3,0.950897,100,0.089283,0.039263,0.128554,768,768,395,284,395,284
+../gen_datasets/gen_N300000_D100_K5.txt,300000,100,10,0,4,0.950946,100,0.089365,0.039529,0.128901,768,768,395,284,395,284
+../gen_datasets/gen_N300000_D100_K5.txt,300000,100,10,0,5,0.950901,100,0.089111,0.039184,0.128303,768,768,395,284,395,284

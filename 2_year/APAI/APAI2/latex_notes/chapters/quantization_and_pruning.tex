@@ -1,0 +1,278 @@
+\section{Quantization \& Pruning}
+We want to make neural networks faster and lighter (both in memory and computation) without sacrificing too much accuracy. The idea is to do that by optimizing how and what numbers are represented in the NNs.
+\subsection{Numeric Data Types}
+\subsubsection{Integer}
+\begin{itemize}
+    \item \textbf{unsigned integer}: \\
+    given $n$-bit the number range is $[0, 2^n-1]$
+    \example{Example}{
+        $10110110_2 \rightarrow 1\cdot 2^7 + 0\cdot 2^6 + 1\cdot 2^5 + 1\cdot 2^4 + 0\cdot 2^3 + 1\cdot 2^2 + 1\cdot 2^1 + 0\cdot 2^0 \rightarrow 182_{10}$
+    }
+
+
+    \item \textbf{signed integer}:
+        \begin{itemize}
+            \item \textbf{sign-magnitude representation}: \\
+            Given $n$-bit the number range is $[-(2^n-1), 2^n-1]$.\\
+            One bit (the MSB) represents the sign, while the remaining $n-1$ bits represent the magnitude. \\
+            Zero has two representations: positive (00..0) and negative (10..0).
+            \example{Example}{
+                $\textbf{0}\,010110110_2$ \rightarrow +182_{10}  \\
+                $\textbf{1}\,010110110_2$ \rightarrow -182_{10} 
+            }
+            \item \textbf{two's complement representation}:
+            Given $n$-bit the number range is $[-2^n, 2^n-1]$.\\
+            Negative numbers are represented by inverting all bits of the positive number and adding 1.\\
+            In this way there is only one representation for zero and arithmetic operations (addition, subtraction) are identical for signed and unsigned integers at the hardware level.\\
+            \example{Example}{
+                $010110110 \rightarrow +182_{10}$ (same as unsigned integer) \\
+                $ 182_2 = 010110110_2\ \rightarrow 101001001_2 + 1 \rightarrow 101001010_2=-182_2$ 
+            }
+        \end{itemize}
+\end{itemize}
+\subsubsection{Fixed-Point Number}
+It is a numeric representation where a fixed number of bits is allocated to the integer part and a fixed number of bits to the fractional part. Unlike floating-point numbers, the position of the radix (decimal) point is constant, which allows for simpler and faster hardware implementations but limits dynamic range.\\
+It benefits from the deterministic precision and performance but suffers the limited dynamic range and so the poor flexibility for high and small values.
+\example{Example}{
+    $01011011000000000_2 \rightarrow (0)(10110110).(00000000)$ \\\\
+    $(0) \rightarrow +$ \\
+    $(10110110_2) \rightarrow (182_{10})$\\
+    $(00000000_2) \rightarrow 0\cdot 2^{-1} + 0\cdot 2^{-2} + ... + 0\cdot 2^{-7} + 0\cdot 2^{-8}=0_{10}$ \\\\
+    $= +182.0$
+}
+
+\subsubsection{Floating-Point Number}
+As the fixed-point number, also this has 3 components: sign, exponent (range), fraction (precision/mantissa). In order to obtain the base-10 value the applied rule is :
+$$(-1)^S × (1 + F) × 2^{(E - B)}$$
+Where $B$, the bias, is needed since the exponent can only be positive and so we need it to represent small values that require negative exponent. Given $n$ bits in the exponent, the bias is $2^{n-1} - 1$.\\
+This structure allows not to set the point statically but dynamically (thanks to the exponent). This allows the same number of significant digits to represent values across an enormous range, from microscopic to astronomical scales.
+\example{Example}{
+    Considering 32-bit with 8-bit exponent, so with bias 127:\\
+    $01000011001101100000000000000000_2\\
+    \Rightarrow (0)(10000110)(01101100000000000000000)_2$\\
+
+    $(0) \rightarrow +$ \\
+    $(10000110_2) \rightarrow 134_{10}$\\
+    $(01101100000000000000000_2) \rightarrow 0.421875_{10}$\\
+    
+    $(+)(1+0.421875) \cdot 2^{134-127} = 1.421875 \cdot 2^7=+182$
+}
+
+\subsection{Quantization}
+This reduces the numerical precision of the model’s parameters and activations. Instead of using high-precision floating-point values (like 32-bit floats), the network uses smaller representations (like 8-bit integers), counteracting the cons of being static with pre-computation and calibration that makes the fixed precision choices data-informed and near-optimal.
+
+In DNN we have two variables to consider:
+\begin{itemize}
+    \item \textbf{weights}: variable in training but fixed at inference time, so the range is known.
+    \item \textbf{activations}: variable also at testing time but dependant on inputs, so they can be evaluated statistically with calibration.
+\end{itemize}
+
+With this procedure, we can achieve significant efficiency gains across the system:
+
+\begin{itemize}
+    \item \textbf{Reduced Memory Footprint:} Transitioning from 32-bit floats to 8-bit integers immediately reduces the model's RAM and ROM occupation by approximately 75\% ($8/32 = 1/4$ of the original size).
+
+    \item \textbf{Increased Data-Transfer Bandwidth:} When loading data, the same hardware instruction can now move 4 times more values (e.g., four 8-bit integers instead of one 32-bit float), effectively quadrupling the memory bandwidth.
+
+    \item \textbf{Optimized Computations:} By converting the problem to integer arithmetic, the CPU can utilize its faster and more power-efficient Arithmetic Logic Units (ALUs) instead of the Floating-Point Units (FPUs). This leads to substantial speed gains and longer battery life. Furthermore, modern SIMD (Single Instruction, Multiple Data) units can perform up to 4 times more operations per cycle on 8-bit integers compared to 32-bit floats, further accelerating parallel computations.
+\end{itemize}
+
+\subsubsection{Linear Quantization}
+It is a technique to map high-precision floating-point numbers (like FP32) to low-precision integers (like INT8). It's called "linear" (or more precisely, "affine") because the mapping from integers to real numbers follows a straight-line equation.
+
+$$r = (q-Z)\cdot S$$
+
+Where:
+\begin{itemize}
+    \item $r$ is the real, floating-point value
+    \item $q$ is the quantized integer value corresponding to $r$
+    \item $Z$ is the Zero Point: an integer value that ensures the real number 0 can be represented exactly by a quantized value. This is crucial for layers like ReLU that produce zeros.
+    \item $S$ is the scale: a floating-point value that defines the step size between each integer value. It scales the integer range to the floating-point range.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/linear_quantization.png}
+    \caption{Linear quantization visualization}
+    \label{fig:linear_quantization}
+\end{figure}
+
+In order to better perform the quantization we have to calibrate the scale and the zero point. According to the problem as represented in Fig.\ref{fig:linear_quantization}, we can estimate them:
+\begin{itemize}
+    \item Scale:
+        \\[1.5ex]
+        $\begin{aligned}[t]
+            &\begin{cases}
+                r_{\text{max}} = S(q_{\text{max}} - Z) \\
+                r_{\text{min}} = S(q_{\text{min}} - Z)
+            \end{cases} 
+            \\[1.5ex]
+            &r_{\text{max}} - r_{\text{min}} = S(q_{\text{max}} - Z) - S(q_{\text{min}} - Z) = S(q_{\text{max}} - q_{\text{min}})
+            \\[1.2ex]
+            &S = \frac{r_{\text{max}} - r_{\text{min}}}{q_{\text{max}} - q_{\text{min}}}
+        \end{aligned}$
+
+    \item Zero point:
+        \\[1.5ex]
+        $\begin{aligned}[t]
+            &r_{\text{min}} = S(q_{\text{min}} - Z)
+            \\[1.5ex]
+            &Z = q_{\text{min}} - \frac{r_{\text{min}}}{S}
+            \\[1.2ex]
+            &Z = \operatorname{round}\left(q_{\text{min}} - \frac{r_{\text{min}}}{S}\right)
+        \end{aligned}$
+
+        mybox{
+            \textbf{NB: there are special cases} \\
+            For weights, that usually are symmetrically distributed around 0, $Z=0$.\\
+            For activations, that usually (because of RELUs) are strongly imbalanced with respect to 0, it is likely to see $Z\neq0$.
+        }
+\end{itemize}
+
+In practice, when we apply the formula to and activation $\textbf{a}$ or to the weights $\textbf{w}$, given $N$-bits the formulas can be seen as:
+
+\begin{table}[H]
+    \centering
+    % \caption{Quantization parameters for activations and weights}
+    \label{tab:placeholder}
+    \begin{tabular}{lcc}
+        \toprule
+        & Scale ($S$) & Zero-point ($Z$) \\
+        \midrule
+        Activations & 
+        $S \;=\; \dfrac{a_{\text{max}} - a_{\text{min}}}{2^N - 1}$ & 
+        $Z \;=\; \dfrac{a_{\text{max}} - a_{\text{min}}}{2}$ \\[4pt]
+        Weights & 
+        $S \;=\; \dfrac{2 \cdot \max(|w_{\text{max}}| - |w_{\text{min}}|)}{2^N - 1}$ & 
+        $Z \;=\; 0$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+Notice that they are simplifications:
+\begin{itemize}
+    \item \textbf{In activations and weights }$q_{\text{max}} - q_{\text{min}} = 2^N-1$\\
+    This is exact and comes from integer representation: with $N$ bits we have $2^N$ discrete values, but the number of steps between them is $2^N-1$. For signed integers in two's complement: $q_{\text{max}} = 2^{N-1}-1$, $q_{\text{min}} = -2^{N-1}$, so $q_{\text{max}} - q_{\text{min}} = 2^N-1$.
+    
+    \item \textbf{In activations }$Z \approx \frac{r_{\text{max}} - r_{\text{min}}}{2}$\\
+    ...mean of the activations...why?
+    
+    \item \textbf{In weights }$r_{\text{max}} - r_{\text{min}} \approx 2 \cdot \operatorname{max}(|r_{\text{max}}|, |r_{\text{min}}|)$\\
+    This simplification forces symmetric quantization around zero. Instead of using the actual range $[r_{\text{min}}, r_{\text{max}}]$, we create a symmetric range $[-\alpha, +\alpha]$ where $\alpha = \operatorname{max}(|r_{\text{max}}|, |r_{\text{min}}|)$. This ensures the range is centered at zero and utilizes the full integer range efficiently for symmetric weight distributions.
+    
+    \item \textbf{In weights }$Z=0$ as explained before.\\
+    This is a design choice for computational efficiency. With symmetric weight distributions centered around zero, setting $Z=0$ eliminates the need for zero-point adjustments in weight-related computations, simplifying the hardware implementation and improving performance.
+\end{itemize}
+
+Then, it is important to remark that for activations we can only estimate the ranges, so after computing the parameters it is necessary another saturation step to ensure that the values fall in the representable range.
+
+\subsubsection{Fixed Precision vs Mixed Precision}
+\begin{itemize}
+    \item \textbf{Fixed precision} \\
+    We choose $N$ bits for quantizing all the network. This has some important problems as not all the layers need quantization in the same way and so we face a tradeoff: a large range (high $N$) to preserve accuracy risks being overly inclusive and wastes memory/compute, while a small range (low $N$) to improve efficiency risks being too exclusive, clipping important values and degrading accuracy. 
+
+    \item \textbf{Mixed Precision} \\
+    Different bit-widths are assigned to different layers or even channels through automated search algorithms (e.g., greedy methods, simulated annealing). This allows precision to be tailored layer-wise, using higher bit-widths for sensitive layers and lower bit-widths for robust ones, achieving optimal trade-offs between model size, computational efficiency, and accuracy.
+\end{itemize}
+
+mybox{
+    \textbf{NOTE}: In both cases the $N$-width can be different in the same layer between activations and weights. Moreover in both cases we can change to vary $S,Z$ across the channels of the same layer.
+}
+
+\subsubsection{Binary Neural Networks}
+They are an extreme form of neural network quantization where both weights and activations are constrained to only two values, $-1$ (represented by logic-0) and $+1$ (represented by logic-1).
+
+This approach achieves massive memory savings (32× reduction) by using 1 bit per value instead of 32 bits. More importantly, it enables radical computational optimizations by replacing traditional Multiply-Accumulate (MAC) operations:
+
+\begin{itemize}
+    \item \textbf{Multiplications are replaced by XNOR operations}\\
+    In binary networks, multiplying two values $\{-1, +1\}$ is equivalent to an XNOR gate when using the logic mapping ($-1 \rightarrow 0$, $+1 \rightarrow 1$). The truth table shows this equivalence:
+    
+    \begin{center}
+    \begin{tabular}{ccc|cc|c}
+    $A$ & $B$ & $A \times B$ & Logic $A$ & Logic $B$ & XNOR \\
+    \hline
+    $-1$ & $-1$ & $+1$ & 0 & 0 & 1 \\
+    $-1$ & $+1$ & $-1$ & 0 & 1 & 0 \\
+    $+1$ & $-1$ & $-1$ & 1 & 0 & 0 \\
+    $+1$ & $+1$ & $+1$ & 1 & 1 & 1 \\
+    \end{tabular}
+    \end{center}
+    
+    This transformation allows replacing floating-point multiplications with single-bit XNOR operations, which are orders of magnitude faster and more energy-efficient.
+    
+    \item \textbf{Additions/accumulations are replaced by Popcount}\\
+    Accumulating binary products requires counting the occurrences of $+1$ and $-1$ results. Let $p$ = count of $+1$s (XNOR=1) and $n$ = count of $-1$s (XNOR=0), with $N = p + n$ (N represents the total number of elements being processed in a given operation, namely the length of the vectors being multiplied and accumulated):
+    
+    $$\text{Accum} = p \cdot (+1) + n \cdot (-1) = p - n = p - (N - p) = 2p - N$$
+    
+    Since $2$ and $N$ are constants, the accumulation is equivalent to counting the number of 1s (popcount). Modern processors can perform popcount operations extremely efficiently, often in a single instruction, making accumulation much faster than traditional addition.
+\end{itemize}
+
+It is important to highlight that the significant footprint reductions and the computational speed-ups have to face the significant drop in accuracy scores.
+
+\subsubsection{Non-Uniform quantization}
+The key idea is: since weight/activation distributions are rarely uniform, why use uniformly spaced quantization points?
+
+So we can explore two main approaches:
+\begin{itemize}
+    \item \textbf{Log-domain quantization} \\
+    Most weights/activations cluster near zero (linear quantization wastes levels on larger values that rarely occur), so we want more quantization levels there. With a logarithmic scale we can inspect negative orders of magnitude.
+    
+    \item \textbf{Weight clustering} (or Learned quantization)   \\
+    Instead of reducing bit-width per value, reduce the number of distinct values. Practically it:
+    \begin{enumerate}
+        \item Groups similar weights into clusters (k-means) and gets their centroids.
+        \item Stores sonly the centroids + cluster indexes. In this way we store a matrix of integers (indexes) and a list of floats (centroids). Saving much more memory instead of storing a matrix of floats.
+        \item When required (inference time), the list of centroids will work as a lookup table, retrieving the float vaulue for the index in a certain cell of the matrix.
+    \end{enumerate}
+\end{itemize}
+
+\subsubsection{Strategies}
+We can so divide those quantization methods into two general principles:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/strategies_schema.jpeg}
+    \caption{Quantization strategies schema}
+    \label{fig:placeholder}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Post-Training Quantization}
+    
+    We train the network, obtain the weights (float) and then, applying a rule/formula we transform them in integers. We don't retrain the network. This methods are preferred as training is very expensive.
+
+    \begin{itemize}
+        \item \textbf{Quantize only weights}\\
+        More common as they are more stable and so you can work better on them after training as they are fixed. The problem is that we have to face operations between two different types of numbers. Typically, we unpack integers into floats for the computation and continue passing floats through the network.
+        This is of course more expensive and minimize the gain from quantization. \\
+        Another solution is to quantize the floats on the fly which is more likely to drop accuracies (computing S/Z on an activation during inference is statistically risky), but we gain in efficiency as we work entirely with quantized data.
+        
+        \item \textbf{Quantize both weights and activations}\\
+        We quantize the activations considering a representative subset of inputs. Typically small amounts of them is sufficient to compute a useful statistics, considering that outliers are handled by saturation.
+    \end{itemize}
+    
+    \item \textbf{Quantization-Aware Training}
+
+    Those methods enable the network, during training, to also learn which is the best quantization. In this way we can achieve better accuracies but of course it is more expensive and so better for smaller networks.\\
+    There are issues issues in backpropagating the gradient of the re-quantization function. During backpropagation we have to round the gradient, but in this way small and useful updates disappers and so training become harder to converge.
+\end{itemize}
+
+\subsection{Pruning}
+
+You compute a network with a lot of weights (different from 0) and then, minimizing the error during the process, you try to set as many of them as possible to 0. This comes from the biological intuition that our best brain capacity doesn't coincide with the moment we have the most synapses. It is a form a compression, as setting weights to 0 il like removing them.
+
+\subsubsection{Strategies}
+\begin{itemize}
+    \item Weight Saliency Pruning (not used)
+    \item \textbf{Magnitude Based Pruning}\\
+    The idea is that we set weights to 0 if they are smaller then a certain amount. I only have to decide a threshold. After the pruning there is a training part as we have to adjust the non-zero weights in order to compensate the changes (to do that we have to freeze the 0 weights). Today networks are very sensitive to pruning.
+    We can also decide to schedule the pruning in order to decide the speed rate of the pruning. Like in learning rate schedulers, starting low and then gradually increasing can lead to better performances.
+
+\subsubsection{Limitations}
+Now we are setting to zero weights without knowing where they are. This can cause the weight matrices to have areas with many zeros and areas without any of them. This is \textbf{unstructured pruning}. The problem is that this irregularity makes it difficult for the hardware to efficiently work on them (e.g. caches, parallel operations).\\
+
+We can solve this by using \textbf{block-based pruning}: we decide the block size and them we enforce a number of weights to zero per each block.\\
+In this way the sparsity is very regular and i can compress the data structure in a very efficient way: store the values in the reduced matrix and then store the indexes of the original matrix where there were 0s.
+\end{itemize}

@@ -1,0 +1,284 @@
+\section{Single-core and Multi-core efficient execution}
+
+\subsection{Convolution as Matrix Multiplication}
+Given a convolution $I*M=O$, we consider the \textbf{Toeplitz Matrix} as the transformed matrix $f(M)$ so that $\operatorname{flatten}(I)\times f(M)=\operatorname{flatten}(O)$.
+This allows us to implement a convolution as matrix multiplication, simplifying the operation even if the new matrix always increases in size with respect to the original. We can do this in both a simple case with a singular channel/activation and in more realistic and complex cases with multiple of them.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/multiple_matrxi_multiplication.jpeg}
+    \caption{Convolution of 2 kernels (with 2 channels) of 2 activations, represented as matrix}
+    \label{fig:placeholder}
+\end{figure}
+Now we know that we can focus on matrix multiplication in order to compute them more efficiently to generally improve the performance of neural networks.
+\begin{mybox}
+    Notice that this idea can be led to the extrema like in high performance GPUs that have to face higher cost and consumptions, but there are also edge processors that work a lower level of performance but that are still enough powerful for small networks.
+\end{mybox}
+
+\subsection{Recap on processor components}
+
+\begin{itemize}
+    \item \textbf{Processor core:} Executes instructions and performs arithmetic, logic, control, and data processing operations.  
+        \begin{itemize}
+            \item \textbf{Registers}: small, fast storage for immediate data and instruction operands. They are called by names and not by indexes.
+            \item \textbf{Caches}: L1/L2/L3 levels providing high-speed access to frequently used data and instructions.
+        \end{itemize}
+
+    \item \textbf{Main memory:} The system’s volatile working area (RAM) where currently running programs and active data reside. It provides fast access but is erased when power is lost.
+
+    \item \textbf{Storage memory:} Non-volatile memory such as SSDs or HDDs used for long-term data retention. Much slower than RAM but persistent across reboots.
+
+    \item \textbf{System bus:} Communication backbone connecting processor, main memory, and I/O modules. It carries data, addresses, and control signals among system components. The more bits it is provided with and the more data it can carry within one cycle.
+
+    \item \textbf{I/O modules:} Interfaces between the processor/memory and external devices (keyboard, display, network, sensors), handling data transfer, buffering, and device-specific control.
+\end{itemize}
+
+The core identifies the components in the Address space, which is the range of memory addresses a processor can generate and access.
+If a CPU has an address bus of $N$ bits, it can uniquely identify $2^N$ memory locations.
+
+\subsection{RISC-V ISA}
+There are 3 main "languages" (ISA or Instruction Set Architecture) for computers, meaning sets of instructions that are human readable but directly connected with the hardware: X86 (intel,amd), ARM (mobiles, datacenters), RISC-V (small computers). The main difference from the others is that it is not proprietary. The set of these instructions is small but generic (turing equivalent language).
+
+\subsection{Specialized processors for AI}
+
+To improve performance in AI workloads, processors are designed with increasingly specialized instruction sets and architectures. The goal is to execute complex AI operations (such as matrix multiplications or convolutions) more efficiently than a general-purpose CPU could.
+
+An efficient chip must also manage energy consumption, since
+\[
+\text{Energy} = \text{Power} \times \text{Time}.
+\]
+This relationship links computational speed and energy efficiency: reducing either power or execution time lowers total energy use.  
+Therefore, there are two main design strategies:
+\begin{enumerate}
+    \item \textbf{Increase performance} (reduce time) while keeping power roughly constant, for example, by using parallelism or dedicated compute units like tensor cores.
+    \item \textbf{Reduce power consumption} while maintaining acceptable performance, for instance, by using lower precision arithmetic or optimized data movement.
+\end{enumerate}
+
+These two strategies are not independent: many modern AI accelerators balance both by minimizing unnecessary data transfers (which dominate power costs) and exploiting hardware specialization to achieve faster, more energy-efficient computation.
+
+\subsubsection{Pipelines}
+Every instruction is divided in simpler stages. In this way we treat instruction execution like a car mounting chain: each step is optimized and after its contribution for an execution is ready for the next one.
+The processor is given a clock that is used to count how much each step will take.\\
+The steps are:
+\begin{enumerate}
+    \item Fetching instruction from memory
+    \item Decode the instruction
+    \item Execute the instruction
+    \item Store the result in memory
+\end{enumerate}
+When you want high performance you fragment the steps so that you can push more steps per clock. The problem is that sometimes the code is like a branch, as it needs one intermediate result for the next steps. This translates in waiting and so loosing clock cycles and so efficiency.
+
+\subsubsection{Hardware parallelism}
+Another route is to execute more instruction at time. This is possible when instructions don't depend on each other, like dot products. This kind of execution improves the performances but also the energy increases as we are using more hardware per clock cycle.
+
+\subsection{Single core: Improving dot product code}
+We will try to specialize the hardware for the type of computation so that it becomes quicker without increasing power, saving energy. Dot product is a crucial part in the pipeline of matrix multiplications, the code we'll analyze is
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/dot_product_original.png}
+    \caption{Inner loop in dot product in matrix multiplication}
+    \label{fig:placeholder}
+\end{figure}
+
+We can explicit the lower level view like the data types and explicit assignment in C (Fig. \ref{fig:img1}) and then translate it into Assembly (Fig. \ref{fig:img2}).
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.60\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/dot_product_simple.png}
+        \caption{C}
+        \label{fig:img1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/dot_product_assembly.png}
+        \caption{Assembly}
+        \label{fig:img2}
+    \end{minipage}
+\end{figure}
+
+Notice that the numbers are 8-bit as we assume to work with quantized networks. Reading the assembly:
+\begin{enumerate}
+    \item The register \verb|t1| stores the address for the vector cell that contains the element we need. We load that value in the register \verb|t2|. We do the same for \verb|t3| and \verb|a4|. 
+    \item We use the two values for computing the multiplication and we store it into the \verb|a4| that previously contained the \verb|arr_int| value, we do this for register use efficency. Remember we have few of them available.
+    \item Then we store the result of the multiplication in the sum counter, represented by the register \verb|t0|. 
+    \item We increment the address to the next element in memory, to simulate the index increment.
+    \item If the index \verb|j| is not-equal to \verb|coeff_len| the processor branches by setting the Program Counter to the address of the \verb|Lstart| label (that recalls the next loop iteration). 
+    \begin{mybox}
+        \textbf{Remark}: the program counter is the register that holds the memory address of the next instruction to be executed.
+    \end{mybox}
+\end{enumerate}
+
+With this configuration we are not very efficient: meaning that, assuming each instruction is made in one cycle, we are doing 1 multiplication and 1 sum/accumulation (so 1 MAC) in 7 instruction/cycles. Now we'll try to make it faster keeping power under control.
+
+\subsubsection{Encode the MAC}
+We want to make the sum and the product in the same instruction (\verb|p.mac r1,r2,r3| where we add to \verb|r1| the product between \verb|r2| and \verb|r3|) that so works in the same cycle (quicker) but requires my datapath to become more complicated and i need to control it and also the register has to read one more operand. The energy increase is low and the speed up is done on an crucial operation so we can take this improvement.\\
+
+Now i'm surely doing better but it is a small improvement (1MAC is 6 cycles instead of 7).
+
+\subsubsection{Use Post-Increment}
+We load the piece of data and then increment the address in the same cycle. We can do it with a little cost as during the load we are not using the adder and so it is almost for free. The register needs an additional read port.
+
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{Previous}
+lb t2, 0x0(t1)
+addi t1, t1, 0x1
+\end{MyCode}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{With post-increment}
+p.lb t2, 0x0(t1!)
+\end{MyCode}
+\end{minipage}
+\end{center}
+
+Now i am cutting even more the instruction (1MAC in 4 cycles).
+
+\subsubsection{Use hardware loops}
+The branch instruction encodes the loop but it can be implemented hardware-side. This is a for loop so i know ho many iterations i will do once i enter the loop. At the beginning of the loop you store how many iterations you want and which code you have to iterate on. This adds hardware (register for the number of iterations and one for the instructions) and so we only have to define:
+\begin{itemize}
+    \item \textbf{start address}: the first instruction of the loop body (where execution jumps back each iteration)
+    \item \textbf{end address}: the instruction after the loop ends (the exit point)
+    \begin{mybox}
+        \textbf{ NOT the last instruction of the loop, but the first instruction AFTER the loop }
+    \end{mybox}
+    \item \textbf{counter}: it's a dedicated hardware register that automatically decrements each iteration, when it reaches 0 it launches the end address.
+\end{itemize}
+
+So we only have to execute once \verb|lp.setup counter, num_iters, end_address|, where the counter is increased up to the number of iterations and the start address is the immediately following one after the setup.In this way the inner loop benefits the most as it is launched outside of \verb|Lstart|.
+
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{Previous}
+Lstart:
+    p.lb t2, 0x0(t1!)
+    p.lb a4, 0x0(t3!)
+    p.mac t0, a4, t2
+    bne t3, a7, Lstart
+\end{MyCode}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{With hardware loop}
+lp.setup a7, Lend
+Lstart:
+    p.lb t2, 0x0(t1!)
+    p.lb a4, 0x0(t3!)
+    p.mac t0, a4, t2
+Lend: nop
+\end{MyCode}
+\end{minipage}
+\end{center}
+In this way now we reduced it into 1 MAC is 3 cycles
+
+\subsubsection{SIMD instruction}
+Given a 32-bit register i can store 4 integers instead of 1 float, so using the quantized values. This may benefit many operations but in particular the dot product multiplier: given two registers $A$, $B$ their result $C$ will be 
+\[
+\begin{aligned}
+C[31:0] = & \operatorname{extend_{32-bit}}(A[31:24] \times B[31:24]) \quad + \\
+          & \operatorname{extend_{32-bit}}(A[23:16] \times B[23:16]) \quad + \\
+          & \operatorname{extend_{32-bit}}(A[15:8]  \times B[15:8])  \quad \quad + \\
+          & \operatorname{extend_{32-bit}}(A[7:0]   \times B[7:0])
+\end{aligned}
+\]
+The product of two 8-bits is a 16-bit number that is extended to 32 so that C can work as final accumulator. In this way we perform 4 MACs in one cycle. In order to do this we have to pay a relatively small price. 
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{Previous}
+lp.setup a7, Lend
+Lstart:
+    p.lb t2, 0x0(t1!)
+    p.lb a4, 0x0(t3!)
+    p.mac t0, a4, t2
+Lend: nop
+\end{MyCode}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{With SIMD}
+lp.setup a7, Lend
+Lstart:
+    p.lb t2, 0x0(t1!)
+    p.lb a4, 0x0(t3!)
+    pv.sdotp (t0, a4, t2)
+Lend: nop
+\end{MyCode}
+\end{minipage}
+\end{center}
+Now the reduction is impressive as we are doing 4 MACs in 3 cycles (as we also require 1/4 of \verb|coeff_len| and so of total cycles to complete the computation).
+
+\begin{mybox}
+    \textbf{NOTE} \\
+    I started by 1/7 MAC/cycles to 4/3 MAC/cycles, it is a \textbf{10x improvement} in speed. But it consume way less than 10x power so it has become more energy efficient!
+\end{mybox}
+
+\subsubsection{Apply unrolling}
+When i need the same coefficient in more dot products i can think of loading it once and using it there for as many products as possible, we say factor $N$ if we can do at most $N$ SIMD dot products for loop.
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{Previous}
+lp.setup a7, Lend
+Lstart:
+    p.lb t2, 0x0(t1!)
+    p.lb a4, 0x0(t3!)
+    pv.sdotp (t0, a4, t2)
+Lend: nop
+\end{MyCode}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{MyCode}{Assembler}{With factor 2 unrolling}
+lp.setup a7, Lend
+Lstart:
+    p.lb t2, 0x0(t1!)
+    
+    p.lb a4, 0x0(t3!)
+    p.lb a5, 0x0(t4!)
+    # ...N-2 times...
+    
+    pv.sdotp (t0, a4, t2)
+    pv.sdotp (t5, a5, t2)
+    # ...N-2 times ...
+Lend: nop
+\end{MyCode}
+\end{minipage}
+\end{center}
+
+In this way we save 1 cycle per iteration in the total count, the efficiency becomes $\frac{N}{1+2N}$ MACs/cycles on $\frac{1}{N}$ of total cycles. We can do this trick also for bigger $N$ than 2 but there is a limit as we are using $N$ register at the same moment and so we will run out of them at a certain point. Moreover the code starts to get larger and we will use more memory and maybe the cache would not be enough anymore (outer memories are more expensive).
+
+\subsection{Multicore Execution}
+
+With single-core performance improvements reaching physical and energy limits, modern processors achieve higher throughput by integrating multiple cores. Each core executes instructions independently, allowing the system to process multiple tasks simultaneously. Speedup is not perfectly linear due to synchronization, memory contention, and communication overhead, as captured by Amdahl’s Law.  
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.47\linewidth]{Images/parallel_cpus_cluster.png}
+%     \caption{Cluster of parallel CPUs}
+%     \label{fig:placeholder}
+% \end{figure}
+
+\subsubsection{Memory Banks}
+To allow simultaneous memory access by multiple cores, the main memory is divided into \textbf{banks}: independent modules that can be accessed in parallel. Proper data distribution across banks reduces conflicts and maximizes memory bandwidth. Each bank can serve only one request at a time, so \textbf{interleaving contiguous addresses} across banks ensures that multiple cores working on consecutive data (e.g., in vector or matrix operations) can fetch them concurrently without contention.  
+
+\subsubsection{Logarithmic Interconnection}
+As the number of cores and memory banks increases, directly connecting every core to every bank would require an impractical number of links, growing quadratically with the system size. To avoid this, the interconnect is organized hierarchically so that the number of links and the communication latency scale proportionally to $\log_2(N)$, where $N$ is the number of nodes. Such structures are called \textbf{logarithmic networks}.  
+
+Within these networks, \textbf{routing trees} determine the path each memory request follows from a core to its target bank, while \textbf{arbitration trees} resolve conflicts when multiple requests converge on the same link or bank. This design minimizes wiring complexity, balances traffic, and ensures deterministic access timing, complementing cache hierarchies that already handle data locality.
+
+
+\subsubsection{Event Unit}
+Cores often need to synchronize at certain points (e.g., before starting a new computation stage). The \textbf{event unit} monitors core progress, implementing barriers and signaling mechanisms so that all cores can proceed safely. This prevents race conditions and ensures workload balance, although real cores may experience small timing variations that require hardware-managed synchronization.  
+
+\subsubsection{L1.5 Shared Cache}
+The \textbf{L1.5 shared cache} sits between private L1 caches and the larger L2/L3 caches. Its purpose is to reduce redundant memory traffic and improve sharing of frequently accessed data. Typically, it stores data and instructions that are likely to be reused by multiple cores, reducing latency compared to fetching from L2/L3 or main memory. Some designs include small private partitions for low-latency access to core-specific data, while the larger shared portion handles inter-core reuse efficiently. Cache coherence protocols maintain data consistency between cores.  
+
+\subsubsection{DMA and Double Buffering}
+When data cannot fit entirely in fast on-chip memory, transfers from slower memory (e.g., L2 or external memory) can introduce latency. 
+\begin{mybox}
+    \textbf{Remember}: the memory has to be small to be quick (usually in 1 clock cycle you can access 100/150 kB).
+\end{mybox}
+The \textbf{DMA (Direct Memory Access)} engine allows data to be fetched in the background while cores continue computing. By preloading data into buffers and overlapping transfer with computation (\textbf{double buffering}), DMA hides memory latency and improves overall throughput. This is critical for high-performance workloads such as matrix operations or streaming data processing.

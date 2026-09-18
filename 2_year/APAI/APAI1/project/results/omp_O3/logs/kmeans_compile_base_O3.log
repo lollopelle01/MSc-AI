@@ -1,0 +1,31 @@
+omp-k-means.c:211:18: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:211:18: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:209:13: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:252:18: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:252:18: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:107:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:107:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:250:13: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:107:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:107:23: optimized:  loop versioned for vectorization because of possible aliasing
+omp-k-means.c:107:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:115:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:115:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:123:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:123:23: optimized:  loop versioned for vectorization because of possible aliasing
+omp-k-means.c:132:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:123:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:123:23: optimized:  loop versioned for vectorization because of possible aliasing
+omp-k-means.c:123:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:123:23: optimized:  loop versioned for vectorization because of possible aliasing
+omp-k-means.c:132:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:132:23: optimized: loop vectorized using 8 byte vectors
+omp-k-means.c:123:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:123:23: optimized:  loop versioned for vectorization because of possible aliasing
+omp-k-means.c:115:23: optimized: loop vectorized using 16 byte vectors
+omp-k-means.c:115:23: optimized: loop vectorized using 8 byte vectors

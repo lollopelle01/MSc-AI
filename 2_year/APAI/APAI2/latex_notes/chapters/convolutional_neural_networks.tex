@@ -1,0 +1,216 @@
+\section{Convolutional Neural Networks}
+
+\subsection{Limits of DNNs in computer vision}
+In the field of computer vision, standard fully connected DNNs exhibit several limitations:
+\begin{itemize}
+    \item \textbf{Low scalability:} they have a very high number of parameters, which leads to large memory requirements and high computational cost.
+    \item \textbf{Ignoring locality:} each neuron is connected to all input pixels, so spatial relationships between nearby pixels are not explicitly leveraged.
+    \item \textbf{Prone to overfitting:} the full connectivity allows the network to memorize training data rather than generalize, especially when the dataset is small relative to the number of parameters.
+\end{itemize}
+
+\subsection{Definition}
+Convolutional Neural Networks (CNNs) replace fully connected layers with convolutional layers that use a small, shared kernel (or filter) applied across the entire input image.  
+The kernel slides over the input and, using a correlation-like operation (since it doesn't flip the kernel), produces feature maps that capture local patterns.  
+
+This architecture addresses several limitations of fully connected DNNs in computer vision:  
+\begin{itemize}
+    \item \textbf{Reduced number of parameters:} sharing the same kernel across the image drastically reduces the total number of weights, improving scalability and computational efficiency.
+    \item \textbf{Locality bias:} the convolution operation focuses only on local neighborhoods, allowing the network to exploit spatial structure and local correlations between pixels.
+    \item \textbf{Translation invariance:} since the same kernel is applied across the entire image, the network can recognize patterns regardless of their position, making it more robust to shifts in the input.
+\end{itemize}
+
+\subsection{Building blocks}
+
+\subsubsection{Convolution Layer}
+
+A convolutional layer operates on a three-dimensional input tensor $I \in \mathbb{R}^{C_\text{in} \times H_\text{in} \times W_\text{in}}$. \\
+The layer contains a set of $C_\text{out}$ learnable kernels and $C_\text{out}$ bias terms. \\
+Then each layer is also characterized by a \textbf{stride} $S$, which defines the step size with which the kernel moves across the input, and a \textbf{padding} $P$, which specifies the number of zero (or constant) values added around the input borders to control the spatial size of the output feature map. \\
+The output vector $O \in \mathbb{R}^{C_\text{out} \times H_\text{out} \times W_\text{out}}$ is computed as:
+\[
+O[c_\text{out}, x, y] =  b[c_\text{out}] + \sum_{c_\text{in}=0}^{C_\text{in}-1} 
+\sum_{i=0}^{K_H - 1} \sum_{j=0}^{K_W - 1}
+K[c_\text{out}, c_\text{in}, i, j] \cdot 
+I[c_\text{in}, Sx + i - P, Sy + j - P].
+\]
+
+The resulting spatial dimensions are determined by:
+\[
+H_\text{out} = \frac{H_\text{in} + 2P - K_h}{S} + 1, \qquad
+W_\text{out} = \frac{W_\text{in} + 2P - K_w}{S} + 1.
+\]
+
+In general this layer has:
+\begin{itemize}
+    \item \textbf{\#params} $= C_\text{out} \times (C_\text{in} \times K_H \times K_W + 1)$,  
+    where the $+1$ accounts for the bias term per output channel.
+
+    \item \textbf{\#FLOPs} $\approx 2 \times H_\text{out} \times W_\text{out} \times C_\text{out} \times C_\text{in} \times K_H \times K_W$,  
+    assuming each multiply–add counts as two floating-point operations.
+\end{itemize}
+
+\subsubsection{Batch Normalization Layer}
+
+This layer normalizes the input activations so that each feature has approximately zero mean and unit variance, which stabilizes and accelerates training.  
+Formally, given an input mini-batch 
+\[
+X = \{x_1, x_2, \dots, x_m\},
+\]
+Batch Normalization operates in two distinct phases:
+
+\begin{enumerate}
+    \item \textbf{Training:}  
+    For each feature dimension, the layer computes the batch statistics:
+    \[
+    \mu_B = \frac{1}{m} \sum_{i=1}^{m} x_i, \qquad 
+    \sigma_B^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu_B)^2.
+    \]
+    The input is then normalized as:
+    \[
+    \hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}},
+    \]
+    and scaled and shifted using learnable parameters $\gamma$ (scale) and $\beta$ (shift):
+    \[
+    y_i = \gamma \hat{x}_i + \beta.
+    \]
+    Running estimates of $\mu_B$ and $\sigma_B^2$ are also updated to be used during inference.
+
+    \item \textbf{Inference:}  
+    The normalization is performed using the running mean $\mu_\text{run}$ and variance $\sigma_\text{run}^2$ accumulated during training:
+    \[
+    \hat{x} = \frac{x - \mu_\text{run}}{\sqrt{\sigma_\text{run}^2 + \epsilon}}, \qquad
+    y = \gamma \hat{x} + \beta.
+    \]
+\end{enumerate}
+
+PS: $\epsilon$ is a small constant added for numerical stability.
+
+In general this layer has:
+\begin{itemize}
+    \item \textbf{\#params} $= 2 \times C$,  
+    where $C$ is the number of feature channels.  
+    The two parameters are the learnable scale $\gamma$ and shift $\beta$ applied to each channel.
+
+    \item \textbf{\#FLOPs} $\approx 4 \times C \times H \times W$,  
+    accounting for the normalization (subtraction and division) and the subsequent affine transformation (multiplication by $\gamma$ and addition of $\beta$) for each element in the feature map.
+\end{itemize}
+
+\subsubsection{Pooling Layer}
+
+This layer reduces the spatial resolution of each channel independently, decreasing the number of parameters and increasing translation invariance and robustness to noise.  
+Pooling operates over small non-overlapping regions of the input feature map, typically of size $2 \times 2$ or $3 \times 3$.  
+Such sizes are chosen because, when combined with a stride equal to the window size (e.g., stride $S=2$ for a $2 \times 2$ window), they effectively downsample the feature map by a factor of two in each spatial dimension, preserving the most relevant spatial information while reducing computational cost.
+
+The reduction is performed by applying a fixed aggregation function over each region. The most common types are:
+
+\begin{itemize}
+    \item \textbf{Max Pooling:}  
+    Selects the maximum value within each local region:
+    \[
+    Y[i, j] = \max_{(m, n) \in \Omega(i,j)} X[m, n],
+    \]
+    where $\Omega(i,j)$ denotes the spatial region of the input corresponding to the pooling window centered at $(i,j)$.
+
+    \item \textbf{Average Pooling:}  
+    Computes the average value within each region:
+    \[
+    Y[i, j] = \frac{1}{|\Omega(i,j)|} \sum_{(m, n) \in \Omega(i,j)} X[m, n].
+    \]
+\end{itemize}
+
+% Pooling layers contain no learnable parameters and are applied independently to each channel of the input feature map.
+
+In general this layer has:
+\begin{itemize}
+    \item \textbf{\#params} $= 0$,  
+    since pooling layers contain no learnable parameters. The operation is purely functional and applied independently to each channel.
+
+    \item \textbf{\#FLOPs} $\approx C \times H_\text{out} \times W_\text{out} \times K_H \times K_W$,  
+    where each output element requires scanning the corresponding pooling region of size $K_H \times K_W$ in the input to compute the maximum or average.
+\end{itemize}
+
+\subsubsection{Fully Connected Layer}
+
+A Fully Connected (FC) layer, also called a Dense layer, connects every input neuron to every output neuron.  
+It operates on a one-dimensional input vector and produces a one-dimensional output vector, performing a global linear transformation.
+
+Formally, given an input vector $x \in \mathbb{R}^{N_\text{in}}$, the layer computes the output like a \href{}{linear classifier}.
+
+In convolutional neural networks, the input tensor $X \in \mathbb{R}^{C_\text{in} \times H_\text{in} \times W_\text{in}}$ is first flattened into a vector of length
+$N_\text{in} = C_\text{in} \times H_\text{in} \times W_\text{in}$
+before being processed by the FC layer.  
+The number of output neurons $N_\text{out}$ corresponds to the desired output dimensionality (the number of classes in a classification task).
+
+In general this layer has:
+\begin{itemize}
+    \item \textbf{\#params} $= N_\text{out} \times (N_\text{in} + 1)$,  
+    where the $+1$ accounts for the bias term associated with each output neuron.
+
+    \item \textbf{\#FLOPs} $\approx 2 \times N_\text{in} \times N_\text{out}$,  
+    since each output requires $N_\text{in}$ multiplications and $N_\text{in}-1$ additions (counting one multiply–add as two floating-point operations).
+\end{itemize}
+
+
+
+\subsection{Separable Convolutions}
+
+Thanks to properties of convolutions, we can \textit{approximate} a standard convolution operation with more efficient factorized versions. However, these decompositions \textbf{do change the structure and expressive power} of the layer, creating different hypothesis spaces rather than just computationally efficient equivalents.
+
+There's an important trade-off: while separable convolutions dramatically reduce computational cost and parameters, they \textit{constrain the space of learnable functions} compared to standard convolutions.
+
+\subsubsection{Spatially Separable Convolutions}
+
+This method factorizes a 2D kernel into two 1D kernels.
+
+\begin{itemize}
+    \item \textbf{Operation:} Decomposes a $K \times K$ kernel into a $K \times 1$ kernel followed by a $1 \times K$ kernel.
+    \item \textbf{Parameters:}
+    \begin{itemize}
+        \item \textbf{Standard Conv:} $K^2$ parameters (per channel)
+        \item \textbf{Spatially Separable:} $K + K = 2K$ parameters
+    \end{itemize}
+    \item \textbf{Computational Cost:}
+    \begin{itemize}
+        \item \textbf{Standard Conv:} $H_o \cdot W_o \cdot K^2$ operations
+        \item \textbf{Spatially Separable:} $H_o \cdot W_o \cdot (K + K)$ operations
+    \end{itemize}
+    \item \textbf{Limitation:} Not all 2D kernels are spatially separable (only rank-1 kernels), limiting its general use.
+\end{itemize}
+
+\subsubsection{Depthwise Separable Convolutions}
+
+This is the most widely used type, decomposing a standard convolution into a \textbf{depthwise} and a \textbf{pointwise} convolution.
+
+\begin{itemize}
+    \item \textbf{Operation:}
+    \begin{enumerate}
+        \item \textbf{Depthwise Conv:} Applies $C_i$ separate $K \times K \times 1$ kernels (one per input channel).
+        \item \textbf{Pointwise Conv:} Applies a $1 \times 1 \times C_i \times C_o$ kernel to mix channels.
+    \end{enumerate}
+    \item \textbf{Parameters:}
+    \begin{itemize}
+        \item \textbf{Standard Conv:} $K^2 \cdot C_i \cdot C_o$
+        \item \textbf{Depthwise Separable:} $(K^2 \cdot C_i) + (1 \cdot 1 \cdot C_i \cdot C_o)$
+    \end{itemize}
+    \item \textbf{Computational Cost:}
+    \begin{itemize}
+        \item \textbf{Standard Conv:} $H_o \cdot W_o \cdot K^2 \cdot C_i \cdot C_o$
+        \item \textbf{Depthwise Separable:} $H_o \cdot W_o \cdot (K^2 \cdot C_i + C_i \cdot C_o)$
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Parameter Reduction Ratio}
+
+The efficiency gain for Depthwise Separable Convolutions is substantial. The ratio of its cost to a standard convolution is approximately:
+
+\begin{align*}
+\frac{\text{Cost}_{\text{sep}}}{\text{Cost}_{\text{std}}} 
+&= \frac{H_o \cdot W_o \cdot (K^2 \cdot C_i + C_i \cdot C_o)}{H_o \cdot W_o \cdot K^2 \cdot C_i \cdot C_o} \\
+&= \frac{K^2 \cdot C_i + C_i \cdot C_o}{K^2 \cdot C_i \cdot C_o} \\
+&= \frac{K^2 \cdot C_i}{K^2 \cdot C_i \cdot C_o} + \frac{C_i \cdot C_o}{K^2 \cdot C_i \cdot C_o} \\
+&= \frac{1}{C_o} + \frac{1}{K^2}
+\end{align*}
+
+For a typical $3\times3$ convolution with many output channels, this results in an \textbf{8x to 9x reduction} in both parameters and computations.
+
+\newpage

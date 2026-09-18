@@ -1,0 +1,28 @@
+================================================================================
+Machine metadata:
+================================================================================
+CPU Model: Common KVM processor
+RAM: 62.79 GB
+OS: Debian GNU/Linux 12 (bookworm)
+NVCC version: 11.8
+---
+GPU metadata:
+NVIDIA L40, 8.9, 46068 MiB, 535.261.03
+================================================================================
+Experiment results:
+================================================================================
+Rep 1: t_classify=0.006414 s, t_update=0.016189 s, tot=0.022610 s, iter=100, shift=0.000000
+         classify: block=512 grid=293 (optimal=284)
+         update:   block=512   grid=293   (optimal=284)
+Rep 2: t_classify=0.006480 s, t_update=0.016231 s, tot=0.022719 s, iter=100, shift=0.000000
+         classify: block=512 grid=293 (optimal=284)
+         update:   block=512   grid=293   (optimal=284)
+Rep 3: t_classify=0.006481 s, t_update=0.016209 s, tot=0.022697 s, iter=100, shift=0.000000
+         classify: block=512 grid=293 (optimal=284)
+         update:   block=512   grid=293   (optimal=284)
+Rep 4: t_classify=0.006430 s, t_update=0.016204 s, tot=0.022642 s, iter=100, shift=0.000000
+         classify: block=512 grid=293 (optimal=284)
+         update:   block=512   grid=293   (optimal=284)
+Rep 5: t_classify=0.006459 s, t_update=0.016253 s, tot=0.022720 s, iter=100, shift=0.000000
+         classify: block=512 grid=293 (optimal=284)
+         update:   block=512   grid=293   (optimal=284)

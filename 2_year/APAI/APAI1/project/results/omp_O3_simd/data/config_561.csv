@@ -1,0 +1,6 @@
+input_file,n_points,n_dims,k,threads,repetitions,final_shift,n_iter,t_classify,t_update,t_tot
+../gen_datasets/gen_N200000_D20_K5.txt,200000,20,10,8,1,0.003509,100,0.116,0.014,0.131
+../gen_datasets/gen_N200000_D20_K5.txt,200000,20,10,8,2,0.003461,100,0.144,0.012,0.156
+../gen_datasets/gen_N200000_D20_K5.txt,200000,20,10,8,3,0.003509,100,0.114,0.011,0.125
+../gen_datasets/gen_N200000_D20_K5.txt,200000,20,10,8,4,0.003508,100,0.114,0.011,0.126
+../gen_datasets/gen_N200000_D20_K5.txt,200000,20,10,8,5,0.004543,100,0.115,0.011,0.126
