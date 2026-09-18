@@ -1,0 +1,21 @@
+n_visits = 9922, n_patients = 2093
+CN visits used to fit autoencoder: 3471 (823 patients)
+Autoencoder: 16-6-16 Keras/TF Dense, 324 epochs (early stopped), best val_loss=0.2533
+
+-- AUC using every visit (per-visit DIAGNOSIS_LABEL as target) --
+NOTE: patients contribute multiple correlated visits here, so
+this inflates apparent sample size (pseudo-replication). See the
+last-visit-only AUC below for a per-patient, non-repeated check.
+  CN vs MCI: 0.649  (n=7928)
+  CN vs AD: 0.803  (n=5465)
+  CN vs MCI+AD: 0.696
+
+-- AUC using only each patient's LAST visit (one row per patient) --
+  CN vs MCI: 0.626  (n=1408)
+  CN vs AD: 0.794  (n=1364)
+  CN vs MCI+AD: 0.707
+
+-- Per-patient HI slope (HI units / year) by baseline group --
+  CN: median=0.0033, mean=0.0092, n=734
+  MCI: median=0.0064, mean=0.0091, n=1000
+  AD: median=0.0304, mean=0.0806, n=345

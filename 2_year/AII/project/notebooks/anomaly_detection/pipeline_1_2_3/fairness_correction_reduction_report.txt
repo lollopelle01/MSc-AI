@@ -1,0 +1,22 @@
+=== In-training alternatives to the post-hoc group-shift fix ===
+Tier: core/forest (worst individual-tier DIDI found by didi_breakdown.py, 7.289)
+
+Model                                   AUC train   AUC test  DIDI(interval) test
+Unconstrained (forest, baseline)            0.902      0.791                8.716
+Reweighing (Kamiran & Calders)              0.904      0.786                9.056
+
+ExponentiatedGradient (fairlearn) -- sweeping the fairness-tightness knob (eps):
+     eps  AUC train   AUC test  DIDI(interval) test
+   0.020      0.858      0.744                6.945
+   0.010      0.859      0.732                1.814
+   0.005      0.823      0.730                5.639
+Tightest setting tried (eps=0.01): test AUC 0.732, DIDI(interval) 1.814
+
+For reference (from earlier scripts, same tier/split):
+  Post-hoc group-shift (fairness_correction.py):    test DIDI(score) 8.570 -> 3.153 (63% cut), AUC untouched
+  LagDualDIDIRegressor (fairness_correction_tf.py): test DIDI(interval) 8.716 -> 7.313 (16% cut), AUC 0.791 -> 0.570
+
+Note: the post-hoc and TF numbers above are DIDI of the SCORE or of a different
+evaluation setup than this script's core-tier-only comparison; the three rows in
+the table above are directly comparable to each other (same split, same tier,
+same DIDI definition -- interval-level, core tier).

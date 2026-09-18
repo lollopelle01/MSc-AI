@@ -1,0 +1,53 @@
+=== PART A: trajectory-aware policy (recommend_interval_trajectory) ===
+Reuses calibrated_risk_scores.csv -- no refitting.
+
+-- Plain (no fairness), calibrated -- trajectory coverage: 79.6% of rows have a prior visit
+   decisions changed by adding trajectory: 6.9% of rows
+  Snapshot only (current policy)         cost=   4925.9  DIDI=2.157  catch= 69.2%
+  Trajectory-aware                       cost=   4968.5  DIDI=3.313  catch= 76.7%
+
+-- Fair (EG), calibrated -- trajectory coverage: 79.6% of rows have a prior visit
+   decisions changed by adding trajectory: 24.4% of rows
+  Snapshot only (current policy)         cost=   5123.4  DIDI=1.281  catch= 65.8%
+  Trajectory-aware                       cost=   5307.6  DIDI=4.273  catch= 74.0%
+
+Read the DIDI/cost/catch numbers above as: does knowing whether a patient's
+risk is rising or falling, not just its current level, actually change enough
+decisions to move the aggregate policy numbers, or does it only re-shuffle a
+small minority of borderline cases?
+
+=== PART B: a LEARNED interval-choice model vs. the closed-form formula ===
+Nested split: test_panel's own patients further split into clf_train/clf_test
+by RID (leakage-free -- clf_test patients never touch fitting or labeling).
+
+n=1420 rows with full extended+anomaly features available (of 2603 scored rows).
+clf_train: 216 patients (1010 rows). clf_test: 93 patients (410 rows).
+
+clf_train label distribution: {6.0: 119, 12.0: 891}
+clf_test  label distribution: {6.0: 31, 12.0: 379}
+
+Learned model's agreement with the formula's own labels on clf_test: 99.8%
+Feature importances (does the learned model actually use context beyond the risk score?):
+RISK_SCORE_plain_cal   0.556
+PTAU                   0.103
+TAU                    0.081
+AMYGDALA_NORM          0.072
+HIPPO_NORM             0.052
+SUMMARY_SUVR           0.039
+PRIOR_DIAGNOSIS        0.035
+NOMINAL_MONTH          0.034
+AGE                    0.012
+ENTORHINAL_NORM        0.011
+ANOMALY_SCORE          0.005
+
+  Closed-form formula (current policy)   cost=    723.3  DIDI=1.897  catch= 71.4%
+  Learned classifier                     cost=    723.3  DIDI=1.856  catch= 71.4%
+
+If the learned model mostly just re-derives RISK_SCORE (that feature dominating
+importances) and matches the formula closely, that's a clean negative result:
+the extra raw features don't carry decision-relevant information the risk score
+hadn't already summarized. If other features carry real weight and the policy
+numbers move, that's evidence a learned policy could do genuinely more than the
+closed-form formula, at the cost of losing the formula's transparency (section 7's
+decision_mechanism.py could no longer explain 'why this interval' as three lines
+of arithmetic -- it would need SHAP or similar, same tradeoff stage 2 already has).

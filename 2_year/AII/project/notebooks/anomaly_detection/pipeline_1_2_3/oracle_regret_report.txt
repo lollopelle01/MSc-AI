@@ -1,0 +1,32 @@
+=== Oracle regret analysis: are the interval decisions actually relevant? ===
+n=2603 rows (test set, common to every policy compared here).
+
+  Fixed (naive baseline)                 cost=   6437.1  DIDI=0.000  catch= 95.2%  spearman(risk,interval)=+nan  3mo=0%/6mo=100%/12mo=0%
+Oracle target: 5.6% of rows have a real forward worsening event to catch (vs. EVENT_AT_VISIT's 5.6%, the wrong, backward-looking label a first attempt at this used -- caught and fixed since it gave an oracle with a LOWER catch rate than the real models, which is not possible for genuine perfect information on the metric actually being optimized).
+
+  ORACLE (perfect information)           cost=   3771.0  DIDI=1.488  catch=100.0%  spearman(risk,interval)=-1.000  3mo=6%/6mo=0%/12mo=94%
+
+-- Snapshot-adaptive policies --
+  Plain, calibrated                      cost=   4925.9  DIDI=2.157  catch= 69.2%  spearman(risk,interval)=-0.537  3mo=0%/6mo=11%/12mo=89%
+  Fair (DemographicParity), calibrated   cost=   5123.4  DIDI=1.281  catch= 65.8%  spearman(risk,interval)=-0.401  3mo=0%/6mo=6%/12mo=94%
+
+-- Trajectory-adaptive policies (section 8) --
+  Plain, trajectory-aware                cost=   4968.5  DIDI=3.313  catch= 76.7%  spearman(risk,interval)=-0.643  3mo=0%/6mo=18%/12mo=82%
+  Fair (DP), trajectory-aware            cost=   5307.6  DIDI=4.273  catch= 74.0%  spearman(risk,interval)=-0.614  3mo=0%/6mo=30%/12mo=70%
+
+=== Regret vs. the oracle (0% = oracle-optimal, 100% = no better than the naive fixed policy) ===
+Oracle cost:     3771.0  (perfect information, catch=100.0%)
+Naive cost:      6437.1  (fixed 6mo for everyone, DIDI=0 by construction)
+
+  Plain, calibrated                      cost=   4925.9  regret=  43.3%
+  Fair (DemographicParity), calibrated   cost=   5123.4  regret=  50.7%
+  Plain, trajectory-aware                cost=   4968.5  regret=  44.9%
+  Fair (DP), trajectory-aware            cost=   5307.6  regret=  57.6%
+
+Read spearman(risk,interval) as the decision-relevance check: a real
+negative correlation (higher risk -> shorter interval) means the decision
+layer is actually using the score's own discriminative power, not just
+producing cost/DIDI/catch numbers that happen to look reasonable. Compare
+this against the fixed policy's undefined/zero correlation (no risk used at
+all) and, if re-run at ratio=160 (section 5d), against a correlation that
+would collapse toward the fixed policy's as decisions saturate to 3 months.

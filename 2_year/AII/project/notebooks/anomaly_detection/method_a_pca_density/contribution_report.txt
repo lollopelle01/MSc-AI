@@ -1,0 +1,47 @@
+PCA T2/Q contribution decomposition -- exactness check
+(sum of per-feature contributions must equal the sample's own T2 / Q)
+
+-- AD_highest_HI: RID=10001, diagnosis=AD, HI=4.114, T2=67.69 (UCL=31.67), Q=9.07 (UCL=4.59) --
+  sum(T2 contributions) = 67.6916  vs actual T2 = 67.6916
+  sum(Q contributions)  = 9.0738  vs actual Q  = 9.0738
+  Top T2 contributors (can be + or -; + = pushes anomaly score up):
+    ST85TA               +22.153
+    ST83TA               +16.780
+    ST111TA              +9.257
+    ST96SV               +7.724
+    ST37SV               +4.590
+    ST52TA               +4.443
+    ST99TA               +4.121
+    ST88SV               +2.445
+  Top Q contributors (always >= 0; unexplained-by-model deviation):
+    ST37SV               +1.844
+    ST111TA              +1.474
+    ST52TA               +0.901
+    ST10CV               +0.801
+    ST85TA               +0.626
+    ST40TA               +0.626
+    ST24TA               +0.614
+    ST24CV               +0.456
+
+-- CN_typical: RID=10320, diagnosis=CN, HI=0.777, T2=14.62 (UCL=31.67), Q=1.45 (UCL=4.59) --
+  sum(T2 contributions) = 14.6236  vs actual T2 = 14.6236
+  sum(Q contributions)  = 1.4476  vs actual Q  = 1.4476
+  Top T2 contributors (can be + or -; + = pushes anomaly score up):
+    PTHAND               +6.298
+    PTEDUCAT             +2.522
+    AGE                  +2.067
+    ST24CV               +0.863
+    ST71SV               +0.799
+    ST83CV               +0.595
+    ST26TA               +0.573
+    ST99TA               +0.361
+  Top Q contributors (always >= 0; unexplained-by-model deviation):
+    ST71SV               +0.599
+    ST52TA               +0.205
+    ST12SV               +0.193
+    ST24CV               +0.139
+    ST24TA               +0.044
+    ST29SV               +0.042
+    ST37SV               +0.042
+    ST111TA              +0.036
+

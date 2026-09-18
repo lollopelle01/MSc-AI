@@ -1,0 +1,7 @@
+n_patients = 464  (CN=269, MCI=161, AD=34)
+n_components retained = 14 (explains 91.9% variance)
+T2 UCL (99%) = 31.67, Q UCL (99%) = 4.59
+
+ROC-AUC, CN vs MCI (combined T2+Q score): 0.696
+ROC-AUC, CN vs AD (combined T2+Q score): 0.890
+ROC-AUC, CN vs (MCI+AD combined): 0.730

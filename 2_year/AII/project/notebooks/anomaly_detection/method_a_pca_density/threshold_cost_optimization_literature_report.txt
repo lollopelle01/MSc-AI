@@ -1,0 +1,47 @@
+Cost-based threshold optimization, LITERATURE-ANCHORED cost ratios
+(replaces threshold_cost_optimization.py's arbitrary [5, 10, 20] sweep)
+
+Source: 2.8x is the point estimate from a 2026 medRxiv preprint on the
+societal cost of Alzheimer's disease by diagnosis timing (~62,000 EUR/yr
+early MCI vs. ~175,000 EUR/yr late severe AD). 1.5x/4.0x are the low/high
+end of 'Global Societal Burden of Alzheimer's Disease by Severity'
+(Neurology and Therapy, 81 studies, 2013-2024, typical ratio 1.4-3.6x).
+This is the SAME literature anchor stage 3's cost_model_for() already uses
+for MCI_OR_WORSE_COST_MULTIPLIER -- reused here for stage 1's own threshold
+instead of an unrelated, arbitrary sweep, so both stages rest on one
+consistent, citable real-world cost story instead of two disconnected ones.
+
+Reframing caveat, stated honestly: this literature prices EARLY vs LATE
+diagnosis of the same disease, which is exactly what a missed anomaly alarm
+causes (later, costlier detection) -- it is not a literal 'one false alarm'
+price, so c_alarm is kept at 1 unit (one routine workup) and only the
+missed/alarm RATIO is replaced with this real anchor.
+
+=== CN vs AD ===
+-- c_missed / c_alarm = 1.5x (low end, Neurology & Therapy review) --
+    PCA          optimal_thr@ 95.5pctile(CN)  cost=  36.0  sensitivity=0.529  false_alarm_rate=0.045  (TP=18 FN=16 FP=12 TN=257)
+    GMM          optimal_thr@ 97.8pctile(CN)  cost=  28.5  sensitivity=0.559  false_alarm_rate=0.022  (TP=19 FN=15 FP=6 TN=263)
+    Autoencoder  optimal_thr@ 96.7pctile(CN)  cost=  36.0  sensitivity=0.471  false_alarm_rate=0.033  (TP=16 FN=18 FP=9 TN=260)
+-- c_missed / c_alarm = 2.8x (medRxiv point estimate -- same anchor as stage 3's cost_model_for) --
+    PCA          optimal_thr@ 95.5pctile(CN)  cost=  56.8  sensitivity=0.529  false_alarm_rate=0.045  (TP=18 FN=16 FP=12 TN=257)
+    GMM          optimal_thr@ 95.2pctile(CN)  cost=  46.6  sensitivity=0.647  false_alarm_rate=0.048  (TP=22 FN=12 FP=13 TN=256)
+    Autoencoder  optimal_thr@ 96.7pctile(CN)  cost=  59.4  sensitivity=0.471  false_alarm_rate=0.033  (TP=16 FN=18 FP=9 TN=260)
+-- c_missed / c_alarm = 4.0x (high end, Neurology & Therapy review) --
+    PCA          optimal_thr@ 91.1pctile(CN)  cost=  72.0  sensitivity=0.647  false_alarm_rate=0.089  (TP=22 FN=12 FP=24 TN=245)
+    GMM          optimal_thr@ 95.2pctile(CN)  cost=  61.0  sensitivity=0.647  false_alarm_rate=0.048  (TP=22 FN=12 FP=13 TN=256)
+    Autoencoder  optimal_thr@ 94.1pctile(CN)  cost=  80.0  sensitivity=0.529  false_alarm_rate=0.059  (TP=18 FN=16 FP=16 TN=253)
+
+=== CN vs MCI+AD ===
+-- c_missed / c_alarm = 1.5x (low end, Neurology & Therapy review) --
+    PCA          optimal_thr@ 73.6pctile(CN)  cost= 173.0  sensitivity=0.651  false_alarm_rate=0.264  (TP=127 FN=68 FP=71 TN=198)
+    GMM          optimal_thr@ 79.6pctile(CN)  cost= 178.0  sensitivity=0.579  false_alarm_rate=0.204  (TP=113 FN=82 FP=55 TN=214)
+    Autoencoder  optimal_thr@ 83.3pctile(CN)  cost= 198.0  sensitivity=0.477  false_alarm_rate=0.167  (TP=93 FN=102 FP=45 TN=224)
+-- c_missed / c_alarm = 2.8x (medRxiv point estimate -- same anchor as stage 3's cost_model_for) --
+    PCA          optimal_thr@ 59.5pctile(CN)  cost= 243.4  sensitivity=0.754  false_alarm_rate=0.405  (TP=147 FN=48 FP=109 TN=160)
+    GMM          optimal_thr@ 55.4pctile(CN)  cost= 254.4  sensitivity=0.754  false_alarm_rate=0.446  (TP=147 FN=48 FP=120 TN=149)
+    Autoencoder  optimal_thr@ 53.5pctile(CN)  cost= 273.4  sensitivity=0.728  false_alarm_rate=0.465  (TP=142 FN=53 FP=125 TN=144)
+-- c_missed / c_alarm = 4.0x (high end, Neurology & Therapy review) --
+    PCA          optimal_thr@ 58.0pctile(CN)  cost= 301.0  sensitivity=0.759  false_alarm_rate=0.420  (TP=148 FN=47 FP=113 TN=156)
+    GMM          optimal_thr@ 55.4pctile(CN)  cost= 312.0  sensitivity=0.754  false_alarm_rate=0.446  (TP=147 FN=48 FP=120 TN=149)
+    Autoencoder  optimal_thr@ 53.5pctile(CN)  cost= 337.0  sensitivity=0.728  false_alarm_rate=0.465  (TP=142 FN=53 FP=125 TN=144)
+

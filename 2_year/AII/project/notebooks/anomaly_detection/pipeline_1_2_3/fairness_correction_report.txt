@@ -1,0 +1,11 @@
+=== Fairness correction: post-hoc group recalibration (fit on train, applied to test) ===
+Protected attributes: ['PTGENDER', 'PTEDUCAT_BUCKET', 'PTMARRY']
+Calibration passes: 8
+
+-- BEFORE correction --
+  Train, before                n= 7063  cost=   30999.8  DIDI=6.600  catch= 95.8%
+  Test, before                 n= 2603  cost=   11621.7  DIDI=7.695  catch= 89.0%
+
+-- AFTER correction --
+  Train, after                 n= 7063  cost=   31087.5  DIDI=2.508  catch= 95.3%
+  Test, after                  n= 2603  cost=   11685.5  DIDI=3.247  catch= 91.1%

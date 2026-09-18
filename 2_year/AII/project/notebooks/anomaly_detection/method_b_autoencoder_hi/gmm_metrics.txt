@@ -1,0 +1,22 @@
+n_visits = 9922, n_patients = 2093
+CN visits used to fit GMM: 3471 (823 patients)
+GMM config: 5 components, full covariance, BIC=105543.4
+
+-- AUC using every visit --
+  CN vs MCI: 0.649  (n=7928)
+  CN vs AD: 0.852  (n=5465)
+  CN vs MCI+AD: 0.712
+
+-- AUC using only each patient's LAST visit --
+  CN vs MCI: 0.634  (n=1408)
+  CN vs AD: 0.847  (n=1364)
+  CN vs MCI+AD: 0.737
+
+-- Per-patient HI slope by baseline group --
+  CN: median=0.0058, mean=0.0052, n=734
+  MCI: median=0.0189, mean=0.0371, n=1000
+  AD: median=0.0755, mean=0.1375, n=345
+
+-- AUC of slope itself as a per-patient predictor --
+  CN vs MCI: 0.587
+  CN vs AD: 0.721

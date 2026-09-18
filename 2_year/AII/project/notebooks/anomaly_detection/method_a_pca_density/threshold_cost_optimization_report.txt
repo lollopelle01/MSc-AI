@@ -1,0 +1,33 @@
+Cost-based threshold optimization (01-ad-de line-search recipe)
+Cost model: c_alarm = 1.0, c_missed swept over [5, 10, 20] x c_alarm
+(sensitivity analysis, per the lecture's own caution that costs are 
+ assumptions to be tested under more than one setting, not a single guess)
+
+=== CN vs AD ===
+-- c_missed / c_alarm = 5 --
+    PCA          optimal_thr@ 80.3pctile(CN)  cost=  83.0  sensitivity=0.824  false_alarm_rate=0.197  (TP=28 FN=6 FP=53 TN=216)
+    GMM          optimal_thr@ 95.2pctile(CN)  cost=  73.0  sensitivity=0.647  false_alarm_rate=0.048  (TP=22 FN=12 FP=13 TN=256)
+    Autoencoder  optimal_thr@ 82.5pctile(CN)  cost=  82.0  sensitivity=0.794  false_alarm_rate=0.175  (TP=27 FN=7 FP=47 TN=222)
+-- c_missed / c_alarm = 10 --
+    PCA          optimal_thr@ 72.5pctile(CN)  cost=  94.0  sensitivity=0.941  false_alarm_rate=0.275  (TP=32 FN=2 FP=74 TN=195)
+    GMM          optimal_thr@ 80.7pctile(CN)  cost= 102.0  sensitivity=0.853  false_alarm_rate=0.193  (TP=29 FN=5 FP=52 TN=217)
+    Autoencoder  optimal_thr@ 82.5pctile(CN)  cost= 117.0  sensitivity=0.794  false_alarm_rate=0.175  (TP=27 FN=7 FP=47 TN=222)
+-- c_missed / c_alarm = 20 --
+    PCA          optimal_thr@ 72.5pctile(CN)  cost= 114.0  sensitivity=0.941  false_alarm_rate=0.275  (TP=32 FN=2 FP=74 TN=195)
+    GMM          optimal_thr@ 80.7pctile(CN)  cost= 152.0  sensitivity=0.853  false_alarm_rate=0.193  (TP=29 FN=5 FP=52 TN=217)
+    Autoencoder  optimal_thr@ 55.0pctile(CN)  cost= 161.0  sensitivity=0.941  false_alarm_rate=0.450  (TP=32 FN=2 FP=121 TN=148)
+
+=== CN vs MCI+AD ===
+-- c_missed / c_alarm = 5 --
+    PCA          optimal_thr@ 58.0pctile(CN)  cost= 348.0  sensitivity=0.759  false_alarm_rate=0.420  (TP=148 FN=47 FP=113 TN=156)
+    GMM          optimal_thr@ 55.4pctile(CN)  cost= 360.0  sensitivity=0.754  false_alarm_rate=0.446  (TP=147 FN=48 FP=120 TN=149)
+    Autoencoder  optimal_thr@ 53.2pctile(CN)  cost= 346.0  sensitivity=0.774  false_alarm_rate=0.468  (TP=151 FN=44 FP=126 TN=143)
+-- c_missed / c_alarm = 10 --
+    PCA          optimal_thr@ 52.0pctile(CN)  cost= 569.0  sensitivity=0.774  false_alarm_rate=0.480  (TP=151 FN=44 FP=129 TN=140)
+    GMM          optimal_thr@ 52.8pctile(CN)  cost= 597.0  sensitivity=0.759  false_alarm_rate=0.472  (TP=148 FN=47 FP=127 TN=142)
+    Autoencoder  optimal_thr@ 53.2pctile(CN)  cost= 566.0  sensitivity=0.774  false_alarm_rate=0.468  (TP=151 FN=44 FP=126 TN=143)
+-- c_missed / c_alarm = 20 --
+    PCA          optimal_thr@ 52.0pctile(CN)  cost=1009.0  sensitivity=0.774  false_alarm_rate=0.480  (TP=151 FN=44 FP=129 TN=140)
+    GMM          optimal_thr@ 52.8pctile(CN)  cost=1067.0  sensitivity=0.759  false_alarm_rate=0.472  (TP=148 FN=47 FP=127 TN=142)
+    Autoencoder  optimal_thr@ 53.2pctile(CN)  cost=1006.0  sensitivity=0.774  false_alarm_rate=0.468  (TP=151 FN=44 FP=126 TN=143)
+

@@ -1,0 +1,36 @@
+=== ExponentiatedGradient under EqualizedOdds vs. DemographicParity ===
+Same base estimator, same cost-aligned objective, same fallback cascade,
+same Platt calibration -- only the fairness constraint changes.
+
+n=2598 rows common to both files.
+
+=== Policy comparison, all decided at ratio=20 ===
+  Fair (EqualizedOdds), calibrated   cost=   5086.1  DIDI=2.579  catch= 69.2%  AUC=0.759
+  Fair (DemographicParity), calibrated -- section 5c cost=   5109.9  DIDI=1.253  catch= 65.8%  AUC=0.736
+  Plain (no fairness), calibrated    cost=   4913.5  DIDI=2.130  catch= 69.2%  AUC=0.802
+
+=== Per-group AUC / calibration gap, EqualizedOdds model ===
+      attribute  group    n   auc  calibration_gap
+       PTGENDER  1.000 1391 0.734            0.021
+       PTGENDER  2.000 1207 0.789            0.014
+PTEDUCAT_BUCKET  0.000 1408 0.779            0.015
+PTEDUCAT_BUCKET  1.000 1190 0.734            0.014
+        PTMARRY  1.000 1938 0.761            0.014
+        PTMARRY  2.000  242 0.847            0.018
+        PTMARRY  3.000  300 0.729            0.029
+        PTMARRY  4.000  107 0.570            0.046
+
+=== Attribution: does EqualizedOdds still lean on NOMINAL_MONTH? ===
+n=1419 rows with full extended+anomaly features.
+
+-- Plain -- Forest R2=0.817
+   SHAP mean |value|: feature | AMYGDALA_NORM     0.0107 | SUMMARY_SUVR      0.0101 | NOMINAL_MONTH     0.0097 | PRIOR_DIAGNOSIS   0.0072 | HIPPO_NORM        0.0052 | PTAU              0.0041 | AGE               0.0013 | TAU               0.0012 | ENTORHINAL_NORM   0.0005 | ANOMALY_SCORE     0.0000
+
+-- Fair (DemographicParity) -- Forest R2=0.760
+   SHAP mean |value|: feature | NOMINAL_MONTH     0.0166 | HIPPO_NORM        0.0074 | PRIOR_DIAGNOSIS   0.0061 | AMYGDALA_NORM     0.0030 | PTAU              0.0017 | AGE               0.0006 | SUMMARY_SUVR      0.0003 | TAU               0.0003 | ANOMALY_SCORE     0.0001 | ENTORHINAL_NORM   0.0000
+
+-- Fair (EqualizedOdds) -- Forest R2=0.724
+   SHAP mean |value|: feature | NOMINAL_MONTH     0.0146 | HIPPO_NORM        0.0074 | PRIOR_DIAGNOSIS   0.0071 | PTAU              0.0053 | TAU               0.0007 | AGE               0.0004 | AMYGDALA_NORM     0.0003 | ANOMALY_SCORE     0.0002 | ENTORHINAL_NORM   0.0000 | SUMMARY_SUVR      0.0000
+
+NOMINAL_MONTH SHAP: plain=0.0097  DP-fair=0.0166  EO-fair=0.0146
+SUMMARY_SUVR  SHAP: plain=0.0101  DP-fair=0.0003  EO-fair=0.0000

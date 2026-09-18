@@ -1,0 +1,22 @@
+n_visits = 9922, n_patients = 2093
+CN visits used to fit PCA: 3471 (823 patients)
+Retained components: 14 (91.9% variance)
+
+-- AUC using every visit --
+  CN vs MCI: 0.653  (n=7928)
+  CN vs AD: 0.857  (n=5465)
+  CN vs MCI+AD: 0.716
+
+-- AUC using only each patient's LAST visit --
+  CN vs MCI: 0.648  (n=1408)
+  CN vs AD: 0.862  (n=1364)
+  CN vs MCI+AD: 0.752
+
+-- Per-patient HI slope by baseline group (PCA-based HI) --
+  CN: median=0.0091, mean=0.0365, n=734
+  MCI: median=0.0351, mean=0.0617, n=1000
+  AD: median=0.1564, mean=0.2821, n=345
+
+-- AUC of slope itself as a per-patient predictor (sanity check) --
+  CN vs MCI: 0.592
+  CN vs AD: 0.712

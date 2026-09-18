@@ -1,0 +1,12 @@
+=== In-training fairness fix: LagDualDIDIRegressor on the 'core' tier ===
+(the worst individual-tier interval-level DIDI found by didi_breakdown.py: 7.289 on core/forest)
+
+Model                           AUC train   AUC test  DIDI(score) train  DIDI(score) test
+Unconstrained (forest)              0.902      0.791              0.488             0.558
+LagDualDIDIRegressor                0.618      0.570              0.161             0.352
+
+DIDI of the downstream recommended INTERVAL (test split, comparable to the 7.289 figure):
+  Unconstrained (forest): 8.716
+  LagDualDIDIRegressor:   7.313
+
+Final trained Lagrangian multiplier (alpha): 2.0108

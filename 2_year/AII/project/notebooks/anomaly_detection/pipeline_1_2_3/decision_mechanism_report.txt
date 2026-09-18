@@ -1,0 +1,34 @@
+=== Stage 3 explainability: why THIS interval, given THIS risk score ===
+Stage 2 (SHAP, explainability_fairness.py / fairness_expgrad_pipeline.py)
+explains RISK_SCORE itself. Stage 3 (decision_util.recommend_interval) is
+not a black box -- it's a 3-candidate closed-form cost minimization -- so
+it is explained exactly, not approximated: the expected cost of every
+candidate interval, per patient, with the margin over the runner-up.
+
+CHECK_COST=1.0, MISSED_CONVERSION_COST=20.0, REFERENCE_INTERVAL_MONTHS=12.0, MENU=(3, 6, 12)
+
+-- Low risk (10th pct): RISK_SCORE=0.063 (tier: extended+anomaly/expgrad) --
+     3mo: routine=4.000 + missed-risk=0.316 = total=4.316
+     6mo: routine=2.000 + missed-risk=0.632 = total=2.632
+    12mo: routine=1.000 + missed-risk=1.263 = total=2.263  <== RECOMMENDED
+    Winner beats runner-up by 0.368 units (14.0% cheaper)
+
+-- Median risk (50th pct): RISK_SCORE=0.614 (tier: extended+anomaly/expgrad) --
+     3mo: routine=4.000 + missed-risk=3.069 = total=7.069  <== RECOMMENDED
+     6mo: routine=2.000 + missed-risk=6.137 = total=8.137
+    12mo: routine=1.000 + missed-risk=12.275 = total=13.275
+    Winner beats runner-up by 1.069 units (13.1% cheaper)
+
+-- High risk (90th pct): RISK_SCORE=0.899 (tier: core/expgrad) --
+     3mo: routine=4.000 + missed-risk=4.493 = total=8.493  <== RECOMMENDED
+     6mo: routine=2.000 + missed-risk=8.986 = total=10.986
+    12mo: routine=1.000 + missed-risk=17.972 = total=18.972
+    Winner beats runner-up by 2.493 units (22.7% cheaper)
+
+Read across the three panels: as RISK_SCORE rises, the missed-conversion
+cost component grows fastest for the LONGEST candidate interval (12mo),
+since that term scales with interval/reference_interval_months -- which is
+exactly why the optimum shifts from a long interval at low risk toward a
+short one at high risk. This is the same cost asymmetry
+(MISSED_CONVERSION_COST=20x CHECK_COST) that motivated the fairness fix's
+~40% cost increase in section 5 of the README -- one consistent story.

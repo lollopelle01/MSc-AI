@@ -1,0 +1,37 @@
+Cohort: n=464 (CN=269, MCI=161, AD=34), 22 features (same as compare_three_methods.py / three_method_metrics.txt)
+TensorFlow 2.21.0, Keras 3.12.4
+
+PCA: 14 components, 91.9% variance
+GMM: 4 components, diag covariance (BIC=12966.9)
+sklearn MLPRegressor AE (OLD): 16-6-16, 562 iters, loss=0.1749
+Keras/TF AE (NEW): 16-6-16 Dense, 356 epochs (early stopped), best val_loss=0.4569
+
+-- PCA (T2/Q) --
+  CN vs MCI: 0.696  (n=430)
+  CN vs AD: 0.890  (95% CI [0.834, 0.937], n=303)
+  CN vs MCI+AD: 0.730
+
+-- GMM (-log-lik) --
+  CN vs MCI: 0.698  (n=430)
+  CN vs AD: 0.881  (95% CI [0.806, 0.939], n=303)
+  CN vs MCI+AD: 0.730
+
+-- Autoencoder -- sklearn MLPRegressor (OLD) --
+  CN vs MCI: 0.667  (n=430)
+  CN vs AD: 0.814  (95% CI [0.730, 0.890], n=303)
+  CN vs MCI+AD: 0.693
+
+-- Autoencoder -- Keras/TF (NEW) --
+  CN vs MCI: 0.703  (n=430)
+  CN vs AD: 0.851  (95% CI [0.778, 0.913], n=303)
+  CN vs MCI+AD: 0.728
+
+Winner by comparison:
+  CN vs MCI: Autoencoder -- Keras/TF (NEW) (AUC=0.703)
+  CN vs AD: PCA (T2/Q) (AUC=0.890)
+  CN vs MCI+AD: GMM (-log-lik) (AUC=0.730)
+
+Keras AE vs sklearn MLPRegressor AE, delta AUC (positive = Keras better):
+  CN vs MCI: +0.036  (old=0.667, new=0.703)
+  CN vs AD: +0.036  (old=0.814, new=0.851)
+  CN vs MCI+AD: +0.036  (old=0.693, new=0.728)

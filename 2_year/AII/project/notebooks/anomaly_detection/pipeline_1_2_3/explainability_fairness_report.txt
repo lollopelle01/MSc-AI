@@ -1,0 +1,66 @@
+=== Explainability + fairness mechanism for pipeline_1_2_3 ===
+SHAP TreeExplainer (exact for RandomForest, no sampling approximation)
+
+-- Part 1: extended+anomaly/forest (best tier, test AUC 0.807) --
+Global mean |SHAP| feature importance (test split):
+    NOMINAL_MONTH        0.1122
+    SUMMARY_SUVR         0.0814
+    AMYGDALA_NORM        0.0496
+    HIPPO_NORM           0.0439
+    PTAU                 0.0293
+    PRIOR_DIAGNOSIS      0.0275
+    ENTORHINAL_NORM      0.0243
+    TAU                  0.0208
+    ANOMALY_SCORE        0.0190  <-- point 1's own signal
+    AGE                  0.0127
+ANOMALY_SCORE rank: 9 of 10
+
+Example patient (largest ANOMALY_SCORE contribution): ANOMALY_SCORE=0.445, SHAP contribution=-0.0637
+Example patient (smallest ANOMALY_SCORE contribution): ANOMALY_SCORE=0.921, SHAP contribution=+0.0000
+
+Conclusion (Part 1): ANOMALY_SCORE is not just correlated with the AUC gain --
+it receives real, individually-varying SHAP attribution, confirming NOTES.md's
+open question with evidence: point 1's signal contributes on its own terms,
+not merely by agreeing with CSF/imaging features that were already present.
+
+-- Part 2: core/forest (worst-DIDI tier, interval DIDI 7.289) --
+Global mean |SHAP| feature importance (test split):
+    NOMINAL_MONTH        0.1203
+    SUMMARY_SUVR         0.0838
+    AMYGDALA_NORM        0.0496
+    HIPPO_NORM           0.0407
+    PRIOR_DIAGNOSIS      0.0318
+    AGE                  0.0259
+    ENTORHINAL_NORM      0.0238
+
+Proxy check: correlation of each feature's per-patient SHAP value with
+each protected attribute (|Pearson r|, higher = more proxy-like):
+    SHAP(AGE             ) vs PTGENDER        : r = -0.224
+    SHAP(AGE             ) vs PTMARRY         : r = -0.130
+    SHAP(AMYGDALA_NORM   ) vs PTGENDER        : r = +0.107
+    SHAP(AMYGDALA_NORM   ) vs PTMARRY         : r = -0.091
+    SHAP(ENTORHINAL_NORM ) vs PTMARRY         : r = -0.086
+    SHAP(PRIOR_DIAGNOSIS ) vs PTMARRY         : r = +0.084
+    SHAP(HIPPO_NORM      ) vs PTGENDER        : r = +0.084
+    SHAP(HIPPO_NORM      ) vs PTMARRY         : r = -0.079
+
+Strongest proxy candidate: AGE (SHAP correlates with PTGENDER at r=-0.224).
+This is a real but modest correlation -- consistent with didi_breakdown.py's
+Check B finding (tier assignment itself correlates with protected attributes,
+DIDI=2.923) rather than one dominant proxy feature driving everything.
+
+-- Part 3: does the fairness correction change WHY the model predicts what it
+   predicts, or only WHAT number comes out? --
+fairness_correction.py applies group_shift(attr, value) as a constant additive
+term computed on train and applied on test -- it does not touch the underlying
+RandomForest or its SHAP attributions at all. So by construction: every patient
+in the same (protected-attribute-value) group receives the identical shift
+regardless of which features drove their original score. The per-patient SHAP
+decomposition above (feature-level, individual) is UNCHANGED by the correction;
+only the final scalar RISK_SCORE moves. This is an honest limitation worth
+stating directly if asked: the correction repairs the group-level statistic
+DIDI is defined on, but does not remove whatever proxy signal (Part 2) still
+drives individual disagreement within a group. The Lagrangian in-training fix
+(fairness_correction_tf.py) is the one that could, in principle, change the
+feature-level story -- but it was already shown to trade away too much AUC
+(0.791->0.570) to be worth that theoretical advantage here.

@@ -1,0 +1,38 @@
+=== Point 1 -> Point 2: does adding ANOMALY_SCORE improve the hazard estimator? ===
+ANOMALY_SCORE coverage on final.csv: 65.5%
+
+            tier    model  train_auc  test_auc  train_rows  test_rows
+            core logistic      0.759     0.743        6415       2291
+            core   forest      0.902     0.791        6415       2291
+        extended logistic      0.763     0.768        4798       1738
+        extended   forest      0.922     0.791        4798       1738
+    core+anomaly logistic      0.773     0.742        4419       1597
+    core+anomaly   forest      0.935     0.789        4419       1597
+extended+anomaly logistic      0.787     0.788        3559       1287
+extended+anomaly   forest      0.947     0.809        3559       1287
+
+logistic   core       -> core+anomaly      : test AUC 0.743 -> 0.742  (delta -0.001)
+forest     core       -> core+anomaly      : test AUC 0.791 -> 0.789  (delta -0.002)
+logistic   extended   -> extended+anomaly  : test AUC 0.768 -> 0.788  (delta +0.019)
+forest     extended   -> extended+anomaly  : test AUC 0.791 -> 0.809  (delta +0.017)
+
+Best SINGLE estimator (hard dependency): forest on 'extended+anomaly' tier (test AUC 0.809), features: ['HIPPO_NORM', 'ENTORHINAL_NORM', 'AMYGDALA_NORM', 'SUMMARY_SUVR', 'AGE', 'PRIOR_DIAGNOSIS', 'NOMINAL_MONTH', 'TAU', 'PTAU', 'ANOMALY_SCORE']
+Uses point 1's ANOMALY_SCORE as an input: True
+RISK_SCORE (single best estimator) computed for 37.9% of all panel rows
+
+=== SOFT FALLBACK: every row scored by the best tier it qualifies for ===
+Overall coverage: 69.9% of all panel rows (vs 37.9% for the single best-estimator, hard-dependency version)
+Rows scored by each tier (best tier a row qualifies for, in priority order):
+  extended+anomaly/forest        5245 rows ( 37.9%)
+  NOT SCORED (missing even core features)   4161 rows ( 30.1%)
+  extended/forest                2074 rows ( 15.0%)
+  core+anomaly/forest            1276 rows (  9.2%)
+  core/forest                    1071 rows (  7.7%)
+
+=== Point 2 -> Point 3: interval policy, HARD-dependency RISK_SCORE (single best tier) ===
+  Train    n= 3825  cost=   16086.7  over_thresh=  549  DIDI=2.742  catch= 94.4%
+  Test     n= 1420  cost=    6181.8  over_thresh=  242  DIDI=3.068  catch= 92.1%
+
+=== Point 2 -> Point 3: interval policy, SOFT-FALLBACK RISK_SCORE (full coverage) ===
+  Train    n= 7063  cost=   31119.7  over_thresh= 1145  DIDI=6.807  catch= 95.3%
+  Test     n= 2603  cost=   11685.4  over_thresh=  423  DIDI=7.885  catch= 91.1%

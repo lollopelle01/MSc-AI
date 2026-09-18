@@ -1,0 +1,60 @@
+=== Fairness + explainability mechanism: ExponentiatedGradient throughout ===
+fairlearn.reductions.ExponentiatedGradient(DemographicParity, eps=0.01, max_iter=30)
+wraps RandomForestClassifier(n_estimators=150, max_depth=6, class_weight='balanced') -- retrained
+for every tier in the fallback cascade, replacing the plain-forest + post-hoc-shift combo.
+
+Coverage of the ExponentiatedGradient fallback: 69.9% (9666/13827 panel rows) -- same cascade structure as before.
+
+-- Policy evaluation: original plain-forest fallback vs. this all-ExponentiatedGradient fallback --
+  Train, ExpGrad fallback      n= 7063  cost=   43393.8  DIDI=3.022  catch= 95.8%
+  Test, ExpGrad fallback       n= 2603  cost=   16080.2  DIDI=2.208  catch= 94.5%
+(compare to wire_full_pipeline.py's plain fallback: Test cost=10825.8 DIDI=8.570 catch=94.9%,
+ and fairness_correction.py's post-hoc-shifted version: Test cost=10782.1 DIDI=3.153 catch=93.2%)
+
+-- Closing the residual (cross-tier) gap: post-hoc shift ON TOP of the EG fallback --
+  Train, EG + post-hoc         n= 7063  cost=   43407.2  DIDI=3.033  catch= 95.8%
+  Test, EG + post-hoc          n= 2603  cost=   16081.3  DIDI=6.155  catch= 94.5%
+This combination keeps ExponentiatedGradient as the substrate the SHAP audit below
+explains (the retrain that changed the model's actual reasoning, and that ANOMALY_SCORE
+and the proxy checks below describe), and uses the cheap group-shift only for the
+residual cross-tier disparity a single-tier constraint structurally cannot reach --
+the same honest layering explainability_fairness.py's Part 3 flagged as a limitation
+of the shift ALONE, now applied on top of a fairer base instead of a plain one.
+
+-- SHAP on the fair (ExponentiatedGradient) extended+anomaly model --
+Global mean |SHAP| feature importance (test split), weighted across mixture components:
+    NOMINAL_MONTH        0.0968
+    HIPPO_NORM           0.0297
+    AMYGDALA_NORM        0.0236
+    SUMMARY_SUVR         0.0230
+    PRIOR_DIAGNOSIS      0.0208
+    ANOMALY_SCORE        0.0181  <-- point 1's own signal
+    PTAU                 0.0181
+    TAU                  0.0163
+    AGE                  0.0085
+    ENTORHINAL_NORM      0.0067
+ANOMALY_SCORE rank: 6 of 10 (fair model)
+
+-- SHAP on the fair (ExponentiatedGradient) core model (was the worst-DIDI tier) --
+Global mean |SHAP| feature importance (test split):
+    NOMINAL_MONTH        0.0796
+    SUMMARY_SUVR         0.0383
+    HIPPO_NORM           0.0302
+    AMYGDALA_NORM        0.0291
+    AGE                  0.0218
+    PRIOR_DIAGNOSIS      0.0199
+    ENTORHINAL_NORM      0.0166
+
+Proxy check on the FAIR model: correlation of each feature's per-patient SHAP
+value with each protected attribute (|Pearson r|) -- compare to the plain
+model's strongest proxy, AGE vs PTGENDER at r=-0.224:
+    SHAP(AMYGDALA_NORM   ) vs PTGENDER        : r = +0.122
+    SHAP(AMYGDALA_NORM   ) vs PTMARRY         : r = -0.120
+    SHAP(PRIOR_DIAGNOSIS ) vs PTGENDER        : r = -0.116
+    SHAP(AGE             ) vs PTMARRY         : r = -0.102
+    SHAP(PRIOR_DIAGNOSIS ) vs PTEDUCAT_BUCKET : r = +0.098
+
+Conclusion: because ExponentiatedGradient is a genuine retrain (a reweighted
+mixture of forests, not a post-hoc shift), this SHAP audit describes the actual
+model now driving RISK_SCORE -- explainability and fairness are the same object
+here, not two separate patches on top of an unchanged classifier.

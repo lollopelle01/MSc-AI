@@ -1,0 +1,14 @@
+pca_hi_trajectories.csv rows: 9922  (2093 patients)
+final.csv rows with a diagnosis date: 13771  (3762 patients)
+RIDs in both files: 2093
+RIDs in pca_hi_trajectories.csv but NOT in final.csv at all: 0 -- these cannot reach 100% no matter how the join is done.
+
+Direct RID + nearest-EXAMDATE_DX match (tolerance 180 days): 9901 / 9922 rows keyed (99.8%)
+  Exact same-day matches: 15.9%
+  Match gap distribution (days): median=10, 95th pct=104, max=180
+
+Still unmatched: 21 rows
+  ...because the RID isn't in final.csv at all: 0
+  ...because RID is in final.csv but no visit within 180 days: 21
+
+Ceiling given final.csv's own cohort: 100.0% of HI rows belong to a patient final.csv has at all -- 99.8% of THAT reachable subset is actually keyed within 180 days.

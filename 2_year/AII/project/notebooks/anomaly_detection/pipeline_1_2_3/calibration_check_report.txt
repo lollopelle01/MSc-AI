@@ -1,0 +1,8 @@
+=== PART A: Can the hazard model's calibration gap be fixed? ===
+Tier: extended+anomaly/forest (the deployed best single estimator, test AUC 0.807 from wire_full_pipeline.py)
+
+BEFORE (plain forest):       test AUC=0.807  weighted mean |calibration gap|=0.208
+AFTER (sigmoid-calibrated):  test AUC=0.808  weighted mean |calibration gap|=0.010
+Calibration gap change: +95.1% (improved)
+AUC change: 0.807 -> 0.808 (preserved -- recalibration should not meaningfully change ranking)
+

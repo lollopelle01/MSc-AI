@@ -1,0 +1,15 @@
+=== Refit-at-100 vs. re-thresholded-at-100 vs. plain, all decided at ratio=100 ===
+n=2598 rows common to both files (5 duplicate-key rows dropped from each side first).
+
+-- REFIT at ratio=100 (this script's question) --
+   cost=10880.7  DIDI=4.118  catch_rate=87.0%  AUC=0.740
+
+-- RE-THRESHOLDED only (ratio=20 fit, decided at 100 -- section 5d) --
+   cost=10961.6  DIDI=5.818  catch_rate=85.6%  AUC=0.736
+
+-- Plain (no fairness), decided at 100 --
+   cost=10727.0  DIDI=7.655  catch_rate=89.7%  AUC=0.802
+
+-- Original fair fit, decided at its native ratio=20 (section 5c) --
+   cost=5109.9  DIDI=1.253  catch_rate=65.8%  AUC=0.736
+

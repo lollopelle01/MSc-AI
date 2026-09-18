@@ -1,0 +1,29 @@
+=== Standalone PCA anomaly-detection gain from relaxing MIN_VISITS_PER_PATIENT ===
+Same PCA baseline (fit once on all CN visits at min_visits=1) scores all three
+populations below -- differences reflect the POPULATION, not a refitting artifact.
+
+-- KEPT today (>=2 visits, current MIN_VISITS_PER_PATIENT) (n_patients=2079) --
+  CN vs MCI: 0.652  (n=1395)
+  CN vs AD: 0.870  (n=1355)
+  CN vs MCI+AD: 0.758  (n=2079)
+
+-- EXPANDED (>=1 visit, MIN_VISITS_PER_PATIENT=1) (n_patients=3030) --
+  CN vs MCI: 0.645  (n=2217)
+  CN vs AD: 0.869  (n=1976)
+  CN vs MCI+AD: 0.743  (n=3030)
+
+-- MARGINAL ONLY (exactly 1 visit -- the newly-included patients) (n_patients=951) --
+  CN vs MCI: 0.620  (n=822)
+  CN vs AD: 0.832  (n=621)
+  CN vs MCI+AD: 0.680  (n=951)
+
+Diagnosis mix of the marginal (newly-included) group:
+  CN: 492
+  MCI: 330
+  AD: 129
+
+Interpretation: compare KEPT vs EXPANDED -- if the aggregate AUC barely moves,
+relaxing the threshold adds coverage without adding standalone detection power,
+which is exactly the 'small gain' argument for keeping MIN_VISITS_PER_PATIENT=2.
+The MARGINAL-only AUC (if computable) shows directly how reliable a health index
+built from a single visit actually is for the patients it would newly reach.

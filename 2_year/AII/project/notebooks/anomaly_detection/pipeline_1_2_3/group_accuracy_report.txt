@@ -1,0 +1,47 @@
+=== PART B: DIDI's blind spot -- per-group accuracy, plain vs fair ===
+DIDI checks whether GROUP AVERAGE outcomes match. It says nothing about
+whether each group's own predictions are individually accurate. This
+checks that directly: AUC and calibration gap, computed SEPARATELY per
+protected-attribute group, for the plain fallback RISK_SCORE and the
+fairness-corrected (ExponentiatedGradient) one.
+
+-- Plain (unconstrained) fallback RISK_SCORE --
+      attribute  group    n   auc  calibration_gap model
+       PTGENDER  1.000 1274 0.878            0.229 plain
+       PTGENDER  2.000 1180 0.882            0.228 plain
+PTEDUCAT_BUCKET  0.000 1356 0.890            0.233 plain
+PTEDUCAT_BUCKET  1.000 1098 0.861            0.223 plain
+        PTMARRY  1.000 1851 0.880            0.218 plain
+        PTMARRY  2.000  303 0.892            0.294 plain
+        PTMARRY  3.000  226 0.892            0.243 plain
+        PTMARRY  4.000   72   NaN            0.168 plain
+
+-- Fair (ExponentiatedGradient, cost-aligned) fallback RISK_SCORE --
+      attribute  group    n   auc  calibration_gap     model
+       PTGENDER  1.000 1274 0.798            0.476 fair (EG)
+       PTGENDER  2.000 1180 0.820            0.476 fair (EG)
+PTEDUCAT_BUCKET  0.000 1356 0.803            0.471 fair (EG)
+PTEDUCAT_BUCKET  1.000 1098 0.811            0.482 fair (EG)
+        PTMARRY  1.000 1851 0.808            0.470 fair (EG)
+        PTMARRY  2.000  303 0.894            0.499 fair (EG)
+        PTMARRY  3.000  226 0.637            0.502 fair (EG)
+        PTMARRY  4.000   72   NaN            0.449 fair (EG)
+
+-- Delta (fair minus plain) per group --
+      attribute  group  auc_delta  calibration_gap_delta
+       PTGENDER +1.000     -0.080                 +0.247
+       PTGENDER +2.000     -0.062                 +0.248
+PTEDUCAT_BUCKET +0.000     -0.087                 +0.238
+PTEDUCAT_BUCKET +1.000     -0.050                 +0.259
+        PTMARRY +1.000     -0.072                 +0.251
+        PTMARRY +2.000     +0.002                 +0.205
+        PTMARRY +3.000     -0.255                 +0.259
+        PTMARRY +4.000        NaN                 +0.281
+
+Largest AUC drop for any single group: PTMARRY=3.0, -0.255
+Read this alongside the DIDI numbers already reported: DIDI fell 76%
+(8.570 -> 2.098) from the same fairness correction. If per-group AUC and
+calibration gap stayed roughly flat across groups (small deltas here),
+that's direct evidence the fairness fix equalized OUTCOMES without
+degrading any single group's own prediction ACCURACY -- the exact
+question DIDI alone cannot answer.

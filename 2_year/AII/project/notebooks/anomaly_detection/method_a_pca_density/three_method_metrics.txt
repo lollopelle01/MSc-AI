@@ -1,0 +1,24 @@
+Cohort: n=464 (CN=269, MCI=161, AD=34), 22 features (same for all 3 methods)
+PCA:          14 components, 91.9% variance
+GMM:          4 components, diag covariance (BIC=12966.9)
+Autoencoder:  16-6-16 Keras/TF Dense autoencoder (bottleneck=6), 434 epochs (early stopped), best val_loss=0.4613
+
+-- PCA (T2/Q) --
+  CN vs MCI: 0.696  (n=430)
+  CN vs AD: 0.890  (95% CI [0.834, 0.937], n=303)
+  CN vs MCI+AD: 0.730
+
+-- GMM (-log-lik) --
+  CN vs MCI: 0.698  (n=430)
+  CN vs AD: 0.881  (95% CI [0.806, 0.939], n=303)
+  CN vs MCI+AD: 0.730
+
+-- Autoencoder (recon. error) --
+  CN vs MCI: 0.710  (n=430)
+  CN vs AD: 0.866  (95% CI [0.794, 0.922], n=303)
+  CN vs MCI+AD: 0.737
+
+Winner by comparison:
+  CN vs MCI: Autoencoder (recon. error) (AUC=0.710)
+  CN vs AD: PCA (T2/Q) (AUC=0.890)
+  CN vs MCI+AD: Autoencoder (recon. error) (AUC=0.737)
