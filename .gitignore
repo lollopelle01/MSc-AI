@@ -1,2 +1,36 @@
-
+# macOS
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.ipynb_checkpoints
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Cache generate dal codice (rigenerabili, troppo pesanti anche per LFS)
+2_year/EAI/project/graphs/cache/
+*.pkl
+*.sqlite3
+*.sqlite
+
+# Dataset scaricabili da fonte esterna (scicite)
+2_year/EAI/project/scicite/scaffolds/
+
+# Toolchain/build/install scaricati (dipendenze esterne del corso APAI, non versionare)
+2_year/APAI/APAI2/APAI-Docker/pulp-riscv-gcc-toolchain/
+2_year/APAI/APAI2/APAI-Docker/pulp-sdk/build/
+2_year/APAI/APAI2/APAI-Docker/pulp-sdk/install/
+*.so
+*.o
+*.a
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# File di sistema generici
+*.log
