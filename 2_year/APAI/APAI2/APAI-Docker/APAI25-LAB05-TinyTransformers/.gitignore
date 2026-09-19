@@ -1,0 +1,45 @@
+# === IDEs & Editors ===
+.vscode/
+.idea/
+*.code-workspace
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+
+# === Build / Output ===
+BUILD/
+build/
+dist/
+out/
+*.log
+
+# === Python (if relevant) ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# === C/C++ / Verilog / Simulation ===
+*.o
+*.obj
+*.exe
+*.out
+*.vcd
+*.wlf
+*.fsdb
+*.vvp
+*.log
+*.jou
+*.str
+*.dmp
+
+# === Misc ===
+*.swp
+*.tmp
+*.bak
+*.cache
+

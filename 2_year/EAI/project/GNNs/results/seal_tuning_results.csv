@@ -1,0 +1,9 @@
+rank,lr,hidden-dim,label-dim,metric,score,elapsed_s,checkpoint
+1,1e-4,64,32,ap,0.9904,21.5,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_003.pt
+2,1e-4,32,32,ap,0.9873,37.9,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_001.pt
+3,1e-4,64,16,ap,0.9865,45.2,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_002.pt
+4,1e-3,64,32,ap,0.9865,45.7,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_007.pt
+5,1e-4,32,16,ap,0.9864,38.2,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_000.pt
+6,1e-3,64,16,ap,0.9852,42.2,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_006.pt
+7,1e-3,32,32,ap,0.9843,39.6,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_005.pt
+8,1e-3,32,16,ap,0.9782,37.2,/Users/giorgioscavello/Documents/GitHub/pellegrinoscavello2425/scripts/../GNNs/weights/tuning/seal/trial_004.pt

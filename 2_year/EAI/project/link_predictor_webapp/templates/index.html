@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Predictor — CitGraph</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Link Predictor</h1>
+    <p class="subtitle">
+      Insert a paper and see its citation subgraph with the trained model's predicted-but-not-
+      yet-existing links drawn in alongside real citations — plus those predictions split into
+      three lenses (all-time greats, promising stars, hidden gems) instead of always surfacing
+      the same most-cited papers, with a decision-tree or LIME explanation for every suggestion.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="search-panel">
+    <label for="searchBox">Find a paper (by title or exact paper ID)</label>
+    <input type="text" id="searchBox" placeholder="e.g. spatial attention, multisensory integration…" autocomplete="off">
+    <div id="searchResults" class="search-results"></div>
+  </section>
+
+  <div id="statusLine" class="status-line"></div>
+
+  <section id="examplesPanel" class="examples-panel" hidden>
+    <h2>Try one of these</h2>
+    <p class="examples-desc">Papers with at least one genuinely confident predicted link — a clearer demonstration than a randomly-chosen paper, since the indexed citation subgraph is sparse.</p>
+    <div id="examplesList" class="examples-list"></div>
+  </section>
+
+  <div id="exploreLayout" class="explore-layout" hidden>
+    <section class="graph-panel">
+      <div id="centerPaper"></div>
+      <div class="graph-legend">
+        <span><i class="dot dot-center"></i> centered paper</span>
+        <span><i class="dot dot-citing"></i> cites this paper</span>
+        <span><i class="dot dot-cited"></i> cited by this paper</span>
+        <span><i class="dot dot-greats"></i> predicted · all-time greats</span>
+        <span><i class="dot dot-stars"></i> predicted · promising stars</span>
+        <span><i class="dot dot-gems"></i> predicted · hidden gems</span>
+        <span class="graph-hint">Click any node to re-center.</span>
+      </div>
+      <div id="graphCanvas" class="graph-canvas"></div>
+    </section>
+
+    <aside class="buckets-panel">
+      <div class="bucket bucket-greats" data-bucket="all_time_greats">
+        <h3><i class="dot dot-greats"></i> All-time greats</h3>
+        <p class="bucket-desc">High citation-graph degree — well-established papers the model still thinks are relevant.</p>
+        <div class="bucket-list" id="bucket-all_time_greats"></div>
+      </div>
+      <div class="bucket bucket-stars" data-bucket="promising_stars">
+        <h3><i class="dot dot-stars"></i> Promising stars</h3>
+        <p class="bucket-desc">Published within the last few years of today's actual date (widened automatically if this paper's own neighborhood has nothing that recent), flagged relevant by the model.</p>
+        <div class="bucket-list" id="bucket-promising_stars"></div>
+      </div>
+      <div class="bucket bucket-gems" data-bucket="hidden_gems">
+        <h3><i class="dot dot-gems"></i> Hidden gems</h3>
+        <p class="bucket-desc">Not recent by today's date, and low citation count, but the model still flags them as relevant — the papers the Matthew effect leaves behind.</p>
+        <div class="bucket-list" id="bucket-hidden_gems"></div>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>Model: trained GraphSAGE link predictor (<code>GNNs/weights/graphsage_link_predictor_es_ap_final.pt</code>).
+  Explanations: a CART decision-tree surrogate (Symbolic Knowledge Extraction) trained offline to
+  approximate the model, falling back to a live per-instance LIME explanation when the tree doesn't
+  fit a specific prediction well. Data built offline by <code>build_recommender_index.py</code>.
+  Runs entirely locally — no data leaves this machine.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

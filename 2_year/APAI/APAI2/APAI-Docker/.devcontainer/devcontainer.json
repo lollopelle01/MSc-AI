@@ -1,0 +1,7 @@
+{
+  "name": "APAI Docker",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  }
+}

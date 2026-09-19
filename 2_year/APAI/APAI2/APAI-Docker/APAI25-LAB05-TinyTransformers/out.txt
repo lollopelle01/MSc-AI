@@ -1,0 +1,9528 @@
+RM  /workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV/
+CC  main.c
+CC  conf_and_weights_fp16.c
+CC  Tokenizer.c
+CC  Sampler.c
+CC  MHSA.c
+CC  net_utils.c
+CC  net.c
+CC  pulp-trainlib/lib/sources/pulp_matmul_fp16.c
+CC  pulp-trainlib/lib/sources/pulp_train_utils_fp16.c
+CC  pulp-trainlib/lib/sources/pulp_rmsnorm_fp16.c
+CC  pulp-trainlib/lib/sources/pulp_act_fp16.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/fll-v1.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/freq-domains.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/pulp/kernel/chips/pulp/soc.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/read_fs/read_fs.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/semihost.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/host_fs.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/fs.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pmsis/pmsis_bsp/bsp/pulp.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/io.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/fprintf.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/prf.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/sprintf.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/semihost.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/init.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/kernel.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/device.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/task.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/alloc.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/alloc_pool.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/irq.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/soc_event.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/log.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/time.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/pulp/drivers/uart/uart-v1.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/pulp/drivers/udma/udma-v3.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/cluster.c
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/crt0.S
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/irq_asm.S
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/task_asm.S
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/time_asm.S
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/common/kernel/soc_event_v2_itc.S
+CC  /workspaces/APAI-Docker/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/pe-eu-v3.S
+LD  /workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV//pulp_llama2/pulp_llama2
+gapy --target=pulp --platform=gvsoc --work-dir=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV/ --config-opt=cluster/nb_pe=8    run --image --binary=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV//pulp_llama2/pulp_llama2 
+gapy --target=pulp --platform=gvsoc --work-dir=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV/ --config-opt=cluster/nb_pe=8    run --flash --binary=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV//pulp_llama2/pulp_llama2 
+gapy --target=pulp --platform=gvsoc --work-dir=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV/ --config-opt=cluster/nb_pe=8    run --exec-prepare --exec --binary=/workspaces/APAI-Docker/APAI25-LAB05-TinyTransformers/BUILD/PULP/GCC_RISCV//pulp_llama2/pulp_llama2 
+
+Hello there.
+Configuring cluster..
+
+Launching net.c...
+
+
+V matmul: 
+
+[core 0] cycles = 724
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1070
+[core 0] instr = 806
+[core 0] active cycles = 1016
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 675
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 627
+[core 0] instr = 318
+[core 0] active cycles = 624
+[core 0] ext load = 5
+[core 0] TCDM cont = 6
+[core 0] ld stall = 18
+[core 0] imiss = 176
+Once
+V matmul: 
+
+[core 0] cycles = 713
+[core 0] instr = 476
+[core 0] active cycles = 682
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1077
+[core 0] ext load = 1
+[core 0] TCDM cont = 105
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 656
+[core 0] ext load = 1
+[core 0] TCDM cont = 16
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 720
+[core 0] instr = 386
+[core 0] active cycles = 717
+[core 0] ext load = 8
+[core 0] TCDM cont = 9
+[core 0] ld stall = 23
+[core 0] imiss = 154
+ upon
+V matmul: 
+
+[core 0] cycles = 723
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 667
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 831
+[core 0] instr = 454
+[core 0] active cycles = 828
+[core 0] ext load = 11
+[core 0] TCDM cont = 8
+[core 0] ld stall = 28
+[core 0] imiss = 154
+ a
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 714
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1101
+[core 0] instr = 806
+[core 0] active cycles = 1085
+[core 0] ext load = 1
+[core 0] TCDM cont = 113
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 724
+[core 0] instr = 474
+[core 0] active cycles = 721
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 890
+[core 0] instr = 478
+[core 0] active cycles = 887
+[core 0] ext load = 14
+[core 0] TCDM cont = 16
+[core 0] ld stall = 18
+[core 0] imiss = 154
+ time
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1100
+[core 0] instr = 806
+[core 0] active cycles = 1097
+[core 0] ext load = 1
+[core 0] TCDM cont = 114
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 691
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1031
+[core 0] instr = 557
+[core 0] active cycles = 1028
+[core 0] ext load = 17
+[core 0] TCDM cont = 26
+[core 0] ld stall = 23
+[core 0] imiss = 165
+,
+V matmul: 
+
+[core 0] cycles = 778
+[core 0] instr = 476
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1064
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 702
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1126
+[core 0] instr = 627
+[core 0] active cycles = 1123
+[core 0] ext load = 20
+[core 0] TCDM cont = 22
+[core 0] ld stall = 28
+[core 0] imiss = 154
+ there
+V matmul: 
+
+[core 0] cycles = 758
+[core 0] instr = 476
+[core 0] active cycles = 744
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1112
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1237
+[core 0] instr = 694
+[core 0] active cycles = 1234
+[core 0] ext load = 23
+[core 0] TCDM cont = 20
+[core 0] ld stall = 33
+[core 0] imiss = 154
+ was
+V matmul: 
+
+[core 0] cycles = 713
+[core 0] instr = 476
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 110
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1106
+[core 0] ext load = 1
+[core 0] TCDM cont = 123
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1266
+[core 0] instr = 706
+[core 0] active cycles = 1263
+[core 0] ext load = 26
+[core 0] TCDM cont = 17
+[core 0] ld stall = 22
+[core 0] imiss = 143
+ a
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 95
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1092
+[core 0] instr = 806
+[core 0] active cycles = 1085
+[core 0] ext load = 1
+[core 0] TCDM cont = 113
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 711
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1413
+[core 0] instr = 786
+[core 0] active cycles = 1410
+[core 0] ext load = 29
+[core 0] TCDM cont = 23
+[core 0] ld stall = 27
+[core 0] imiss = 165
+ b
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1031
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 1524
+[core 0] instr = 854
+[core 0] active cycles = 1521
+[core 0] ext load = 32
+[core 0] TCDM cont = 11
+[core 0] ld stall = 32
+[core 0] imiss = 176
+r
+V matmul: 
+
+[core 0] cycles = 728
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1121
+[core 0] instr = 806
+[core 0] active cycles = 1106
+[core 0] ext load = 1
+[core 0] TCDM cont = 134
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 1633
+[core 0] instr = 925
+[core 0] active cycles = 1630
+[core 0] ext load = 35
+[core 0] TCDM cont = 33
+[core 0] ld stall = 37
+[core 0] imiss = 154
+a
+V matmul: 
+
+[core 0] cycles = 754
+[core 0] instr = 476
+[core 0] active cycles = 713
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1036
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1688
+[core 0] instr = 936
+[core 0] active cycles = 1685
+[core 0] ext load = 38
+[core 0] TCDM cont = 33
+[core 0] ld stall = 26
+[core 0] imiss = 165
+ve
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1078
+[core 0] ext load = 1
+[core 0] TCDM cont = 95
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 702
+[core 0] instr = 474
+[core 0] active cycles = 665
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 1815
+[core 0] instr = 1016
+[core 0] active cycles = 1805
+[core 0] ext load = 41
+[core 0] TCDM cont = 34
+[core 0] ld stall = 31
+[core 0] imiss = 165
+ b
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1080
+[core 0] instr = 806
+[core 0] active cycles = 1032
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 691
+[core 0] instr = 474
+[core 0] active cycles = 671
+[core 0] ext load = 1
+[core 0] TCDM cont = 20
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 1915
+[core 0] instr = 1087
+[core 0] active cycles = 1912
+[core 0] ext load = 44
+[core 0] TCDM cont = 32
+[core 0] ld stall = 36
+[core 0] imiss = 165
+ir
+V matmul: 
+
+[core 0] cycles = 723
+[core 0] instr = 476
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1021
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2026
+[core 0] instr = 1153
+[core 0] active cycles = 2023
+[core 0] ext load = 47
+[core 0] TCDM cont = 29
+[core 0] ld stall = 41
+[core 0] imiss = 165
+d
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1083
+[core 0] ext load = 1
+[core 0] TCDM cont = 100
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 726
+[core 0] instr = 474
+[core 0] active cycles = 723
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 2052
+[core 0] instr = 1168
+[core 0] active cycles = 2049
+[core 0] ext load = 50
+[core 0] TCDM cont = 26
+[core 0] ld stall = 30
+[core 0] imiss = 154
+ named
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1091
+[core 0] instr = 806
+[core 0] active cycles = 1034
+[core 0] ext load = 1
+[core 0] TCDM cont = 18
+[core 0] ld stall = 5
+[core 0] imiss = 187
+
+ K matmul: 
+[core 0] cycles = 700
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2197
+[core 0] instr = 1252
+[core 0] active cycles = 2194
+[core 0] ext load = 53
+[core 0] TCDM cont = 34
+[core 0] ld stall = 35
+[core 0] imiss = 176
+ S
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1124
+[core 0] instr = 806
+[core 0] active cycles = 1100
+[core 0] ext load = 1
+[core 0] TCDM cont = 128
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 680
+[core 0] instr = 474
+[core 0] active cycles = 643
+[core 0] ext load = 1
+[core 0] TCDM cont = 25
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+ ATTENTION: 
+[core 0] cycles = 2293
+[core 0] instr = 1318
+[core 0] active cycles = 2290
+[core 0] ext load = 56
+[core 0] TCDM cont = 38
+[core 0] ld stall = 40
+[core 0] imiss = 154
+p
+V matmul: 
+
+[core 0] cycles = 781
+[core 0] instr = 476
+[core 0] active cycles = 726
+[core 0] ext load = 1
+[core 0] TCDM cont = 74
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1104
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 688
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 2415
+[core 0] instr = 1384
+[core 0] active cycles = 2412
+[core 0] ext load = 59
+[core 0] TCDM cont = 24
+[core 0] ld stall = 45
+[core 0] imiss = 176
+ot
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1015
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2444
+[core 0] instr = 1398
+[core 0] active cycles = 2427
+[core 0] ext load = 62
+[core 0] TCDM cont = 31
+[core 0] ld stall = 34
+[core 0] imiss = 143
+.
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1113
+[core 0] instr = 806
+[core 0] active cycles = 1061
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 733
+[core 0] instr = 474
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 2580
+[core 0] instr = 1481
+[core 0] active cycles = 2577
+[core 0] ext load = 65
+[core 0] TCDM cont = 32
+[core 0] ld stall = 39
+[core 0] imiss = 176
+ S
+V matmul: 
+
+[core 0] cycles = 751
+[core 0] instr = 476
+[core 0] active cycles = 737
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1080
+[core 0] instr = 806
+[core 0] active cycles = 1077
+[core 0] ext load = 1
+[core 0] TCDM cont = 105
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2686
+[core 0] instr = 1549
+[core 0] active cycles = 2683
+[core 0] ext load = 68
+[core 0] TCDM cont = 37
+[core 0] ld stall = 44
+[core 0] imiss = 165
+p
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1096
+[core 0] ext load = 1
+[core 0] TCDM cont = 113
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 701
+[core 0] instr = 474
+[core 0] active cycles = 664
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2810
+[core 0] instr = 1613
+[core 0] active cycles = 2792
+[core 0] ext load = 71
+[core 0] TCDM cont = 41
+[core 0] ld stall = 49
+[core 0] imiss = 154
+ot
+V matmul: 
+
+[core 0] cycles = 750
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 731
+[core 0] instr = 474
+[core 0] active cycles = 717
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 2823
+[core 0] instr = 1627
+[core 0] active cycles = 2809
+[core 0] ext load = 74
+[core 0] TCDM cont = 17
+[core 0] ld stall = 38
+[core 0] imiss = 154
+ lo
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1078
+[core 0] ext load = 1
+[core 0] TCDM cont = 106
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 664
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 2958
+[core 0] instr = 1709
+[core 0] active cycles = 2953
+[core 0] ext load = 77
+[core 0] TCDM cont = 44
+[core 0] ld stall = 43
+[core 0] imiss = 154
+ved
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1093
+[core 0] instr = 806
+[core 0] active cycles = 1082
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3079
+[core 0] instr = 1776
+[core 0] active cycles = 3065
+[core 0] ext load = 80
+[core 0] TCDM cont = 32
+[core 0] ld stall = 48
+[core 0] imiss = 165
+ to
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 721
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1093
+[core 0] instr = 806
+[core 0] active cycles = 1090
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3182
+[core 0] instr = 1845
+[core 0] active cycles = 3172
+[core 0] ext load = 83
+[core 0] TCDM cont = 39
+[core 0] ld stall = 53
+[core 0] imiss = 154
+ r
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 3216
+[core 0] instr = 1859
+[core 0] active cycles = 3213
+[core 0] ext load = 86
+[core 0] TCDM cont = 28
+[core 0] ld stall = 42
+[core 0] imiss = 165
+un
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1079
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 663
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3353
+[core 0] instr = 1939
+[core 0] active cycles = 3350
+[core 0] ext load = 89
+[core 0] TCDM cont = 35
+[core 0] ld stall = 47
+[core 0] imiss = 176
+ and
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1104
+[core 0] ext load = 1
+[core 0] TCDM cont = 121
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3466
+[core 0] instr = 2005
+[core 0] active cycles = 3459
+[core 0] ext load = 92
+[core 0] TCDM cont = 63
+[core 0] ld stall = 52
+[core 0] imiss = 143
+ play
+V matmul: 
+
+[core 0] cycles = 727
+[core 0] instr = 476
+[core 0] active cycles = 679
+[core 0] ext load = 1
+[core 0] TCDM cont = 16
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1085
+[core 0] ext load = 1
+[core 0] TCDM cont = 91
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 696
+[core 0] instr = 474
+[core 0] active cycles = 665
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3583
+[core 0] instr = 2075
+[core 0] active cycles = 3565
+[core 0] ext load = 95
+[core 0] TCDM cont = 48
+[core 0] ld stall = 57
+[core 0] imiss = 154
+ in
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 724
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1105
+[core 0] instr = 806
+[core 0] active cycles = 1053
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 742
+[core 0] instr = 474
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 25
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+ ATTENTION: 
+[core 0] cycles = 3581
+[core 0] instr = 2089
+[core 0] active cycles = 3578
+[core 0] ext load = 98
+[core 0] TCDM cont = 20
+[core 0] ld stall = 46
+[core 0] imiss = 154
+ the
+V matmul: 
+
+[core 0] cycles = 723
+[core 0] instr = 476
+[core 0] active cycles = 709
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1126
+[core 0] instr = 806
+[core 0] active cycles = 1123
+[core 0] ext load = 1
+[core 0] TCDM cont = 129
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3736
+[core 0] instr = 2170
+[core 0] active cycles = 3732
+[core 0] ext load = 101
+[core 0] TCDM cont = 56
+[core 0] ld stall = 51
+[core 0] imiss = 154
+ s
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1052
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 5
+[core 0] imiss = 187
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 660
+[core 0] ext load = 1
+[core 0] TCDM cont = 31
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3840
+[core 0] instr = 2238
+[core 0] active cycles = 3837
+[core 0] ext load = 104
+[core 0] TCDM cont = 60
+[core 0] ld stall = 56
+[core 0] imiss = 143
+k
+V matmul: 
+
+[core 0] cycles = 759
+[core 0] instr = 476
+[core 0] active cycles = 724
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1139
+[core 0] instr = 806
+[core 0] active cycles = 1120
+[core 0] ext load = 1
+[core 0] TCDM cont = 115
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 3962
+[core 0] instr = 2303
+[core 0] active cycles = 3958
+[core 0] ext load = 107
+[core 0] TCDM cont = 66
+[core 0] ld stall = 61
+[core 0] imiss = 143
+y
+V matmul: 
+
+[core 0] cycles = 716
+[core 0] instr = 476
+[core 0] active cycles = 661
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 110
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1095
+[core 0] ext load = 1
+[core 0] TCDM cont = 112
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 670
+[core 0] ext load = 1
+[core 0] TCDM cont = 30
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 3995
+[core 0] instr = 2320
+[core 0] active cycles = 3988
+[core 0] ext load = 110
+[core 0] TCDM cont = 36
+[core 0] ld stall = 50
+[core 0] imiss = 165
+.
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1117
+[core 0] instr = 806
+[core 0] active cycles = 1097
+[core 0] ext load = 1
+[core 0] TCDM cont = 125
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 4113
+[core 0] instr = 2402
+[core 0] active cycles = 4108
+[core 0] ext load = 113
+[core 0] TCDM cont = 39
+[core 0] ld stall = 55
+[core 0] imiss = 165
+ One
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1117
+[core 0] instr = 806
+[core 0] active cycles = 1066
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 4241
+[core 0] instr = 2473
+[core 0] active cycles = 4238
+[core 0] ext load = 116
+[core 0] TCDM cont = 71
+[core 0] ld stall = 60
+[core 0] imiss = 154
+ day
+V matmul: 
+
+[core 0] cycles = 750
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1097
+[core 0] instr = 806
+[core 0] active cycles = 1077
+[core 0] ext load = 1
+[core 0] TCDM cont = 94
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 4367
+[core 0] instr = 2535
+[core 0] active cycles = 4364
+[core 0] ext load = 119
+[core 0] TCDM cont = 68
+[core 0] ld stall = 65
+[core 0] imiss = 165
+,
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1112
+[core 0] instr = 806
+[core 0] active cycles = 1082
+[core 0] ext load = 1
+[core 0] TCDM cont = 88
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 4377
+[core 0] instr = 2553
+[core 0] active cycles = 4357
+[core 0] ext load = 122
+[core 0] TCDM cont = 46
+[core 0] ld stall = 54
+[core 0] imiss = 143
+ S
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1093
+[core 0] instr = 806
+[core 0] active cycles = 1078
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 659
+[core 0] ext load = 1
+[core 0] TCDM cont = 19
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 4508
+[core 0] instr = 2631
+[core 0] active cycles = 4504
+[core 0] ext load = 125
+[core 0] TCDM cont = 61
+[core 0] ld stall = 59
+[core 0] imiss = 154
+p
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 714
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1031
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 4628
+[core 0] instr = 2698
+[core 0] active cycles = 4614
+[core 0] ext load = 128
+[core 0] TCDM cont = 47
+[core 0] ld stall = 64
+[core 0] imiss = 165
+ot
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1108
+[core 0] instr = 806
+[core 0] active cycles = 1105
+[core 0] ext load = 1
+[core 0] TCDM cont = 133
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 4742
+[core 0] instr = 2769
+[core 0] active cycles = 4739
+[core 0] ext load = 131
+[core 0] TCDM cont = 74
+[core 0] ld stall = 69
+[core 0] imiss = 154
+ f
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 695
+[core 0] instr = 474
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 4769
+[core 0] instr = 2784
+[core 0] active cycles = 4758
+[core 0] ext load = 134
+[core 0] TCDM cont = 64
+[core 0] ld stall = 58
+[core 0] imiss = 143
+ou
+V matmul: 
+
+[core 0] cycles = 780
+[core 0] instr = 476
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1061
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 685
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 4881
+[core 0] instr = 2860
+[core 0] active cycles = 4875
+[core 0] ext load = 137
+[core 0] TCDM cont = 47
+[core 0] ld stall = 63
+[core 0] imiss = 154
+nd
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1136
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 714
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5009
+[core 0] instr = 2928
+[core 0] active cycles = 4990
+[core 0] ext load = 140
+[core 0] TCDM cont = 61
+[core 0] ld stall = 68
+[core 0] imiss = 143
+ a
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1068
+[core 0] ext load = 1
+[core 0] TCDM cont = 96
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 685
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5112
+[core 0] instr = 2999
+[core 0] active cycles = 5106
+[core 0] ext load = 143
+[core 0] TCDM cont = 57
+[core 0] ld stall = 73
+[core 0] imiss = 154
+ c
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1100
+[core 0] ext load = 1
+[core 0] TCDM cont = 117
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 658
+[core 0] ext load = 1
+[core 0] TCDM cont = 29
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 5165
+[core 0] instr = 3014
+[core 0] active cycles = 5156
+[core 0] ext load = 146
+[core 0] TCDM cont = 67
+[core 0] ld stall = 62
+[core 0] imiss = 154
+u
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1067
+[core 0] ext load = 1
+[core 0] TCDM cont = 95
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5289
+[core 0] instr = 3093
+[core 0] active cycles = 5277
+[core 0] ext load = 149
+[core 0] TCDM cont = 68
+[core 0] ld stall = 67
+[core 0] imiss = 154
+r
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1041
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5403
+[core 0] instr = 3162
+[core 0] active cycles = 5391
+[core 0] ext load = 152
+[core 0] TCDM cont = 60
+[core 0] ld stall = 72
+[core 0] imiss = 165
+ch
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1029
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 727
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 5499
+[core 0] instr = 3225
+[core 0] active cycles = 5496
+[core 0] ext load = 155
+[core 0] TCDM cont = 59
+[core 0] ld stall = 77
+[core 0] imiss = 154
+ in
+V matmul: 
+
+[core 0] cycles = 718
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1106
+[core 0] ext load = 1
+[core 0] TCDM cont = 134
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5519
+[core 0] instr = 3241
+[core 0] active cycles = 5516
+[core 0] ext load = 158
+[core 0] TCDM cont = 51
+[core 0] ld stall = 66
+[core 0] imiss = 143
+ his
+V matmul: 
+
+[core 0] cycles = 724
+[core 0] instr = 476
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1081
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 5670
+[core 0] instr = 3323
+[core 0] active cycles = 5667
+[core 0] ext load = 161
+[core 0] TCDM cont = 63
+[core 0] ld stall = 71
+[core 0] imiss = 165
+ b
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1055
+[core 0] instr = 806
+[core 0] active cycles = 1016
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 702
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 5793
+[core 0] instr = 3392
+[core 0] active cycles = 5790
+[core 0] ext load = 164
+[core 0] TCDM cont = 64
+[core 0] ld stall = 76
+[core 0] imiss = 176
+ir
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1087
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 5898
+[core 0] instr = 3462
+[core 0] active cycles = 5885
+[core 0] ext load = 167
+[core 0] TCDM cont = 71
+[core 0] ld stall = 81
+[core 0] imiss = 154
+t
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1106
+[core 0] instr = 806
+[core 0] active cycles = 1064
+[core 0] ext load = 1
+[core 0] TCDM cont = 81
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 5951
+[core 0] instr = 3473
+[core 0] active cycles = 5944
+[core 0] ext load = 170
+[core 0] TCDM cont = 86
+[core 0] ld stall = 70
+[core 0] imiss = 154
+h
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1085
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 692
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6083
+[core 0] instr = 3554
+[core 0] active cycles = 6067
+[core 0] ext load = 173
+[core 0] TCDM cont = 102
+[core 0] ld stall = 75
+[core 0] imiss = 143
+d
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1093
+[core 0] instr = 806
+[core 0] active cycles = 1090
+[core 0] ext load = 1
+[core 0] TCDM cont = 118
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 675
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6151
+[core 0] instr = 3624
+[core 0] active cycles = 6147
+[core 0] ext load = 176
+[core 0] TCDM cont = 61
+[core 0] ld stall = 80
+[core 0] imiss = 154
+ay
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1065
+[core 0] instr = 806
+[core 0] active cycles = 1023
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 739
+[core 0] instr = 474
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 96
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6271
+[core 0] instr = 3691
+[core 0] active cycles = 6268
+[core 0] ext load = 179
+[core 0] TCDM cont = 58
+[core 0] ld stall = 85
+[core 0] imiss = 165
+ g
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1132
+[core 0] instr = 806
+[core 0] active cycles = 1059
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 679
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 6304
+[core 0] instr = 3703
+[core 0] active cycles = 6301
+[core 0] ext load = 182
+[core 0] TCDM cont = 48
+[core 0] ld stall = 74
+[core 0] imiss = 165
+r
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1088
+[core 0] instr = 806
+[core 0] active cycles = 1082
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 701
+[core 0] instr = 474
+[core 0] active cycles = 670
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6461
+[core 0] instr = 3786
+[core 0] active cycles = 6445
+[core 0] ext load = 185
+[core 0] TCDM cont = 87
+[core 0] ld stall = 79
+[core 0] imiss = 154
+a
+V matmul: 
+
+[core 0] cycles = 766
+[core 0] instr = 476
+[core 0] active cycles = 720
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 176
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1096
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 719
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 22
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 6546
+[core 0] instr = 3858
+[core 0] active cycles = 6535
+[core 0] ext load = 188
+[core 0] TCDM cont = 69
+[core 0] ld stall = 84
+[core 0] imiss = 154
+nd
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1055
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6628
+[core 0] instr = 3921
+[core 0] active cycles = 6622
+[core 0] ext load = 191
+[core 0] TCDM cont = 39
+[core 0] ld stall = 89
+[core 0] imiss = 154
+m
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1069
+[core 0] instr = 806
+[core 0] active cycles = 1061
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 6690
+[core 0] instr = 3935
+[core 0] active cycles = 6687
+[core 0] ext load = 194
+[core 0] TCDM cont = 63
+[core 0] ld stall = 78
+[core 0] imiss = 154
+a
+V matmul: 
+
+[core 0] cycles = 702
+[core 0] instr = 476
+[core 0] active cycles = 662
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1078
+[core 0] instr = 806
+[core 0] active cycles = 1017
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 6820
+[core 0] instr = 4020
+[core 0] active cycles = 6810
+[core 0] ext load = 197
+[core 0] TCDM cont = 72
+[core 0] ld stall = 83
+[core 0] imiss = 154
+.
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 716
+[core 0] ext load = 1
+[core 0] TCDM cont = 86
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1057
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 6938
+[core 0] instr = 4088
+[core 0] active cycles = 6932
+[core 0] ext load = 200
+[core 0] TCDM cont = 82
+[core 0] ld stall = 88
+[core 0] imiss = 154
+ He
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1067
+[core 0] instr = 806
+[core 0] active cycles = 1064
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7056
+[core 0] instr = 4153
+[core 0] active cycles = 7045
+[core 0] ext load = 203
+[core 0] TCDM cont = 80
+[core 0] ld stall = 93
+[core 0] imiss = 154
+ was
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1100
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 694
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7081
+[core 0] instr = 4163
+[core 0] active cycles = 7078
+[core 0] ext load = 206
+[core 0] TCDM cont = 68
+[core 0] ld stall = 82
+[core 0] imiss = 154
+ very
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1082
+[core 0] instr = 806
+[core 0] active cycles = 1054
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 662
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7207
+[core 0] instr = 4247
+[core 0] active cycles = 7195
+[core 0] ext load = 209
+[core 0] TCDM cont = 70
+[core 0] ld stall = 87
+[core 0] imiss = 154
+ a
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 724
+[core 0] ext load = 1
+[core 0] TCDM cont = 94
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1085
+[core 0] instr = 806
+[core 0] active cycles = 1056
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 702
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7336
+[core 0] instr = 4316
+[core 0] active cycles = 7319
+[core 0] ext load = 212
+[core 0] TCDM cont = 83
+[core 0] ld stall = 92
+[core 0] imiss = 154
+n
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 732
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1103
+[core 0] instr = 806
+[core 0] active cycles = 1051
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7471
+[core 0] instr = 4387
+[core 0] active cycles = 7468
+[core 0] ext load = 215
+[core 0] TCDM cont = 112
+[core 0] ld stall = 97
+[core 0] imiss = 165
+g
+V matmul: 
+
+[core 0] cycles = 747
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1096
+[core 0] instr = 806
+[core 0] active cycles = 1089
+[core 0] ext load = 1
+[core 0] TCDM cont = 117
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 671
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7462
+[core 0] instr = 4395
+[core 0] active cycles = 7447
+[core 0] ext load = 218
+[core 0] TCDM cont = 66
+[core 0] ld stall = 86
+[core 0] imiss = 143
+r
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1071
+[core 0] instr = 806
+[core 0] active cycles = 1068
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 7644
+[core 0] instr = 4477
+[core 0] active cycles = 7614
+[core 0] ext load = 221
+[core 0] TCDM cont = 94
+[core 0] ld stall = 91
+[core 0] imiss = 165
+y
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 719
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1076
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7737
+[core 0] instr = 4545
+[core 0] active cycles = 7734
+[core 0] ext load = 224
+[core 0] TCDM cont = 102
+[core 0] ld stall = 96
+[core 0] imiss = 165
+ and
+V matmul: 
+
+[core 0] cycles = 744
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1054
+[core 0] instr = 806
+[core 0] active cycles = 1002
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 5
+[core 0] imiss = 121
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 664
+[core 0] ext load = 1
+[core 0] TCDM cont = 13
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 7792
+[core 0] instr = 4615
+[core 0] active cycles = 7789
+[core 0] ext load = 227
+[core 0] TCDM cont = 47
+[core 0] ld stall = 101
+[core 0] imiss = 165
+ w
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1061
+[core 0] instr = 806
+[core 0] active cycles = 1004
+[core 0] ext load = 1
+[core 0] TCDM cont = 32
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 700
+[core 0] instr = 474
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 7882
+[core 0] instr = 4630
+[core 0] active cycles = 7876
+[core 0] ext load = 230
+[core 0] TCDM cont = 94
+[core 0] ld stall = 90
+[core 0] imiss = 165
+h
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 710
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1024
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 8002
+[core 0] instr = 4704
+[core 0] active cycles = 7969
+[core 0] ext load = 233
+[core 0] TCDM cont = 62
+[core 0] ld stall = 95
+[core 0] imiss = 165
+it
+V matmul: 
+
+[core 0] cycles = 750
+[core 0] instr = 476
+[core 0] active cycles = 712
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1079
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 665
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8122
+[core 0] instr = 4777
+[core 0] active cycles = 8119
+[core 0] ext load = 236
+[core 0] TCDM cont = 94
+[core 0] ld stall = 100
+[core 0] imiss = 176
+e
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 675
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 8204
+[core 0] instr = 4841
+[core 0] active cycles = 8198
+[core 0] ext load = 239
+[core 0] TCDM cont = 79
+[core 0] ld stall = 105
+[core 0] imiss = 154
+.
+V matmul: 
+
+[core 0] cycles = 770
+[core 0] instr = 476
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1062
+[core 0] instr = 806
+[core 0] active cycles = 1057
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 5
+[core 0] imiss = 121
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 28
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 8247
+[core 0] instr = 4863
+[core 0] active cycles = 8234
+[core 0] ext load = 242
+[core 0] TCDM cont = 93
+[core 0] ld stall = 94
+[core 0] imiss = 143
+
+
+V matmul: 
+
+[core 0] cycles = 758
+[core 0] instr = 476
+[core 0] active cycles = 713
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1064
+[core 0] ext load = 1
+[core 0] TCDM cont = 81
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8336
+[core 0] instr = 4944
+[core 0] active cycles = 8333
+[core 0] ext load = 245
+[core 0] TCDM cont = 52
+[core 0] ld stall = 99
+[core 0] imiss = 165
+T
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1111
+[core 0] instr = 806
+[core 0] active cycles = 1076
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8481
+[core 0] instr = 5012
+[core 0] active cycles = 8478
+[core 0] ext load = 248
+[core 0] TCDM cont = 107
+[core 0] ld stall = 104
+[core 0] imiss = 143
+he
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 714
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1110
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 661
+[core 0] ext load = 1
+[core 0] TCDM cont = 32
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8590
+[core 0] instr = 5076
+[core 0] active cycles = 8587
+[core 0] ext load = 251
+[core 0] TCDM cont = 78
+[core 0] ld stall = 109
+[core 0] imiss = 165
+ b
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1113
+[core 0] instr = 806
+[core 0] active cycles = 1097
+[core 0] ext load = 1
+[core 0] TCDM cont = 125
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 659
+[core 0] ext load = 1
+[core 0] TCDM cont = 30
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8639
+[core 0] instr = 5090
+[core 0] active cycles = 8636
+[core 0] ext load = 254
+[core 0] TCDM cont = 108
+[core 0] ld stall = 98
+[core 0] imiss = 143
+ir
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1105
+[core 0] instr = 806
+[core 0] active cycles = 1042
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 8775
+[core 0] instr = 5166
+[core 0] active cycles = 8756
+[core 0] ext load = 257
+[core 0] TCDM cont = 105
+[core 0] ld stall = 103
+[core 0] imiss = 143
+d
+V matmul: 
+
+[core 0] cycles = 754
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1091
+[core 0] instr = 806
+[core 0] active cycles = 1038
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 29
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 8880
+[core 0] instr = 5237
+[core 0] active cycles = 8868
+[core 0] ext load = 260
+[core 0] TCDM cont = 119
+[core 0] ld stall = 108
+[core 0] imiss = 132
+ saw
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 720
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1112
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 8983
+[core 0] instr = 5310
+[core 0] active cycles = 8965
+[core 0] ext load = 263
+[core 0] TCDM cont = 87
+[core 0] ld stall = 113
+[core 0] imiss = 154
+ a
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1071
+[core 0] instr = 806
+[core 0] active cycles = 1045
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9025
+[core 0] instr = 5326
+[core 0] active cycles = 9022
+[core 0] ext load = 266
+[core 0] TCDM cont = 94
+[core 0] ld stall = 102
+[core 0] imiss = 165
+ big
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 712
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1082
+[core 0] instr = 806
+[core 0] active cycles = 1046
+[core 0] ext load = 1
+[core 0] TCDM cont = 74
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9170
+[core 0] instr = 5399
+[core 0] active cycles = 9154
+[core 0] ext load = 269
+[core 0] TCDM cont = 100
+[core 0] ld stall = 107
+[core 0] imiss = 165
+ c
+V matmul: 
+
+[core 0] cycles = 757
+[core 0] instr = 476
+[core 0] active cycles = 743
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1062
+[core 0] ext load = 1
+[core 0] TCDM cont = 90
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 697
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9233
+[core 0] instr = 5472
+[core 0] active cycles = 9219
+[core 0] ext load = 272
+[core 0] TCDM cont = 69
+[core 0] ld stall = 112
+[core 0] imiss = 154
+at
+V matmul: 
+
+[core 0] cycles = 725
+[core 0] instr = 476
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1119
+[core 0] instr = 806
+[core 0] active cycles = 1097
+[core 0] ext load = 1
+[core 0] TCDM cont = 114
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 701
+[core 0] instr = 474
+[core 0] active cycles = 667
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9403
+[core 0] instr = 5537
+[core 0] active cycles = 9400
+[core 0] ext load = 275
+[core 0] TCDM cont = 135
+[core 0] ld stall = 117
+[core 0] imiss = 154
+ named
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1071
+[core 0] ext load = 1
+[core 0] TCDM cont = 99
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 724
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9433
+[core 0] instr = 5552
+[core 0] active cycles = 9428
+[core 0] ext load = 278
+[core 0] TCDM cont = 112
+[core 0] ld stall = 106
+[core 0] imiss = 165
+ M
+V matmul: 
+
+[core 0] cycles = 717
+[core 0] instr = 476
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 717
+[core 0] instr = 474
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 9506
+[core 0] instr = 5634
+[core 0] active cycles = 9499
+[core 0] ext load = 281
+[core 0] TCDM cont = 77
+[core 0] ld stall = 111
+[core 0] imiss = 154
+a
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1112
+[core 0] instr = 806
+[core 0] active cycles = 1091
+[core 0] ext load = 1
+[core 0] TCDM cont = 119
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 730
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9619
+[core 0] instr = 5699
+[core 0] active cycles = 9607
+[core 0] ext load = 284
+[core 0] TCDM cont = 59
+[core 0] ld stall = 116
+[core 0] imiss = 165
+x
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 663
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 9749
+[core 0] instr = 5768
+[core 0] active cycles = 9738
+[core 0] ext load = 287
+[core 0] TCDM cont = 90
+[core 0] ld stall = 121
+[core 0] imiss = 154
+.
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1056
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 717
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 9805
+[core 0] instr = 5789
+[core 0] active cycles = 9791
+[core 0] ext load = 290
+[core 0] TCDM cont = 87
+[core 0] ld stall = 110
+[core 0] imiss = 176
+ M
+V matmul: 
+
+[core 0] cycles = 727
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1125
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 714
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 14
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+ ATTENTION: 
+[core 0] cycles = 9910
+[core 0] instr = 5866
+[core 0] active cycles = 9907
+[core 0] ext load = 293
+[core 0] TCDM cont = 81
+[core 0] ld stall = 115
+[core 0] imiss = 176
+a
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1076
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 10011
+[core 0] instr = 5932
+[core 0] active cycles = 10004
+[core 0] ext load = 296
+[core 0] TCDM cont = 86
+[core 0] ld stall = 120
+[core 0] imiss = 154
+x
+V matmul: 
+
+[core 0] cycles = 766
+[core 0] instr = 476
+[core 0] active cycles = 730
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1121
+[core 0] instr = 806
+[core 0] active cycles = 1065
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10137
+[core 0] instr = 5998
+[core 0] active cycles = 10134
+[core 0] ext load = 299
+[core 0] TCDM cont = 91
+[core 0] ld stall = 125
+[core 0] imiss = 165
+ was
+V matmul: 
+
+[core 0] cycles = 723
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1118
+[core 0] instr = 806
+[core 0] active cycles = 1074
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 5
+[core 0] imiss = 198
+
+ K matmul: 
+[core 0] cycles = 722
+[core 0] instr = 474
+[core 0] active cycles = 709
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10192
+[core 0] instr = 6012
+[core 0] active cycles = 10180
+[core 0] ext load = 302
+[core 0] TCDM cont = 118
+[core 0] ld stall = 114
+[core 0] imiss = 143
+ sa
+V matmul: 
+
+[core 0] cycles = 756
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1057
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 694
+[core 0] instr = 474
+[core 0] active cycles = 671
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10299
+[core 0] instr = 6094
+[core 0] active cycles = 10295
+[core 0] ext load = 305
+[core 0] TCDM cont = 94
+[core 0] ld stall = 119
+[core 0] imiss = 165
+d
+V matmul: 
+
+[core 0] cycles = 717
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1110
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 90
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 10392
+[core 0] instr = 6157
+[core 0] active cycles = 10389
+[core 0] ext load = 308
+[core 0] TCDM cont = 93
+[core 0] ld stall = 124
+[core 0] imiss = 143
+.
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1059
+[core 0] ext load = 1
+[core 0] TCDM cont = 87
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 702
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10508
+[core 0] instr = 6232
+[core 0] active cycles = 10495
+[core 0] ext load = 311
+[core 0] TCDM cont = 83
+[core 0] ld stall = 129
+[core 0] imiss = 154
+ He
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1092
+[core 0] instr = 806
+[core 0] active cycles = 1040
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10553
+[core 0] instr = 6240
+[core 0] active cycles = 10545
+[core 0] ext load = 314
+[core 0] TCDM cont = 97
+[core 0] ld stall = 118
+[core 0] imiss = 143
+ a
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1076
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 101
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10697
+[core 0] instr = 6326
+[core 0] active cycles = 10694
+[core 0] ext load = 317
+[core 0] TCDM cont = 111
+[core 0] ld stall = 123
+[core 0] imiss = 165
+s
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1086
+[core 0] ext load = 1
+[core 0] TCDM cont = 114
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10806
+[core 0] instr = 6385
+[core 0] active cycles = 10803
+[core 0] ext load = 320
+[core 0] TCDM cont = 121
+[core 0] ld stall = 128
+[core 0] imiss = 143
+ked
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1120
+[core 0] instr = 806
+[core 0] active cycles = 1114
+[core 0] ext load = 1
+[core 0] TCDM cont = 142
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 10888
+[core 0] instr = 6455
+[core 0] active cycles = 10877
+[core 0] ext load = 323
+[core 0] TCDM cont = 74
+[core 0] ld stall = 133
+[core 0] imiss = 154
+ his
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 732
+[core 0] ext load = 1
+[core 0] TCDM cont = 91
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1096
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 10933
+[core 0] instr = 6475
+[core 0] active cycles = 10928
+[core 0] ext load = 326
+[core 0] TCDM cont = 90
+[core 0] ld stall = 122
+[core 0] imiss = 154
+ friend
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1037
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11110
+[core 0] instr = 6553
+[core 0] active cycles = 11106
+[core 0] ext load = 329
+[core 0] TCDM cont = 147
+[core 0] ld stall = 127
+[core 0] imiss = 154
+,
+V matmul: 
+
+[core 0] cycles = 725
+[core 0] instr = 476
+[core 0] active cycles = 711
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1124
+[core 0] instr = 806
+[core 0] active cycles = 1121
+[core 0] ext load = 1
+[core 0] TCDM cont = 138
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11184
+[core 0] instr = 6622
+[core 0] active cycles = 11169
+[core 0] ext load = 332
+[core 0] TCDM cont = 110
+[core 0] ld stall = 132
+[core 0] imiss = 143
+ a
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1082
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11324
+[core 0] instr = 6695
+[core 0] active cycles = 11309
+[core 0] ext load = 335
+[core 0] TCDM cont = 143
+[core 0] ld stall = 137
+[core 0] imiss = 143
+ little
+V matmul: 
+
+[core 0] cycles = 725
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1118
+[core 0] instr = 806
+[core 0] active cycles = 1070
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11337
+[core 0] instr = 6701
+[core 0] active cycles = 11321
+[core 0] ext load = 338
+[core 0] TCDM cont = 106
+[core 0] ld stall = 126
+[core 0] imiss = 143
+ m
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1094
+[core 0] ext load = 1
+[core 0] TCDM cont = 122
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 670
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11466
+[core 0] instr = 6790
+[core 0] active cycles = 11443
+[core 0] ext load = 341
+[core 0] TCDM cont = 96
+[core 0] ld stall = 131
+[core 0] imiss = 165
+or
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1047
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11579
+[core 0] instr = 6851
+[core 0] active cycles = 11548
+[core 0] ext load = 344
+[core 0] TCDM cont = 104
+[core 0] ld stall = 136
+[core 0] imiss = 143
+n
+V matmul: 
+
+[core 0] cycles = 747
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1016
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 722
+[core 0] instr = 474
+[core 0] active cycles = 719
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 11675
+[core 0] instr = 6919
+[core 0] active cycles = 11672
+[core 0] ext load = 347
+[core 0] TCDM cont = 105
+[core 0] ld stall = 141
+[core 0] imiss = 154
+ing
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1043
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11721
+[core 0] instr = 6933
+[core 0] active cycles = 11704
+[core 0] ext load = 350
+[core 0] TCDM cont = 129
+[core 0] ld stall = 130
+[core 0] imiss = 121
+,
+V matmul: 
+
+[core 0] cycles = 722
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1038
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 729
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 11841
+[core 0] instr = 7017
+[core 0] active cycles = 11819
+[core 0] ext load = 353
+[core 0] TCDM cont = 74
+[core 0] ld stall = 135
+[core 0] imiss = 176
+ "
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1074
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 11917
+[core 0] instr = 7087
+[core 0] active cycles = 11902
+[core 0] ext load = 356
+[core 0] TCDM cont = 58
+[core 0] ld stall = 140
+[core 0] imiss = 165
+W
+V matmul: 
+
+[core 0] cycles = 728
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1083
+[core 0] ext load = 1
+[core 0] TCDM cont = 111
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 671
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12061
+[core 0] instr = 7157
+[core 0] active cycles = 12054
+[core 0] ext load = 359
+[core 0] TCDM cont = 100
+[core 0] ld stall = 145
+[core 0] imiss = 165
+h
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 683
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1036
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12113
+[core 0] instr = 7160
+[core 0] active cycles = 12087
+[core 0] ext load = 362
+[core 0] TCDM cont = 114
+[core 0] ld stall = 134
+[core 0] imiss = 132
+at
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1032
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 695
+[core 0] instr = 474
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12232
+[core 0] instr = 7245
+[core 0] active cycles = 12228
+[core 0] ext load = 365
+[core 0] TCDM cont = 119
+[core 0] ld stall = 139
+[core 0] imiss = 154
+ do
+V matmul: 
+
+[core 0] cycles = 740
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1091
+[core 0] instr = 806
+[core 0] active cycles = 1040
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12335
+[core 0] instr = 7319
+[core 0] active cycles = 12310
+[core 0] ext load = 368
+[core 0] TCDM cont = 95
+[core 0] ld stall = 144
+[core 0] imiss = 154
+ you
+V matmul: 
+
+[core 0] cycles = 712
+[core 0] instr = 476
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 99
+
+Q matmul: 
+[core 0] cycles = 1176
+[core 0] instr = 806
+[core 0] active cycles = 1125
+[core 0] ext load = 1
+[core 0] TCDM cont = 109
+[core 0] ld stall = 5
+[core 0] imiss = 187
+
+ K matmul: 
+[core 0] cycles = 724
+[core 0] instr = 474
+[core 0] active cycles = 683
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 12440
+[core 0] instr = 7386
+[core 0] active cycles = 12411
+[core 0] ext load = 371
+[core 0] TCDM cont = 83
+[core 0] ld stall = 149
+[core 0] imiss = 154
+ s
+V matmul: 
+
+[core 0] cycles = 760
+[core 0] instr = 476
+[core 0] active cycles = 746
+[core 0] ext load = 1
+[core 0] TCDM cont = 105
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1087
+[core 0] ext load = 1
+[core 0] TCDM cont = 115
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 12523
+[core 0] instr = 7401
+[core 0] active cycles = 12487
+[core 0] ext load = 374
+[core 0] TCDM cont = 108
+[core 0] ld stall = 138
+[core 0] imiss = 165
+e
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 727
+[core 0] ext load = 1
+[core 0] TCDM cont = 86
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1034
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 688
+[core 0] instr = 474
+[core 0] active cycles = 657
+[core 0] ext load = 1
+[core 0] TCDM cont = 28
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12574
+[core 0] instr = 7473
+[core 0] active cycles = 12570
+[core 0] ext load = 377
+[core 0] TCDM cont = 86
+[core 0] ld stall = 143
+[core 0] imiss = 143
+e
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1092
+[core 0] ext load = 1
+[core 0] TCDM cont = 120
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12738
+[core 0] instr = 7542
+[core 0] active cycles = 12723
+[core 0] ext load = 380
+[core 0] TCDM cont = 128
+[core 0] ld stall = 148
+[core 0] imiss = 143
+?
+V matmul: 
+
+[core 0] cycles = 754
+[core 0] instr = 476
+[core 0] active cycles = 728
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1119
+[core 0] instr = 806
+[core 0] active cycles = 1110
+[core 0] ext load = 1
+[core 0] TCDM cont = 127
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 12
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+ ATTENTION: 
+[core 0] cycles = 12804
+[core 0] instr = 7620
+[core 0] active cycles = 12795
+[core 0] ext load = 383
+[core 0] TCDM cont = 76
+[core 0] ld stall = 153
+[core 0] imiss = 165
+"
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 734
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1120
+[core 0] instr = 806
+[core 0] active cycles = 1067
+[core 0] ext load = 1
+[core 0] TCDM cont = 95
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 696
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 12858
+[core 0] instr = 7632
+[core 0] active cycles = 12846
+[core 0] ext load = 386
+[core 0] TCDM cont = 95
+[core 0] ld stall = 142
+[core 0] imiss = 154
+ M
+V matmul: 
+
+[core 0] cycles = 765
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1097
+[core 0] instr = 806
+[core 0] active cycles = 1094
+[core 0] ext load = 1
+[core 0] TCDM cont = 122
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 705
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 13023
+[core 0] instr = 7713
+[core 0] active cycles = 13012
+[core 0] ext load = 389
+[core 0] TCDM cont = 132
+[core 0] ld stall = 147
+[core 0] imiss = 165
+a
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1147
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 671
+[core 0] ext load = 1
+[core 0] TCDM cont = 31
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13103
+[core 0] instr = 7780
+[core 0] active cycles = 13090
+[core 0] ext load = 392
+[core 0] TCDM cont = 119
+[core 0] ld stall = 152
+[core 0] imiss = 143
+x
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1097
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 667
+[core 0] ext load = 1
+[core 0] TCDM cont = 27
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13205
+[core 0] instr = 7843
+[core 0] active cycles = 13200
+[core 0] ext load = 395
+[core 0] TCDM cont = 101
+[core 0] ld stall = 157
+[core 0] imiss = 154
+ said
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1062
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 724
+[core 0] instr = 474
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13269
+[core 0] instr = 7864
+[core 0] active cycles = 13266
+[core 0] ext load = 398
+[core 0] TCDM cont = 144
+[core 0] ld stall = 146
+[core 0] imiss = 143
+,
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1072
+[core 0] ext load = 1
+[core 0] TCDM cont = 100
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 701
+[core 0] instr = 474
+[core 0] active cycles = 664
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 13357
+[core 0] instr = 7939
+[core 0] active cycles = 13350
+[core 0] ext load = 401
+[core 0] TCDM cont = 93
+[core 0] ld stall = 151
+[core 0] imiss = 154
+ "
+V matmul: 
+
+[core 0] cycles = 754
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1072
+[core 0] ext load = 1
+[core 0] TCDM cont = 111
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 726
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13469
+[core 0] instr = 8009
+[core 0] active cycles = 13448
+[core 0] ext load = 404
+[core 0] TCDM cont = 70
+[core 0] ld stall = 156
+[core 0] imiss = 165
+I
+V matmul: 
+
+[core 0] cycles = 747
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1085
+[core 0] instr = 806
+[core 0] active cycles = 1017
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 689
+[core 0] instr = 474
+[core 0] active cycles = 682
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 13573
+[core 0] instr = 8081
+[core 0] active cycles = 13570
+[core 0] ext load = 407
+[core 0] TCDM cont = 95
+[core 0] ld stall = 161
+[core 0] imiss = 154
+'
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1048
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13615
+[core 0] instr = 8095
+[core 0] active cycles = 13597
+[core 0] ext load = 410
+[core 0] TCDM cont = 70
+[core 0] ld stall = 150
+[core 0] imiss = 165
+m
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1086
+[core 0] instr = 806
+[core 0] active cycles = 1081
+[core 0] ext load = 1
+[core 0] TCDM cont = 109
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 767
+[core 0] instr = 474
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 13733
+[core 0] instr = 8167
+[core 0] active cycles = 13728
+[core 0] ext load = 413
+[core 0] TCDM cont = 96
+[core 0] ld stall = 155
+[core 0] imiss = 143
+ a
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1097
+[core 0] instr = 806
+[core 0] active cycles = 1088
+[core 0] ext load = 1
+[core 0] TCDM cont = 105
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 698
+[core 0] instr = 474
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 13843
+[core 0] instr = 8241
+[core 0] active cycles = 13831
+[core 0] ext load = 416
+[core 0] TCDM cont = 71
+[core 0] ld stall = 160
+[core 0] imiss = 165
+ m
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1056
+[core 0] instr = 806
+[core 0] active cycles = 1001
+[core 0] ext load = 1
+[core 0] TCDM cont = 18
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 13973
+[core 0] instr = 8309
+[core 0] active cycles = 13960
+[core 0] ext load = 419
+[core 0] TCDM cont = 88
+[core 0] ld stall = 165
+[core 0] imiss = 165
+on
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1042
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 700
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14053
+[core 0] instr = 8320
+[core 0] active cycles = 14025
+[core 0] ext load = 422
+[core 0] TCDM cont = 109
+[core 0] ld stall = 154
+[core 0] imiss = 165
+st
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1145
+[core 0] instr = 806
+[core 0] active cycles = 1066
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14164
+[core 0] instr = 8401
+[core 0] active cycles = 14161
+[core 0] ext load = 425
+[core 0] TCDM cont = 138
+[core 0] ld stall = 159
+[core 0] imiss = 154
+er
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 32
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1066
+[core 0] ext load = 1
+[core 0] TCDM cont = 94
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 17
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 14234
+[core 0] instr = 8467
+[core 0] active cycles = 14230
+[core 0] ext load = 428
+[core 0] TCDM cont = 104
+[core 0] ld stall = 164
+[core 0] imiss = 143
+!
+V matmul: 
+
+[core 0] cycles = 750
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1071
+[core 0] instr = 806
+[core 0] active cycles = 1056
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 655
+[core 0] ext load = 1
+[core 0] TCDM cont = 15
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 14321
+[core 0] instr = 8544
+[core 0] active cycles = 14314
+[core 0] ext load = 431
+[core 0] TCDM cont = 63
+[core 0] ld stall = 169
+[core 0] imiss = 165
+ I
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 734
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1055
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14451
+[core 0] instr = 8559
+[core 0] active cycles = 14416
+[core 0] ext load = 434
+[core 0] TCDM cont = 136
+[core 0] ld stall = 158
+[core 0] imiss = 154
+ f
+V matmul: 
+
+[core 0] cycles = 747
+[core 0] instr = 476
+[core 0] active cycles = 711
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1024
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14535
+[core 0] instr = 8638
+[core 0] active cycles = 14531
+[core 0] ext load = 437
+[core 0] TCDM cont = 142
+[core 0] ld stall = 163
+[core 0] imiss = 143
+ou
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1065
+[core 0] instr = 806
+[core 0] active cycles = 1060
+[core 0] ext load = 1
+[core 0] TCDM cont = 88
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 703
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14615
+[core 0] instr = 8702
+[core 0] active cycles = 14599
+[core 0] ext load = 440
+[core 0] TCDM cont = 72
+[core 0] ld stall = 168
+[core 0] imiss = 165
+nd
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 714
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1045
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 666
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14735
+[core 0] instr = 8767
+[core 0] active cycles = 14720
+[core 0] ext load = 443
+[core 0] TCDM cont = 89
+[core 0] ld stall = 173
+[core 0] imiss = 154
+ a
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1075
+[core 0] instr = 806
+[core 0] active cycles = 1070
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 714
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 14723
+[core 0] instr = 8785
+[core 0] active cycles = 14711
+[core 0] ext load = 446
+[core 0] TCDM cont = 21
+[core 0] ld stall = 162
+[core 0] imiss = 176
+n
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 87
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1117
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 101
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 14902
+[core 0] instr = 8861
+[core 0] active cycles = 14879
+[core 0] ext load = 449
+[core 0] TCDM cont = 88
+[core 0] ld stall = 167
+[core 0] imiss = 154
+ot
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 710
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1052
+[core 0] instr = 806
+[core 0] active cycles = 1022
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 665
+[core 0] ext load = 1
+[core 0] TCDM cont = 14
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 15032
+[core 0] instr = 8930
+[core 0] active cycles = 15025
+[core 0] ext load = 452
+[core 0] TCDM cont = 123
+[core 0] ld stall = 172
+[core 0] imiss = 154
+her
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1053
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 714
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15153
+[core 0] instr = 8994
+[core 0] active cycles = 15150
+[core 0] ext load = 455
+[core 0] TCDM cont = 143
+[core 0] ld stall = 177
+[core 0] imiss = 143
+ c
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1089
+[core 0] ext load = 1
+[core 0] TCDM cont = 106
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 710
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15233
+[core 0] instr = 9018
+[core 0] active cycles = 15217
+[core 0] ext load = 458
+[core 0] TCDM cont = 190
+[core 0] ld stall = 166
+[core 0] imiss = 132
+u
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1096
+[core 0] ext load = 1
+[core 0] TCDM cont = 113
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 728
+[core 0] instr = 474
+[core 0] active cycles = 665
+[core 0] ext load = 1
+[core 0] TCDM cont = 14
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 15274
+[core 0] instr = 9096
+[core 0] active cycles = 15259
+[core 0] ext load = 461
+[core 0] TCDM cont = 67
+[core 0] ld stall = 171
+[core 0] imiss = 176
+s
+V matmul: 
+
+[core 0] cycles = 724
+[core 0] instr = 476
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1097
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 15399
+[core 0] instr = 9160
+[core 0] active cycles = 15396
+[core 0] ext load = 464
+[core 0] TCDM cont = 110
+[core 0] ld stall = 176
+[core 0] imiss = 154
+h
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 712
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1092
+[core 0] instr = 806
+[core 0] active cycles = 1063
+[core 0] ext load = 1
+[core 0] TCDM cont = 91
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 723
+[core 0] instr = 474
+[core 0] active cycles = 720
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15543
+[core 0] instr = 9227
+[core 0] active cycles = 15500
+[core 0] ext load = 467
+[core 0] TCDM cont = 101
+[core 0] ld stall = 181
+[core 0] imiss = 154
+i
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1106
+[core 0] ext load = 1
+[core 0] TCDM cont = 134
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 733
+[core 0] instr = 474
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15568
+[core 0] instr = 9246
+[core 0] active cycles = 15545
+[core 0] ext load = 470
+[core 0] TCDM cont = 121
+[core 0] ld stall = 170
+[core 0] imiss = 143
+on
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 719
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1040
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 15657
+[core 0] instr = 9324
+[core 0] active cycles = 15649
+[core 0] ext load = 473
+[core 0] TCDM cont = 71
+[core 0] ld stall = 175
+[core 0] imiss = 176
+ to
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 714
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 15763
+[core 0] instr = 9392
+[core 0] active cycles = 15757
+[core 0] ext load = 476
+[core 0] TCDM cont = 89
+[core 0] ld stall = 180
+[core 0] imiss = 154
+y
+V matmul: 
+
+[core 0] cycles = 751
+[core 0] instr = 476
+[core 0] active cycles = 716
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1091
+[core 0] instr = 806
+[core 0] active cycles = 1088
+[core 0] ext load = 1
+[core 0] TCDM cont = 116
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 725
+[core 0] instr = 474
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15931
+[core 0] instr = 9461
+[core 0] active cycles = 15916
+[core 0] ext load = 479
+[core 0] TCDM cont = 148
+[core 0] ld stall = 185
+[core 0] imiss = 143
+!
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1092
+[core 0] instr = 806
+[core 0] active cycles = 1081
+[core 0] ext load = 1
+[core 0] TCDM cont = 109
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 15987
+[core 0] instr = 9479
+[core 0] active cycles = 15972
+[core 0] ext load = 482
+[core 0] TCDM cont = 167
+[core 0] ld stall = 174
+[core 0] imiss = 143
+"
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1114
+[core 0] instr = 806
+[core 0] active cycles = 1018
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 717
+[core 0] instr = 474
+[core 0] active cycles = 713
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 16057
+[core 0] instr = 9556
+[core 0] active cycles = 16051
+[core 0] ext load = 485
+[core 0] TCDM cont = 113
+[core 0] ld stall = 179
+[core 0] imiss = 154
+ The
+V matmul: 
+
+[core 0] cycles = 711
+[core 0] instr = 476
+[core 0] active cycles = 685
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1110
+[core 0] instr = 806
+[core 0] active cycles = 1107
+[core 0] ext load = 1
+[core 0] TCDM cont = 135
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 710
+[core 0] instr = 474
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 16160
+[core 0] instr = 9627
+[core 0] active cycles = 16157
+[core 0] ext load = 488
+[core 0] TCDM cont = 132
+[core 0] ld stall = 184
+[core 0] imiss = 132
+ c
+V matmul: 
+
+[core 0] cycles = 736
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1106
+[core 0] instr = 806
+[core 0] active cycles = 1053
+[core 0] ext load = 1
+[core 0] TCDM cont = 81
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 16255
+[core 0] instr = 9697
+[core 0] active cycles = 16245
+[core 0] ext load = 491
+[core 0] TCDM cont = 77
+[core 0] ld stall = 189
+[core 0] imiss = 165
+at
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 729
+[core 0] ext load = 1
+[core 0] TCDM cont = 99
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1096
+[core 0] instr = 806
+[core 0] active cycles = 1092
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 726
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 16303
+[core 0] instr = 9702
+[core 0] active cycles = 16292
+[core 0] ext load = 494
+[core 0] TCDM cont = 85
+[core 0] ld stall = 178
+[core 0] imiss = 154
+ said
+V matmul: 
+
+[core 0] cycles = 779
+[core 0] instr = 476
+[core 0] active cycles = 731
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1074
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 26
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 16453
+[core 0] instr = 9789
+[core 0] active cycles = 16450
+[core 0] ext load = 497
+[core 0] TCDM cont = 142
+[core 0] ld stall = 183
+[core 0] imiss = 143
+,
+V matmul: 
+
+[core 0] cycles = 722
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1096
+[core 0] ext load = 1
+[core 0] TCDM cont = 124
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 704
+[core 0] instr = 474
+[core 0] active cycles = 672
+[core 0] ext load = 1
+[core 0] TCDM cont = 32
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 16565
+[core 0] instr = 9855
+[core 0] active cycles = 16558
+[core 0] ext load = 500
+[core 0] TCDM cont = 125
+[core 0] ld stall = 188
+[core 0] imiss = 154
+ "
+V matmul: 
+
+[core 0] cycles = 757
+[core 0] instr = 476
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1074
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 16702
+[core 0] instr = 9923
+[core 0] active cycles = 16680
+[core 0] ext load = 503
+[core 0] TCDM cont = 146
+[core 0] ld stall = 193
+[core 0] imiss = 143
+I
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 63
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1048
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 723
+[core 0] instr = 474
+[core 0] active cycles = 709
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 16778
+[core 0] instr = 9943
+[core 0] active cycles = 16769
+[core 0] ext load = 506
+[core 0] TCDM cont = 189
+[core 0] ld stall = 182
+[core 0] imiss = 154
+ want
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1085
+[core 0] instr = 806
+[core 0] active cycles = 1047
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 668
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 16825
+[core 0] instr = 10024
+[core 0] active cycles = 16822
+[core 0] ext load = 509
+[core 0] TCDM cont = 124
+[core 0] ld stall = 187
+[core 0] imiss = 154
+ to
+V matmul: 
+
+[core 0] cycles = 736
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1060
+[core 0] ext load = 1
+[core 0] TCDM cont = 88
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 673
+[core 0] ext load = 1
+[core 0] TCDM cont = 22
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 16952
+[core 0] instr = 10078
+[core 0] active cycles = 16945
+[core 0] ext load = 512
+[core 0] TCDM cont = 132
+[core 0] ld stall = 192
+[core 0] imiss = 143
+ s
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1088
+[core 0] ext load = 1
+[core 0] TCDM cont = 116
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 719
+[core 0] instr = 474
+[core 0] active cycles = 682
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17028
+[core 0] instr = 10153
+[core 0] active cycles = 17023
+[core 0] ext load = 515
+[core 0] TCDM cont = 83
+[core 0] ld stall = 197
+[core 0] imiss = 165
+e
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1063
+[core 0] ext load = 1
+[core 0] TCDM cont = 91
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17048
+[core 0] instr = 10165
+[core 0] active cycles = 17035
+[core 0] ext load = 518
+[core 0] TCDM cont = 63
+[core 0] ld stall = 186
+[core 0] imiss = 154
+e
+V matmul: 
+
+[core 0] cycles = 728
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 31
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1105
+[core 0] instr = 806
+[core 0] active cycles = 1102
+[core 0] ext load = 1
+[core 0] TCDM cont = 119
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 717
+[core 0] instr = 474
+[core 0] active cycles = 674
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17192
+[core 0] instr = 10244
+[core 0] active cycles = 17189
+[core 0] ext load = 521
+[core 0] TCDM cont = 86
+[core 0] ld stall = 191
+[core 0] imiss = 165
+ it
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 721
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1066
+[core 0] ext load = 1
+[core 0] TCDM cont = 94
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 687
+[core 0] instr = 474
+[core 0] active cycles = 670
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17351
+[core 0] instr = 10319
+[core 0] active cycles = 17327
+[core 0] ext load = 524
+[core 0] TCDM cont = 108
+[core 0] ld stall = 196
+[core 0] imiss = 176
+!
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1051
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 728
+[core 0] instr = 474
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17443
+[core 0] instr = 10385
+[core 0] active cycles = 17434
+[core 0] ext load = 527
+[core 0] TCDM cont = 123
+[core 0] ld stall = 201
+[core 0] imiss = 154
+"
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1100
+[core 0] instr = 806
+[core 0] active cycles = 1097
+[core 0] ext load = 1
+[core 0] TCDM cont = 114
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17452
+[core 0] instr = 10401
+[core 0] active cycles = 17418
+[core 0] ext load = 530
+[core 0] TCDM cont = 79
+[core 0] ld stall = 190
+[core 0] imiss = 143
+ M
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 710
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1121
+[core 0] instr = 806
+[core 0] active cycles = 1103
+[core 0] ext load = 1
+[core 0] TCDM cont = 120
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 701
+[core 0] instr = 474
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 17642
+[core 0] instr = 10484
+[core 0] active cycles = 17639
+[core 0] ext load = 533
+[core 0] TCDM cont = 184
+[core 0] ld stall = 195
+[core 0] imiss = 143
+a
+V matmul: 
+
+[core 0] cycles = 744
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1091
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 716
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 17739
+[core 0] instr = 10552
+[core 0] active cycles = 17729
+[core 0] ext load = 536
+[core 0] TCDM cont = 118
+[core 0] ld stall = 200
+[core 0] imiss = 187
+x
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1054
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 17817
+[core 0] instr = 10619
+[core 0] active cycles = 17810
+[core 0] ext load = 539
+[core 0] TCDM cont = 130
+[core 0] ld stall = 205
+[core 0] imiss = 143
+ said
+V matmul: 
+
+[core 0] cycles = 715
+[core 0] instr = 476
+[core 0] active cycles = 667
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1094
+[core 0] instr = 806
+[core 0] active cycles = 1091
+[core 0] ext load = 1
+[core 0] TCDM cont = 119
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 698
+[core 0] instr = 474
+[core 0] active cycles = 678
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 17821
+[core 0] instr = 10630
+[core 0] active cycles = 17806
+[core 0] ext load = 542
+[core 0] TCDM cont = 71
+[core 0] ld stall = 194
+[core 0] imiss = 154
+,
+V matmul: 
+
+[core 0] cycles = 765
+[core 0] instr = 476
+[core 0] active cycles = 717
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 677
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18032
+[core 0] instr = 10706
+[core 0] active cycles = 18015
+[core 0] ext load = 545
+[core 0] TCDM cont = 179
+[core 0] ld stall = 199
+[core 0] imiss = 132
+ "
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1065
+[core 0] ext load = 1
+[core 0] TCDM cont = 93
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 725
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18085
+[core 0] instr = 10776
+[core 0] active cycles = 18077
+[core 0] ext load = 548
+[core 0] TCDM cont = 109
+[core 0] ld stall = 204
+[core 0] imiss = 154
+W
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1099
+[core 0] instr = 806
+[core 0] active cycles = 1063
+[core 0] ext load = 1
+[core 0] TCDM cont = 91
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 699
+[core 0] instr = 474
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18220
+[core 0] instr = 10852
+[core 0] active cycles = 18195
+[core 0] ext load = 551
+[core 0] TCDM cont = 123
+[core 0] ld stall = 209
+[core 0] imiss = 154
+e
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 727
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1090
+[core 0] instr = 806
+[core 0] active cycles = 1074
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 716
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 18291
+[core 0] instr = 10862
+[core 0] active cycles = 18250
+[core 0] ext load = 554
+[core 0] TCDM cont = 144
+[core 0] ld stall = 198
+[core 0] imiss = 143
+ c
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1088
+[core 0] instr = 806
+[core 0] active cycles = 1057
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 729
+[core 0] instr = 474
+[core 0] active cycles = 726
+[core 0] ext load = 1
+[core 0] TCDM cont = 86
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 18276
+[core 0] instr = 10940
+[core 0] active cycles = 18273
+[core 0] ext load = 557
+[core 0] TCDM cont = 24
+[core 0] ld stall = 203
+[core 0] imiss = 165
+an
+V matmul: 
+
+[core 0] cycles = 707
+[core 0] instr = 476
+[core 0] active cycles = 658
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 88
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1046
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 733
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18532
+[core 0] instr = 11008
+[core 0] active cycles = 18528
+[core 0] ext load = 560
+[core 0] TCDM cont = 167
+[core 0] ld stall = 208
+[core 0] imiss = 165
+ ha
+V matmul: 
+
+[core 0] cycles = 716
+[core 0] instr = 476
+[core 0] active cycles = 688
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1110
+[core 0] instr = 806
+[core 0] active cycles = 1094
+[core 0] ext load = 1
+[core 0] TCDM cont = 122
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18623
+[core 0] instr = 11076
+[core 0] active cycles = 18620
+[core 0] ext load = 563
+[core 0] TCDM cont = 158
+[core 0] ld stall = 213
+[core 0] imiss = 154
+ve
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 717
+[core 0] ext load = 1
+[core 0] TCDM cont = 87
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1034
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 18610
+[core 0] instr = 11092
+[core 0] active cycles = 18592
+[core 0] ext load = 566
+[core 0] TCDM cont = 91
+[core 0] ld stall = 202
+[core 0] imiss = 154
+ the
+V matmul: 
+
+[core 0] cycles = 759
+[core 0] instr = 476
+[core 0] active cycles = 745
+[core 0] ext load = 1
+[core 0] TCDM cont = 115
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1152
+[core 0] instr = 806
+[core 0] active cycles = 1149
+[core 0] ext load = 1
+[core 0] TCDM cont = 177
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 725
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 18746
+[core 0] instr = 11168
+[core 0] active cycles = 18743
+[core 0] ext load = 569
+[core 0] TCDM cont = 119
+[core 0] ld stall = 207
+[core 0] imiss = 154
+ c
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1053
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 711
+[core 0] instr = 474
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 18862
+[core 0] instr = 11238
+[core 0] active cycles = 18851
+[core 0] ext load = 572
+[core 0] TCDM cont = 128
+[core 0] ld stall = 212
+[core 0] imiss = 143
+a
+V matmul: 
+
+[core 0] cycles = 756
+[core 0] instr = 476
+[core 0] active cycles = 725
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1074
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 706
+[core 0] instr = 474
+[core 0] active cycles = 680
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19018
+[core 0] instr = 11317
+[core 0] active cycles = 18985
+[core 0] ext load = 575
+[core 0] TCDM cont = 161
+[core 0] ld stall = 217
+[core 0] imiss = 143
+c
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1128
+[core 0] instr = 806
+[core 0] active cycles = 1125
+[core 0] ext load = 1
+[core 0] TCDM cont = 142
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 685
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19082
+[core 0] instr = 11325
+[core 0] active cycles = 19074
+[core 0] ext load = 578
+[core 0] TCDM cont = 148
+[core 0] ld stall = 206
+[core 0] imiss = 198
+t
+V matmul: 
+
+[core 0] cycles = 729
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 121
+
+Q matmul: 
+[core 0] cycles = 1109
+[core 0] instr = 806
+[core 0] active cycles = 1065
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 19151
+[core 0] instr = 11401
+[core 0] active cycles = 19137
+[core 0] ext load = 581
+[core 0] TCDM cont = 143
+[core 0] ld stall = 211
+[core 0] imiss = 143
+u
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 713
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1072
+[core 0] instr = 806
+[core 0] active cycles = 1052
+[core 0] ext load = 1
+[core 0] TCDM cont = 80
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 707
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19278
+[core 0] instr = 11475
+[core 0] active cycles = 19257
+[core 0] ext load = 584
+[core 0] TCDM cont = 135
+[core 0] ld stall = 216
+[core 0] imiss = 165
+re
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1053
+[core 0] ext load = 1
+[core 0] TCDM cont = 81
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 741
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 19391
+[core 0] instr = 11539
+[core 0] active cycles = 19370
+[core 0] ext load = 587
+[core 0] TCDM cont = 154
+[core 0] ld stall = 221
+[core 0] imiss = 143
+ and
+V matmul: 
+
+[core 0] cycles = 734
+[core 0] instr = 476
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 24
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+Q matmul: 
+[core 0] cycles = 1100
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 743
+[core 0] instr = 474
+[core 0] active cycles = 740
+[core 0] ext load = 1
+[core 0] TCDM cont = 100
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 19364
+[core 0] instr = 11550
+[core 0] active cycles = 19361
+[core 0] ext load = 590
+[core 0] TCDM cont = 101
+[core 0] ld stall = 210
+[core 0] imiss = 143
+ g
+V matmul: 
+
+[core 0] cycles = 742
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1041
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 714
+[core 0] instr = 474
+[core 0] active cycles = 682
+[core 0] ext load = 1
+[core 0] TCDM cont = 42
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 19547
+[core 0] instr = 11631
+[core 0] active cycles = 19529
+[core 0] ext load = 593
+[core 0] TCDM cont = 140
+[core 0] ld stall = 215
+[core 0] imiss = 154
+o
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 735
+[core 0] ext load = 1
+[core 0] TCDM cont = 94
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1079
+[core 0] instr = 806
+[core 0] active cycles = 1024
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 722
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 47
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 19649
+[core 0] instr = 11706
+[core 0] active cycles = 19634
+[core 0] ext load = 596
+[core 0] TCDM cont = 140
+[core 0] ld stall = 220
+[core 0] imiss = 154
+ on
+V matmul: 
+
+[core 0] cycles = 747
+[core 0] instr = 476
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1104
+[core 0] ext load = 1
+[core 0] TCDM cont = 132
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 725
+[core 0] instr = 474
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 76
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19718
+[core 0] instr = 11767
+[core 0] active cycles = 19701
+[core 0] ext load = 599
+[core 0] TCDM cont = 99
+[core 0] ld stall = 225
+[core 0] imiss = 143
+ the
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 39
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1104
+[core 0] instr = 806
+[core 0] active cycles = 1044
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 719
+[core 0] instr = 474
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19768
+[core 0] instr = 11786
+[core 0] active cycles = 19749
+[core 0] ext load = 602
+[core 0] TCDM cont = 78
+[core 0] ld stall = 214
+[core 0] imiss = 176
+ c
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 34
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1069
+[core 0] instr = 806
+[core 0] active cycles = 1054
+[core 0] ext load = 1
+[core 0] TCDM cont = 82
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 19929
+[core 0] instr = 11866
+[core 0] active cycles = 19925
+[core 0] ext load = 605
+[core 0] TCDM cont = 146
+[core 0] ld stall = 219
+[core 0] imiss = 165
+h
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 723
+[core 0] ext load = 1
+[core 0] TCDM cont = 93
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1086
+[core 0] instr = 806
+[core 0] active cycles = 1022
+[core 0] ext load = 1
+[core 0] TCDM cont = 28
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 742
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 19982
+[core 0] instr = 11931
+[core 0] active cycles = 19979
+[core 0] ext load = 608
+[core 0] TCDM cont = 74
+[core 0] ld stall = 224
+[core 0] imiss = 176
+i
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1020
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 727
+[core 0] instr = 474
+[core 0] active cycles = 724
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20143
+[core 0] instr = 12001
+[core 0] active cycles = 20130
+[core 0] ext load = 611
+[core 0] TCDM cont = 137
+[core 0] ld stall = 229
+[core 0] imiss = 154
+ck
+V matmul: 
+
+[core 0] cycles = 774
+[core 0] instr = 476
+[core 0] active cycles = 740
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1095
+[core 0] ext load = 1
+[core 0] TCDM cont = 123
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 20179
+[core 0] instr = 12019
+[core 0] active cycles = 20173
+[core 0] ext load = 614
+[core 0] TCDM cont = 110
+[core 0] ld stall = 218
+[core 0] imiss = 187
+en
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1064
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20265
+[core 0] instr = 12096
+[core 0] active cycles = 20262
+[core 0] ext load = 617
+[core 0] TCDM cont = 110
+[core 0] ld stall = 223
+[core 0] imiss = 154
+.
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 30
+[core 0] ld stall = 4
+[core 0] imiss = 176
+
+Q matmul: 
+[core 0] cycles = 1078
+[core 0] instr = 806
+[core 0] active cycles = 1075
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 728
+[core 0] instr = 474
+[core 0] active cycles = 708
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 20387
+[core 0] instr = 12169
+[core 0] active cycles = 20380
+[core 0] ext load = 620
+[core 0] TCDM cont = 121
+[core 0] ld stall = 228
+[core 0] imiss = 154
+"
+V matmul: 
+
+[core 0] cycles = 728
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1112
+[core 0] instr = 806
+[core 0] active cycles = 1100
+[core 0] ext load = 1
+[core 0] TCDM cont = 128
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20518
+[core 0] instr = 12235
+[core 0] active cycles = 20509
+[core 0] ext load = 623
+[core 0] TCDM cont = 125
+[core 0] ld stall = 233
+[core 0] imiss = 165
+ M
+V matmul: 
+
+[core 0] cycles = 768
+[core 0] instr = 476
+[core 0] active cycles = 720
+[core 0] ext load = 1
+[core 0] TCDM cont = 90
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1070
+[core 0] ext load = 1
+[core 0] TCDM cont = 98
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 724
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20518
+[core 0] instr = 12250
+[core 0] active cycles = 20515
+[core 0] ext load = 626
+[core 0] TCDM cont = 124
+[core 0] ld stall = 222
+[core 0] imiss = 132
+a
+V matmul: 
+
+[core 0] cycles = 731
+[core 0] instr = 476
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1103
+[core 0] instr = 806
+[core 0] active cycles = 1088
+[core 0] ext load = 1
+[core 0] TCDM cont = 116
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 728
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 20675
+[core 0] instr = 12331
+[core 0] active cycles = 20640
+[core 0] ext load = 629
+[core 0] TCDM cont = 98
+[core 0] ld stall = 227
+[core 0] imiss = 165
+x
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 723
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1014
+[core 0] ext load = 1
+[core 0] TCDM cont = 31
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 744
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20771
+[core 0] instr = 12390
+[core 0] active cycles = 20768
+[core 0] ext load = 632
+[core 0] TCDM cont = 116
+[core 0] ld stall = 232
+[core 0] imiss = 154
+ was
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1080
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 740
+[core 0] instr = 474
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 20828
+[core 0] instr = 12456
+[core 0] active cycles = 20815
+[core 0] ext load = 635
+[core 0] TCDM cont = 60
+[core 0] ld stall = 237
+[core 0] imiss = 143
+ so
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1069
+[core 0] instr = 806
+[core 0] active cycles = 1021
+[core 0] ext load = 1
+[core 0] TCDM cont = 38
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 742
+[core 0] instr = 474
+[core 0] active cycles = 719
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 20952
+[core 0] instr = 12469
+[core 0] active cycles = 20929
+[core 0] ext load = 638
+[core 0] TCDM cont = 121
+[core 0] ld stall = 226
+[core 0] imiss = 154
+ happy
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 50
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1067
+[core 0] instr = 806
+[core 0] active cycles = 1051
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 728
+[core 0] instr = 474
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21046
+[core 0] instr = 12551
+[core 0] active cycles = 21031
+[core 0] ext load = 641
+[core 0] TCDM cont = 95
+[core 0] ld stall = 231
+[core 0] imiss = 165
+ and
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1086
+[core 0] instr = 806
+[core 0] active cycles = 1082
+[core 0] ext load = 1
+[core 0] TCDM cont = 110
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 727
+[core 0] instr = 474
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 74
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21191
+[core 0] instr = 12618
+[core 0] active cycles = 21178
+[core 0] ext load = 644
+[core 0] TCDM cont = 151
+[core 0] ld stall = 236
+[core 0] imiss = 143
+ f
+V matmul: 
+
+[core 0] cycles = 744
+[core 0] instr = 476
+[core 0] active cycles = 726
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1130
+[core 0] instr = 806
+[core 0] active cycles = 1112
+[core 0] ext load = 1
+[core 0] TCDM cont = 140
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 719
+[core 0] instr = 474
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 21343
+[core 0] instr = 12695
+[core 0] active cycles = 21334
+[core 0] ext load = 647
+[core 0] TCDM cont = 193
+[core 0] ld stall = 241
+[core 0] imiss = 154
+le
+V matmul: 
+
+[core 0] cycles = 719
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1078
+[core 0] ext load = 1
+[core 0] TCDM cont = 106
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21333
+[core 0] instr = 12706
+[core 0] active cycles = 21312
+[core 0] ext load = 650
+[core 0] TCDM cont = 116
+[core 0] ld stall = 230
+[core 0] imiss = 165
+w
+V matmul: 
+
+[core 0] cycles = 726
+[core 0] instr = 476
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1108
+[core 0] instr = 806
+[core 0] active cycles = 1057
+[core 0] ext load = 1
+[core 0] TCDM cont = 30
+[core 0] ld stall = 5
+[core 0] imiss = 198
+
+ K matmul: 
+[core 0] cycles = 741
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 21400
+[core 0] instr = 12788
+[core 0] active cycles = 21391
+[core 0] ext load = 653
+[core 0] TCDM cont = 67
+[core 0] ld stall = 235
+[core 0] imiss = 176
+ d
+V matmul: 
+
+[core 0] cycles = 735
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1103
+[core 0] instr = 806
+[core 0] active cycles = 1100
+[core 0] ext load = 1
+[core 0] TCDM cont = 117
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 731
+[core 0] instr = 474
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21521
+[core 0] instr = 12849
+[core 0] active cycles = 21507
+[core 0] ext load = 656
+[core 0] TCDM cont = 86
+[core 0] ld stall = 240
+[core 0] imiss = 154
+ow
+V matmul: 
+
+[core 0] cycles = 753
+[core 0] instr = 476
+[core 0] active cycles = 727
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1091
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 86
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 36
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 21693
+[core 0] instr = 12924
+[core 0] active cycles = 21688
+[core 0] ext load = 659
+[core 0] TCDM cont = 151
+[core 0] ld stall = 245
+[core 0] imiss = 165
+n
+V matmul: 
+
+[core 0] cycles = 743
+[core 0] instr = 476
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1119
+[core 0] instr = 806
+[core 0] active cycles = 1086
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 709
+[core 0] instr = 474
+[core 0] active cycles = 682
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21663
+[core 0] instr = 12942
+[core 0] active cycles = 21660
+[core 0] ext load = 662
+[core 0] TCDM cont = 97
+[core 0] ld stall = 234
+[core 0] imiss = 154
+ the
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 49
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1135
+[core 0] instr = 806
+[core 0] active cycles = 1108
+[core 0] ext load = 1
+[core 0] TCDM cont = 103
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 745
+[core 0] instr = 474
+[core 0] active cycles = 742
+[core 0] ext load = 1
+[core 0] TCDM cont = 102
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 21781
+[core 0] instr = 13014
+[core 0] active cycles = 21758
+[core 0] ext load = 665
+[core 0] TCDM cont = 68
+[core 0] ld stall = 239
+[core 0] imiss = 154
+ c
+V matmul: 
+
+[core 0] cycles = 751
+[core 0] instr = 476
+[core 0] active cycles = 707
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1108
+[core 0] instr = 806
+[core 0] active cycles = 1069
+[core 0] ext load = 1
+[core 0] TCDM cont = 97
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 21921
+[core 0] instr = 13088
+[core 0] active cycles = 21912
+[core 0] ext load = 668
+[core 0] TCDM cont = 116
+[core 0] ld stall = 244
+[core 0] imiss = 154
+u
+V matmul: 
+
+[core 0] cycles = 751
+[core 0] instr = 476
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1035
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 729
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 22048
+[core 0] instr = 13164
+[core 0] active cycles = 22027
+[core 0] ext load = 671
+[core 0] TCDM cont = 127
+[core 0] ld stall = 249
+[core 0] imiss = 154
+s
+V matmul: 
+
+[core 0] cycles = 752
+[core 0] instr = 476
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1077
+[core 0] instr = 806
+[core 0] active cycles = 1041
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 735
+[core 0] instr = 474
+[core 0] active cycles = 721
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 22135
+[core 0] instr = 13174
+[core 0] active cycles = 22099
+[core 0] ext load = 674
+[core 0] TCDM cont = 121
+[core 0] ld stall = 238
+[core 0] imiss = 187
+h
+V matmul: 
+
+[core 0] cycles = 744
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1088
+[core 0] instr = 806
+[core 0] active cycles = 1047
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 22153
+[core 0] instr = 13246
+[core 0] active cycles = 22145
+[core 0] ext load = 677
+[core 0] TCDM cont = 84
+[core 0] ld stall = 243
+[core 0] imiss = 143
+i
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 685
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1077
+[core 0] ext load = 1
+[core 0] TCDM cont = 105
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 726
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 58
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 22314
+[core 0] instr = 13317
+[core 0] active cycles = 22309
+[core 0] ext load = 680
+[core 0] TCDM cont = 139
+[core 0] ld stall = 248
+[core 0] imiss = 143
+on
+V matmul: 
+
+[core 0] cycles = 730
+[core 0] instr = 476
+[core 0] active cycles = 675
+[core 0] ext load = 1
+[core 0] TCDM cont = 45
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1052
+[core 0] instr = 806
+[core 0] active cycles = 1016
+[core 0] ext load = 1
+[core 0] TCDM cont = 44
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 22420
+[core 0] instr = 13387
+[core 0] active cycles = 22375
+[core 0] ext load = 683
+[core 0] TCDM cont = 62
+[core 0] ld stall = 253
+[core 0] imiss = 176
+ a
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 692
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1087
+[core 0] instr = 806
+[core 0] active cycles = 1024
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 22488
+[core 0] instr = 13404
+[core 0] active cycles = 22482
+[core 0] ext load = 686
+[core 0] TCDM cont = 142
+[core 0] ld stall = 242
+[core 0] imiss = 165
+g
+V matmul: 
+
+[core 0] cycles = 738
+[core 0] instr = 476
+[core 0] active cycles = 687
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1059
+[core 0] ext load = 1
+[core 0] TCDM cont = 87
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 736
+[core 0] instr = 474
+[core 0] active cycles = 733
+[core 0] ext load = 1
+[core 0] TCDM cont = 93
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 22554
+[core 0] instr = 13479
+[core 0] active cycles = 22545
+[core 0] ext load = 689
+[core 0] TCDM cont = 81
+[core 0] ld stall = 247
+[core 0] imiss = 165
+a
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 701
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1093
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 741
+[core 0] instr = 474
+[core 0] active cycles = 703
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 22681
+[core 0] instr = 13554
+[core 0] active cycles = 22676
+[core 0] ext load = 692
+[core 0] TCDM cont = 107
+[core 0] ld stall = 252
+[core 0] imiss = 165
+in
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 43
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1092
+[core 0] instr = 806
+[core 0] active cycles = 1060
+[core 0] ext load = 1
+[core 0] TCDM cont = 88
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 22868
+[core 0] instr = 13619
+[core 0] active cycles = 22845
+[core 0] ext load = 695
+[core 0] TCDM cont = 161
+[core 0] ld stall = 257
+[core 0] imiss = 165
+.
+V matmul: 
+
+[core 0] cycles = 736
+[core 0] instr = 476
+[core 0] active cycles = 722
+[core 0] ext load = 1
+[core 0] TCDM cont = 92
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1073
+[core 0] instr = 806
+[core 0] active cycles = 1049
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 5
+[core 0] imiss = 165
+
+ K matmul: 
+[core 0] cycles = 720
+[core 0] instr = 474
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 22861
+[core 0] instr = 13636
+[core 0] active cycles = 22840
+[core 0] ext load = 698
+[core 0] TCDM cont = 118
+[core 0] ld stall = 246
+[core 0] imiss = 165
+
+
+V matmul: 
+
+[core 0] cycles = 733
+[core 0] instr = 476
+[core 0] active cycles = 719
+[core 0] ext load = 1
+[core 0] TCDM cont = 89
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1107
+[core 0] instr = 806
+[core 0] active cycles = 1076
+[core 0] ext load = 1
+[core 0] TCDM cont = 93
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 723
+[core 0] instr = 474
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23001
+[core 0] instr = 13715
+[core 0] active cycles = 22996
+[core 0] ext load = 701
+[core 0] TCDM cont = 165
+[core 0] ld stall = 251
+[core 0] imiss = 154
+T
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1060
+[core 0] ext load = 1
+[core 0] TCDM cont = 77
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 713
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 23054
+[core 0] instr = 13782
+[core 0] active cycles = 23033
+[core 0] ext load = 704
+[core 0] TCDM cont = 67
+[core 0] ld stall = 256
+[core 0] imiss = 176
+he
+V matmul: 
+
+[core 0] cycles = 719
+[core 0] instr = 476
+[core 0] active cycles = 670
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1072
+[core 0] ext load = 1
+[core 0] TCDM cont = 100
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 729
+[core 0] instr = 474
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23236
+[core 0] instr = 13850
+[core 0] active cycles = 23196
+[core 0] ext load = 707
+[core 0] TCDM cont = 151
+[core 0] ld stall = 261
+[core 0] imiss = 143
+ c
+V matmul: 
+
+[core 0] cycles = 723
+[core 0] instr = 476
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1134
+[core 0] instr = 806
+[core 0] active cycles = 1086
+[core 0] ext load = 1
+[core 0] TCDM cont = 81
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 717
+[core 0] instr = 474
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 69
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23284
+[core 0] instr = 13862
+[core 0] active cycles = 23240
+[core 0] ext load = 710
+[core 0] TCDM cont = 119
+[core 0] ld stall = 250
+[core 0] imiss = 176
+oo
+V matmul: 
+
+[core 0] cycles = 749
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1080
+[core 0] ext load = 1
+[core 0] TCDM cont = 108
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 721
+[core 0] instr = 474
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23326
+[core 0] instr = 13942
+[core 0] active cycles = 23311
+[core 0] ext load = 713
+[core 0] TCDM cont = 71
+[core 0] ld stall = 255
+[core 0] imiss = 176
+l
+V matmul: 
+
+[core 0] cycles = 755
+[core 0] instr = 476
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 66
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1116
+[core 0] instr = 806
+[core 0] active cycles = 1091
+[core 0] ext load = 1
+[core 0] TCDM cont = 119
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23561
+[core 0] instr = 14011
+[core 0] active cycles = 23556
+[core 0] ext load = 716
+[core 0] TCDM cont = 227
+[core 0] ld stall = 260
+[core 0] imiss = 154
+ c
+V matmul: 
+
+[core 0] cycles = 721
+[core 0] instr = 476
+[core 0] active cycles = 695
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1108
+[core 0] instr = 806
+[core 0] active cycles = 1044
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 691
+[core 0] ext load = 1
+[core 0] TCDM cont = 51
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 23580
+[core 0] instr = 14078
+[core 0] active cycles = 23559
+[core 0] ext load = 719
+[core 0] TCDM cont = 128
+[core 0] ld stall = 265
+[core 0] imiss = 143
+a
+V matmul: 
+
+[core 0] cycles = 739
+[core 0] instr = 476
+[core 0] active cycles = 698
+[core 0] ext load = 1
+[core 0] TCDM cont = 46
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1120
+[core 0] instr = 806
+[core 0] active cycles = 1073
+[core 0] ext load = 1
+[core 0] TCDM cont = 68
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 37
+[core 0] ld stall = 4
+[core 0] imiss = 165
+
+ ATTENTION: 
+[core 0] cycles = 23592
+[core 0] instr = 14097
+[core 0] active cycles = 23570
+[core 0] ext load = 722
+[core 0] TCDM cont = 92
+[core 0] ld stall = 254
+[core 0] imiss = 154
+p
+V matmul: 
+
+[core 0] cycles = 732
+[core 0] instr = 476
+[core 0] active cycles = 718
+[core 0] ext load = 1
+[core 0] TCDM cont = 88
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1078
+[core 0] instr = 806
+[core 0] active cycles = 1048
+[core 0] ext load = 1
+[core 0] TCDM cont = 87
+[core 0] ld stall = 5
+[core 0] imiss = 132
+
+ K matmul: 
+[core 0] cycles = 739
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 73
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 23791
+[core 0] instr = 14175
+[core 0] active cycles = 23786
+[core 0] ext load = 725
+[core 0] TCDM cont = 209
+[core 0] ld stall = 259
+[core 0] imiss = 132
+t
+V matmul: 
+
+[core 0] cycles = 744
+[core 0] instr = 476
+[core 0] active cycles = 693
+[core 0] ext load = 1
+[core 0] TCDM cont = 52
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1115
+[core 0] instr = 806
+[core 0] active cycles = 1096
+[core 0] ext load = 1
+[core 0] TCDM cont = 124
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 718
+[core 0] instr = 474
+[core 0] active cycles = 712
+[core 0] ext load = 1
+[core 0] TCDM cont = 72
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 23842
+[core 0] instr = 14243
+[core 0] active cycles = 23803
+[core 0] ext load = 728
+[core 0] TCDM cont = 81
+[core 0] ld stall = 264
+[core 0] imiss = 165
+a
+V matmul: 
+
+[core 0] cycles = 763
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 32
+[core 0] ld stall = 4
+[core 0] imiss = 176
+
+Q matmul: 
+[core 0] cycles = 1084
+[core 0] instr = 806
+[core 0] active cycles = 1079
+[core 0] ext load = 1
+[core 0] TCDM cont = 107
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 730
+[core 0] instr = 474
+[core 0] active cycles = 694
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 23994
+[core 0] instr = 14317
+[core 0] active cycles = 23957
+[core 0] ext load = 731
+[core 0] TCDM cont = 140
+[core 0] ld stall = 269
+[core 0] imiss = 154
+in
+V matmul: 
+
+[core 0] cycles = 727
+[core 0] instr = 476
+[core 0] active cycles = 686
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1056
+[core 0] ext load = 1
+[core 0] TCDM cont = 84
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 696
+[core 0] ext load = 1
+[core 0] TCDM cont = 67
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 24022
+[core 0] instr = 14332
+[core 0] active cycles = 23982
+[core 0] ext load = 734
+[core 0] TCDM cont = 114
+[core 0] ld stall = 258
+[core 0] imiss = 165
+ was
+V matmul: 
+
+[core 0] cycles = 746
+[core 0] instr = 476
+[core 0] active cycles = 715
+[core 0] ext load = 1
+[core 0] TCDM cont = 74
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1130
+[core 0] instr = 806
+[core 0] active cycles = 1100
+[core 0] ext load = 1
+[core 0] TCDM cont = 128
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 726
+[core 0] instr = 474
+[core 0] active cycles = 723
+[core 0] ext load = 1
+[core 0] TCDM cont = 83
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 24174
+[core 0] instr = 14398
+[core 0] active cycles = 24138
+[core 0] ext load = 737
+[core 0] TCDM cont = 159
+[core 0] ld stall = 263
+[core 0] imiss = 143
+ g
+V matmul: 
+
+[core 0] cycles = 755
+[core 0] instr = 476
+[core 0] active cycles = 741
+[core 0] ext load = 1
+[core 0] TCDM cont = 100
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1086
+[core 0] instr = 806
+[core 0] active cycles = 1083
+[core 0] ext load = 1
+[core 0] TCDM cont = 111
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 715
+[core 0] instr = 474
+[core 0] active cycles = 690
+[core 0] ext load = 1
+[core 0] TCDM cont = 61
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 24252
+[core 0] instr = 14474
+[core 0] active cycles = 24238
+[core 0] ext load = 740
+[core 0] TCDM cont = 144
+[core 0] ld stall = 268
+[core 0] imiss = 154
+on
+V matmul: 
+
+[core 0] cycles = 748
+[core 0] instr = 476
+[core 0] active cycles = 720
+[core 0] ext load = 1
+[core 0] TCDM cont = 79
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1059
+[core 0] ext load = 1
+[core 0] TCDM cont = 54
+[core 0] ld stall = 5
+[core 0] imiss = 176
+
+ K matmul: 
+[core 0] cycles = 708
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 24341
+[core 0] instr = 14544
+[core 0] active cycles = 24338
+[core 0] ext load = 743
+[core 0] TCDM cont = 123
+[core 0] ld stall = 273
+[core 0] imiss = 165
+e
+V matmul: 
+
+[core 0] cycles = 737
+[core 0] instr = 476
+[core 0] active cycles = 700
+[core 0] ext load = 1
+[core 0] TCDM cont = 70
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1066
+[core 0] instr = 806
+[core 0] active cycles = 1050
+[core 0] ext load = 1
+[core 0] TCDM cont = 78
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 712
+[core 0] instr = 474
+[core 0] active cycles = 669
+[core 0] ext load = 1
+[core 0] TCDM cont = 40
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 24414
+[core 0] instr = 14556
+[core 0] active cycles = 24378
+[core 0] ext load = 746
+[core 0] TCDM cont = 142
+[core 0] ld stall = 262
+[core 0] imiss = 143
+.
+V matmul: 
+
+[core 0] cycles = 720
+[core 0] instr = 476
+[core 0] active cycles = 689
+[core 0] ext load = 1
+[core 0] TCDM cont = 48
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1081
+[core 0] instr = 806
+[core 0] active cycles = 1047
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 729
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 64
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 24539
+[core 0] instr = 14636
+[core 0] active cycles = 24521
+[core 0] ext load = 749
+[core 0] TCDM cont = 166
+[core 0] ld stall = 267
+[core 0] imiss = 143
+ He
+V matmul: 
+
+[core 0] cycles = 760
+[core 0] instr = 476
+[core 0] active cycles = 746
+[core 0] ext load = 1
+[core 0] TCDM cont = 116
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+Q matmul: 
+[core 0] cycles = 1083
+[core 0] instr = 806
+[core 0] active cycles = 1034
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 723
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 55
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 24541
+[core 0] instr = 14706
+[core 0] active cycles = 24538
+[core 0] ext load = 752
+[core 0] TCDM cont = 62
+[core 0] ld stall = 272
+[core 0] imiss = 154
+ l
+V matmul: 
+
+[core 0] cycles = 750
+[core 0] instr = 476
+[core 0] active cycles = 709
+[core 0] ext load = 1
+[core 0] TCDM cont = 57
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1098
+[core 0] instr = 806
+[core 0] active cycles = 1083
+[core 0] ext load = 1
+[core 0] TCDM cont = 111
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 733
+[core 0] instr = 474
+[core 0] active cycles = 681
+[core 0] ext load = 1
+[core 0] TCDM cont = 41
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 24719
+[core 0] instr = 14768
+[core 0] active cycles = 24692
+[core 0] ext load = 755
+[core 0] TCDM cont = 65
+[core 0] ld stall = 277
+[core 0] imiss = 187
+e
+V matmul: 
+
+[core 0] cycles = 754
+[core 0] instr = 476
+[core 0] active cycles = 705
+[core 0] ext load = 1
+[core 0] TCDM cont = 53
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1085
+[core 0] instr = 806
+[core 0] active cycles = 1076
+[core 0] ext load = 1
+[core 0] TCDM cont = 104
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 713
+[core 0] instr = 474
+[core 0] active cycles = 684
+[core 0] ext load = 1
+[core 0] TCDM cont = 33
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+ ATTENTION: 
+[core 0] cycles = 24805
+[core 0] instr = 14786
+[core 0] active cycles = 24783
+[core 0] ext load = 758
+[core 0] TCDM cont = 130
+[core 0] ld stall = 266
+[core 0] imiss = 176
+ar
+V matmul: 
+
+[core 0] cycles = 745
+[core 0] instr = 476
+[core 0] active cycles = 697
+[core 0] ext load = 1
+[core 0] TCDM cont = 56
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1096
+[core 0] instr = 806
+[core 0] active cycles = 1068
+[core 0] ext load = 1
+[core 0] TCDM cont = 85
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 717
+[core 0] instr = 474
+[core 0] active cycles = 702
+[core 0] ext load = 1
+[core 0] TCDM cont = 62
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 24900
+[core 0] instr = 14871
+[core 0] active cycles = 24879
+[core 0] ext load = 761
+[core 0] TCDM cont = 134
+[core 0] ld stall = 271
+[core 0] imiss = 154
+n
+V matmul: 
+
+[core 0] cycles = 724
+[core 0] instr = 476
+[core 0] active cycles = 706
+[core 0] ext load = 1
+[core 0] TCDM cont = 65
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1095
+[core 0] instr = 806
+[core 0] active cycles = 1092
+[core 0] ext load = 1
+[core 0] TCDM cont = 120
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 729
+[core 0] instr = 474
+[core 0] active cycles = 711
+[core 0] ext load = 1
+[core 0] TCDM cont = 71
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 25063
+[core 0] instr = 14940
+[core 0] active cycles = 25040
+[core 0] ext load = 764
+[core 0] TCDM cont = 173
+[core 0] ld stall = 276
+[core 0] imiss = 165
+ed
+V matmul: 
+
+[core 0] cycles = 741
+[core 0] instr = 476
+[core 0] active cycles = 712
+[core 0] ext load = 1
+[core 0] TCDM cont = 60
+[core 0] ld stall = 4
+[core 0] imiss = 154
+
+Q matmul: 
+[core 0] cycles = 1102
+[core 0] instr = 806
+[core 0] active cycles = 1095
+[core 0] ext load = 1
+[core 0] TCDM cont = 112
+[core 0] ld stall = 5
+[core 0] imiss = 154
+
+ K matmul: 
+[core 0] cycles = 732
+[core 0] instr = 474
+[core 0] active cycles = 699
+[core 0] ext load = 1
+[core 0] TCDM cont = 59
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+ ATTENTION: 
+[core 0] cycles = 25122
+[core 0] instr = 15003
+[core 0] active cycles = 25086
+[core 0] ext load = 767
+[core 0] TCDM cont = 102
+[core 0] ld stall = 281
+[core 0] imiss = 165
+ that
+V matmul: 
+
+[core 0] cycles = 722
+[core 0] instr = 476
+[core 0] active cycles = 676
+[core 0] ext load = 1
+[core 0] TCDM cont = 35
+[core 0] ld stall = 4
+[core 0] imiss = 143
+
+Q matmul: 
+[core 0] cycles = 1089
+[core 0] instr = 806
+[core 0] active cycles = 1086
+[core 0] ext load = 1
+[core 0] TCDM cont = 114
+[core 0] ld stall = 5
+[core 0] imiss = 143
+
+ K matmul: 
+[core 0] cycles = 734
+[core 0] instr = 474
+[core 0] active cycles = 704
+[core 0] ext load = 1
+[core 0] TCDM cont = 75
+[core 0] ld stall = 4
+[core 0] imiss = 132
+
+ ATTENTION: 
+[core 0] cycles = 25184
+[core 0] instr = 15011
+[core 0] active cycles = 25181
+[core 0] ext load = 770
+[core 0] TCDM cont = 172
+[core 0] ld stall = 270
+[core 0] imiss = 143

@@ -1,0 +1,8 @@
+name: ethics
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - pip
+  - pygraphviz
+prefix: /opt/anaconda3/envs/ethics
