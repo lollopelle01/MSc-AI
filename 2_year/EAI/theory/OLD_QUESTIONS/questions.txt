@@ -1,0 +1,126 @@
+What is consequentialism? What are the pros and cons? What are other theories to solve those cons? Analyze it in autonomous? What if there are 3 person in vehicle and 3 outside?
+ 
+Can you tell me something about the idea of utilitarianism? What are the
+problems related to wealth distribution?
+ 
+ 
+⁠imperatives, comparison between kant ethics and utilitarianism, can an action pass the universability test by kant but still be immoral
+ 
+Do you remember Deontology?
+ 
+⁠hypothetical imperative and categorical imperative
+ 
+Do you remember the theory of justice by John Rawls?
+ 
+Do you remember something about the virtue ethics? What are the main
+issues of this school of thought?
+ 
+ 
+What are the principles of trustworthy AI? What about the accountability?
+ 
+ 
+What can you tell me about the idea of human rights?
+ 
+-------
+What surveilance state is? surveillance manipulation and relative problems
+ 
+⁠Cambridge analytical? Problems according to GDPR? What they should've done to process data (te 6 items in GDPR: consent, legitimate interest, ...)? Among these 6 which one is good for user?
+ 
+-------------------------------
+ 
+What are the legal basis for the processing of personal data as stated in
+the GDPR?(art. 6 gdpr)
+ 
+controller techniques to handle personal data (or something like that, I think she wanted to know about personal data, de-identifiabilty of data and so on)
+ 
+⁠targeted advertising
+ 
+Can you tell me something about Article 22 of the GDPR about the
+explainability?
+ 
+Do you remember the principle of data minimisation? Is there a tension
+between this an AI methods? The GDPR provides some ways for re-using the
+data, do you know these ways, it means, exceptions by which you can re-
+purpose the data.
+ 
+Do you remember the duties of information of a service provider that
+should be given to a data subject in the context of collection and processing
+of personal data under the GDPR? What are the rights that the data subject
+can exercise? And the rights for data access?
+ 
+---------
+ 
+Claudette: settings, all the approaches they used and relative results
+ 
+---------
+ 
+COMPAS and Loomis case
+ 
+Can you tell me something this idea of fairness in automated decision
+making, what are the main issues related to this idea of fairness?
+ 
+Let’s say we have a system that is equally accurate for two groups (blue
+and green). If you have the same features in both groups you will be treated
+equally. Then it may happen that the kind of error made by the system affect
+different to the two groups. Being considered false negative is better than
+being considered false positive. Can you make an example?
+ 
+------------ 
+ 
+Can you tell me something about the ethical issues related to Autonomous
+Vehicles? About the MIT Lab experiment, is there an approach that you find
+more fair than other?
+ 
+⁠ethical knob 1 vs 2
+ 
+----------------
+ 
+ 
+ 
+ 1. What is consequentialism? What are the pros and cons? What are other theories to solve those cons? Analyze it in autonomous? What if there are 3 persons in a vehicle and 3 outside?
+
+2. Can you tell me something about the idea of utilitarianism? What are the problems related to wealth distribution?
+
+3. Imperatives, comparison between Kant ethics and utilitarianism, can an action pass the universality test by Kant but still be immoral?
+
+4. Do you remember Deontology?
+
+5. Hypothetical imperative and categorical imperative.
+
+6. Do you remember the theory of justice by John Rawls?
+
+7. Do you remember something about virtue ethics? What are the main issues of this school of thought?
+
+8. What are the principles of trustworthy AI? What about the accountability?
+
+9. What can you tell me about the idea of human rights?
+
+10. What is a surveillance state? Surveillance manipulation and relative problems.
+
+11. Cambridge Analytica? Problems according to GDPR? What should they have done to process data (the 6 items in GDPR: consent, legitimate interest, ...)? Among these 6, which one is good for the user?
+
+12. What are the legal bases for the processing of personal data as stated in the GDPR? (art. 6 GDPR)
+
+13. Controller techniques to handle personal data (or something like that, I think she wanted to know about personal data, de-identifiability of data, and so on).
+
+14. Targeted advertising.
+
+15. Can you tell me something about Article 22 of the GDPR about explainability?
+
+16. Do you remember the principle of data minimization? Is there a tension between this and AI methods? The GDPR provides some ways for re-using the data, do you know these ways? That is, exceptions by which you can re-purpose the data.
+
+17. Do you remember the duties of information of a service provider that should be given to a data subject in the context of collection and processing of personal data under the GDPR? What are the rights that the data subject can exercise? And the rights for data access?
+
+18. Claudette: settings, all the approaches they used, and relative results.
+
+19. COMPAS and Loomis case.
+
+20. Can you tell me something about this idea of fairness in automated decision-making? What are the main issues related to this idea of fairness?
+
+21. Let’s say we have a system that is equally accurate for two groups (blue and green). If you have the same features in both groups, you will be treated equally. Then it may happen that the kind of error made by the system affects the two groups differently. Being considered a false negative is better than being considered a false positive. Can you make an example?
+
+22. Can you tell me something about the ethical issues related to Autonomous Vehicles? About the MIT Lab experiment, is there an approach that you find more fair than others?
+
+23. Ethical knob 1 vs 2.
+24. Kantian Ethics
+25. Cambridge analytica case
